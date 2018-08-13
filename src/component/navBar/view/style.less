@@ -1,0 +1,70 @@
+@nav-bar-height:4.4rem;
+@theme-color:#3aaaff;
+@nav-word-color:#747474;
+.nav-bar {
+    width: 100%;
+    height: @nav-bar-height;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    nav {
+        width: 100%;
+        height: @nav-bar-height;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            width: 100%;
+            height: @nav-bar-height;
+            padding: 0;
+
+            li {
+                display: inline-block;
+                height: @nav-bar-height;
+                width: 20%;
+                position: relative;
+
+                .nav-icon {
+                    width: 60%;
+                    height: 3.6rem;
+                    margin: -1.8rem 20%;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    color:@nav-word-color;
+                    // background: red;
+                    font-size: 1rem;
+                    text-align: center;
+
+                    img {
+                        display: block;
+                        width: 2rem;
+                        height: 2rem;
+                        margin: 0.3rem auto;
+                        // margin-bottom: 0.5rem;
+                        // background: blue;
+                    }
+                }
+
+                .nav-icon-act {
+                    color: @theme-color;
+                    img {
+                        background: @theme-color;
+                    }
+                }
+
+                a {
+                    width: 60%;
+                    margin: 0 20%;
+                    height: @nav-bar-height;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    // background: rgb(255, 255, 0);
+                }
+            }
+        }
+    }
+}
+
+
