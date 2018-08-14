@@ -5,8 +5,8 @@ import "./style.less"
 
 const HomeTitle = ()=>{
     return (
-        <div>
-            home title
+        <div className="title-inner home-t">
+            首页
         </div>
     )
 }
