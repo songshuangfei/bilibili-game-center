@@ -1,55 +1,14 @@
 import React,{ Component } from "react"
 
+import Carousel from   "./full-screen-carousel" 
 import "./style.less"
 
 class Home extends Component {
     render(){
         return(
             <div className="home">
-                Home page
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
-                <h1>title</h1>
+                <Carousel/>
+                
             </div>
         )
     }

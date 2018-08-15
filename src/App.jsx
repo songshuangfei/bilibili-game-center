@@ -20,7 +20,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TitleBar />
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/rank" component={RankingList}/>
@@ -28,6 +27,7 @@ class App extends Component {
           <Route path="/strategy" component={GameStrategy}/>
           <Route path="/my" component={My}/>
         </Switch>
+        <TitleBar />{/*title和nav是fixed定位所以要放下面*/}
         <NavBar />
       </div>
     );

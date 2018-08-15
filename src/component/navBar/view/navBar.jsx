@@ -39,7 +39,7 @@ class NavBar extends Component {
 
     render(){
         var path = window.location.pathname;
-        console.log(path)
+        // console.log(path)
         return(
             <div className="nav-bar">
                 <nav>

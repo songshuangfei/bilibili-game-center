@@ -12,13 +12,38 @@
 
     .title-inner {
         width: 100%;
-        height: @title-bar-height;
-        line-height: @title-bar-height;
-        text-align: center;
-        font-size: 1.4rem;
-        color: @word-color-primary;
+        height: @title-bar-height;        
         position: relative;
         // background: red;
+
+        .page-name {
+            text-align: center;
+            font-size: 1.2rem;
+            color: @word-color-primary;
+            width: 4rem;
+            height: 1.2rem;
+            margin: -0.6rem -2rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            // background: red;//取消注释查看布局
+        }
+
+        .left-link {
+            float: left;
+            margin: 0.6rem;
+        }
+
+        .right-link{
+            float: right;
+            margin: 0.6rem;
+
+        }
+
+        img {
+            width: 2.8rem;
+            height: 2.8rem;
+        }
     }
 }
 
