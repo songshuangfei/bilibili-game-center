@@ -1,0 +1,105 @@
+@import url("../../commonLess/variable.less");
+@num: 12;//列表最大长度
+@cover-p: 0.7;//游戏封面长除以宽值
+@gradient:rgba(0,0,0,0.4);
+.book-game {
+    margin-top: 0.5rem;
+    .book-game-title {
+        width: 100%;
+        font-size: 1.1rem;
+        color: @word-color-primary;
+        padding: 0.4rem @page-side-blank;
+        position: relative;
+        // background: red;
+        a {
+            position: absolute;
+            right: @page-side-blank;
+            top: 0.2rem;
+            img {
+                width: 1.1rem;
+                height: 1.1rem;
+            }   
+        }
+    }
+
+    .book-game-list {
+        width: 100%;
+        padding-left: @page-side-blank;
+        overflow: hidden;
+        // background: red;
+
+        .item-cont {
+            overflow-x: scroll;
+            margin-bottom: -3rem;
+            padding-bottom: 3rem;
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding:0;
+                width: (@num+1)*10rem;
+                li {
+                    float: left;
+                    width: 12rem;
+                    background: #fff;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    margin:0 0.5rem;
+                    margin-bottom: 0.5rem;
+                    box-shadow: @gray-shadow;
+                    position: relative;
+                    img {
+                        width: 100%;
+                        height: @cover-p*10rem;
+                    }
+                    .info {
+                        width: 100%;
+                        padding: 0.7rem;
+                        .game-name {
+                            width: 100%;
+                            padding: 0 0.5rem;
+                            height: 1.4rem;
+                            margin: 0.4rem 0;
+                            line-height: 1.4rem;
+                            font-size: 1.1rem;
+                            color: @word-color-primary;
+                            text-align: center;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        .book-num {
+                            color: @word-color-light;
+                            font-size: 0.8rem;
+                            width: 100%;
+                            text-align: center;
+                            // background: red;
+                            height: 1rem;
+                            line-height: 1rem;
+                        }
+                    }
+                    .b-btn {
+                        width: 5rem;
+                        height: 2rem;
+                        border-radius: 1rem;
+                        margin: 0.6rem 3.5rem;
+                        margin-bottom: 1rem;
+                        background: @theme-color;
+                        color: #fff;
+                        font-size: 1rem;
+                        text-align: center;
+                        line-height: 2rem;
+                        box-shadow: 0 2px 8px rgba(71, 187, 255, 0.5);
+                    }
+
+                    .b-btn:active {
+                        color: @theme-color;
+                        background: #fff;
+                    }
+                }
+            }
+        }
+    }
+    
+}
