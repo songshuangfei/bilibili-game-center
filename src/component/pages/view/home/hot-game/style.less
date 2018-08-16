@@ -1,0 +1,83 @@
+@import url("../../commonLess/variable.less");
+.hot-game {
+    width: 100%;
+    height: 14rem;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(86, 159, 207, 0.08);
+
+    .hot-game-title {
+        width: 100%;
+        font-size: 1.1rem;
+        color: @word-color-primary;
+        padding: 0.4rem @page-side-blank;
+        position: relative;
+        // background: red;
+
+        div {
+            display: inline;
+        }
+
+        i {
+            margin-top: 0.3rem;
+            // background: yellow;
+            float: right;
+        }
+    }
+
+    .hot-game-list {
+        width: 100%;
+        height: 11rem;
+        padding-left: @page-side-blank;
+        overflow: hidden;
+        // background: red;
+
+
+        ul {
+            list-style: none;
+            height: 14rem;
+            margin: 0;
+            padding: 0;
+            white-space:nowrap;
+            overflow-x: scroll;
+            // background: rgba(0, 128, 0, 0.438);
+
+
+            li {
+                display: inline-block;
+                width: 6rem;
+                height: 11rem;;
+                margin: 0 0.2rem;
+                background: @theme-color;
+
+                img {
+                    width: 5rem;
+                    height: 5rem;
+                    margin: 0.2rem 0.5rem;
+                }
+
+                .g-name {
+                    width: 5rem;
+                    height: 2.2rem;
+                    margin: 0 0.5rem;
+                    color: @word-color-primary;
+                    font-size: 1rem;
+                    line-height: 1.1rem;
+                    text-align: center;
+                    white-space:normal;
+                    word-break:break-all;
+                    word-wrap:break-word; 
+
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+
+                    background: red;
+
+                }
+
+                .d-btn {
+
+                }
+            }
+        }
+    }
+}
