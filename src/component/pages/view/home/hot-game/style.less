@@ -1,7 +1,6 @@
 @import url("../../commonLess/variable.less");
 .hot-game {
     width: 100%;
-    height: 14rem;
     background: #fff;
     box-shadow: 0 1px 4px rgba(86, 159, 207, 0.08);
 
@@ -26,58 +25,72 @@
 
     .hot-game-list {
         width: 100%;
-        height: 11rem;
         padding-left: @page-side-blank;
         overflow: hidden;
         // background: red;
 
 
-        ul {
+        ul {//横向滚动条被隐藏
             list-style: none;
-            height: 14rem;
             margin: 0;
             padding: 0;
             white-space:nowrap;
             overflow-x: scroll;
+            margin-bottom: -3rem;//将下方横向滚动条放到高度自适应容器外
+            padding-bottom: 3.8rem;//保证容器内容不被隐藏,并留出0.8rem下边界
+            position: relative;//item按钮的定位参照
+
             // background: rgba(0, 128, 0, 0.438);
+            
+            
+            .item-cont {
+                width: 60rem;//一个item宽度为6re吗，最多10个
 
-
-            li {
-                display: inline-block;
-                width: 6rem;
-                height: 11rem;;
-                margin: 0 0.2rem;
-                background: @theme-color;
-
-                img {
-                    width: 5rem;
-                    height: 5rem;
-                    margin: 0.2rem 0.5rem;
-                }
-
-                .g-name {
-                    width: 5rem;
-                    height: 2.2rem;
-                    margin: 0 0.5rem;
-                    color: @word-color-primary;
-                    font-size: 1rem;
-                    line-height: 1.1rem;
-                    text-align: center;
-                    white-space:normal;
-                    word-break:break-all;
-                    word-wrap:break-word; 
-
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-
-                    background: red;
-
-                }
-
-                .d-btn {
-
+                li {
+                    float: left;
+                    width: 6rem;
+                    padding-bottom: 2.4rem;//给按钮留出空间，因为按钮先对更高级父级绝对定位
+                    // background: @theme-color;
+    
+                    img {
+                        width: 5rem;
+                        height: 5rem;
+                        margin: 0.2rem 0.5rem;
+                    }
+    
+                    .g-name {
+                        width: 5rem;
+                        margin: 0 0.5rem;
+                        color: @word-color-primary;
+                        font-size: 1rem;
+                        line-height: 1.1rem;
+                        text-align: center;
+                        white-space:normal;
+                        word-break:break-all;
+                        word-wrap:break-word; 
+                        // background: red;
+    
+                    }
+    
+                    .d-btn {
+                        width: 3rem;
+                        height: 1.6rem;
+                        border-radius: 0.8rem;
+                        margin-left: 1.5rem;
+                        line-height: 1.6rem;
+                        background: @theme-color; 
+                        margin-bottom: 3.8rem;
+                        position: absolute;
+                        bottom: 0;
+                        text-align: center;
+                        a {
+                            color: #FFF;
+                        }
+                    }
                 }
             }
+
+            
         }
     }
 }

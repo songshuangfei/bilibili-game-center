@@ -58,17 +58,19 @@ class HotGame extends Component {
                 </div>
                 <div className="hot-game-list">
                     <ul>
-                        {
-                            data.map((v,i)=>(
-                                <GameItem 
-                                    key={i}
-                                    img={v.icon} 
-                                    to={v.pageLink} 
-                                    name={v.name}
-                                    DlLink={v.DlLink}
-                                />
-                            ))
-                        }
+                        <li className="item-cont">
+                            {
+                                data.map((v,i)=>(
+                                    <GameItem 
+                                        key={i}
+                                        img={v.icon} 
+                                        to={v.pageLink} 
+                                        name={v.name}
+                                        DlLink={v.DlLink}
+                                    />
+                                ))
+                            }
+                        </li>
                     </ul>
                 </div>
             </div>
