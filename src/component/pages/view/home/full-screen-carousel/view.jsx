@@ -11,7 +11,7 @@ import "./style.less"
 const CarlItem = (props)=>{
     return(
         <div className="carl-item">
-            <a href={props.to}>
+            <a href={`/activity/${props.activityId}`}>
                 <img src={props.img} alt="img"/>
             </a>
         </div>
@@ -32,9 +32,9 @@ class FullScreenCarl extends Component{
     getCarouselCnt(){
         var newData = {//模拟轮播图数据
             data:[
-                { img:"img/1.jpg",to:"img/1.jpg"},//链接都为http完整url
-                { img:"img/2.jpg",to:"img/2.jpg"},
-                { img:"img/3.jpg",to:"img/3.jpg"}
+                { img:"/activtyimg/1.jpg",activityId:"001"},
+                { img:"/activtyimg/2.jpg",activityId:"002"},
+                { img:"/activtyimg/3.jpg",activityId:"003"}
             ]
         }
         //axios get
@@ -51,8 +51,8 @@ class FullScreenCarl extends Component{
         var cdata = this.state.carlData;
         return(
             <Carousel autoplay={true}>
-                {cdata.map((v,i)=>(
-                    <CarlItem key={i} img={v.img} to={v.to}/>
+                {cdata.map((v)=>(
+                    <CarlItem key={v.activityId} img={v.img} activityId={v.activityId}/>
                 ))}
             </Carousel>
         )

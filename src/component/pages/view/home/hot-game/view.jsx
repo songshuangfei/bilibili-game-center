@@ -1,32 +1,37 @@
 import React,{ Component } from "react"
-import { Icon } from "antd"
+import { rightIcon } from "../icons"
 
 import "./style.less"
 
 // const moreUrl = "234234"//更多热门游戏api
+//hot-game可装游戏个数配置在style.less
 
 var gameData = {//热门游戏需求数据
     data:[
-        {name:"game11423423",icon:"/img/1.jpg",DlLink:"213",pageLink:"213"},
-        {name:"game2",icon:"/img/2.jpg",DlLink:"213",pageLink:"213"},
-        {name:"game3",icon:"/img/3.jpg",DlLink:"213",pageLink:"213"},
-        {name:"game4",icon:"/img/1.jpg",DlLink:"213",pageLink:"213"},
-        {name:"game5",icon:"/img/2.jpg",DlLink:"213",pageLink:"213"},
+        {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
+        {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+        {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
+        {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
+        {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+        {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+        {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
     ]
 }
 
-const GameItem = (props) => {
-    return(
-        <li>
-            <a href={props.pageLink}>
-                <img src={props.img} alt="img"/>
-            </a>
-            <p className="g-name">{props.name}</p>
-            <div className="d-btn">
-                <a href={props.DlLink}>下载</a>
-            </div>
-        </li>
-    )
+class GameItem extends Component {
+    render(){
+        return(
+            <li>
+                <a href={`/game/${this.props.gameId}`}>
+                    <img src={this.props.img} alt="img"/>
+                </a>
+                <p className="g-name">{this.props.name}</p>
+                <div className="d-btn">
+                    <a href={this.props.DlLink}>下载</a>
+                </div>
+            </li>
+        )
+    }
 }
 
 class HotGame extends Component {
@@ -49,28 +54,27 @@ class HotGame extends Component {
 
     render(){
         var data = this.state.gameListData
-        console.log(data)
+        // console.log(data)
         return(
             <div className="hot-game">
                 <div className="hot-game-title">
-                    <div>精品推荐</div>
-                    <Icon type="right"/>
+                    精品推荐
+                    <a href="/rank"><img src={rightIcon} alt=""/></a>
                 </div>
                 <div className="hot-game-list">
                     <ul>
-                        <li className="item-cont">
+                        <div className="item-cont">
                             {
-                                data.map((v,i)=>(
+                                data.map((v)=>(
                                     <GameItem 
-                                        key={i}
+                                        key={v.gameId}
                                         img={v.icon} 
-                                        to={v.pageLink} 
                                         name={v.name}
-                                        DlLink={v.DlLink}
+                                        gameId={v.gameId}
                                     />
                                 ))
                             }
-                        </li>
+                        </div>
                     </ul>
                 </div>
             </div>

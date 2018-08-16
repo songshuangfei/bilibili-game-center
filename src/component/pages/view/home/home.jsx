@@ -1,7 +1,8 @@
 import React,{ Component } from "react"
+import Carousel from "./full-screen-carousel" 
+import HotGame from "./hot-game" 
+import HotStrategy from "./hot-strategy" 
 
-import Carousel from   "./full-screen-carousel" 
-import HotGame from   "./hot-game" 
 import "./style.less"
 
 class Home extends Component {
@@ -10,6 +11,7 @@ class Home extends Component {
             <div className="home">
                 <Carousel/>
                 <HotGame/>
+                <HotStrategy/>
                 <h1>243</h1>
                 <h1>243</h1>
                 <h1>243</h1>
