@@ -1,5 +1,7 @@
 @import url("../../commonLess/variable.less");
-
+@num: 12;//列表最大长度
+@cover-p: 0.56;//视频封面长除以宽值
+@gradient:rgba(0,0,0,0.4);
 .hot-strategy {
     margin-top: 0.5rem;
     .hot-strategy-title {
@@ -24,16 +26,97 @@
         width: 100%;
         padding-left: @page-side-blank;
         overflow: hidden;
-        background: red;
+        // background: red;
 
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .item-cont {
             overflow-x: scroll;
             margin-bottom: -3rem;
             padding-bottom: 3rem;
-            // .item-cont
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding:0;
+                width: (@num+1)*10rem;
+                li {
+                    float: left;
+                    width: 10rem;
+                    background: #fff;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    margin:0 0.5rem;
+                    margin-bottom: 0.5rem;
+                    box-shadow: @gray-shadow;
+                    position: relative;
+                    .cover {
+                        position: relative;
+                        img {
+                            width: 10rem;
+                            height: @cover-p*10rem;
+                        }
+                        .video-hot {
+                            width: 100%;
+                            padding-left: 0.2rem;
+                            padding-top: 0.2rem;
+                            height: 1.3rem;
+                            position: absolute;
+                            bottom: 0;
+                            background: -webkit-linear-gradient(transparent, @gradient); /* Safari 5.1 - 6.0 */
+                            background: -o-linear-gradient(transparent, @gradient); /* Opera 11.1 - 12.0 */
+                            background: -moz-linear-gradient(transparent, @gradient); /* Firefox 3.6 - 15 */
+                            background: linear-gradient(transparent, @gradient); /* 标准的语法 */
+                            
+                            div {
+                                float: left;
+                                font-size: 0.8rem;
+                                color: #fff;
+                            }
+                            img {
+                                float: left;
+                                width: 0.8rem;
+                                height: 0.8rem;
+                                margin: 0 0.2rem;
+                                // margin-top: 0.05rem;
+                            }
+                        }
+                    }
+                    .info {
+                        width: 100%;
+                        padding: 0.7rem;
+                        .title {
+                            width: 100%;
+                            font-size: 1rem;
+                            line-height: 1.4rem;
+                            height: 2.8rem;
+                            overflow: hidden;
+                            white-space:normal;
+                            word-break:break-all;
+                            word-wrap:break-word;
+                        }
+                        span {
+                            display: block;
+                            width: 100%;
+                            height: 1.4rem;
+                            line-height: 1.4rem;
+                            // background: red;
+                            margin-top:0.3rem;
+                            color: @word-color-light;
+                            font-size: 0.9rem;
+                            overflow: hidden;
+                        }
+                    }
+
+                    a{
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        // background: rgba(93, 93, 255, 0.616);
+                    }
+                }
+            }
         }
     }
     

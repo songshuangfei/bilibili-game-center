@@ -1,4 +1,6 @@
 @import url("../../commonLess/variable.less");
+@game-num:12;//最大游戏个数
+
 .hot-game {
     width: 100%;
     background: #fff;
@@ -31,10 +33,8 @@
         // background: red;
 
 
-        ul {//横向滚动条被隐藏
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .item-cont {//横向滚动条被隐藏
+            
             overflow-x: scroll;
             margin-bottom: -3rem;//将下方横向滚动条放到高度自适应容器外
             padding-bottom: 3.8rem;//保证容器内容不被隐藏,并留出0.8rem下边界
@@ -43,8 +43,11 @@
             // background: rgba(0, 128, 0, 0.438);
             
             
-            .item-cont {
-                width: 120rem;//一个item宽度为6re吗，最多10个
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                width: (@game-num+1)*6rem;//一个item宽度为6re吗，最多10个
 
                 li {
                     float: left;

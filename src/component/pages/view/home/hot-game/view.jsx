@@ -4,7 +4,7 @@ import { rightIcon } from "../icons"
 import "./style.less"
 
 // const moreUrl = "234234"//更多热门游戏api
-//hot-game可装游戏个数配置在style.less
+//hot-game可装游戏个数配置在style.less,默认最大为12个
 
 var gameData = {//热门游戏需求数据
     data:[
@@ -62,8 +62,8 @@ class HotGame extends Component {
                     <a href="/rank"><img src={rightIcon} alt=""/></a>
                 </div>
                 <div className="hot-game-list">
-                    <ul>
-                        <div className="item-cont">
+                    <div className="item-cont">
+                        <ul>
                             {
                                 data.map((v)=>(
                                     <GameItem 
@@ -74,8 +74,8 @@ class HotGame extends Component {
                                     />
                                 ))
                             }
-                        </div>
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
             </div>
         )
