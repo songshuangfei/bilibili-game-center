@@ -20,6 +20,8 @@ var gameData = {//热门游戏需求数据
 
 class GameItem extends Component {
     render(){
+    // console.log(this.props.gameId)
+
         return(
             <li>
                 <a href={`/game/${this.props.gameId}`}>

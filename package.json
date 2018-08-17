@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.8.0",
+    "babel-polyfill": "^6.26.0",
     "react": "^16.4.2",
     "react-app-rewire-less": "^2.1.2",
     "react-dom": "^16.4.2",

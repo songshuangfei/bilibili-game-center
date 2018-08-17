@@ -8,4 +8,4 @@ module.exports = function override(config, env) {
         modifyVars: { "@primary-color": "#22ade5" },
     })(config, env);
     return config;
-};
+}; 

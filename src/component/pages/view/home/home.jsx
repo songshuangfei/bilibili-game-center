@@ -3,6 +3,8 @@ import Carousel from "./full-screen-carousel"
 import HotGame from "./hot-game" 
 import HotStrategy from "./hot-strategy" 
 import BookGame from "./book-game"
+import NewGame from "./new-game"
+import GameAdver from "./game-adver"
 
 import "./style.less"
 
@@ -14,35 +16,8 @@ class Home extends Component {
                 <HotGame/>
                 <HotStrategy/>
                 <BookGame/>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
-                <h1>243</h1>
+                <NewGame/>
+                <GameAdver/>
             </div>
         )
     }

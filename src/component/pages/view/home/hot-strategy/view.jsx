@@ -60,9 +60,8 @@ class HotStrategy extends Component {
                     <div className="item-cont">
                         <ul>
                             {data.map(v=>(
-                               <StrategyItem key={v.vedioId} data={v}/>
+                                <StrategyItem key={v.vedioId} data={v}/>
                             ))}
-
                         </ul>
                     </div>
                 </div>

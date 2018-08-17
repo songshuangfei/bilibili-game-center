@@ -1,5 +1,5 @@
 import React,{ Component } from "react"
-import { rightIcon,eyeIcon,goodIcon } from "../icons"
+import { rightIcon } from "../icons"
 
 import "./style.less"
 //列表最大长度在style.less配置，默认最长为12个
@@ -8,7 +8,7 @@ const gameData = {
     data:[
         {img:"/gamecover/1.jpg",game:"公主连接Re:Dive",gameId:"001",bookNum:"123123"},
         {img:"/gamecover/2.jpg",game:"魔法记录 魔法少女小圆",gameId:"002",bookNum:"872364"},
-        {img:"/gamecover/3.jpg",game:"FGO",gameID:"003",bookNum:"784574"},
+        {img:"/gamecover/3.jpg",game:"FGO",gameId:"003",bookNum:"784574"},
         {img:"/gamecover/4.jpg",game:"第五人格",gameId:"004",bookNum:"234234"},
     ]
 }
@@ -57,7 +57,7 @@ class HotStrategy extends Component {
                     <div className="item-cont">
                         <ul>
                             {data.map(v=>(
-                               <GameItem key={v.vedioId} data={v}/>
+                               <GameItem key={v.gameId} data={v}/>
                             ))}
 
                         </ul>

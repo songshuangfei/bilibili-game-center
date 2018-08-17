@@ -32,9 +32,9 @@ class FullScreenCarl extends Component{
     getCarouselCnt(){
         var newData = {//模拟轮播图数据
             data:[
-                { img:"/activtyimg/1.jpg",activityId:"001"},
-                { img:"/activtyimg/2.jpg",activityId:"002"},
-                { img:"/activtyimg/3.jpg",activityId:"003"}
+                { img:"/activityimg/1.jpg",activityId:"001"},
+                { img:"/activityimg/2.jpg",activityId:"002"},
+                { img:"/activityimg/3.jpg",activityId:"003"}
             ]
         }
         //axios get
