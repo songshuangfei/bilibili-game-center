@@ -6,15 +6,16 @@
     margin-top: 0.5rem;
     .hot-strategy-title {
         width: 100%;
-        font-size: 1.1rem;
-        color: @word-color-primary;
         padding: 0.4rem @page-side-blank;
         position: relative;
+        font-size: 1.1rem;
+        color: @word-color-primary;
+        box-sizing: border-box;
         // background: red;
+
         a {
-            position: absolute;
-            right: @page-side-blank;
-            top: 0.2rem;
+            
+            float: right;
             img {
                 width: 1.1rem;
                 height: 1.1rem;
@@ -24,7 +25,7 @@
 
     .hot-strategy-list {
         width: 100%;
-        padding-left: @page-side-blank;
+        padding-left: 0;
         overflow: hidden;
         // background: red;
 
@@ -83,7 +84,8 @@
                     }
                     .info {
                         width: 100%;
-                        padding: 0.7rem;
+                        box-sizing: border-box;
+                        padding: 0.5rem;
                         .title {
                             width: 100%;
                             font-size: 1rem;

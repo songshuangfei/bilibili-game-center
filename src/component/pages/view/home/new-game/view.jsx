@@ -49,7 +49,7 @@ class NewGame extends Component {
         return(
             <div className="new-game">
                 <div className="new-game-title">
-                    新游推荐
+                    <span>新游推荐</span>
                     <a href="/"><img src={rightIcon} alt=""/></a>
                 </div>
                 <div className="new-game-list">

@@ -1,5 +1,5 @@
 import React,{Component} from "react"
-import { Carousel } from 'antd';
+import { Carousel, WingBlank } from 'antd-mobile';
 
 import "./style.less"
 
@@ -9,12 +9,11 @@ import "./style.less"
 // const CARLAPI = ""
 
 const CarlItem = (props)=>{
+    var data = props.data;
     return(
-        <div className="carl-item">
-            <a href={`/activity/${props.activityId}`}>
-                <img src={props.img} alt="img"/>
-            </a>
-        </div>
+        <a className="carl-item" href={`/activity/${data.activityId}`}>
+            <img src={data.img} alt="img"/>
+        </a>
     )
 }
 
@@ -48,11 +47,14 @@ class FullScreenCarl extends Component{
     }
 
     render(){
-        var cdata = this.state.carlData;
+        var data = this.state.carlData;
         return(
-            <Carousel autoplay={true}>
-                {cdata.map((v)=>(
-                    <CarlItem key={v.activityId} img={v.img} activityId={v.activityId}/>
+            <Carousel
+                autoplay={true}
+                infinite
+            >
+                {data.map(v=>(
+                    <CarlItem key={v.activityId} data={v}/>
                 ))}
             </Carousel>
         )

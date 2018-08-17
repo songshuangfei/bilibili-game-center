@@ -23,7 +23,6 @@ const GameItem = (props)=>{
                 <div className="game-name">{data.game}</div>
                 <div className="book-num">{`${data.bookNum}人已经预约`}</div>
             </div>
-
             <div className="b-btn">预约</div>            
         </li>
     )
@@ -50,7 +49,7 @@ class HotStrategy extends Component {
         return(
             <div className="book-game">
                 <div className="book-game-title">
-                    预约中心
+                    <span>预约中心</span>
                     <a href="/rank"><img src={rightIcon} alt=""/></a>
                 </div>
                 <div className="book-game-list">

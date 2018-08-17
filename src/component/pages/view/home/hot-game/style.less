@@ -5,18 +5,16 @@
     width: 100%;
     background: #fff;
     box-shadow: 0 1px 4px rgba(86, 159, 207, 0.08);
-
     .hot-game-title {
         width: 100%;
         font-size: 1.1rem;
         color: @word-color-primary;
-        padding: 0.4rem @page-side-blank;
+        padding: 0.8rem @page-side-blank;
+        box-sizing: border-box;
         position: relative;
         // background: red;
         a {
-            position: absolute;
-            right: @page-side-blank;
-            top: 0.2rem;
+            float: right;
             img {
                 width: 1.1rem;
                 height: 1.1rem;
@@ -28,7 +26,6 @@
 
     .hot-game-list {
         width: 100%;
-        padding-left: @page-side-blank;
         overflow: hidden;
         // background: red;
 

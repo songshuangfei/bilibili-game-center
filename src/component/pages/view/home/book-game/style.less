@@ -6,15 +6,17 @@
     margin-top: 0.5rem;
     .book-game-title {
         width: 100%;
-        font-size: 1.1rem;
-        color: @word-color-primary;
-        padding: 0.4rem @page-side-blank;
+        padding: 0.4rem 0;
         position: relative;
         // background: red;
+        span {
+            font-size: 1.1rem;
+            color: @word-color-primary;
+            margin-left: @page-side-blank;
+        }
         a {
-            position: absolute;
-            right: @page-side-blank;
-            top: 0.2rem;
+            margin-right: @page-side-blank;
+            float: right;
             img {
                 width: 1.1rem;
                 height: 1.1rem;
@@ -24,7 +26,6 @@
 
     .book-game-list {
         width: 100%;
-        padding-left: @page-side-blank;
         overflow: hidden;
         // background: red;
 
@@ -54,8 +55,10 @@
                     }
                     .info {
                         width: 100%;
-                        padding: 0.7rem;
+                        padding: 0.5rem;
+                        box-sizing: border-box;
                         .game-name {
+                            box-sizing: border-box;
                             width: 100%;
                             padding: 0 0.5rem;
                             height: 1.4rem;

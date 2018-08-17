@@ -4,15 +4,17 @@
     margin-top: 0.5rem;
     .new-game-title {
         width: 100%;
-        font-size: 1.1rem;
-        color: @word-color-primary;
-        padding: 0.4rem @page-side-blank;
+        margin: 0.4rem 0;
         position: relative;
         // background: red;
+        span {
+            margin-left: @page-side-blank;
+            font-size: 1.1rem;
+            color: @word-color-primary;
+        }
         a {
-            position: absolute;
-            right: @page-side-blank;
-            top: 0.2rem;
+            margin-right: @page-side-blank;
+            float: right;
             img {
                 width: 1.1rem;
                 height: 1.1rem;
@@ -22,7 +24,6 @@
 
     .new-game-list {
         width: 100%;
-        padding-left: @page-side-blank;
         overflow: hidden;
 
         .game-cont {
