@@ -53,17 +53,18 @@ const AdverItem= (props)=>{
 class GameAdver extends Component {
     constructor(){
         super();
+        var cacheData = window.appDataCache.home.gameAdver
         this.state = {
-            page:0,
+            page:cacheData?cacheData.length/5:0,
             pageSize:5,
             HaveAnyMore:true,
-            data:[],
+            data:cacheData?cacheData:[],
         }
         this.getData = this.getData.bind(this);
-        this.getData = this.getData.bind(this)
     }
 
     getData(){
+        console.log("GameAdver,无缓存，请求数据")
         window.onscroll = null;
         /*非第一次挂载时，window.onscroll是null，这里这句没什么用，第二次后请求时
         开始加载数据时取消监听，防止用户重新向下滑动造成数据加载错乱而bug*/
@@ -76,7 +77,6 @@ class GameAdver extends Component {
             var resData = [];//这里模拟后台逻辑
     
             resData = adverData.data.slice(sendData.page*sendData.pageSize,(sendData.page+1)*sendData.pageSize)
-            // console.log(resData)
             
             //ajax
             //ajax callback
@@ -84,6 +84,7 @@ class GameAdver extends Component {
                 var l = resData.length;
                 this.setState((prevstate)=>{
                     window.onscroll=this.setOnonscroll()//数据结束后重新设置监听
+                    window.appDataCache.home.gameAdver = [...prevstate.data,...resData]//设置缓存
                     return{
                         page:prevstate.page+1,
                         data:[...prevstate.data,...resData],
@@ -111,6 +112,11 @@ class GameAdver extends Component {
 
 
     componentDidMount(){
+        if(this.state.page!==0){
+            console.log("GameAdver,已经加载缓存数据");
+            window.onscroll=this.setOnonscroll();
+            return;
+        }
         this.getData();//包含绑定监听事件
         //组件挂在后首先请求以此数据，在请求回调函数中绑定滚动监听。
     }
