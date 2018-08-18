@@ -32,16 +32,25 @@ const GameItem = (props)=>{
 class NewGame extends Component {
     constructor(){
         super();
+        var cacheData = window.appDataCache.home.newGame
         this.state = {
-            data:[]
+            data:cacheData?cacheData:[]//缓存数据如果存在，就给给state
         }
         this.getDate = this.getDate.bind(this);
     }
     getDate(){
+        // console.log("NewGame，无缓存,请求数据")
+
+        var resData = gameData;
+        window.appDataCache.home.newGame = resData.data
         //callback
         this.setState({data:gameData.data})
     }
     componentDidMount(){
+        if(this.state.data.length!==0){
+            // console.log("NewGame，缓存数据已经给state，不请求数据")
+            return;
+        }
         this.getDate();
     }
     render(){

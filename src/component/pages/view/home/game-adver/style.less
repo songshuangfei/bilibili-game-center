@@ -99,4 +99,31 @@
             }
         }
     }
+
+    .loading {
+        width: 100%;
+        // background: red;
+        text-align: center;
+        margin: 1rem 0;
+        color: @word-color-light;
+        img {
+            width: 1.8rem;
+            height: 1.8rem;
+            position: relative;
+            animation: rotate 1.4s infinite;
+            transform-origin: 50% 50%;
+    
+        }
+    }
+}
+
+@keyframes rotate {
+    form { transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+
+@-webkit-keyframes rotate {
+    form { transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }

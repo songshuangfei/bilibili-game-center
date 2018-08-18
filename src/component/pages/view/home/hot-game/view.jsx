@@ -39,23 +39,31 @@ class GameItem extends Component {
 class HotGame extends Component {
     constructor(){
         super();
+        var cacheData = window.appDataCache.home.hotGame
         this.state={
-            gameListData:[]
+            data:cacheData?cacheData:[]//缓存数据如果存在，就给给state
         }
-        this.getGameListData = this.getGameListData.bind(this)
+        this.getData = this.getData.bind(this)
     }
 
-    getGameListData(){
+    getData(){
         //axios
+        // console.log("HotGame，无缓存,请求数据")
+        var resData = gameData;
+        window.appDataCache.home.hotGame = resData.data//设置缓存
         // callback
-        this.setState({gameListData:gameData.data})
+        this.setState({data:resData.data})
     }
     componentDidMount(){
-        this.getGameListData()
+        if(this.state.data.length!==0){
+            // console.log("HotGame，缓存数据已经给state，不请求数据")
+            return;
+        }
+        this.getData()
     }
 
     render(){
-        var data = this.state.gameListData
+        var data = this.state.data
         // console.log(data)
         return(
             <div className="hot-game">

@@ -8,7 +8,10 @@ import GameAdver from "./game-adver"
 
 import "./style.less"
 
+
+
 class Home extends Component {
+   
     render(){
         return(
             <div className="home">

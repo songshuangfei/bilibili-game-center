@@ -28,20 +28,29 @@ const GameItem = (props)=>{
     )
 }
 
-class HotStrategy extends Component {
+class BookGame extends Component {
     constructor(){
         super();
+        var cacheData = window.appDataCache.home.bookGame
         this.state = {
-            data:[]
+            data:cacheData?cacheData:[] //缓存数据如果存在，就给给state
         }
+        this.getData = this.getData.bind(this)
     }
 
-    getStrategyData(){
-        this.setState({data:gameData.data})
+    getData(){
+        // console.log("BookGame 无缓存请求数据")
+        var resData = gameData;
+        window.appDataCache.home.bookGame = resData.data;//获取缓存数据后将其储存
+        this.setState({data:resData.data})
     }
 
     componentDidMount(){
-        this.getStrategyData();
+        if(this.state.data.length!==0){
+            // console.log("BookGame缓存数据已经给state，不请求数据")
+            return;
+        }
+        this.getData();//第一次挂载，不存在缓存数据，下载数据，并设置到全局缓存
     }
 
     render(){
@@ -67,4 +76,4 @@ class HotStrategy extends Component {
     }
 }
 
-export default HotStrategy;
+export default BookGame;

@@ -35,17 +35,27 @@ const StrategyItem = (props)=>{
 class HotStrategy extends Component {
     constructor(){
         super();
+        var cacheData = window.appDataCache.home.hotStrategy
         this.state = {
-            data:[]
+            data:cacheData?cacheData:[]//缓存数据如果存在，就给给state
         }
+        this.getData = this.getData.bind(this);
     }
 
-    getStrategyData(){
-        this.setState({data:strgData.data})
+    getData(){
+        // console.log("HotStrategy，无缓存,请求数据")
+
+        var resData = strgData;
+        window.appDataCache.home.hotStrategy = resData.data;
+        this.setState({data:resData.data})
     }
 
     componentDidMount(){
-        this.getStrategyData();
+        if(this.state.data.length!==0){
+            // console.log("HotStrategy，缓存数据已经给state，不请求数据")
+            return;
+        }
+        this.getData();
     }
 
     render(){
