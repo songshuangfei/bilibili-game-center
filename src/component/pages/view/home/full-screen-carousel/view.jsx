@@ -1,5 +1,5 @@
 import React,{Component} from "react"
-import { Carousel, WingBlank } from 'antd-mobile';
+import { Carousel } from 'antd-mobile';
 
 import "./style.less"
 

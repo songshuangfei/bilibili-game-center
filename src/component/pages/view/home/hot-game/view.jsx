@@ -28,8 +28,17 @@ class GameItem extends Component {
                     <img src={this.props.img} alt="img"/>
                 </a>
                 <p className="g-name">{this.props.name}</p>
+            </li>
+        )
+    }
+}
+
+class DownloadBtn extends Component {
+    render(){
+        return(
+            <li>
                 <div className="d-btn">
-                    <a href={this.props.DlLink}>下载</a>
+                    <a href={`/downloadgame/${this.props.gameId}`}>下载</a>
                 </div>
             </li>
         )
@@ -66,16 +75,22 @@ class HotGame extends Component {
                 <div className="hot-game-list">
                     <div className="item-cont">
                         <ul>
-                            {
-                                data.map((v)=>(
-                                    <GameItem 
-                                        key={v.gameId}
-                                        img={v.icon} 
-                                        name={v.name}
-                                        gameId={v.gameId}
-                                    />
-                                ))
-                            }
+                            {data.map((v)=>(
+                                <GameItem 
+                                    key={v.gameId}
+                                    img={v.icon} 
+                                    name={v.name}
+                                    gameId={v.gameId}
+                                />
+                            ))}
+                        </ul>
+                        <ul className="btn-list">
+                            {data.map((v)=>(
+                                <DownloadBtn
+                                    key={v.gameId} 
+                                    gameId={v.gameId}
+                                />
+                            ))}
                         </ul>
                     </div>
                 </div>
