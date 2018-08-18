@@ -1,6 +1,8 @@
 # bilibili game center
 
 ## 简介
+未完成
+![avatar](/doc/home.png)
 
 ## 目录结构
 
