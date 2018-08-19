@@ -1,20 +1,12 @@
 import React,{ Component } from "react"
 import { rightIcon } from "../icons"
-
+import axios from 'axios';
 import "./style.less"
 
-const gameData = {
-    data:[
-        {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
-        {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
-        {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
-        {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
-        {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
-        {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
-        {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
-    ]
-}
-
+//前端单条数据要求
+/*
+        {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"}
+*/
 
 const GameItem = (props)=>{
     var data = props.data;
@@ -39,19 +31,36 @@ class NewGame extends Component {
         this.getDate = this.getDate.bind(this);
     }
     getDate(){
-        // console.log("NewGame，无缓存,请求数据")
-
-        var resData = gameData;
-        window.appDataCache.home.newGame = resData.data
-        //callback
-        this.setState({data:gameData.data})
+        console.log("<NewGame/>,无缓存,请求数据")
+        var that =this;
+        var CancelToken = axios.CancelToken;
+        axios.get('/api/newgame', {
+            cancelToken: new CancelToken(function executor(c) {
+                // executor 函数接收一个 cancel 函数作为参数
+                that.requestCancel = c;
+            })
+        })
+        .then(function (res) {
+            window.appDataCache.home.newGame = res.data.newGame//设置缓存
+            that.setState({data:res.data.newGame})
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     }
+
     componentDidMount(){
         if(this.state.data.length!==0){
-            // console.log("NewGame，缓存数据已经给state，不请求数据")
+            console.log("<NewGame/>,已经加载缓存数据,不请求数据")
             return;
         }
         this.getDate();
+    }
+
+    componentWillUnmount(){
+        if(this.requestCancel){//如果没执行过this.getData就不会有this。requestCancel。所以要判断
+            this.requestCancel("<NewGame/>,组件卸载拦截请求数据");
+        }
     }
     render(){
         var data = this.state.data;

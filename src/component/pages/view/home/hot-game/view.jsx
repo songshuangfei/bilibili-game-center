@@ -1,22 +1,16 @@
 import React,{ Component } from "react"
 import { rightIcon } from "../icons"
+import axios from 'axios';
 
 import "./style.less"
 
-// const moreUrl = "234234"//更多热门游戏api
 //hot-game可装游戏个数配置在style.less,默认最大为12个
 
-var gameData = {//热门游戏需求数据
-    data:[
-        {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
-        {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
-        {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
-        {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
-        {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
-        {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
-        {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
-    ]
-}
+
+//前端单条数据要求
+/*
+    {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"}
+*/
 
 class GameItem extends Component {
     render(){
@@ -40,6 +34,7 @@ class HotGame extends Component {
     constructor(){
         super();
         var cacheData = window.appDataCache.home.hotGame
+
         this.state={
             data:cacheData?cacheData:[]//缓存数据如果存在，就给给state
         }
@@ -48,18 +43,35 @@ class HotGame extends Component {
 
     getData(){
         //axios
-        // console.log("HotGame，无缓存,请求数据")
-        var resData = gameData;
-        window.appDataCache.home.hotGame = resData.data//设置缓存
-        // callback
-        this.setState({data:resData.data})
+        console.log("<HotGame/>,无缓存,请求数据")
+        var that = this;
+        var CancelToken = axios.CancelToken;
+        axios.get('/api/hotgame',{
+            cancelToken: new CancelToken(function executor(c) {
+                // executor 函数接收一个 cancel 函数作为参数
+                that.requestCancel = c;
+            })
+        })
+        .then(function (res) {
+            window.appDataCache.home.hotGame = res.data.hotGame//设置缓存
+            that.setState({data:res.data.hotGame})
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     }
     componentDidMount(){
         if(this.state.data.length!==0){
-            // console.log("HotGame，缓存数据已经给state，不请求数据")
+            console.log("<HotGame/>,已经加载缓存数据,不请求数据")
             return;
         }
         this.getData()
+    }
+
+    componentWillUnmount(){
+        if(this.requestCancel){//如果没执行过this.getData就不会有this。requestCancel。所以要判断
+            this.requestCancel("<HotGame/>,组件卸载拦截请求数据");
+        }
     }
 
     render(){

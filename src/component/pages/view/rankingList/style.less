@@ -3,4 +3,30 @@
 .rank {
     padding-top: @page-top-blank;//这里用margin会造成滚动
     padding-bottom: @page-bottom-blank;
+    position: relative;
+    .rank-type-tab {
+        width: 100%;
+        padding: 0.5rem 0;
+        position: fixed;
+        top: @page-top-blank;
+        background: #fff;
+        box-shadow: @blue-shadow;
+
+        .tab {
+            height: 2rem;
+            line-height: 2rem;
+            color: @word-color-primary;
+            font-size: 1rem;
+            text-align: center;
+            // background: red;
+            width: 25%;
+            display: inline-block;
+        }
+    }
+    .list {
+      width: 100%;
+      height: 60rem;
+      background: #ffffff;
+      margin-top:3rem;
+    }
 }

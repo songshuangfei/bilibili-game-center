@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd-mobile": "^2.2.3",
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -21,5 +22,6 @@
     "babel-plugin-import": "^1.8.0",
     "react-app-rewired": "^1.5.2",
     "less": "^3.8.1"
-  }
+  },
+  "proxy": "http://localhost:8000"
 }

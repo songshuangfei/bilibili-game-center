@@ -1,36 +1,19 @@
 @c-p:0.35;//轮播图宽除长的值
 
-// .ant-carousel .slick-slide {
-//     text-align: center;
-//     height: @c-p*100vw;//1 vm = 1% view width,1vh = 1% viewport height.vm是长款较小的一个，vmax反之
-//     // background: #364d79;
-//     overflow: hidden;
-
-//     .carl-item {
-//         height:  @c-p*100vw;
-//         width: 100%;
-//         position: relative;
-//         // background: red;
-
-//         img {
-//             width: 100%;
-//             height: 100%;
-//             // background: blue;
-//         }
-
-//         a {
-//             position: a
-//         }
-//     }
-// }
-
-.carl-item {
-    display: block;
+.carousel-out {
     width: 100%;
-    height:  @c-p*100vw;
-    img{
+    height:  @c-p*100vw !important;
+    background: #fff;
+    .carl-item {
+        display: block;
         width: 100%;
-        height: @c-p*100vw;
+        height:  @c-p*100vw !important;
+        touch-action: manipulation;
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
 }
+
   

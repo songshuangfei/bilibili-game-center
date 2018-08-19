@@ -11,6 +11,18 @@ import "./style.less"
 
 
 class Home extends Component {
+    componentWillUnmount(){
+        var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        window.appDataCache.home.st = scrollTop;//保存页面位置
+        document.documentElement.scrollTop = document.body.scrollTop = 0;//设置为0，防止切换到其他页面后不在顶端
+    }
+
+    componentDidMount(){
+        var st = window.appDataCache.home.st
+        if(st){
+            document.documentElement.scrollTop = document.body.scrollTop = st//设置页面位置
+        }
+    }
    
     render(){
         return(

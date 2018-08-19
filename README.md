@@ -3,6 +3,19 @@
 ## 简介
 ![avatar](/doc/home.png)
 
+## 读前须知
+* `./server`目录是一个使用express构建的简单的后台服务，启动客户端前应先启动这个server
+```
+bilibili-game-center >cd server
+                      npm install
+                      npm start
+
+bilibili-game-center >npm insatll
+                      npm start
+```
+* 本app中的缓存并不是真正的缓存到本地，是为防止来回切换页面导致数据丢失和页面已经滚动的高度丢失而定义的全局变量（也通过这种手段防止了不必要的数据请求）。
+* 所有组件都是用了axios的拦截请求方法，保证在卸载组件后不会在axios回调函数中发生steState()方法的的调用
+
 ## 目录结构
 
 ### src整体目录结构
@@ -69,8 +82,7 @@
 ```
 ```
 
-#### 注
-* 本app中的缓存并不是真正的缓存到本地，是为防止来回切换页面而导致数据丢失而定义的全局变量（也通过这种手段防止了不必要的数据请求），这个全局变量有点类似flux
+
 
 
 ### 待做事项记录
