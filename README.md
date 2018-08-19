@@ -4,7 +4,7 @@
 ![avatar](/doc/home.png)
 
 ## 读前须知
-* `./server`目录是一个使用express构建的简单的后台服务，启动客户端前应先启动这个server
+* `./server`目录是一个使用express构建的简单的后台服务，用预测前端请求，启动客户端前应先启动这个server
 ```
 bilibili-game-center >cd server
                       npm install
