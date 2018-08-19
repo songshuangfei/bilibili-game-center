@@ -1,10 +1,10 @@
 # bilibili game center
 
 ## 简介
-![avatar](/doc/home.png)
+<img src="./doc/home.png" width="420px" >
 
 ## 读前须知
-* `./server`目录是一个使用express构建的简单的后台服务，用预测前端请求，启动客户端前应先启动这个server
+* `./server`目录是一个使用express构建的简单的后台服务，用于测试前端请求，启动客户端前应先启动这个server
 ```
 bilibili-game-center >cd server
                       npm install
