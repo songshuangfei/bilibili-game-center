@@ -10,7 +10,8 @@ bilibili-game-center >cd server
                       npm install
                       npm start
 
-bilibili-game-center >npm insatll
+bilibili-game-center >cd ./client
+                      npm insatll
                       npm start
 ```
 * 本app中的缓存并不是真正的缓存到本地，是为防止来回切换页面导致数据丢失和页面已经滚动的高度丢失而定义的全局变量（也通过这种手段防止了不必要的数据请求）。
@@ -18,7 +19,7 @@ bilibili-game-center >npm insatll
 
 ## 目录结构
 
-### src整体目录结构
+### client的src整体目录结构
 ```
  ├─src
     │  App.jsx
@@ -52,7 +53,7 @@ bilibili-game-center >npm insatll
                     titleBar.jsx
 ```
 
-### home目录结构
+### client的home目录结构
 ```
  ├─home
     │  home.jsx
@@ -66,19 +67,19 @@ bilibili-game-center >npm insatll
     └─new-game                    #新游推荐板块
 ```
 
-### find目录结构
+### client的find目录结构
 ```
 ```
 
-### gameStrategy目录结构
+### client的gameStrategy目录结构
 ```
 ```
 
 
-### my目录结构
+### client的my目录结构
 ```
 ```
-### rankList目录结构
+### client的rankList目录结构
 ```
 ```
 
