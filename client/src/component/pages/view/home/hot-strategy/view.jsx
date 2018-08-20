@@ -1,17 +1,21 @@
 import React,{ Component } from "react"
 import { rightIcon,eyeIcon,goodIcon } from "../icons"
+import axios from 'axios'
 
 import "./style.less"
 //列表最大长度在style.less配置，默认最长为12个
 
-const strgData = {
-    data:[
-        {img:"/videocover/1.jpg",eye:"2074",good:"101",title:"【角色测评】[处刑装·紫苑]全新改版",game:"崩坏3",vedioId:"001"},
-        {img:"/videocover/2.jpg",eye:"1478",good:"341",title:"《崩坏三》120水隐藏福利，永久有效，你们发现了吗？",game:"崩坏3",vedioId:"002"},
-        {img:"/videocover/3.jpg",eye:"896",good:"99",title:"【FGO】满破・泳装·谜之女主角XX（CV：川澄绫子）宝具+EX+2技能",game:"FGO",vedioId:"003"},
-        {img:"/videocover/4.jpg",eye:"136",good:"49",title:"【第五人格】双监管者模式流出，监管者竟然可以使用道具",game:"第五人格",vedioId:"004"},
-    ]
+/*
+前端单条数据要求
+{
+    img:"/videocover/1.jpg",
+    eye:"2074",
+    good:"101",
+    title:"【角色测评】[处刑装·紫苑]全新改版",
+    game:"崩坏3",
+    vedioId:"001"
 }
+*/
 const StrategyItem = (props)=>{
     var data = props.data
     return(
@@ -43,19 +47,36 @@ class HotStrategy extends Component {
     }
 
     getData(){
-        // console.log("HotStrategy，无缓存,请求数据")
-
-        var resData = strgData;
-        window.appDataCache.home.hotStrategy = resData.data;
-        this.setState({data:resData.data})
+        console.log("<HotStrategy/>,无缓存,请求数据")
+        var that = this;
+        var CancelToken = axios.CancelToken;
+        axios.get('/api/hotstrategy',{
+            cancelToken: new CancelToken(function executor(c) {
+                // executor 函数接收一个 cancel 函数作为参数
+                that.requestCancel = c;
+            })
+        })
+        .then(res=>{
+            window.appDataCache.home.hotStrategy = res.data.hotStrategy
+            that.setState({data:res.data.hotStrategy})
+        })
+        .catch(error=>{
+            console.log(error)
+        })
     }
 
     componentDidMount(){
         if(this.state.data.length!==0){
-            // console.log("HotStrategy，缓存数据已经给state，不请求数据")
+            console.log("<HotStrategy/>,已经加载缓存数据,不请求数据")
             return;
         }
         this.getData();
+    }
+
+    componentWillUnmount(){
+        if(this.requestCancel){//如果没执行过this.getData就不会有this.requestCancel。所以要判断
+            this.requestCancel("<HotStrategy/>，组件卸载拦截请求数据");
+        }
     }
 
     render(){

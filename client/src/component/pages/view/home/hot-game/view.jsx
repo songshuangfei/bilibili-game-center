@@ -52,11 +52,11 @@ class HotGame extends Component {
                 that.requestCancel = c;
             })
         })
-        .then(function (res) {
+        .then((res)=>{
             window.appDataCache.home.hotGame = res.data.hotGame//设置缓存
             that.setState({data:res.data.hotGame})
         })
-        .catch(function (error) {
+        .catch((error)=>{
             console.log(error);
         });
     }

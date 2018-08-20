@@ -1,10 +1,12 @@
 import "babel-polyfill";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import { BrowserRouter as Router } from "react-router-dom"
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import "./normalize.css"
+import './index.css';
+
 
 window.debugLog = function(text){//方便在移动端看日志（不需要就删除并删除html中class为".debuglog"的div）
     document.getElementById("debuglog").innerHTML=text;

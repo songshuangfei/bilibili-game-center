@@ -40,11 +40,11 @@ class NewGame extends Component {
                 that.requestCancel = c;
             })
         })
-        .then(function (res) {
+        .then((res)=>{
             window.appDataCache.home.newGame = res.data.newGame//设置缓存
             that.setState({data:res.data.newGame})
         })
-        .catch(function (error) {
+        .catch((error)=>{
             console.log(error);
         });
     }
@@ -58,10 +58,11 @@ class NewGame extends Component {
     }
 
     componentWillUnmount(){
-        if(this.requestCancel){//如果没执行过this.getData就不会有this。requestCancel。所以要判断
+        if(this.requestCancel){//如果没执行过this.getData就不会有this.requestCancel。所以要判断
             this.requestCancel("<NewGame/>,组件卸载拦截请求数据");
         }
     }
+
     render(){
         var data = this.state.data;
         return(

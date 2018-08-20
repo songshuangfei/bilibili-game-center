@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/carousel', function(req, res, next) {
-  res.json({carousel:[
+  res.json({'carousel':[
       { img:"/activityimg/1.jpg",activityId:"001"},
       { img:"/activityimg/2.jpg",activityId:"002"},
       { img:"/activityimg/3.jpg",activityId:"003"}
@@ -11,7 +11,7 @@ router.get('/carousel', function(req, res, next) {
 });
 
 router.get('/hotgame', function(req, res, next) {
-  res.json({hotGame:[
+  res.json({'hotGame':[
     {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
     {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
     {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
@@ -40,12 +40,12 @@ router.post('/gameadver', function(req, res, next) {
   ]
   var resData = db.slice(sendData.page*sendData.pageSize,(sendData.page+1)*sendData.pageSize)//返回查找到的页数的内容，每页size由客户端决定
 
-  res.json({gameAdver:resData})
+  res.json({'gameAdver':resData})
 });
 
 
 router.get('/bookgame', function(req, res, next) {
-  res.json({bookGame:[
+  res.json({'bookGame':[
     {img:"/gamecover/1.jpg",game:"公主连接Re:Dive",gameId:"001",bookNum:"123123"},
     {img:"/gamecover/2.jpg",game:"魔法记录 魔法少女小圆",gameId:"002",bookNum:"872364"},
     {img:"/gamecover/3.jpg",game:"FGO",gameId:"003",bookNum:"784574"},
@@ -54,7 +54,7 @@ router.get('/bookgame', function(req, res, next) {
 });
 
 router.get('/newgame', function(req, res, next) {
-  res.json({newGame:[
+  res.json({'newGame':[
     {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
     {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
     {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
@@ -65,5 +65,37 @@ router.get('/newgame', function(req, res, next) {
   ]})
 });
 
+router.get('/hotstrategy', function(req, res, next) {
+  res.json({'hotStrategy':[
+    {img:"/videocover/1.jpg",eye:"2074",good:"101",title:"【角色测评】[处刑装·紫苑]全新改版",game:"崩坏3",vedioId:"001"},
+    {img:"/videocover/2.jpg",eye:"1478",good:"341",title:"《崩坏三》120水隐藏福利，永久有效，你们发现了吗？",game:"崩坏3",vedioId:"002"},
+    {img:"/videocover/3.jpg",eye:"896",good:"99",title:"【FGO】满破・泳装·谜之女主角XX（CV：川澄绫子）宝具+EX+2技能",game:"FGO",vedioId:"003"},
+    {img:"/videocover/4.jpg",eye:"136",good:"49",title:"【第五人格】双监管者模式流出，监管者竟然可以使用道具",game:"第五人格",vedioId:"004"},
+  ]})
+});
+
+router.post('/rank', function(req, res, next) {
+  var sendData = req.body;
+  var db = [
+    {icon:'/gameicon/bh3.png',name:'崩坏3',type:'角色扮演',size:'1478M',score:8.8,gameId:'001'},
+    {icon:"/gameicon/mhmnz.png",name:"梦幻模拟战",type:'角色扮演',size:'872M',score:7.4,gameId:"002"},
+    {icon:"/gameicon/smjh.png",name:"食梦计划",type:'角色扮演',size:'872M',score:7.4,gameId:"003"},
+    {icon:"/gameicon/zs.png",name:"站双：帕弥什",type:'角色扮演',size:'472M',score:7.4,gameId:"004"},
+    {icon:"/gameicon/mhmnz.png",name:"辐射：避难所Online",type:'休闲益智',size:'672M',score:7.4,gameId:"005"},
+    {icon:"/gameicon/fgo.png",name:"命运-冠位指定",type:'回合卡牌',size:'802M',score:8.2,gameId:"006"},
+    {icon:"/gameicon/blhx.png",name:"碧蓝航线",type:'冒险射击',size:'792M',score:8.4,gameId:"007"},
+    {icon:'/gameicon/bh3.png',name:'崩坏3-新开始',type:'角色扮演',size:'1478M',score:8.8,gameId:'009'},
+    {icon:"/gameicon/mhmnz.png",name:"梦幻模拟战",type:'角色扮演',size:'872M',score:7.4,gameId:"010"},
+    {icon:"/gameicon/smjh.png",name:"食梦计划",type:'角色扮演',size:'872M',score:7.4,gameId:"011"},
+    {icon:"/gameicon/zs.png",name:"站双：帕弥什",type:'角色扮演',size:'472M',score:7.4,gameId:"012"},
+    {icon:"/gameicon/mhmnz.png",name:"辐射：避难所Online",type:'休闲益智',size:'672M',score:7.4,gameId:"013"},
+    {icon:"/gameicon/fgo.png",name:"命运-冠位指定",type:'回合卡牌',size:'802M',score:8.2,gameId:"014"},
+    {icon:"/gameicon/blhx.png",name:"碧蓝航线",type:'冒险射击',size:'792M',score:8.4,gameId:"015"},
+  ]
+
+  var resData = db.slice(sendData.page*sendData.pageSize,(sendData.page+1)*sendData.pageSize)//返回查找到的页数的内容，每页size由客户端决定
+  res.json({'rankList':resData})
+});
 
 module.exports = router;
+  

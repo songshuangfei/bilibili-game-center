@@ -50,11 +50,11 @@ class BookGame extends Component {
                 that.requestCancel = c;
             })
         })
-        .then(function (res) {
+        .then((res)=>{
             window.appDataCache.home.bookGame = res.data.bookGame//设置缓存
             that.setState({data:res.data.bookGame})
         })
-        .catch(function (error) {
+        .catch((error)=>{
             console.log(error);
         });
     }

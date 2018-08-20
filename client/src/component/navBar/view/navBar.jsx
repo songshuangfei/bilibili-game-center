@@ -1,5 +1,5 @@
 import React,{Component} from "react"
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import  { navIcon } from "./icons"
 import "./style.less"
 
@@ -45,39 +45,45 @@ class NavBar extends Component {
                 <nav>
                     <ul>
                         <li>
-                            <div  className={this.setNavClass(path,"/")}>
-                                <img src={this.setNavIcon(path,"/")} alt=""/>{/*图标没对齐不是css问题，检查图标内容是否在图片正中央*/}
-                                精选
-                            </div>
-                            <NavLink exact to="/"></NavLink>
+                            
+                            <Link  to="/">
+                                <div  className={this.setNavClass(path,"/")}>
+                                    <img src={this.setNavIcon(path,"/")} alt=""/>{/*图标没对齐不是css问题，检查图标内容是否在图片正中央*/}
+                                    精选
+                                </div>
+                            </Link>
                         </li>
                         <li>
-                            <div className={this.setNavClass(path,"/rank")}>
-                                <img src={this.setNavIcon(path,"/rank")} alt=""/>
-                                排行
-                            </div>
-                            <NavLink to="/rank" ></NavLink>
+                            <Link to="/rank" >
+                                <div className={this.setNavClass(path,"/rank")}>
+                                    <img src={this.setNavIcon(path,"/rank")} alt=""/>
+                                    排行
+                                </div>
+                            </Link>
                         </li>
                         <li>
-                            <div className={this.setNavClass(path,"/find")}>
-                                <img src={this.setNavIcon(path,"/find")} alt=""/>
-                                发现
-                            </div>
-                            <NavLink to="/find"></NavLink>
+                            <Link to="/find">
+                                <div className={this.setNavClass(path,"/find")}>
+                                    <img src={this.setNavIcon(path,"/find")} alt=""/>
+                                    发现
+                                </div>
+                            </Link>
                         </li>
                         <li>
-                            <div className={this.setNavClass(path,"/strategy")}>
-                                <img src={this.setNavIcon(path,"/strategy")} alt=""/>
-                                攻略
-                            </div>
-                            <NavLink to="/strategy"></NavLink>
+                            <Link to="/strategy">
+                                <div className={this.setNavClass(path,"/strategy")}>
+                                    <img src={this.setNavIcon(path,"/strategy")} alt=""/>
+                                    攻略
+                                </div>
+                            </Link>
                         </li>
                         <li>
-                            <div className={this.setNavClass(path,"/my")}>
-                                <img src={this.setNavIcon(path,"/my")} alt=""/>
-                                我的
-                            </div>
-                            <NavLink to="/my"></NavLink>
+                            <Link to="/my">
+                                <div className={this.setNavClass(path,"/my")}>
+                                    <img src={this.setNavIcon(path,"/my")} alt=""/>
+                                    我的
+                                </div>
+                            </Link>
                         </li>
                     </ul>
                 </nav>

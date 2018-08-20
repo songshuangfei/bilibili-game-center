@@ -13,7 +13,6 @@ import {
   GameStrategy,
   My
 } from "./component/pages"
-import "./normalize.css"
 import './App.less';
 
 class App extends Component {

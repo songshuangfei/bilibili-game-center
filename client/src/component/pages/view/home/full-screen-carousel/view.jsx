@@ -46,11 +46,11 @@ class FullScreenCarl extends Component{
                 that.requestCancel = c;
             })
         })
-        .then(function (res) {
+        .then((res)=>{
             window.appDataCache.home.carousel = res.data.carousel//设置缓存
             that.setState({data:res.data.carousel})
         })
-        .catch(function (error) {
+        .catch((error)=>{
             console.log(error);
         });
     }

@@ -1,5 +1,8 @@
 import React,{ Component } from "react"
 import { starIcon,loadingIcon } from "../icons"
+import {ScrollMonitor} from "../../commonFunction"
+
+
 import axios from 'axios';
 
 
@@ -48,6 +51,7 @@ const AdverItem= (props)=>{
     )
 }
 
+
 class GameAdver extends Component {
     constructor(){
         super();
@@ -57,19 +61,17 @@ class GameAdver extends Component {
             pageSize:5,
             HaveAnyMore:true,
             data:cacheData?cacheData:[],
+            isRequestFalied:false,
         }
         this.getData = this.getData.bind(this);
+        this.touchToRefresh= this.touchToRefresh.bind(this)
     }
 
     getData(){
-        console.log("GameAdver,无缓存或加载新数据，请求数据")
-        window.onscroll = null;
-        /*非第一次挂载时，window.onscroll是null，这里这句没什么用，第二次后请求时
-        开始加载数据时取消监听，防止用户重新向下滑动造成数据加载错乱而bug*/
+        console.log("<GameAdver/>,无缓存或加载新数据，请求数据")
         var that =this;
-        var CancelToken = axios.CancelToken;
-
         if(this.state.HaveAnyMore){//服务端还有数据时才加载
+            var CancelToken = axios.CancelToken;
             axios.post('/api/gameadver', {
                 page:that.state.page,
                 pageSize:that.state.pageSize,
@@ -79,44 +81,46 @@ class GameAdver extends Component {
                     that.requestCancel = c;
                 })
             })
-            .then(function (res) {
-                var resData = res.data.gameAdver
+            .then((res)=>{
+                var resData = res.data.gameAdver;
                 that.setState((prevstate)=>{
-                    window.onscroll=that.setOnonscroll()//数据结束后重新设置监听
                     window.appDataCache.home.gameAdver = [...prevstate.data,...resData]//设置缓存
-                    let l = resData.length
+                    let l = resData.length;
                     return{
                         page:prevstate.page+1,
                         data:[...prevstate.data,...resData],
                         HaveAnyMore: l < that.state.pageSize?false:true,//如果传回数据个数小于size，说明服务器没有更多数据了，设值为false，下次就不用发送无用的请求了
+                        isRequestFalied:false
                     }
                 })
+                this.scrollMonitor.StartMonitor();//数据结束后重新设置监听
+
             })
-            .catch(function (error) {
-                console.log(error);
+            .catch((error)=>{
+                if(error.response){
+                    // 请求已发出，但服务器响应的状态码不在 2xx 范围内
+                    that.setState({isRequestFalied:true})
+                    //设置请求失败，改变页面展示
+                }else{
+                    //非服务器响应错误的error
+                    console.log(error.message);
+                    //这里error.message就是requestCancel里设置的消息
+                }
             });
         }
     }
 
-    setOnonscroll(){
-        var getData = this.getData;
-        return function(){
-            var clientHeight = document.documentElement.clientHeight||document.body.clientHeight;//可视区域（容器）的高度
-            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;//可滑动的高度，内容即被容器影藏的高度；滑倒底部时的值最大
-            var offsetHeight = document.getElementById('root').offsetHeight//内容高度
-            
-            if(scrollTop/(offsetHeight-clientHeight) >= 0.9){//设成0.9，是为了保证if内能执行，因为移动端可视区域高度不标准
-                // console.log("滑倒了底部");
-                getData();
-            }
-        }
+    touchToRefresh(){
+        this.setState({isRequestFalied:false})//这里设置为false不是说请求成功了，而是为了加载动画重新播放
+        this.getData();//执行一次请求函数
     }
 
 
     componentDidMount(){
+        this.scrollMonitor = new ScrollMonitor(this.getData);
         if(this.state.data.length!==0){
-            console.log("GameAdver,已经加载缓存数据,不请求数据");
-            window.onscroll=this.setOnonscroll();
+            console.log("<GameAdver/>,已经加载缓存数据,不请求数据");
+            this.scrollMonitor.StartMonitor();
             return;
         }
         this.getData();//包含绑定监听事件
@@ -125,26 +129,38 @@ class GameAdver extends Component {
 
     componentWillUnmount(){
         if(this.requestCancel){//如果没执行过this.getData就不会有this。requestCancel。所以要判断
-            this.requestCancel("GameAdver,组件卸载拦截请求数据");
+            this.requestCancel("<GameAdver/>,组件卸载拦截请求数据");
         }
-        window.onscroll = null;
+        this.scrollMonitor.StopMonitor()
         
     }
 
     render(){
-        var data = this.state.data
+        var data = this.state.data,
+            isRequestFalied = this.state.isRequestFalied;
         return(
             <div className="game-adver">
                 {data.map(v=>(
                     <AdverItem key={v.gameId} data={v} />
                 ))}
-                <div className="loading">{this.state.HaveAnyMore?
-                    <img src={loadingIcon} alt="loading"/>:
-                    "_(:зゝ∠)_世界的尽头~ " }
+                <div>
+                    {
+                        isRequestFalied?
+                        <div className="rq-failed" onTouchEnd={this.touchToRefresh}>
+                            服务器离家出走中_(:зゝ∠)<br/>点击刷新
+                        </div>:
+                        <div className="loading">{
+                            this.state.HaveAnyMore?
+                            <img src={loadingIcon} alt="loading"/>:
+                            "_(:зゝ∠)_世界的尽头~ " }
+                        </div>
+                    }
                 </div>
             </div>
         )
     }
 }
+
+
 
 export default GameAdver;

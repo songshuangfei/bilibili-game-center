@@ -26,42 +26,33 @@
                 display: inline-block;
                 height: @nav-bar-height;
                 width: 20%;
-                position: relative;
-
-                .nav-icon {
-                    width: 60%;
-                    height: 3.6rem;
-                    margin: -1.8rem 20%;
-                    position: absolute;
-                    top: 50%;
-                    left: 0;
-                    color:@nav-word-color;
-                    font-size: 0.8rem;
-                    text-align: center;
-                    // background: red;//取消注释方便查看布局
-
-                    img {
-                        display: block;
-                        width: 2.6rem;
-                        height: 2.6rem;
-                        margin: 0 auto;
-                        // background: blue;//取消注释方便查看布局
-                    }
-                }
-
-                .nav-icon-act {
-                    color: @theme-color;
-                }
-
                 a {
                     display: block;
                     width: 60%;
-                    margin: 0 20%;
-                    height: @nav-bar-height;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
+                    height: 3.8rem;
+                    margin: 0.3rem 20%;
+                    float: left;
                     // background: rgba(255, 255, 0, 0.13);//取消注释方便查看布局
+
+                    .nav-icon {
+                        width: 100%;
+                        color:@nav-word-color;
+                        font-size: 0.8rem;
+                        text-align: center;
+                        // background: red;//取消注释方便查看布局
+    
+                        img {
+                            display: block;
+                            width: 2.6rem;
+                            height: 2.6rem;
+                            margin: 0 auto;
+                            // background: blue;//取消注释方便查看布局
+                        }
+                    }
+    
+                    .nav-icon-act {
+                        color: @theme-color;
+                    }
                 }
             }
         }
