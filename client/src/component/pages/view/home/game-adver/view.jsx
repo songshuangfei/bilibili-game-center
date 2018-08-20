@@ -98,6 +98,9 @@ class GameAdver extends Component {
             .catch((error)=>{
                 if(error.response){
                     // 请求已发出，但服务器响应的状态码不在 2xx 范围内
+                    if(that.state.isRequestFailed){//如果就是true，就不必再执行setState，引起不必要的更新循环
+                        return;
+                    }
                     that.setState({isRequestFalied:true})
                     //设置请求失败，改变页面展示
                 }else{
