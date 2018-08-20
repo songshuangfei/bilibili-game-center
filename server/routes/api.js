@@ -76,6 +76,7 @@ router.get('/hotstrategy', function(req, res, next) {
 
 router.post('/rank', function(req, res, next) {
   var sendData = req.body;
+  console.log(sendData)
   var db = [
     {icon:'/gameicon/bh3.png',name:'崩坏3',type:'角色扮演',size:'1478M',score:8.8,gameId:'001'},
     {icon:"/gameicon/mhmnz.png",name:"梦幻模拟战",type:'角色扮演',size:'872M',score:7.4,gameId:"002"},

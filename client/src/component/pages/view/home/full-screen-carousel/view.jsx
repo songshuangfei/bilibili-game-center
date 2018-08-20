@@ -47,7 +47,6 @@ class FullScreenCarl extends Component{
             })
         })
         .then((res)=>{
-            window.appDataCache.home.carousel = res.data.carousel//设置缓存
             that.setState({data:res.data.carousel})
         })
         .catch((error)=>{
@@ -67,6 +66,7 @@ class FullScreenCarl extends Component{
         if(this.requestCancel){//如果没执行过this.getData就不会有this。requestCancel。所以要判断
             this.requestCancel("<Carousel>,组件卸载拦截请求数据");
         }
+        window.appDataCache.home.carousel = this.state.data//设置缓存
     }
 
     render(){

@@ -29,19 +29,16 @@ const GameItem =(props)=>{
 class RankingList extends Component {
     constructor(){
         super();
-        var cacheData = window.appDataCache.rank.allData;//获取缓存(包含四个数组的对象)
-        var tab = window.appDataCache.rank.tab;//保存离开时的tab
+        var cacheData = window.appDataCache.rank.state;//获取缓存
         var blank = {//初次挂载时会使用这个空数据
             BestSelling:[],
             GoodTrend:[],
             MorePraise:[],
             Hot:[],
         }
-        this.state = {
-            pageSize:10,
-            sortType:['BestSelling','GoodTrend','MorePraise','Hot'],
-            tabNow:tab?tab:'BestSelling',
-            data:cacheData?cacheData:blank,
+        this.state = cacheData?cacheData:{
+            tabNow:'BestSelling',
+            data:blank,
             haveAnyMore:{//每个分页是否还有数据的标识
                 BestSelling:true,
                 GoodTrend:true,
@@ -49,27 +46,39 @@ class RankingList extends Component {
                 Hot:true
             }
         }
+        this.pageSize=10;
+        this.sortType=['BestSelling','GoodTrend','MorePraise','Hot'];
         this.getData = this.getData.bind(this);
-        this.touchTab = this.touchTab.bind(this)
+        this.touchTab = this.touchTab.bind(this);
     }
 
-    getData(){
-        console.log("get",this)
-        console.log(`<RankingList/>,无缓存或请求新的数据,请求tab:${this.state.tabNow}数据`);
+    getData(toTab){
         var that = this;
-        var tabDataNow = that.state.data[that.state.tabNow];//当前tab数据（array）
-        if(tabDataNow.length%that.state.pageSize !==0){
-            //有余数说明上次服务器最后传了个不足pagesize的数据，说明后台无数据了，直接return
-            //这里设置无内容的提示
-            console.log(`tab:${that.state.tabNow}没有更多了`)
+        var tabNow;
+        if(toTab){//如果是点击tab而请求数据
+            tabNow = toTab;
+            if(that.state.data[tabNow].length!==0){//点击换页过来但是有数据，不请求数据（return）
+                console.log(`tab:${tabNow}有数据`)
+                return;
+            }
+        }else{//初始化加载和滚动加载没有toTab参数，就会执行这里
+            tabNow = that.state.tabNow;
+        }
+
+
+        if(!this.state.haveAnyMore[tabNow]){//当前tab没有更多数据时数据
+            console.log(`tab:${tabNow}下没有更多了`)
             return;
         }
 
+        var tabDataNow = that.state.data[tabNow];//当前tab数据（array）
+
+        console.log(`<RankingList/>,无缓存或请求新的数据,请求tab:${tabNow}数据`);
         var CancelToken = axios.CancelToken;
         axios.post('/api/rank',{
-            sort:that.state.tabNow,//传给后台的排序方式
-            page:tabDataNow.length/that.state.pageSize,
-            pageSize:that.state.pageSize
+            sort:tabNow,//传给后台的排序方式
+            page:tabDataNow.length/that.pageSize,
+            pageSize:that.pageSize
         },{
             cancelToken: new CancelToken(function executor(c) {
                 that.requestCancel = c;
@@ -78,8 +87,16 @@ class RankingList extends Component {
         .then(res=>{
             console.log(res.data)
             var newData = {...that.state.data}
-            newData[that.state.tabNow] = [...newData[that.state.tabNow],...res.data.rankList];
-            this.setState({data:newData});
+            var newHaveAnyMore = {...that.state.haveAnyMore};
+
+            if(res.data.rankList.length < that.pageSize){
+               newHaveAnyMore[tabNow] = false
+            }
+            newData[tabNow] = [...newData[tabNow],...res.data.rankList];
+            this.setState({
+                data:newData,
+                haveAnyMore:newHaveAnyMore
+            });
             this.scrollMonitor.StartMonitor();
 
         })
@@ -95,18 +112,22 @@ class RankingList extends Component {
     }
 
     touchTab(num){
-        var toTab = this.state.sortType[num];//将前往的tab
+        document.documentElement.scrollTop = document.body.scrollTop = 0;
+        //打开其他tab无论有没有数据都将页面滚动回最顶出出
+        var toTab = this.sortType[num];//将前往的tab
         if(toTab !== this.state.tabNow){//点击的不是当前tab
             this.setState({
                 tabNow:toTab
             })
+            this.getData(toTab)
         }
     }
 
     componentDidMount(){
+
         this.scrollMonitor = new ScrollMonitor(this.getData);//创建监听器
         var data = this.state.data,
-            tabNow = this.state.tabNow
+            tabNow = this.state.tabNow;
         if(data){//存在缓存数据
             if(data[tabNow].length!==0){//存在当前tab缓存数据
                 console.log(`<RankingList/>,已经加载tab:${tabNow}缓存数据,暂时不请求数据`);
@@ -122,11 +143,10 @@ class RankingList extends Component {
             this.requestCancel("<RankingList/>，组件卸载拦截请求数据");
         }
         this.scrollMonitor.StopMonitor();//停止监听
-        window.appDataCache.rank.tab = this.state.tabNow;//缓存tab分页所在标签
-        window.appDataCache.rank.allData = this.state.data;//缓存数据
+        window.appDataCache.rank.state = this.state;//缓存数据
     }
     render(){
-        var tabLib = this.state.sortType
+        var tabLib = this.sortType
         var tabNow = this.state.tabNow;
         var data = this.state.data[tabNow];
         return(
@@ -145,7 +165,7 @@ class RankingList extends Component {
                         ))
                     }
                 </div>
-                <LoadingBoard                />
+                <LoadingBoard />
             </div>
         )
     }

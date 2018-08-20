@@ -52,12 +52,10 @@ class HotStrategy extends Component {
         var CancelToken = axios.CancelToken;
         axios.get('/api/hotstrategy',{
             cancelToken: new CancelToken(function executor(c) {
-                // executor 函数接收一个 cancel 函数作为参数
                 that.requestCancel = c;
             })
         })
         .then(res=>{
-            window.appDataCache.home.hotStrategy = res.data.hotStrategy
             that.setState({data:res.data.hotStrategy})
         })
         .catch(error=>{
@@ -77,6 +75,8 @@ class HotStrategy extends Component {
         if(this.requestCancel){//如果没执行过this.getData就不会有this.requestCancel。所以要判断
             this.requestCancel("<HotStrategy/>，组件卸载拦截请求数据");
         }
+        window.appDataCache.home.hotStrategy = this.state.data
+
     }
 
     render(){

@@ -58,11 +58,11 @@ class GameAdver extends Component {
         var cacheData = window.appDataCache.home.gameAdver
         this.state = {
             page:cacheData?cacheData.length/5:0,
-            pageSize:5,
             HaveAnyMore:true,
             data:cacheData?cacheData:[],
             isRequestFalied:false,
         }
+        this.pageSize = 5;
         this.getData = this.getData.bind(this);
         this.touchToRefresh= this.touchToRefresh.bind(this)
     }
@@ -74,7 +74,7 @@ class GameAdver extends Component {
             var CancelToken = axios.CancelToken;
             axios.post('/api/gameadver', {
                 page:that.state.page,
-                pageSize:that.state.pageSize,
+                pageSize:that.pageSize,
             },{
                 cancelToken: new CancelToken(function executor(c) {
                     // executor 函数接收一个 cancel 函数作为参数
@@ -84,12 +84,11 @@ class GameAdver extends Component {
             .then((res)=>{
                 var resData = res.data.gameAdver;
                 that.setState((prevstate)=>{
-                    window.appDataCache.home.gameAdver = [...prevstate.data,...resData]//设置缓存
                     let l = resData.length;
                     return{
                         page:prevstate.page+1,
                         data:[...prevstate.data,...resData],
-                        HaveAnyMore: l < that.state.pageSize?false:true,//如果传回数据个数小于size，说明服务器没有更多数据了，设值为false，下次就不用发送无用的请求了
+                        HaveAnyMore: l < that.pageSize?false:true,//如果传回数据个数小于size，说明服务器没有更多数据了，设值为false，下次就不用发送无用的请求了
                         isRequestFalied:false
                     }
                 })
@@ -132,7 +131,7 @@ class GameAdver extends Component {
             this.requestCancel("<GameAdver/>,组件卸载拦截请求数据");
         }
         this.scrollMonitor.StopMonitor()
-        
+        window.appDataCache.home.gameAdver = this.state.data;//设置缓存
     }
 
     render(){

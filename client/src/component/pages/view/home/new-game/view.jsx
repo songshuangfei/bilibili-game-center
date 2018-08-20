@@ -41,7 +41,6 @@ class NewGame extends Component {
             })
         })
         .then((res)=>{
-            window.appDataCache.home.newGame = res.data.newGame//设置缓存
             that.setState({data:res.data.newGame})
         })
         .catch((error)=>{
@@ -61,6 +60,7 @@ class NewGame extends Component {
         if(this.requestCancel){//如果没执行过this.getData就不会有this.requestCancel。所以要判断
             this.requestCancel("<NewGame/>,组件卸载拦截请求数据");
         }
+        window.appDataCache.home.newGame = this.state.newGame//设置缓存
     }
 
     render(){
