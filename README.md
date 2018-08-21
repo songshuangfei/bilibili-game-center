@@ -1,7 +1,8 @@
 # bilibili game center
 
 ## 简介
-<img src="./doc/home.png" width="420px" >
+<img src="./doc/home.jpg" width="380px" >
+<img src="./doc/rank.jpg" width="380px" >
 
 ## 读前须知
 * `./server`目录是一个使用express构建的简单的后台服务，用于测试前端请求，启动客户端前应先启动这个server
@@ -15,7 +16,6 @@ bilibili-game-center >cd ./client
                       npm start
 ```
 * 本app中的缓存并不是真正的缓存到本地，是为防止来回切换页面导致数据丢失和页面已经滚动的高度丢失而定义的全局变量（也通过这种手段防止了不必要的数据请求）。
-* 所有组件都是用了axios的拦截请求方法，保证在卸载组件后不会在axios回调函数中发生steState()方法的的调用
 
 ## 目录结构
 
@@ -41,6 +41,9 @@ bilibili-game-center >cd ./client
         │  └─view                       #App的5个分页
         │      ├─commonLess
         │      │      variable.less     #页面公共less变量(颜色、尺寸)
+        |      |      animation.less    #动画
+        |      ├─commonJsx              #页面公用组件库
+        |      ├─commonFunction         #公用函数  
         │      ├─find                   #发现页
         │      ├─gameStrategy           #游戏攻略页
         │      ├─home                   #首页
@@ -67,6 +70,17 @@ bilibili-game-center >cd ./client
     └─new-game                    #新游推荐板块
 ```
 
+### client的rankList目录结构
+```
+├─home
+    │  gameList.jsx               #游戏列标筛选tab
+    │  rankingList.jsx            #游戏列表
+    │  style.less
+    │  
+    └─game-item                   #游戏列表单个组件
+        
+```
+
 ### client的find目录结构
 ```
 ```
@@ -79,9 +93,7 @@ bilibili-game-center >cd ./client
 ### client的my目录结构
 ```
 ```
-### client的rankList目录结构
-```
-```
+
 
 
 

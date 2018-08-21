@@ -33,13 +33,14 @@ class GameList extends Component {
         this.getData = this.getData.bind(this);
     }
     
-    getData(toTab){//tab切换时才会有这个toTab参数，否则就是页面滚动加载数据
+    getData(toTab,laodingToRetry){//tab切换时才会有这个toTab参数，否则就是页面滚动加载数据
         var that = this;
         var tabNow;
         toTab?tabNow=toTab:tabNow = this.state.tab;
-        if(!this.state.haveAnyMore){//如果没有数据就不请求
+        if(!this.state.haveAnyMore){//如果后台没有数据就不请求
             return;
         }
+        
         var CancelToken = axios.CancelToken;
         axios.post('/api/rank',{
             sort:tabNow,//传给后台的排序方式
@@ -64,7 +65,9 @@ class GameList extends Component {
             if(error.response){
                 // 请求已发出，但服务器响应的状态码不在 2xx 范围内
                 if(that.state.isRequestFailed){//如果就是true，就不必再执行setState，引起不必要的更新循环
-                    console.log("不必提交state更新,不会引起第二次请求");
+                    console.log("不必提交state更新,不会引起第二次请求,设置<LoadingBoard/>点击重试");
+                    if(laodingToRetry)//让loadingBoard变为可点击重新加载的状态
+                        laodingToRetry();
                     return;
                 }
                 that.setState({isRequestFailed:true});
@@ -79,14 +82,17 @@ class GameList extends Component {
         this.scrollMonitor = new ScrollMonitor(this.getData);//创建监听器
         if(this.state.data.length!==0){
             console.log(`<RankingList/>,已经加载tab:${this.state.tab}缓存数据,暂时不请求数据`);
-            this.scrollMonitor.StartMonitor();//监听器开始监听，用户滑动到底就加载数据
+            this.scrollMonitor.StartMonitor();//监听器开始监听，用户滑动到底就加载数据并自动取消监听，在加载完数据后再次调用开启监听
             return;
         }
-        this.getData();
+        this.getData();//没有数据就获取数据
     }
 
     componentWillReceiveProps(nextProps){
-        window.appDataCache.rank[this.state.tab]={//qiehuantab先保存数据
+        if(nextProps===this.props){
+            return;
+        }
+        window.appDataCache.rank[this.state.tab]={//切换tab先保存数据
             haveAnyMore:this.state.haveAnyMore,
             data:this.state.data
         }
@@ -95,10 +101,7 @@ class GameList extends Component {
             this.requestCancel("<RankingList/>，tab已切换，请求数据被拦截");
         }
 
-        if(nextProps===this.props){
-            return;
-        }
-        var newTab = nextProps.tab;
+        var newTab = nextProps.tab;//新tab下页面初始化
         var newData = window.appDataCache.rank[newTab]?window.appDataCache.rank[newTab]:{data:[],haveAnyMore:true};
         this.setState({
             tab:newTab,

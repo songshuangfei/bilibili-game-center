@@ -1,11 +1,10 @@
 @import url("../../commonLess/animation.less");
 @import url("../../commonLess/variable.less");
-.loaing-board {
+.loading-board {
     width: 100%;
     padding: 0.2rem 0;
     .loading-icon {
-        height: 2rem;
-        line-height: 2rem;
+        padding: 0.6rem 0;
         text-align: center;
         .loading-rotate {
             width: 1.8rem;
@@ -18,18 +17,29 @@
 
     .nomore {
         color: @word-color-light;
-        height: 2rem;
-        line-height: 2rem;
         text-align: center;
         font-size: 0.8rem;
+        padding: 0.6rem 0;
     }
 
     .failed {
         width: 100%;
-        line-height: 1.2rem;
         color: @word-color-light;
         font-size: 0.8rem;
         text-align: center;
+        padding: 0.6rem 0;
+        .refresh {
+            width: 4rem;
+            height: 1.8rem;
+            border-radius: 0.9rem;
+            background: @theme-color;
+            text-align: center;
+            color: #fff;
+            font-size: 0.8rem;
+            line-height: 1.8rem;
+            margin: 0.4rem auto;
+            box-shadow:0 2px 8px rgba(71, 187, 255, 0.5);
+        }
     }
 
 }

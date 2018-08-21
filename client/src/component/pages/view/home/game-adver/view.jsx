@@ -1,5 +1,5 @@
 import React,{ Component } from "react"
-import { starIcon,loadingIcon } from "../../icons"
+import { starIcon } from "../../icons"
 import {ScrollMonitor} from "../../commonFunction"
 import {LoadingBoard} from "../../commonJsx"
 
@@ -61,14 +61,14 @@ class GameAdver extends Component {
             page:cacheData?cacheData.length/5:0,
             HaveAnyMore:true,
             data:cacheData?cacheData:[],
-            isRequestFalied:false,
+            isRequestFailed:false,
         }
         this.pageSize = 5;
         this.getData = this.getData.bind(this);
         // this.touchToRefresh= this.touchToRefresh.bind(this
     }
 
-    getData(){
+    getData(_,laodingToRetry){
         console.log("<GameAdver/>,无缓存或加载新数据，请求数据")
         var that =this;
         if(this.state.HaveAnyMore){//服务端还有数据时才加载
@@ -100,9 +100,11 @@ class GameAdver extends Component {
                 if(error.response){
                     // 请求已发出，但服务器响应的状态码不在 2xx 范围内
                     if(that.state.isRequestFailed){//如果就是true，就不必再执行setState，引起不必要的更新循环
+                        if(laodingToRetry)
+                            laodingToRetry();
                         return;
                     }
-                    that.setState({isRequestFalied:true})
+                    that.setState({isRequestFailed:true})
                     //设置请求失败，改变页面展示
                 }else{
                     //非服务器响应错误的error
@@ -133,8 +135,9 @@ class GameAdver extends Component {
     }
 
     render(){
+        console.log('rendering')
         var data = this.state.data,
-            isRequestFalied = this.state.isRequestFalied;
+            isRequestFailed = this.state.isRequestFailed;
         return(
             <div className="game-adver">
                 {data.map(v=>(
@@ -142,7 +145,7 @@ class GameAdver extends Component {
                 ))}
                 <div>
                     <div>
-                        <LoadingBoard msg={isRequestFalied?'failed':
+                        <LoadingBoard msg={isRequestFailed?'failed':
                         this.state.HaveAnyMore?'loading':"nomore"} action={this.getData}/>
                     </div>
                 </div>
