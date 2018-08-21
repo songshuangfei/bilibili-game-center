@@ -1,3 +1,35 @@
+@import url("../../commonLess/animation.less");
+@import url("../../commonLess/variable.less");
 .loaing-board {
+    width: 100%;
+    padding: 0.2rem 0;
+    .loading-icon {
+        height: 2rem;
+        line-height: 2rem;
+        text-align: center;
+        .loading-rotate {
+            width: 1.8rem;
+            height: 1.8rem;
+            position: relative;
+            animation: @loading-rotate;
+            transform-origin: 50% 50%;
+        }
+    }
+
+    .nomore {
+        color: @word-color-light;
+        height: 2rem;
+        line-height: 2rem;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    .failed {
+        width: 100%;
+        line-height: 1.2rem;
+        color: @word-color-light;
+        font-size: 0.8rem;
+        text-align: center;
+    }
 
 }

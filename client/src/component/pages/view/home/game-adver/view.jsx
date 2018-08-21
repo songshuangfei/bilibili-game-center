@@ -1,6 +1,7 @@
 import React,{ Component } from "react"
-import { starIcon,loadingIcon } from "../icons"
+import { starIcon,loadingIcon } from "../../icons"
 import {ScrollMonitor} from "../../commonFunction"
+import {LoadingBoard} from "../../commonJsx"
 
 
 import axios from 'axios';
@@ -64,7 +65,7 @@ class GameAdver extends Component {
         }
         this.pageSize = 5;
         this.getData = this.getData.bind(this);
-        this.touchToRefresh= this.touchToRefresh.bind(this)
+        // this.touchToRefresh= this.touchToRefresh.bind(this
     }
 
     getData(){
@@ -112,12 +113,6 @@ class GameAdver extends Component {
         }
     }
 
-    touchToRefresh(){
-        this.setState({isRequestFalied:false})//这里设置为false不是说请求成功了，而是为了加载动画重新播放
-        this.getData();//执行一次请求函数
-    }
-
-
     componentDidMount(){
         this.scrollMonitor = new ScrollMonitor(this.getData);
         if(this.state.data.length!==0){
@@ -146,17 +141,10 @@ class GameAdver extends Component {
                     <AdverItem key={v.gameId} data={v} />
                 ))}
                 <div>
-                    {
-                        isRequestFalied?
-                        <div className="rq-failed" onTouchEnd={this.touchToRefresh}>
-                            服务器离家出走中_(:зゝ∠)<br/>点击刷新
-                        </div>:
-                        <div className="loading">{
-                            this.state.HaveAnyMore?
-                            <img src={loadingIcon} alt="loading"/>:
-                            "_(:зゝ∠)_世界的尽头~ " }
-                        </div>
-                    }
+                    <div>
+                        <LoadingBoard msg={isRequestFalied?'failed':
+                        this.state.HaveAnyMore?'loading':"nomore"} action={this.getData}/>
+                    </div>
                 </div>
             </div>
         )

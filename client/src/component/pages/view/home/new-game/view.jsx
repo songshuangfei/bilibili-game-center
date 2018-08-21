@@ -1,5 +1,5 @@
 import React,{ Component } from "react"
-import { rightIcon } from "../icons"
+import { rightIcon } from "../../icons"
 import axios from 'axios';
 import "./style.less"
 

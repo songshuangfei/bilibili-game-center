@@ -51,7 +51,6 @@ class RankingList extends Component {
         }
     }
     render(){
-        console.log(this.state.tabNow)
         return(
             <div className="rank">
                 <GameList tab = {this.state.tabNow} />

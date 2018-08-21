@@ -3,7 +3,7 @@ import GameItem from "./game-item/view"
 import axios from 'axios';
 
 import {ScrollMonitor} from "../commonFunction"
-// import {LoadingBoard} from "../commonJsx"
+import {LoadingBoard} from "../commonJsx"
 
 
 /*前端单条数据
@@ -22,7 +22,6 @@ class GameList extends Component {
     constructor(props){
         super(props);
         var tab = this.props.tab;
-        console.log("d",tab)
         var cache = window.appDataCache.rank[tab];//获取缓存
         this.state = {
             data:cache?cache.data:[],
@@ -111,7 +110,7 @@ class GameList extends Component {
     componentDidUpdate(){
         if(this.state.data.length===0){
             this.getData();
-            console.log(213123321)
+            console.log("更新组件，如果是切换tab而没有数据就请求数据");
         }
     }
 
@@ -132,14 +131,12 @@ class GameList extends Component {
             <div className="rank-list">
                 {
                     data.map((v,i)=>(
-                        <GameItem  key={v.gameId} data={v} index={i}/>
+                        <GameItem  key={v.gameId} data={v} index={i} isDownload={this.state.tab==='GoodTrend'?false:true}/>
                     ))
                 }
                 <div>
-                    {
-                        this.state.isRequestFailed?'500，点击刷新':
-                        this.state.haveAnyMore?'loading':"nomore"
-                    }
+                    <LoadingBoard msg={this.state.isRequestFailed?'failed':
+                        this.state.haveAnyMore?'loading':"nomore"} action={this.getData}/>
                 </div>
             </div>
         )
