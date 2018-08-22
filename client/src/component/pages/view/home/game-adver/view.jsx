@@ -65,7 +65,6 @@ class GameAdver extends Component {
         }
         this.pageSize = 5;
         this.getData = this.getData.bind(this);
-        // this.touchToRefresh= this.touchToRefresh.bind(this
     }
 
     getData(_,laodingToRetry){
@@ -135,7 +134,6 @@ class GameAdver extends Component {
     }
 
     render(){
-        console.log('rendering')
         var data = this.state.data,
             isRequestFailed = this.state.isRequestFailed;
         return(

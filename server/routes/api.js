@@ -98,5 +98,28 @@ router.post('/rank', function(req, res, next) {
   res.json({'rankList':resData})
 });
 
+router.get('/strategy/hotgame', function(req, res, next) {
+  res.json({'hotgame':[
+    {img:"/gamecover/1.jpg",gameId:"001"},
+    {img:"/gamecover/2.jpg",gameId:"002"},
+    {img:"/gamecover/3.jpg",gameId:"003"},
+    {img:"/gamecover/4.jpg",gameId:"004"}
+  ]})
+});
+
+router.post('/strategy/newstrategy', function(req, res, next) {
+  res.json({'strategy':[
+    {authorName:'咸鱼5号',authorHead:"dasasd",
+      title:"《崩坏3》新剧情攻略",
+      cover:"/stragetysrc/cover/1.png",
+      strategyInfo:"非常好玩的游戏啊啊啊啊啊啊啊啊啊啊啊sssssssssssssssssssss啊啊啊~太好玩了~",
+      eye:"22",
+      good:"12",
+      gameName:"崩坏3",
+      stragetyId:"123123"
+  }
+  ]})
+});
+
 module.exports = router;
   

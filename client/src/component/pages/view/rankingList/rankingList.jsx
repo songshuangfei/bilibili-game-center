@@ -56,7 +56,7 @@ class RankingList extends Component {
                 <GameList tab = {this.state.tabNow} />
                 <div className="rank-type-tab">
                     <div className="tab" onTouchEnd={()=>this.touchTab('BestSelling')} style={this.setTabStyle('BestSelling')} >畅销榜</div>
-                    <div className="tab" onTouchEnd={()=>this.touchTab('GoodTrend')} style={this.setTabStyle('GoodTrend')}>期待帮</div>
+                    <div className="tab" onTouchEnd={()=>this.touchTab('GoodTrend')} style={this.setTabStyle('GoodTrend')}>期待榜</div>
                     <div className="tab" onTouchEnd={()=>this.touchTab('MorePraise')} style={this.setTabStyle('MorePraise')}>口碑榜</div>
                     <div className="tab" onTouchEnd={()=>this.touchTab('Hot')} style={this.setTabStyle('Hot')}>上升最快</div>
                     <div className="mark" style={{left:this.state.markLeft}}></div>
