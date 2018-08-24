@@ -1,6 +1,8 @@
 import React,{Component} from "react";
-
 import axios from "axios";
+import {eyeGrayIcon,goodGrayIcon} from "../../icons"
+import {ScrollMonitor} from ".././../commonFunction"
+import {LoadingBoard} from "../../commonJsx"
 
 import "./style.less";
 
@@ -31,7 +33,10 @@ const StrategyItem = (props) => {
             <div className="strg-info">{data.strategyInfo}</div>
             <div className="info">
                 <div className="game-name">{data.gameName}</div>
-                <div className="strg-hot"></div>
+                <div className="strg-hot">
+                    <img src={eyeGrayIcon} alt=""/>{data.eye}
+                    <img src={goodGrayIcon} alt=""/>{data.good}
+                </div>
             </div>
         </div>
     )
@@ -46,11 +51,13 @@ class NewStrategy extends Component {
         this.state = {
             data:cacheData?cacheData:[],
             haveAnyMore:true,
+            isRequestFailed:false,
         }
         this.pageSize = 5;
+        this.getData = this.getData.bind(this);
     }
 
-    getData(){
+    getData(_,laodingToRetry){
         var that =this;
         if(!this.state.haveAnyMore){
             return;
@@ -73,20 +80,43 @@ class NewStrategy extends Component {
                    haveAnyMore: data.length < this.pageSize?false:true
                 }
             })
+            this.scrollMonitor.StartMonitor();
+        })
+        .catch(error=>{
+            if (error.response) {
+                //请求失败
+                if(this.state.isRequestFailed){
+                    console.log('ssss')
+                    if(laodingToRetry)
+                        laodingToRetry();
+                    return;
+                }
+                that.setState({isRequestFailed:true});
+                console.log("服务器出错，点击刷新")
+            } else {
+                console.log(error)
+            }
         })
     }
 
     componentDidMount(){
+        this.scrollMonitor = new ScrollMonitor(this.getData)
         if(this.state.data.length !==0){
+            console.log("<NewStragety>,加载缓存，暂不请求数据");
+            this.scrollMonitor.StartMonitor();
             return;
         }
         this.getData();
     }
+
     componentWillUnmount(){
         if(this.requestCancel){
             this.requestCancel("<NewStragety/>组件卸载拦截请求数据")
         }
+        this.scrollMonitor.StopMonitor();//取消监听
+        window.appDataCache.strategy.newStrategy = this.state.data;
     }
+
     render(){
         var data = this.state.data;
         return(
@@ -97,6 +127,9 @@ class NewStrategy extends Component {
                 {data.map(v=>(
                     <StrategyItem data={v} key={v.stragetyId}/>
                 ))}
+                <LoadingBoard msg={this.state.isRequestFailed?'failed':
+                    this.state.haveAnyMore?'loading':"nomore"} action={this.getData}
+                />
             </div>
         )
     }

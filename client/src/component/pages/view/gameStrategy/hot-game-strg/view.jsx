@@ -32,7 +32,7 @@ class HotGameStrg extends Component {
     }
     componentDidMount(){
         if(this.state.data.length !== 0){
-            console.log("加载缓存");
+            console.log("<HotGameStrg/>加载缓存");
             return;
         }
         this.getData();

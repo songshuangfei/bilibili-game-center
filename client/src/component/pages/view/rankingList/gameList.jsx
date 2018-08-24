@@ -53,12 +53,12 @@ class GameList extends Component {
         })
         .then(res=>{
             var newData = res.data.rankList;
-            that.setState((prevState=>{
+            that.setState(prevState=>{
                 return{
                     data:[...prevState.data,...newData],
                     haveAnyMore:newData.length<that.pageSize?false:true,//设置是否还有数据的标识
                 }
-            }))
+            })
             this.scrollMonitor.StartMonitor();
         })
         .catch(error=>{

@@ -108,17 +108,84 @@ router.get('/strategy/hotgame', function(req, res, next) {
 });
 
 router.post('/strategy/newstrategy', function(req, res, next) {
-  res.json({'strategy':[
-    {authorName:'咸鱼5号',authorHead:"dasasd",
-      title:"《崩坏3》新剧情攻略",
-      cover:"/stragetysrc/cover/1.png",
-      strategyInfo:"非常好玩的游戏啊啊啊啊啊啊啊啊啊啊啊sssssssssssssssssssss啊啊啊~太好玩了~",
+  var sendData = req.body;
+  var db = [
+    {
+      authorName:'咸鱼5号',
+      authorHead:"/userhead/1.jpg",
+      title:"《死神激斗》朽木角色曝光！技能炸裂",
+      cover:"/stragetysrc/cover/5.png",
+      strategyInfo:"【游戏介绍】《BLEACH境·界-死神激斗》是由集英社、テレビ東京、電通、ぴえろ协力制作、获得日本国",
       eye:"22",
       good:"12",
+      gameName:"死神激斗·境界-死神激斗",
+      stragetyId:"001"
+    },{
+      authorName:'万象物语',
+      authorHead:"/userhead/3.jpg",
+      title:"《幻境试炼》公告",
+      cover:"/stragetysrc/cover/2.png",
+      strategyInfo:"【游戏介绍】《万象物语》是由龙渊网络与雷亚游戏联合研发的大型角色扮演游戏，故事讲述远古大地",
+      eye:"626",
+      good:"52",
+      gameName:"万象物语",
+      stragetyId:"002"
+    },{
+      authorName:'山竹哟',
+      authorHead:"/userhead/2.jpg",
+      title:"《决战平安京》式神·犬夜叉",
+      cover:"/stragetysrc/cover/1.png",
+      strategyInfo:"全球无符文对称MOBA，5V5公平竞技！《决战！平安京》是网易重磅推出的无符文公平对战MOBA手游，完美传承《阴阳师》的唯美和风画面",
+      eye:"452",
+      good:"132",
+      gameName:"决战平安京",
+      stragetyId:"003"
+    },{
+      authorName:'咸鱼6号',
+      authorHead:"/userhead/4.jpg",
+      title:"《崩坏3》女王降临",
+      cover:"/stragetysrc/cover/3.png",
+      strategyInfo:"《崩坏3》2.5版本「女王降临」! 琪亚娜S级灵魂觉醒女武神「空之律者」 女王降临,姬子A级女武神「极地战刃」参战,助",
+      eye:"432",
+      good:"242",
       gameName:"崩坏3",
-      stragetyId:"123123"
-  }
-  ]})
+      stragetyId:"004"
+    },{
+      authorName:'阴阳师',
+      authorHead:"/userhead/5.jpg",
+      title:"《阴阳师》新剧情攻略",
+      cover:"/stragetysrc/cover/4.png",
+      strategyInfo:"【游戏介绍】《阴阳师》是由中国网易移动游戏公司自主研发的3D日式和风回合制RPG手游。游戏中的和风元素是以《源氏物语》的古日本平安时代为背景设计的。",
+      eye:"222",
+      good:"132",
+      gameName:"阴阳师",
+      stragetyId:"005"
+    },{
+      authorName:'咸鱼5号',
+      authorHead:"/userhead/1.jpg",
+      title:"《死神激斗》朽木角色曝光！技能炸裂",
+      cover:"/stragetysrc/cover/5.png",
+      strategyInfo:"【游戏介绍】《BLEACH境·界-死神激斗》是由集英社、テレビ東京、電通、ぴえろ协力制作、获得日本国",
+      eye:"22",
+      good:"12",
+      gameName:"死神激斗·境界-死神激斗",
+      stragetyId:"006"
+    },{
+      authorName:'万象物语',
+      authorHead:"/userhead/3.jpg",
+      title:"《幻境试炼》公告",
+      cover:"/stragetysrc/cover/2.png",
+      strategyInfo:"【游戏介绍】《万象物语》是由龙渊网络与雷亚游戏联合研发的大型角色扮演游戏，故事讲述远古大地",
+      eye:"626",
+      good:"52",
+      gameName:"万象物语",
+      stragetyId:"007"
+    }
+  ];
+  
+  var resData = db.slice(sendData.page*sendData.pageSize,(sendData.page+1)*sendData.pageSize)//返回查找到的页数的内容，每页size由客户端决定
+  
+  res.json({'strategy':resData})
 });
 
 module.exports = router;
