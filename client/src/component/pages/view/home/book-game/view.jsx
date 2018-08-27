@@ -1,4 +1,5 @@
 import React,{ Component } from "react"
+import { HorizontalScroll } from "../../commonJsx"
 import { rightIcon } from "../../icons"
 import axios from 'axios';
 
@@ -82,14 +83,11 @@ class BookGame extends Component {
                     <a href="/rank"><img src={rightIcon} alt=""/></a>
                 </div>
                 <div className="book-game-list">
-                    <div className="item-cont">
-                        <ul>
-                            {data.map(v=>(
-                               <GameItem key={v.gameId} data={v}/>
-                            ))}
-
-                        </ul>
-                    </div>
+                    <HorizontalScroll>
+                        {data.map(v=>(
+                            <GameItem key={v.gameId} data={v}/>
+                        ))}
+                    </HorizontalScroll>
                 </div>
             </div>
         )

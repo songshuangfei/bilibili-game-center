@@ -1,5 +1,6 @@
 import React,{ Component } from "react"
 import { rightIcon,eyeIcon,goodIcon } from "../../icons"
+import { HorizontalScroll } from "../../commonJsx"
 import axios from 'axios'
 
 import "./style.less"
@@ -88,13 +89,11 @@ class HotStrategy extends Component {
                     <a href="/rank"><img src={rightIcon} alt=""/></a>
                 </div>
                 <div className="hot-strategy-list">
-                    <div className="item-cont">
-                        <ul>
-                            {data.map(v=>(
-                                <StrategyItem key={v.vedioId} data={v}/>
-                            ))}
-                        </ul>
-                    </div>
+                    <HorizontalScroll>
+                        {data.map(v=>(
+                            <StrategyItem key={v.vedioId} data={v}/>
+                        ))}
+                    </HorizontalScroll>
                 </div>
             </div>
         )

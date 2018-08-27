@@ -25,22 +25,8 @@
     .hot-strategy-list {
         width: 100%;
         padding-left: 0;
-        overflow: hidden;
         // background: red;
-
-        .item-cont {
-            overflow-x: scroll;
-            margin-bottom: -3rem;
-            padding-bottom: 3rem;
-            overflow-y: hidden;
-
-            ul {
-                list-style: none;
-                margin: 0 ;
-                padding:0;
-                width: (@num+1)*11rem;
                 li {
-                    float: left;
                     width: 10rem;
                     background: #fff;
                     border-radius: 6px;
@@ -97,6 +83,7 @@
                             white-space:normal;
                             word-break:break-all;
                             word-wrap:break-word;
+                            color: @word-color-primary;
                             // background: red;
                         }
                         span {
@@ -122,8 +109,6 @@
                         // background: rgba(93, 93, 255, 0.616);
                     }
                 }
-            }
-        }
     }
     
 }

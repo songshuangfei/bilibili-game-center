@@ -24,51 +24,33 @@
 
     .new-game-list {
         width: 100%;
-        overflow: hidden;
-
-        .game-cont {
-            width: 100%;
-            margin-bottom: -3rem;
-            padding-bottom: 3rem;
-            overflow-x: scroll;
-            // background: red;
-
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                width: (@num+1)*6rem;//一个item宽度为6re吗，最多10个
-                
-                li {
-                    float: left;
-                    width: 6rem;
-                    margin-right: 0.5rem;
-                    // background: @theme-color;
-                    a {
-                        display: block;
-                        width: 5rem;
-                        height: 5rem;
-                        margin: 0 0.5rem;
-                        img {
-                            width: 100%;
-                            height: 100%;    
-                        }
-                    }
-                    
-
-                    .g-name {
-                        width: 5rem;
-                        margin: 0.4rem 0.5rem;
-                        color: @word-color-primary;
-                        font-size: 1rem;
-                        line-height: 1.1rem;
-                        text-align: center;
-                        white-space:normal;
-                        word-break:break-all;
-                        word-wrap:break-word; 
-                        // background: red;
-                    }
+        li {
+            width: 6rem;
+            margin-right: 0.5rem;
+            // background: @theme-color;
+            a {
+                display: block;
+                width: 5rem;
+                height: 5rem;
+                margin: 0 0.5rem;
+                img {
+                    width: 100%;
+                    height: 100%;    
                 }
+            }
+            
+
+            .g-name {
+                width: 5rem;
+                margin: 0.4rem 0.5rem;
+                color: @word-color-primary;
+                font-size: 1rem;
+                line-height: 1.1rem;
+                text-align: center;
+                white-space:normal;
+                word-break:break-all;
+                word-wrap:break-word; 
+                // background: red;
             }
         }
     }
