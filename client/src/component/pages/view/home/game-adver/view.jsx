@@ -56,7 +56,7 @@ const AdverItem= (props)=>{
 class GameAdver extends Component {
     constructor(){
         super();
-        var cacheData = window.appDataCache.home.gameAdver
+        var cacheData = window.appDataCache.home.gameAdver;
         this.state = {
             page:cacheData?cacheData.length/5:0,
             HaveAnyMore:true,
