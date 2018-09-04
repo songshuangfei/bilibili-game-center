@@ -188,5 +188,18 @@ router.post('/strategy/newstrategy', function(req, res, next) {
   res.json({'strategy':resData})
 });
 
+router.get('/my/user', function(req, res, next) {
+  res.json({'user':{
+    back:"/gamecover/1.jpg",
+    headImg:"/userhead/1.jpg",
+    name:"山竹哟",
+    sex:"female",
+    lv:6,
+    id:"2845689",
+    following:45,
+    follower:21
+  }})
+});
+
 module.exports = router;
   
