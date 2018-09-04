@@ -190,7 +190,7 @@ router.post('/strategy/newstrategy', function(req, res, next) {
 
 router.get('/my/user', function(req, res, next) {
   res.json({'user':{
-    back:"/gamecover/1.jpg",
+    back:"/userback/default.jpg",
     headImg:"/userhead/1.jpg",
     name:"山竹哟",
     sex:"female",

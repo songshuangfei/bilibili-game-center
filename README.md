@@ -1,26 +1,29 @@
 # bilibili game center
 
 ## 简介
+使用react高仿的bilibili游戏中心。
+
 <img src="./doc/home.jpg" width="320px" >
 <img src="./doc/rank.jpg" width="320px" >
 <img src="./doc/strategy.jpg" width="320px" >
+<img src="./doc/my.jpg" width="320px" >
 
 ## 读前须知
 * `./server`目录是一个使用express构建的简单的后台服务，用于测试前端请求，启动客户端前应先启动这个server
 ```
-bilibili-game-center >cd server
-                      npm install
-                      npm start
+>cd server
+ npm install
+ npm start
 
-bilibili-game-center >cd ./client
-                      npm insatll
-                      npm start
+>cd client
+ npm insatll
+ npm start
 ```
 * 本app中的缓存并不是真正的缓存到本地，是为防止来回切换页面导致数据丢失和页面已经滚动的高度丢失而定义的全局变量（也通过这种手段防止了不必要的数据请求）。
 
 ## 目录结构
 
-### client的src整体目录结构
+### client的src大概目录结构
 ```
  ├─src
     │  App.jsx
@@ -57,59 +60,11 @@ bilibili-game-center >cd ./client
                     titleBar.jsx
 ```
 
-### client的home目录结构
-```
- ├─home
-    │  home.jsx
-    │  style.less    │  
-    ├─book-game                   #预约游戏板块
-    ├─full-screen-carousel        #全屏轮播图
-    ├─game-adver                  #游戏广告列表
-    ├─hot-game                    #热门游戏板块
-    ├─hot-strategy                #热门攻略                      
-    ├─icons                       #板块公用的图标
-    └─new-game                    #新游推荐板块
-```
-
-### client的rankList目录结构
-```
-├─home
-    │  gameList.jsx               #游戏列标筛选tab
-    │  rankingList.jsx            #游戏列表
-    │  style.less
-    │  
-    └─game-item                   #游戏列表单个组件
-        
-```
-
-### client的find目录结构
-```
-```
-
-### client的gameStrategy目录结构
-```
-```
-
-
-### client的my目录结构
-```
-```
-
-
-
-
-
 ### 待做事项记录
 * a标签和Link组件的选择
 * hometitle显示消息数
-* hometitle所链接的页面
-* title组件的和修改
-* 轮播图数据的请求
-* 轮播图点入页面
-* 热门游戏的数据请求
-* more按钮链接页面
-* 热门游戏图标点入页面（游戏介绍页面）
 * 热门游戏下载按钮的进度功能
 * 首页翻滚加载数据
+* 页面链接的页面
 
 
