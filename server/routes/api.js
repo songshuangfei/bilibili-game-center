@@ -194,10 +194,22 @@ router.get('/my/user', function(req, res, next) {
     headImg:"/userhead/1.jpg",
     name:"山竹哟",
     sex:"female",
-    lv:6,
+    lv:5,
     id:"2845689",
     following:45,
     follower:21
+  }})
+});
+
+router.get('/my/menu', function(req, res, next) {
+  res.json({'menu':{
+    update:0,
+    played:8,
+    bought:0,
+    booked:1,
+    evaluate:5,
+    collect:14,
+    gift:1,
   }})
 });
 

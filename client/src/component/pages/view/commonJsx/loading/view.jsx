@@ -29,6 +29,7 @@ class LoadingBoard extends Component {
     }
 
     componentWillReceiveProps(nextProps){
+        
         this.setState({
             now:nextProps.msg,
             action:nextProps.action

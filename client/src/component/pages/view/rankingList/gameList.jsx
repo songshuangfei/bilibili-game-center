@@ -29,7 +29,7 @@ class GameList extends Component {
             tab:this.props.tab,
             isRequestFailed:false,
         }
-        this.pageSize = 10;
+        this.pageSize = 5;
         this.getData = this.getData.bind(this);
     }
     
@@ -59,7 +59,7 @@ class GameList extends Component {
                     haveAnyMore:newData.length<that.pageSize?false:true,//设置是否还有数据的标识
                 }
             })
-            this.scrollMonitor.StartMonitor();
+            that.scrollMonitor.StartMonitor();
         })
         .catch(error=>{
             if(error.response){
@@ -114,7 +114,9 @@ class GameList extends Component {
         if(this.state.data.length===0){
             this.getData();
             console.log("更新组件，如果是切换tab而没有数据就请求数据");
+            return;
         }
+
     }
 
     componentWillUnmount(){
