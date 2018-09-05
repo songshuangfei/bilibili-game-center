@@ -1,9 +1,11 @@
 # bilibili game center
 
 ## 简介
-使用react高仿的bilibili游戏中心。
+使用react高仿的bilibili游戏中心（客户端5个页面，其他点击进入的页面未做）。
 
-<img src="./doc/home.jpg" width="280px" ><img src="./doc/rank.jpg" width="280px" ><img src="./doc/find.jpg" width="280px" ><img src="./doc/strategy.jpg" width="280px" ><img src="./doc/my.jpg" width="280px" >
+<img src="./doc/home.jpg" style="margin:0 10px;width:280px;" ><img src="./doc/rank.jpg" style="margin:0 10px;width:280px;" >
+<img src="./doc/find.jpg" style="margin:0 10px;width:280px;" ><br/><img src="./doc/strategy.jpg" style="margin:0 10px;width:280px;" >
+<img src="./doc/my.jpg" style="margin:0 10px;width:280px;" >
 
 ## 读前须知
 * `./server`目录是一个使用express构建的简单的后台服务，用于测试前端请求，启动客户端前应先启动这个server
@@ -56,4 +58,7 @@
                     style.less
                     titleBar.jsx
 ```
-
+### 构建
+* ` ./client ` 目录 ` npm run build `
+* 拷贝 ` ./client/build/ ` 下的所有内容到 ` ./server/public `
+* ` ./server ` 目录下 ` npm start `
