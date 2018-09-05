@@ -1,0 +1,37 @@
+
+module.exports = {
+    hotGame:[
+        {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
+        {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+        {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
+        {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
+        {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+        {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+        {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"}
+    ],
+    newGame:[
+        {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
+        {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+        {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+        {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
+        {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
+        {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+        {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
+    ],
+    gamesRank:[
+        {icon:'/gameicon/bh3.png',name:'崩坏3',type:'角色扮演',size:'1478M',score:8.8,gameId:'001'},
+        {icon:"/gameicon/mhmnz.png",name:"梦幻模拟战",type:'角色扮演',size:'872M',score:7.4,gameId:"002"},
+        {icon:"/gameicon/smjh.png",name:"食梦计划",type:'角色扮演',size:'872M',score:7.4,gameId:"003"},
+        {icon:"/gameicon/zs.png",name:"站双：帕弥什",type:'角色扮演',size:'472M',score:7.4,gameId:"004"},
+        {icon:"/gameicon/mhmnz.png",name:"辐射：避难所Online",type:'休闲益智',size:'672M',score:7.4,gameId:"005"},
+        {icon:"/gameicon/fgo.png",name:"命运-冠位指定",type:'回合卡牌',size:'802M',score:8.2,gameId:"006"},
+        {icon:"/gameicon/blhx.png",name:"碧蓝航线",type:'冒险射击',size:'792M',score:8.4,gameId:"007"},
+        {icon:'/gameicon/bh3.png',name:'崩坏3-新开始',type:'角色扮演',size:'1478M',score:8.8,gameId:'009'},
+        {icon:"/gameicon/mhmnz.png",name:"梦幻模拟战",type:'角色扮演',size:'872M',score:7.4,gameId:"010"},
+        {icon:"/gameicon/smjh.png",name:"食梦计划",type:'角色扮演',size:'872M',score:7.4,gameId:"011"},
+        {icon:"/gameicon/zs.png",name:"站双：帕弥什",type:'角色扮演',size:'472M',score:7.4,gameId:"012"},
+        {icon:"/gameicon/mhmnz.png",name:"辐射：避难所Online",type:'休闲益智',size:'672M',score:7.4,gameId:"013"},
+        {icon:"/gameicon/fgo.png",name:"命运-冠位指定",type:'回合卡牌',size:'802M',score:8.2,gameId:"014"},
+        {icon:"/gameicon/blhx.png",name:"碧蓝航线",type:'冒险射击',size:'792M',score:8.4,gameId:"015"},
+    ],
+}

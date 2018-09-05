@@ -1,0 +1,70 @@
+module.exports = {
+    hot:[
+        { img:"/activityimg/3.jpg",activityId:"001"},
+        { img:"/activityimg/1.jpg",activityId:"002"},
+        { img:"/activityimg/2.jpg",activityId:"003"}
+    ],
+    better:[
+        {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+        {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
+        {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+        {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
+        {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
+        {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+        {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
+    ],
+    payGame:[
+        {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
+        {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+        {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+        {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
+        {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+        {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
+        {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
+    ],
+    list:[
+        {name:"经典游戏",data:[
+            {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
+            {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
+            {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+            {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
+            {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+            {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+            {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"}]
+        },
+        {name:"热度速升",data:[
+            {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+            {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
+            {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
+            {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+            {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
+            {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+            {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"}]
+        },
+        {name:"休闲小游戏",data:[
+            {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+            {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
+            {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
+            {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+            {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+            {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
+            {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},]
+        },
+        {name:"很多人玩",data:[
+            
+            {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+            {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+            {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
+            {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
+            {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+            {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
+            {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},]
+        },
+    ],
+    special:[
+        {specialImg:"/gamecover/4.jpg",specialId:"004"},
+        {specialImg:"/gamecover/3.jpg",specialId:"003"},
+        {specialImg:"/gamecover/1.jpg",specialId:"001"},
+        {specialImg:"/gamecover/2.jpg",specialId:"002"},
+    ]
+}

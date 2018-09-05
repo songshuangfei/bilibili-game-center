@@ -8,7 +8,7 @@ import "./style.less"
 var titleLink = {
     masterStation:"http://bilibili.com",//首页返回按钮
     homePage:"/",//首页链接
-    msg:"",
+    msg:"/outpage",
     search:"",
     more:"",
     myDownload:"",

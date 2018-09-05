@@ -29,13 +29,20 @@ class Find extends Component {
             })
         })
         .then((res)=>{
-            that.setState({data:res.data.list})
+            var resData = res.data.list;
+            that.setState({
+                data:resData,
+                haveAnyMore:false
+            })
         })
         .catch((error)=>{
             if(error.response){
+                console.log("23123123")
+
                 if(that.state.isRequestFailed){
                     if(laodingToRetry)
                         laodingToRetry();
+                        console.log(laodingToRetry)
                     return;
                 }
                 that.setState({isRequestFailed:true})
@@ -69,6 +76,7 @@ class Find extends Component {
     render(){
         let data = this.state.data;
         let isRequestFailed = this.state.isRequestFailed;
+        let haveAnyMore = this.state.haveAnyMore;
         return(
             <div className="find">
                 <FindHot/>
@@ -82,7 +90,7 @@ class Find extends Component {
                     ))
                 }
                 <div>
-                    <LoadingBoard msg={isRequestFailed?'failed':"nomore"} action={this.getData}/>
+                    <LoadingBoard msg={isRequestFailed?'failed':haveAnyMore?'loading':"nomore"} action={this.getData}/>
                 </div>
             </div>
         )
