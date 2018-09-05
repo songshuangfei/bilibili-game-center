@@ -59,6 +59,7 @@ class Find extends Component {
 
         if(this.state.data.length!==0){
             console.log(`<Find/>,已经加载缓存数据,不请求数据`)
+            this.setState({haveAnyMore:false})
             return;
         }
         this.getData();
