@@ -22,36 +22,38 @@ const GameItem = (props)=>{
 }
 
 
-class NewGame extends Component {
-    constructor(){
-        super();
-        var cacheData = window.appDataCache.home.newGame
+class HListReq extends Component {
+    constructor(props){
+        super(props);
+        var cacheData = window.appDataCache.find[this.props.tag];
         this.state = {
             data:cacheData?cacheData:[]//缓存数据如果存在，就给给state
         }
         this.getData = this.getData.bind(this);
+        this.url = this.props.url;
+        this.name = this.props.name ;
     }
     getData(){
-        console.log("<NewGame/>,无缓存,请求数据")
+        console.log(`<HList/>tag: ${this.props.tag},无缓存,请求数据`)
         var that =this;
         var CancelToken = axios.CancelToken;
-        axios.get('/api/newgame', {
+        axios.get(that.url, {
             cancelToken: new CancelToken(function executor(c) {
                 // executor 函数接收一个 cancel 函数作为参数
                 that.requestCancel = c;
             })
         })
         .then((res)=>{
-            that.setState({data:res.data.newGame})
+            that.setState({data:res.data[this.props.tag]})
         })
         .catch((error)=>{
-            console.log(error);
+            console.log(error.message);
         });
     }
 
     componentDidMount(){
         if(this.state.data.length!==0){
-            console.log("<NewGame/>,已经加载缓存数据,不请求数据")
+            console.log(`<HList/>tag: ${this.props.tag},已经加载缓存数据,不请求数据`)
             return;
         }
         this.getData();
@@ -59,20 +61,20 @@ class NewGame extends Component {
 
     componentWillUnmount(){
         if(this.requestCancel){//如果没执行过this.getData就不会有this.requestCancel。所以要判断
-            this.requestCancel("<NewGame/>,组件卸载拦截请求数据");
+            this.requestCancel(`<HList/>tag: ${this.props.tag},组件卸载拦截请求数据`);
         }
-        window.appDataCache.home.newGame = this.state.newGame//设置缓存
+        window.appDataCache.find[this.props.tag]=this.state.data;
     }
 
     render(){
         var data = this.state.data;
         return(
-            <div className="new-game">
-                <div className="new-game-title">
-                    <span>新游推荐</span>
+            <div className="h-list">
+                <div className="h-list-title">
+                    <span>{this.name}</span>
                     <a href="/"><img src={rightIcon} alt=""/></a>
                 </div>
-                <div className="new-game-list">
+                <div className="game-list">
                     <HorizontalScroll>
                         {data.map(v=>(
                             <GameItem key={v.gameId} data = {v}/>
@@ -85,4 +87,4 @@ class NewGame extends Component {
     }
 }
 
-export default NewGame;
+export default HListReq;

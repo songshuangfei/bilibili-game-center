@@ -4,17 +4,18 @@ function ScrollMonitor(action){
     this._monitor = function (){
         var clientHeight = document.documentElement.clientHeight||document.body.clientHeight;//可视区域（容器）的高度
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;//可滑动的高度，内容即被容器影藏的高度；滑倒底部时的值最大
-        var offsetHeight = document.getElementById('root').offsetHeight;//内容高度
-        if(scrollTop/(offsetHeight-clientHeight) >= 0.65){//
+        var scrollHeight = document.documentElement.scrollHeight;//内容高度
+        if(scrollTop/(scrollHeight-clientHeight) >= 0.75){//
             console.log("滑倒了底部");
-            window.onscroll = null;//>=0.9是个范围，在这个范围会一直执行seOnonscroll，所以达到这个范围应该马上取消监听
             action();//
+            window.onscroll = null;//>=0.9是个范围，在这个范围会一直执行seOnonscroll，所以达到这个范围应该马上取消监听
         }
     }
 }
 
 ScrollMonitor.prototype.StopMonitor=function(){
     window.onscroll = null;
+
 }
 
 ScrollMonitor.prototype.StartMonitor=function(){

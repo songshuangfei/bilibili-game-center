@@ -28,6 +28,10 @@ import played from "./menu/played.png"
 import setting from "./menu/setting.png"
 import update from "./menu/update.png"
 
+import findRank from "./find-rank.png"
+import findKinds from "./find-kinds.png"
+import findGift from "./find-gift.png"
+
 const sexIcon = {
     male,
     female,
@@ -53,5 +57,8 @@ export {
     rightWhiteIcon,
     sexIcon,
     lvIcon,
-    menuIcon
+    menuIcon,
+    findGift,
+    findKinds,
+    findRank
 }

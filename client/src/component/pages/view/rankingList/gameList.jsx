@@ -25,11 +25,11 @@ class GameList extends Component {
         var cache = window.appDataCache.rank[tab];//获取缓存
         this.state = {
             data:cache?cache.data:[],
-            haveAnyMore:cache?cache.haveAnyMore:true,
+            haveAnyMore:true,
             tab:this.props.tab,
             isRequestFailed:false,
         }
-        this.pageSize = 5;
+        this.pageSize = 6;
         this.getData = this.getData.bind(this);
     }
     
@@ -57,6 +57,7 @@ class GameList extends Component {
                 return{
                     data:[...prevState.data,...newData],
                     haveAnyMore:newData.length<that.pageSize?false:true,//设置是否还有数据的标识
+                    isRequestFailed:false
                 }
             })
             that.scrollMonitor.StartMonitor();
@@ -96,6 +97,7 @@ class GameList extends Component {
             haveAnyMore:this.state.haveAnyMore,
             data:this.state.data
         }
+        window.appDataCache.rank.haveAnyMore = this.state.haveAnyMore;
 
         if(this.requestCancel){//切换tab有可能还有axios，取消请求
             this.requestCancel("<RankingList/>，tab已切换，请求数据被拦截");
@@ -125,7 +127,6 @@ class GameList extends Component {
         }
         this.scrollMonitor.StopMonitor();
         window.appDataCache.rank[this.state.tab]={
-            haveAnyMore:this.state.haveAnyMore,
             data:this.state.data
         }
     }

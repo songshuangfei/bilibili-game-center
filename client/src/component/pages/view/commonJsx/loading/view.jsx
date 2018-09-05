@@ -60,7 +60,6 @@ class LoadingBoard extends Component {
                     this.state.now ==='failed'?
                     <Failed touch={()=>this.touchToRefresh()} />:
                     <NoMore/>
-
                 }
             </div>
         )

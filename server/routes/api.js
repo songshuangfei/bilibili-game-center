@@ -213,5 +213,66 @@ router.get('/my/menu', function(req, res, next) {
   }})
 });
 
+router.get('/find/hot', function(req, res, next) {
+  res.json({'hot':[
+      { img:"/activityimg/3.jpg",activityId:"001"},
+      { img:"/activityimg/1.jpg",activityId:"002"},
+      { img:"/activityimg/2.jpg",activityId:"003"}
+  ]})
+});
+
+router.get('/find/better', function(req, res, next) {
+  res.json({'better':[
+    {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+    {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
+    {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+    {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
+    {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
+    {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+    {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
+  ]})
+});
+
+router.get('/find/paygame', function(req, res, next) {
+  res.json({'paygame':[
+    {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"},
+    {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+    {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+    {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
+    {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+    {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
+    {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
+  ]})
+});
+
+router.get('/find/list', function(req, res, next) {
+  let gameList = [
+    {name:"梦幻模拟战",icon:"/gameicon//mhmnz.png",gameId:"004"},
+    {name:"食梦计划",icon:"/gameicon//smjh.png",gameId:"005"},
+    {name:"站双：帕弥什",icon:"/gameicon//zs.png",gameId:"006"},
+    {name:"辐射：避难所Online",icon:"/gameicon//fs.png",gameId:"007"},
+    {name:"命运-冠位指定",icon:"/gameicon/fgo.png",gameId:"001"},
+    {name:"崩坏3",icon:"/gameicon/bh3.png",gameId:"002"},
+    {name:"碧蓝航线",icon:"/gameicon/blhx.png",gameId:"003"}]
+  res.json({'list':[
+    {name:"1组游戏",data:gameList},
+    {name:"2组游戏",data:gameList},
+    {name:"3组游戏",data:gameList},
+    {name:"4组游戏",data:gameList},
+  ]})
+});
+
+
+router.get('/find/special', function(req, res, next) {
+  res.json({'special':[
+    {specialImg:"/gamecover/4.jpg",specialId:"004"},
+    {specialImg:"/gamecover/3.jpg",specialId:"003"},
+    {specialImg:"/gamecover/1.jpg",specialId:"001"},
+    {specialImg:"/gamecover/2.jpg",specialId:"002"},
+    
+  ]})
+});
+
+
 module.exports = router;
   

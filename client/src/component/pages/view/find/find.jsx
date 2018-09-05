@@ -1,68 +1,92 @@
 import React,{ Component } from "react"
+import FindHot from "./find-hot"
+import {HListReq,HList} from "./h-list"
+import Special from "./special"
+import {LoadingBoard} from "../commonJsx"
+import axios from "axios"
+
 import "./style.less"
-import { Carousel, WingBlank } from 'antd-mobile';
 
 
 class Find extends Component {
+    constructor(){
+        super();
+        var cache = window.appDataCache.find.data;
+        this.state = {
+            data:cache?cache:[],
+            haveAnyMore:true,
+            isRequestFailed:false,
+        }
+        this.getData = this.getData.bind(this)
+    }
+    getData(_,laodingToRetry){
+        console.log(`<Find/>,无缓存,请求数据`)
+        var that =this;
+        var CancelToken = axios.CancelToken;
+        axios.get("/api/find/list", {
+            cancelToken: new CancelToken(function executor(c) {
+                that.requestCancel = c;
+            })
+        })
+        .then((res)=>{
+            that.setState({data:res.data.list})
+        })
+        .catch((error)=>{
+            if(error.response){
+                if(that.state.isRequestFailed){
+                    if(laodingToRetry)
+                        laodingToRetry();
+                    return;
+                }
+                that.setState({isRequestFailed:true})
+            }else{
+                console.log(error.message);
+            }
+        });
+    }
+    componentDidMount(){
+        var st = window.appDataCache.find.st
+        if(st){
+            document.documentElement.scrollTop = document.body.scrollTop = st//设置页面位置
+        }    
+
+        if(this.state.data.length!==0){
+            console.log(`<Find/>,已经加载缓存数据,不请求数据`)
+            return;
+        }
+        this.getData();
+    }
+    componentWillUnmount(){
+        var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        window.appDataCache.find.st = scrollTop;//保存页面位置
+        document.documentElement.scrollTop = document.body.scrollTop = 0;//设置为0，防止切换到其他页面后不在顶端
+
+        if(this.requestCancel){//如果没执行过this.getData就不会有this.requestCancel。所以要判断
+            this.requestCancel(`<Find/>,组件卸载拦截请求数据`);
+        }
+        window.appDataCache.find.data = this.state.data;
+    }
     render(){
+        let data = this.state.data;
+        let isRequestFailed = this.state.isRequestFailed;
         return(
-            <div className="find">Find Page
-            <App/>
+            <div className="find">
+                <FindHot/>
+                <HListReq url="/api/newgame" name="新游预约" tag="newGame"/>{/*url：数据接口，name：标题名，tag：请求到的数据数组名和数据缓存时的名*/}
+                <Special/>
+                <HListReq url="/api/find/better" name="哔哩哔哩 (゜-゜)つロ 干杯~" tag="better"/>
+                <HListReq url="/api/find/paygame" name="付费游戏" tag="paygame"/>
+                {
+                    data.map((v,i)=>(
+                        <HList key={i} data={v.data} name={v.name}/>
+                    ))
+                }
+                <div>
+                    <LoadingBoard msg={isRequestFailed?'failed':"nomore"} action={this.getData}/>
+                </div>
             </div>
         )
     }
-}
-
-
-
-
-
-
-
-class App extends React.Component {
-  state = {
-    data: ['1', '2', '3'],
-    imgHeight: 176,
-  }
-  componentDidMount() {
-    // simulate img loading
-    setTimeout(() => {
-      this.setState({
-        data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-      });
-    }, 100);
-  }
-  render() {
-    return (
-      <WingBlank>
-        <Carousel
-          autoplay={false}
-          infinite
-          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-          afterChange={index => console.log('slide to', index)}
-        >
-          {this.state.data.map(val => (
-            <a
-              key={val}
-              href="http://www.alipay.com"
-              style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
-            >
-              <img
-                src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
-                alt=""
-                style={{ width: '100%', verticalAlign: 'top' }}
-                onLoad={() => {
-                  // fire window resize event to change height
-                  window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: 'auto' });
-                }}
-              />
-            </a>
-          ))}
-        </Carousel>
-      </WingBlank>
-    );
-  }
 }
 
 
