@@ -3,11 +3,7 @@
 ## 简介
 使用react高仿的bilibili游戏中心。
 
-<img src="./doc/home.jpg" width="280px" >
-<img src="./doc/rank.jpg" width="280px" >
-<img src="./doc/find.jpg" width="280px" >
-<img src="./doc/strategy.jpg" width="280px" >
-<img src="./doc/my.jpg" width="280px" >
+<img src="./doc/home.jpg" width="280px" ><img src="./doc/rank.jpg" width="280px" ><img src="./doc/find.jpg" width="280px" ><img src="./doc/strategy.jpg" width="280px" ><img src="./doc/my.jpg" width="280px" >
 
 ## 读前须知
 * `./server`目录是一个使用express构建的简单的后台服务，用于测试前端请求，启动客户端前应先启动这个server
