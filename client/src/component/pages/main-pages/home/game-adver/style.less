@@ -1,0 +1,122 @@
+@import url("../../../commonLess/variable.less");
+@import url("../../../commonLess/animation.less");
+@c-p:0.35;
+.game-adver {
+    width: 100%;
+    padding: 0 @page-side-blank;
+    box-sizing: border-box;
+    .adver-item {
+        width: 100%;
+        background: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: @blue-shadow;
+        margin-top: 1rem;
+        padding-bottom: 0.8rem;
+        position: relative;
+
+        .game-cover {
+            width: 100%;
+            height: auto;
+        }
+        .info {
+            box-sizing: border-box;
+            width: 100%;
+            padding:0 0.5rem;
+            .top {
+                width: 100%;
+                height: 2.4rem;
+                line-height: 2.4rem;
+                font-size: 1.1rem;
+                color:@word-color-primary;
+                // background: yellow;
+                position: relative;
+                .t-right {
+                    width: 4rem;
+                    height: 2rem;
+                    margin-top: 0.2rem;
+                    // background: red;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+
+                    .score {
+                        float: left;
+                        width: 2rem;
+                        height: 2rem;;
+                        font-size: 0.8rem;
+                        color: @word-color-light;
+                        // background: red;
+                        text-align: center;
+                        line-height: 1rem;
+
+                        img {
+                            display: block;
+                            margin: 0.2rem 0.6rem;
+                            width: 0.8rem;
+                            height: 0.8rem;
+                            margin-bottom: 0;
+                        }
+                        
+                    }
+                    .v-line {
+                        width: 1px;
+                        height: 100%;
+                        float: left;
+                        margin-left: -3px;
+                        transform: scale(0.7,0.8);
+                        background: rgb(214, 214, 214);
+                    }
+
+                    .icon {
+                        float: left;
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                }
+                
+            }
+            .bottom {
+                width: 100%;
+                height: 1.2rem;
+                line-height: 1.2rem;
+                font-size: 0.9rem;
+                color: @word-color-light;
+                position: relative;
+                .b-left{
+                    width: 70%;
+                    height: 100%;
+                    white-space:nowrap;
+                    overflow:hidden; 
+                    text-overflow:ellipsis;
+                }
+                span {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    font-size: 0.8rem;
+                    color: @word-color-light;
+                    margin-bottom: -0.4rem;
+                }
+                
+            }
+        }
+        a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            // background: red;
+            position: absolute;
+            top: 0;
+        }
+    }
+
+    .rq-failed {
+        width: 100%;
+        height: 2rem;
+        padding: 0.5rem 0;
+        color: @word-color-light;
+        text-align: center;
+        line-height: 1.4rem; 
+    }
+}

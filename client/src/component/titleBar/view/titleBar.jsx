@@ -8,11 +8,12 @@ import "./style.less"
 var titleLink = {
     masterStation:"http://bilibili.com",//首页返回按钮
     homePage:"/",//首页链接
-    msg:"/outpage",
+    msg:"/msg",
     search:"",
     more:"",
     myDownload:"",
 }
+
 
 const HomeTitle = ()=>{
     return (
@@ -91,6 +92,17 @@ const MyTitle = ()=>{
 }
 
 
+const MsgTitle = ()=>{
+    return (
+        <div className="title-inner home-t">
+            <div className="page-name">我的消息</div>
+            <a className="left-link" href={titleLink.homePage}>
+                <img src={titleIcon.back} alt=""/>
+            </a>
+        </div>
+    )
+}
+
 class TitleBar extends Component {
     render(){
         return(
@@ -101,6 +113,7 @@ class TitleBar extends Component {
                     <Route path="/find" component={FindTitle}/>
                     <Route path="/strategy" component={StrategyTitle}/>
                     <Route path="/my" component={MyTitle}/>
+                    <Route path="/msg" component={MsgTitle}/>
                 </Switch>
             </div>
         )

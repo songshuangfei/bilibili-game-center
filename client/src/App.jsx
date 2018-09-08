@@ -11,7 +11,8 @@ import {
   RankingList,
   Find,
   GameStrategy,
-  My
+  My,
+  MsgPage,
 } from "./component/pages"
 import './App.less';
 
@@ -25,9 +26,16 @@ class App extends Component {
           <Route path="/find" component={Find}/>
           <Route path="/strategy" component={GameStrategy}/>
           <Route path="/my" component={My}/>
+          <Route path="/msg" component={MsgPage}/>
         </Switch>
         <TitleBar />{/*title和nav是fixed定位所以要放下面*/}
-        <NavBar />
+        <Switch>
+          <Route exact path="/" component={NavBar}/>
+          <Route path="/rank" component={NavBar}/>
+          <Route path="/find" component={NavBar}/>
+          <Route path="/strategy" component={NavBar}/>
+          <Route path="/my" component={NavBar}/>
+        </Switch>
       </div>
     );
   }

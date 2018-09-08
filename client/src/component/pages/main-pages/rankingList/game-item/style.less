@@ -1,0 +1,96 @@
+@import url("../../../commonLess/variable.less");
+.rank-item {
+    background:#fff;
+    width: 100%;
+    height: 7rem;
+    display: flex;
+
+    .rank-item-index {
+        height: 7rem;
+        line-height: 7rem;
+        width: 2rem;
+        font-size: 1rem;
+        text-align: center;
+        flex: none;
+    }
+
+    .rank-item-icon {
+        height: 7rem;
+        width: 5.5rem;
+        flex: none;
+        line-height: 7rem;
+        // background: red;
+        img {
+            width: 5rem;
+            height: 5rem;
+            margin: 1rem 0;
+        }
+    }
+
+    .rank-item-info {
+        height: 7rem;
+        position: relative;
+        // background: yellow;
+        flex: 1;
+        .game-name {
+            width: 100%;
+            height: 3rem;
+            line-height: 3.2rem;
+            font-size: 1rem;
+            color: @word-color-primary;
+            overflow: hidden;
+        }
+        .type-size {
+            height: 1rem;
+            line-height: 1rem;
+            width: 100%;
+            // background: green;
+            color: @word-color-light;
+            font-size: 0.8rem;
+            .btn {
+                width: 4.4rem;
+                height: 2rem;
+                line-height: 2rem;
+                margin: -1rem @page-side-blank;
+                background: @theme-color;
+                border-radius: 1rem;
+                box-shadow: 0 2px 8px rgba(71, 187, 255, 0.5);
+                float: right;
+                text-align: center;
+                color:#fff;
+                font-size: 0.9rem;
+            }
+            .btn:active{
+                background: #fff;
+                color: @theme-color;
+            }
+        }
+
+        .score {
+            height: 1.4rem;
+            line-height: 1.4rem;
+            margin-top: 0.2rem;
+            img {
+                width: 0.7rem;
+                height: 0.7rem;
+                margin-right: 1px;
+            }
+            span {
+                color: @theme-color;
+                font-size: 0.8rem;
+                margin-left: 0.5rem;
+            }
+        }
+        .score:after {
+            content: "";
+            display: block;
+            width: 100%;
+            background: @back-ground-gray;
+            height: 2px;;
+            margin-bottom: -2px;
+            position: absolute;
+            bottom: 0;
+        }
+        
+    }
+}

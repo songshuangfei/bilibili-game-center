@@ -1,7 +1,9 @@
-import { Home } from "./view/home/home"
-import { RankingList } from "./view/rankingList/rankingList"
-import { Find } from "./view/find/find"
-import { GameStrategy } from "./view/gameStrategy/gameStrategy"
-import { My } from "./view/my/my"
+import { Home } from "./main-pages/home/home"
+import { RankingList } from "./main-pages/rankingList/rankingList"
+import { Find } from "./main-pages/find/find"
+import { GameStrategy } from "./main-pages/gameStrategy/gameStrategy"
+import { My } from "./main-pages/my/my"
 
-export { Home, RankingList, Find, GameStrategy, My }
+import MsgPage from "../pages/link-pages/msg"
+
+export { Home, RankingList, Find, GameStrategy, My, MsgPage }
