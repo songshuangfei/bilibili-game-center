@@ -9,9 +9,10 @@ var titleLink = {
     masterStation:"http://bilibili.com",//首页返回按钮
     homePage:"/",//首页链接
     msg:"/msg",
-    search:"",
+    search:"/search",
     more:"",
     myDownload:"",
+    prevMainPage:"/",
 }
 
 
@@ -22,12 +23,12 @@ const HomeTitle = ()=>{
             <a className="left-link" href={titleLink.masterStation}>
                 <img src={titleIcon.back} alt=""/>
             </a>
-            <a className="right-link" href={titleLink.search}>
+            <Link className="right-link" to={titleLink.search}>
                 <img src={titleIcon.search} alt=""/>
-            </a>
-            <a className="right-link" href={titleLink.msg}>
+            </Link>
+            <Link className="right-link" to={titleLink.msg}>
                 <img src={titleIcon.msg} alt=""/>
-            </a>
+            </Link>
         </div>
     )
 }
@@ -39,9 +40,9 @@ const RankTitle = ()=>{
             <Link className="left-link" to={titleLink.homePage}>
                 <img src={titleIcon.back} alt=""/>
             </Link>
-            <a className="right-link" href={titleLink.search}>
+            <Link className="right-link" to={titleLink.search}>
                 <img src={titleIcon.search} alt=""/>
-            </a>
+            </Link>
         </div>
     )
 }
@@ -53,9 +54,9 @@ const FindTitle = ()=>{
             <Link className="left-link" to={titleLink.homePage}>
                 <img src={titleIcon.back} alt=""/>
             </Link>
-            <a className="right-link" href={titleLink.search}>
+            <Link className="right-link" to={titleLink.search}>
                 <img src={titleIcon.search} alt=""/>
-            </a>
+            </Link>
         </div>
     )
 }
@@ -67,12 +68,12 @@ const StrategyTitle = ()=>{
             <Link className="left-link" to={titleLink.homePage}>
                 <img src={titleIcon.back} alt=""/>
             </Link>
-            <a className="right-link" href={titleLink.search}>
+            <Link className="right-link" to={titleLink.search}>
                 <img src={titleIcon.search} alt=""/>
-            </a>
-            <a className="right-link" href={titleLink.more}>
+            </Link>
+            <Link className="right-link" to={titleLink.more}>
                 <img src={titleIcon.more} alt=""/>
-            </a>
+            </Link>
         </div>
     )
 }
@@ -84,9 +85,9 @@ const MyTitle = ()=>{
             <Link className="left-link" to={titleLink.homePage}>
                 <img src={titleIcon.back} alt=""/>
             </Link>
-            <a className="right-link" href={titleLink.myDownload}>
+            <Link className="right-link" to={titleLink.myDownload}>
                 <img src={titleIcon.myDownload} alt=""/>
-            </a>
+            </Link>
         </div>
     )
 }
@@ -94,17 +95,70 @@ const MyTitle = ()=>{
 
 const MsgTitle = ()=>{
     return (
-        <div className="title-inner home-t">
+        <div className="title-inner msg-t">
             <div className="page-name">我的消息</div>
-            <a className="left-link" href={titleLink.homePage}>
+            <Link className="left-link" to={titleLink.homePage}>
                 <img src={titleIcon.back} alt=""/>
-            </a>
+            </Link>
         </div>
     )
 }
 
+class SearchTitle extends Component {
+    constructor(){
+        super();
+        this.state = {
+            value:""
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.clear = this.clear.bind(this)
+    }
+
+    handleChange(e){
+        console.log("c")
+        this.setState({
+            value:e.target.value
+        })
+    }
+
+    handleSubmit(e){
+        console.log("sumbit")
+        e.preventDefault()
+        this.setState({
+            value:""
+        })
+    }
+
+    clear(){
+        this.setState({
+            value:""
+        })
+    }
+
+    render(){
+        return(
+            <div className="title-inner search-t">
+                <form className="search-form" onSubmit={this.handleSubmit} ref={this.getForm}>
+                    <input className="search-input" type="text" value={this.state.value} onChange={this.handleChange} placeholder="搜索游戏..."/>
+                    <div className="clear-input">
+                        {this.state.value?<img src={titleIcon.searchClear} onTouchEnd={this.clear} alt="clear" />:"" }
+                    </div>
+                    <input className="search-sum" type="submit" value="" style={{backgroundImage:`url(${titleIcon.search})`}}/>
+                </form>
+                <Link className="left-link" to={titleLink.prevMainPage}>
+                    <img src={titleIcon.back} alt=""/>
+                </Link>
+            </div>
+        )
+    }
+}
+
 class TitleBar extends Component {
     render(){
+    if(window.location.pathname !== "/search"){
+        titleLink.prevMainPage = window.location.pathname;
+    }
         return(
             <div className="title-bar">
                 <Switch>
@@ -114,6 +168,7 @@ class TitleBar extends Component {
                     <Route path="/strategy" component={StrategyTitle}/>
                     <Route path="/my" component={MyTitle}/>
                     <Route path="/msg" component={MsgTitle}/>
+                    <Route path="/search" component={SearchTitle}/>
                 </Switch>
             </div>
         )

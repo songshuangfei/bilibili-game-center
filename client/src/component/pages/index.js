@@ -5,5 +5,6 @@ import { GameStrategy } from "./main-pages/gameStrategy/gameStrategy"
 import { My } from "./main-pages/my/my"
 
 import MsgPage from "../pages/link-pages/msg"
+import SearchPage from "../pages/link-pages/search"
 
-export { Home, RankingList, Find, GameStrategy, My, MsgPage }
+export { Home, RankingList, Find, GameStrategy, My, MsgPage, SearchPage }
