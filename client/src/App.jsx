@@ -14,6 +14,7 @@ import {
   My,
   MsgPage,
   SearchPage,
+  DownloadManager,
 } from "./component/pages"
 import './App.less';
 
@@ -29,6 +30,7 @@ class App extends Component {
           <Route path="/my" component={My}/>
           <Route path="/msg" component={MsgPage}/>
           <Route path="/search" component={SearchPage}/>
+          <Route path="/download" component={DownloadManager}/>
         </Switch>
         <TitleBar />{/*title和nav是fixed定位所以要放下面*/}
         <Switch>

@@ -33,6 +33,7 @@ import findKinds from "./find-kinds.png"
 import findGift from "./find-gift.png"
 
 import nomsgIcon from "./nomsg.png"
+import nodownloadIcon from "./no-download.png"
 
 const sexIcon = {
     male,
@@ -63,5 +64,6 @@ export {
     findGift,
     findKinds,
     findRank,
-    nomsgIcon
+    nomsgIcon,
+    nodownloadIcon
 }
