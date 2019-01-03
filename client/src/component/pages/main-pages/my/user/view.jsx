@@ -14,7 +14,6 @@ class User extends Component {
     }
 
     getData(){
-        console.log("<User/>,无缓存,请求数据")
         var that =this;
         var CancelToken = axios.CancelToken;
         axios.get('/api/my/user', {
@@ -33,7 +32,6 @@ class User extends Component {
 
     componentDidMount(){
         if(this.state.data.back){
-            console.log("<User/>,已经加载缓存数据,不请求数据")
             return;
         }
         this.getData();

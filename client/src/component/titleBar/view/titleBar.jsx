@@ -116,7 +116,6 @@ class SearchTitle extends Component {
     }
 
     handleChange(e){
-        console.log("c")
         this.setState({
             value:e.target.value
         })
@@ -125,9 +124,6 @@ class SearchTitle extends Component {
     handleSubmit(e){
         console.log("sumbit")
         e.preventDefault()
-        this.setState({
-            value:""
-        })
     }
 
     clear(){
@@ -165,6 +161,16 @@ const DownloadTitle = ()=>{
     )
 }
 
+const GameTitle = ()=>{
+    return (
+        <div className="title-inner game-title">
+            <div className="back" ><Link to="/" ><img src={titleIcon.leftWhite} alt=""/></Link></div>
+            <div className="share"><img src={titleIcon.menuSpot} alt=""/></div>
+        </div>
+    )
+}
+
+
 class TitleBar extends Component {
     render(){
     if(window.location.pathname !== "/search"){
@@ -181,6 +187,7 @@ class TitleBar extends Component {
                     <Route path="/msg" component={MsgTitle}/>
                     <Route path="/search" component={SearchTitle}/>
                     <Route path="/download" component={DownloadTitle}/>
+                    <Route path="/game" component={GameTitle}/>
                 </Switch>
             </div>
         )

@@ -24,20 +24,17 @@ const CarlItem = (props)=>{
     )
 }
 
-
 class FullScreenCarl extends Component{
     constructor(){
         super();
-        var cacheData = window.appDataCache.home.carousel
+        var cacheData = window.appDataCache.home.carousel;
         this.state = {
-            data:cacheData?cacheData:[]//缓存数据如果存在，就给给state
+            data: cacheData?cacheData:[]//缓存数据如果存在，就给给state
         }
         this.getData = this.getData.bind(this);
     }
 
-
     getData(){
-        console.log("<Carousel/>,无缓存,请求数据")
         var that =this;
         var CancelToken = axios.CancelToken;
         axios.get('/api/carousel', {
@@ -50,20 +47,21 @@ class FullScreenCarl extends Component{
             that.setState({data:res.data.carousel})
         })
         .catch((error)=>{
-            console.log(error);
+            console.log(error.message);
         });
     }
     
     componentDidMount(){
         if(this.state.data.length!==0){
-            console.log("<Carousel/>,已经加载缓存数据,不请求数据")
+            //已经加载缓存
             return;
         }
         this.getData();
     }
 
     componentWillUnmount(){
-        if(this.requestCancel){//如果没执行过this.getData就不会有this。requestCancel。所以要判断
+        if(this.requestCancel){
+            //组件卸载后但axios回调未执行时，拦截回调
             this.requestCancel("<Carousel>,组件卸载拦截请求数据");
         }
         window.appDataCache.home.carousel = this.state.data//设置缓存

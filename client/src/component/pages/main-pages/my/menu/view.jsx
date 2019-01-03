@@ -25,7 +25,6 @@ class Menu extends Component {
         }
     }
     getData(){
-        console.log("<Menu/>,无缓存,请求数据")
         var that =this;
         var CancelToken = axios.CancelToken;
         axios.get('/api/my/menu', {

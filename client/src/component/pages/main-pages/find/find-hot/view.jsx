@@ -38,7 +38,6 @@ class FindHot extends Component{
 
 
     getData(){
-        console.log("<FindHot/>,无缓存,请求数据")
         var that =this;
         var CancelToken = axios.CancelToken;
         axios.get('/api/find/hot', {
@@ -57,7 +56,6 @@ class FindHot extends Component{
     
     componentDidMount(){
         if(this.state.data.length!==0){
-            console.log("<FindHot/>,已经加载缓存数据,不请求数据")
             return;
         }
         this.getData();

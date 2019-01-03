@@ -1,22 +1,17 @@
-@title-bar-height:4rem;
-@theme-color:#22ade5;
-@word-color-primary:#424242;//主要的文字颜色
-@word-color-light:#959595;//次要文字颜色
+@import url("../../commonLess/variable.less");
 .title-bar {
-    z-index: 99999;
+    z-index: 999;
     width: 100%;
-    height: @title-bar-height;
     position: fixed;
     top: 0;
     left: 0;
-    background: #fff;
-    box-shadow: 0px 1px 2px rgba(128, 128, 128, 0.15);
 
     .title-inner {
         width: 100%;
         height: @title-bar-height;        
         position: relative;
-        // background: red;
+        background: #fff;
+        box-shadow: 0px 1px 2px rgba(128, 128, 128, 0.15);
 
         .page-name {
             text-align: center;
@@ -29,7 +24,6 @@
             position: absolute;
             left: 50%;
             top: 50%;
-            // background: red;//取消注释查看布局
         }
 
         .left-link {
@@ -47,6 +41,35 @@
             width: 2.8rem;
             height: 2.8rem;
         }
+    }
+
+    .game-title {
+        background: transparent;
+        box-shadow: none;
+        .back,.share {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 1rem;
+            margin: 1rem 0.6rem;
+            background: rgba(0,0,0,0.4);
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            img {
+                margin: 20%;
+                width: 60%;
+                height: 60%;
+            }
+        }
+        .back {
+            float: left;
+        }
+        .share {
+            float: right;
+        }
+
     }
 
     .search-t {
@@ -69,19 +92,20 @@
             }
 
             .search-input {
-                width: calc( 100% - 6rem);
+                width: calc( 100% - 5rem);
                 height: 2rem;
                 margin-top: 1.2rem;
                 float: left;
             }
             .clear-input {
                 float: left;
-                width: 2rem;
+                width: 1rem;
                 height: 2rem;
                 line-height: 2rem;
                 margin-top: 1.2rem;
+                text-align: center;
                 img {
-                    width: 1rem;
+                    width: 0.8rem;
                     height: auto;
                 }
             }
