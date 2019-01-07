@@ -1,4 +1,8 @@
 {
+  "rules": {
+    "ordered-imports": false,
+    "no-console": false
+  },
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "linterOptions": {
     "exclude": [
