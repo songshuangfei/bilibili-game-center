@@ -1,4 +1,4 @@
-@import url(../common/css/global.css);
+@import url("../commoncss/global.css");
 .title-bar-out {
     width: 100%;
     height: var(--title-bar-height);
@@ -13,12 +13,12 @@
 
 .title-bar-out .page-name {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--word-color-primary);
-    height: 1.2rem;
-    line-height: 1.2rem;
+    height: 1rem;
+    line-height: 1rem;
     flex: 1;
-    margin-top: 1.6rem;
+    margin-top: 1.7rem;
 }
 
 .title-bar-out .title-link-block {

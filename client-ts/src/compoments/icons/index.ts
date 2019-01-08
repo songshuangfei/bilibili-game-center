@@ -36,6 +36,9 @@ import nomsgIcon from "./nomsg.png"
 import nodownloadIcon from "./no-download.png"
 import playIcon from "./play.png"
 
+import ImgLoadingIcon from "./img-loading.jpg"
+
+
 const sexIcon = {
     female,
     male,
@@ -68,4 +71,5 @@ export {
     nomsgIcon,
     nodownloadIcon,
     playIcon,
+    ImgLoadingIcon
 }

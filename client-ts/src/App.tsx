@@ -24,10 +24,6 @@ function MainPagesWrapper(){
 		<div className="main-pages-wrapper">
 			<Switch>
 				<Route exact={true} path="/" component={Home}/>
-				<Route path="/rank" component={Home}/>
-				<Route path="/find" component={Home}/>
-				<Route path="/strategy" component={Home}/>
-				<Route path="/my" component={Home}/>
 			</Switch>
 			<TitleBar/>
 			<Nav/>
