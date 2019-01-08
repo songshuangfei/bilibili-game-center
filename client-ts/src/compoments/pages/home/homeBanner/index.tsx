@@ -28,10 +28,9 @@ class HomeBanner extends React.Component {
     }
 
     public render(){
-        return <Banner width="100%" height="40vw" items={this.props.items}/>
+        return <Banner width="100%" height="34vw" items={this.props.items}/>
     }
 }
-
 
 export default connect(
     mapStateToProps,

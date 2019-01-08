@@ -13,64 +13,7 @@ class Strategy extends React.Component {
 	public render() {
 		return (
 			<div>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
 				str
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
 			</div>
 		)
 	}
