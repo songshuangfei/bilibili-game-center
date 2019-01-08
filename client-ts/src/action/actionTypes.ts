@@ -1,7 +1,7 @@
 enum actionTypes {
     login,
     logout,
-    getCarousel
+    getHomeBanner,
 }
 
 export default actionTypes;

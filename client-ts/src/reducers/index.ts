@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
-import userLogin from './userLogin'
+import userLogin from './userLogin';
+import homeBanner from './homeBanner';
 
 
 export default combineReducers({
-  userLogin,
+  homeBanner,
+  userLogin
 })

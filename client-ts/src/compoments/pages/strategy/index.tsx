@@ -1,20 +1,18 @@
 import * as React from 'react';
-import HomeBanner from "./homeBanner";
 import pageScroll from "src/compoments/commonFunc/scroll"
 
-class Home extends React.Component {
+class Strategy extends React.Component {
 	public componentWillUnmount(){
-		pageScroll.saveScrollTop("home");
+		pageScroll.saveScrollTop("strategy");
 	}
 
 	public componentDidMount(){
-		pageScroll.setScrollTopToPage("home");
+		pageScroll.setScrollTopToPage("strategy");
 	}
 
 	public render() {
 		return (
 			<div>
-				<HomeBanner/>
 				<li>12</li>
 				<li>12</li>
 				<li>12</li>
@@ -30,6 +28,7 @@ class Home extends React.Component {
 				<li>12</li>
 				<li>12</li>
 				<li>12</li>
+				str
 				<li>12</li>
 				<li>12</li>
 				<li>12</li>
@@ -77,4 +76,4 @@ class Home extends React.Component {
 	}
 }
 
-export default Home;
+export default Strategy;

@@ -7,7 +7,6 @@ import './index.css';
 import './normalize.css';
 import registerServiceWorker from './registerServiceWorker';
 import store from "./store";
-console.log(store)
 ReactDOM.render(
   <Router>
     <Provider store={store}>

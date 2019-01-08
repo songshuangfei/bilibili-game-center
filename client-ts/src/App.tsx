@@ -10,6 +10,10 @@ import TitleBar from "./compoments/titleBar"
 
 
 import Home from "./compoments/pages/home";
+import Rank from "./compoments/pages/rank";
+import Find from "./compoments/pages/find";
+import Strategy from "./compoments/pages/strategy";
+import My from "./compoments/pages/my";
 
 
 
@@ -24,6 +28,10 @@ function MainPagesWrapper(){
 		<div className="main-pages-wrapper">
 			<Switch>
 				<Route exact={true} path="/" component={Home}/>
+				<Route path="/rank" component={Rank}/>
+				<Route path="/find" component={Find}/>
+				<Route path="/strategy" component={Strategy}/>
+				<Route path="/my" component={My}/>
 			</Switch>
 			<TitleBar/>
 			<Nav/>

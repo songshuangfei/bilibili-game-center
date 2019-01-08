@@ -1,4 +1,4 @@
-import {actionTypes} from "../action"
+import actionTypes from "../action/actionTypes"
 const userLogin = (state = {isloged:false, userId: null}, action: any): any => {
     switch (action.type) {
       case actionTypes.login:
