@@ -1,0 +1,35 @@
+@import url(../common/css/global.css);
+.title-bar-out {
+    width: 100%;
+    height: var(--title-bar-height);
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    display: flex;
+    box-shadow: 0px 1px 2px rgba(128, 128, 128, 0.15);
+}
+
+.title-bar-out .page-name {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--word-color-primary);
+    height: 1.2rem;
+    line-height: 1.2rem;
+    flex: 1;
+    margin-top: 1.6rem;
+}
+
+.title-bar-out .title-link-block {
+    display: block;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: 0.8rem 0.2rem;
+}
+
+.title-link-block>img{
+    display: block;
+    width: 2.8rem;
+    height: 2.8rem;
+}

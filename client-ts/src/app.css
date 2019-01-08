@@ -1,0 +1,8 @@
+@import url(./compoments/common/css/global.css);
+.main-pages-wrapper {
+    /* transform: translate(100px,100px) */
+    padding-top: var(--title-bar-height);
+}
+.other-pages-wrapper {
+    
+}

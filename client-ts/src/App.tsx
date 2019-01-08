@@ -1,25 +1,61 @@
 import * as React from 'react';
 import {
-  Route,
-  Switch
+	Route,
+	Switch,
+	Link
 } from 'react-router-dom';
+import "./app.css";
+import Nav from "./compoments/nav"
+import TitleBar from "./compoments/titleBar"
 
-function Home() {
-  return <div>
-    {[1,2,3].map(v=><li key={v}>v</li>)}
-  </div>
+
+import Home from "./compoments/pages/home";
+
+
+
+function Search() {
+	return <div>
+		<Link to="/">hhh</Link>
+	</div>
+}
+// MainPagesWrapper 五个主要页面
+function MainPagesWrapper(){
+	return (
+		<div className="main-pages-wrapper">
+			<Switch>
+				<Route exact={true} path="/" component={Home}/>
+				<Route path="/rank" component={Home}/>
+				<Route path="/find" component={Home}/>
+				<Route path="/strategy" component={Home}/>
+				<Route path="/my" component={Home}/>
+			</Switch>
+			<TitleBar/>
+			<Nav/>
+		</div>
+	)
+}
+
+// OtherPagesWrapper 其他从侧面滑入的页面
+function OtherPagesWrapper(){
+	return (
+		<div className="other-pages-wrapper">
+			<Switch>
+				<Route path="/search" component={Search}/>
+			</Switch>
+		</div>
+	)
 }
 
 class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        <Switch>
-          <Route exact={true} path="/" component={Home}/>
-        </Switch>
-      </div>
-    );
-  }
+	public render() {
+		const pathNow:string = window.location.pathname;
+		const isMainPage:boolean = ['/','/rank','/find','/strategy','/my'].indexOf(pathNow)===-1?false:true; 
+		return (
+			<div className="App">
+				{isMainPage?<MainPagesWrapper/>:<OtherPagesWrapper/>}
+			</div>
+		);
+	}
 }
 
 export default App;
