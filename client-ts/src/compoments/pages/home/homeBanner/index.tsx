@@ -13,7 +13,6 @@ const mapDispatchToProps = (dispatch:any) => ({
 
 class HomeBanner extends React.Component {
     public props: {items:any,sethomeBanner:any};
-
     public componentDidMount(){
         if(this.props.items.length!==0){
             return

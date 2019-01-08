@@ -7,13 +7,17 @@ html{font-size:12px}
 @media screen and (min-width:750px) and (max-width:799px){html{font-size:26.5px}}
 @media screen and (min-width:800px){html{font-size:25px}}
 
+* {
+  -webkit-overflow-scrolling:touch; /*在移动端滚动更流畅*/
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "微软雅黑";
   background: #f5f5f5 !important;
-  -webkit-overflow-scrolling:touch; /*在移动端滚动更流畅*/
 }
+
 
 a, img {
   -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/

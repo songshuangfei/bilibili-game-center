@@ -1,6 +1,7 @@
 import * as React from 'react';
 import HomeBanner from "./homeBanner";
 import pageScroll from "src/compoments/commonFunc/scroll";
+import HotGame from "./hotGame"
 
 class Home extends React.Component {
 	public componentWillUnmount(){
@@ -15,6 +16,7 @@ class Home extends React.Component {
 		return (
 			<div>
 				<HomeBanner/>
+				<HotGame/>
 			</div>
 		)
 	}

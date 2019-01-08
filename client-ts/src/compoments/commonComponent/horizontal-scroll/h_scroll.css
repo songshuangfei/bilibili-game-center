@@ -1,0 +1,22 @@
+.h-scroll-out {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.h-scroll-container {
+    overflow-x: scroll;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+    -webkit-overflow-scrolling:touch; /*在移动端滚动更流畅*/
+    transition-timing-function: ease-in-out;
+}
+
+.h-scroll-container>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+
+

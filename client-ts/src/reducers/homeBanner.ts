@@ -1,6 +1,6 @@
 import actionTypes from "../action/actionTypes"
 const homeBanner = (
-    state = [], action:{type:actionTypes,items:Array<{img:string,link:string}>}): any => {
+    state = [], action:{type:actionTypes,items:Array<{img:string,link:string}>}) => {
     switch (action.type) {
     case actionTypes.getHomeBanner:
         return action.items;

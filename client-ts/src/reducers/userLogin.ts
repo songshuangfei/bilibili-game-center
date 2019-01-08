@@ -1,5 +1,5 @@
 import actionTypes from "../action/actionTypes"
-const userLogin = (state = {isloged:false, userId: null}, action: any): any => {
+const userLogin = (state = {isloged:false, userId: null}, action: {type:actionTypes,userId:number}) => {
     switch (action.type) {
       case actionTypes.login:
         return {
