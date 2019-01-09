@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import {Link} from "react-router-dom"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { ImgLoadingIcon } from "../../icons"
+import "./banner.css"
 
 const Banner = (props:{
     width:string,
@@ -11,10 +12,6 @@ const Banner = (props:{
     return(
         <div style={{
             backgroundColor:"#fff",
-            backgroundImage:`url(${ImgLoadingIcon})`,
-            backgroundPosition:"center",
-            backgroundRepeat:"no-repeat",
-            backgroundSize:"3rem auto",
             height:props.height,
             width:props.width,
         }}>
@@ -28,6 +25,7 @@ const Banner = (props:{
                 {props.items.map(v=>(
                     <div key={v.link}>
                         <img style={{height:props.height}}  src={v.img} alt=""/>
+                        <Link to={v.link} className="banner-link"/>
                     </div>
                 ))}
             </Carousel>

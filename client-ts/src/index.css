@@ -18,13 +18,25 @@ body {
   background: #f5f5f5 !important;
 }
 
-
-a, img {
-  -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
-}
-
 a,button,input,optgroup,select,textarea {
   -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
 }
 
+img {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-pointer-events: none;/*禁用鼠标*/
+  pointer-events: none;
+}
+
+a {
+
+}
+
+a,p,div,span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select:none;  
+  -o-user-select:none;  
+  user-select:none; 
+}
 

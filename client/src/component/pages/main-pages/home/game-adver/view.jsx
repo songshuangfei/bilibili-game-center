@@ -1,6 +1,6 @@
 import React,{ Component } from "react"
 import { starIcon } from "../../../icons"
-import {ScrollMonitor} from "../../../commonFunction"
+import {ScrollMonitor} from "../../../commonFunction/"
 import {LoadingBoard} from "../../../commonJsx"
 
 import axios from 'axios';

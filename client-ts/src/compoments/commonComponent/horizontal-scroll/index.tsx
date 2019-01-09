@@ -1,8 +1,8 @@
 import * as React from 'react';
 import "./h_scroll.css";
 class HorizontalScroll extends React.Component {
+    public props:{backgroundColor:string,children:any};
     public state:any;
-    public props:{style:{background:string},children:any};
     private container:any;// 容器，ref引用
     private content:any;// 内容，ref引用
     private startX:number;// 滑到边界，记录当前手指x坐标为起始位置
@@ -26,7 +26,7 @@ class HorizontalScroll extends React.Component {
         return(
             <div    
                 className="h-scroll-out"
-                style={{background:this.props.style.background}}
+                style={{background:this.props.backgroundColor}}
             >
                 <div 
                     className="h-scroll-container"
