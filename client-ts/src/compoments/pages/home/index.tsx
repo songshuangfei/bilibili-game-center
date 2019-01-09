@@ -23,30 +23,6 @@ class Home extends React.Component {
 				<HotGame/>
 				<LinkTitle title='热门攻略' link="/strategy" backgroundColor="none"/>
 				<HotStrategy/>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
 			</div>
 		)
 	}
