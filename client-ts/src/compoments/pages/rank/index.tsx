@@ -1,5 +1,5 @@
 import * as React from 'react';
-import pageScroll from "src/compoments/commonFunc/scroll"
+import pageScroll from "src/compoments/commonFunc/scroll";
 
 class Rank extends React.Component {
 	public componentWillUnmount(){

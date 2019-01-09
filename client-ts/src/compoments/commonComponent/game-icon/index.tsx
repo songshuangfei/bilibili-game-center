@@ -2,11 +2,12 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import "./game-icon.css";
 
-const GameIcon = (props:{gameIconUrl:string,gameName:string,gameId:string})=> {
+const GameIcon = (props:{gameIconSrc:string,gameName:string,gameId:string})=> {
+    const gameLink = (!props.gameId)?"#":`/game/${props.gameId}`;
     return (
         <div className="game-icon">
-            <Link to={`/game/${props.gameId}`}>
-                <img src={props.gameIconUrl} alt=""/>
+            <Link to={gameLink}>
+                <img src={props.gameIconSrc} alt=""/>
             </Link>
             <div className="game-icon-name">{props.gameName}</div>
         </div>

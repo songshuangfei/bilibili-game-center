@@ -15,7 +15,7 @@ class HomeBanner extends React.Component {
     public props: {items:any,sethomeBanner:any};
     public componentDidMount(){
         if(this.props.items.length!==0){
-            return
+            return;
         }
         console.log("get home banner")
         const clitems:Array<{img:string,link:string}> = [
@@ -23,7 +23,10 @@ class HomeBanner extends React.Component {
 			{img:"http://192.168.1.101:8000/activityimg/2.jpg",link:"1232323"},
 			{img:"http://192.168.1.101:8000/activityimg/2.jpg",link:"12"}
         ];
-        this.props.sethomeBanner(clitems);
+        const that =this;
+        setTimeout(() => {
+            that.props.sethomeBanner(clitems);
+        }, 3000);
     }
 
     public render(){
