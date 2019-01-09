@@ -36,7 +36,7 @@ import nomsgIcon from "./nomsg.png"
 import nodownloadIcon from "./no-download.png"
 import playIcon from "./play.png"
 
-import ImgLoadingIcon from "./img-loading.jpg"
+import ImgLoadingIcon from "./img-loading.png"
 
 
 const sexIcon = {
