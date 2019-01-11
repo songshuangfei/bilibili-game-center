@@ -1,9 +1,6 @@
 import actionTypes from "./actionTypes";
 
-// ui相关action
-
-// ajax请求数据actions
-const setHomeBanner = (items:Array<{img:string,link:string}>) =>({
+const setHomeBanner = (items:Array<{imgSrc:string,link:string}>) =>({
     items,
     type:actionTypes.getHomeBanner,
 });

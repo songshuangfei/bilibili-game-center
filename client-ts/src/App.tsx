@@ -5,8 +5,8 @@ import {
 	Link
 } from 'react-router-dom';
 import "./app.css";
-import Nav from "./compoments/nav"
-import TitleBar from "./compoments/titleBar"
+import Nav from "./compoments/nav";
+import TitleBar from "./compoments/titleBar";
 
 
 import Home from "./compoments/pages/home";

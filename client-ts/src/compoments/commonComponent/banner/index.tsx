@@ -6,7 +6,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./banner.css";
 
 
-const Banner = (props:{width:string, height:string, items:Array<{img:string,link:string}> })=>{
+const Banner = (props:{width:string, height:string, items:Array<{imgSrc:string,link:string}> })=>{
     const content = (
         <Carousel 
             showArrows={false}
@@ -17,7 +17,7 @@ const Banner = (props:{width:string, height:string, items:Array<{img:string,link
         >
             {props.items.map(v=>(
                 <div key={v.link}>
-                    <img style={{height:props.height}}  src={v.img} alt=""/>
+                    <img style={{height:props.height}}  src={v.imgSrc} alt=""/>
                     <Link to={v.link} className="banner-link"/>
                 </div>
             ))}

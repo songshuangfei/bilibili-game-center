@@ -3,7 +3,8 @@ import HomeBanner from "./homeBanner";
 import pageScroll from "src/compoments/commonFunc/scroll";
 import LinkTitle from "src/compoments/commonComponent/link-title"
 import HotGame from "./hotGame";
-import HotStrategy from "./hotStrategy"
+import HotStrategy from "./hotStrategy";
+
 
 class Home extends React.Component {
 	
