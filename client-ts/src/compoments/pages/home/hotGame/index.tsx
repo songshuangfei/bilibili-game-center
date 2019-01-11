@@ -38,7 +38,7 @@ class HotGame extends React.Component {
                         gameName={v.name}
                     />
                 ))} */}
-                {[1,2,3,4,5,6].map(v=><HotGameItem key={v} gameId="" gameIconSrc={ImgLoadingIcon} gameName="bilibili"/>)}
+                {[1,2,3,4,5,6,7,8,9].map(v=><HotGameItem key={v} gameId="" gameIconSrc={ImgLoadingIcon} gameName="bilibili"/>)}
             </HorizontalScroll>
         )
     }
