@@ -1,0 +1,1 @@
+type BannerItem = {imgSrc:string,link:string};
