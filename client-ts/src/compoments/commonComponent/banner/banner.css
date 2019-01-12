@@ -10,3 +10,24 @@
     position: absolute;
     top: 0;
 }
+
+/*修改框架默认样式*/
+
+.carousel .control-dots {
+    text-align: right ;
+    padding: 0 6px;
+    box-sizing: border-box;
+}
+
+.carousel .control-dots .dot {
+    opacity: 1;
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    background: #fff;
+    box-shadow:none;
+}
+
+.carousel .control-dots .dot.selected {
+    background: #f45a8d;
+}

@@ -1,4 +1,7 @@
 @import url("./compoments/commoncss/global.css");
+.App {
+    overflow-x: hidden;
+}
 .main-pages-wrapper {
     padding-top: var(--title-bar-height);
 }
