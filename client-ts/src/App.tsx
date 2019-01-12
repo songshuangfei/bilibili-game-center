@@ -1,13 +1,8 @@
 import * as React from 'react';
-import {
-	Route,
-	Switch,
-	Link
-} from 'react-router-dom';
+import { Route, Switch, } from 'react-router-dom';
 import "./app.css";
 import Nav from "./compoments/nav";
 import TitleBar from "./compoments/titleBar";
-
 
 import Home from "./compoments/pages/home";
 import Rank from "./compoments/pages/rank";
@@ -15,14 +10,8 @@ import Find from "./compoments/pages/find";
 import Strategy from "./compoments/pages/strategy";
 import My from "./compoments/pages/my";
 
+import Search from "./compoments/pages/search";
 
-
-function Search() {
-	return <div>
-		<Link to="/">hhh</Link>
-	</div>
-}
-// MainPagesWrapper 五个主要页面
 function MainPagesWrapper(){
 	return (
 		<div className="main-pages-wrapper">
@@ -39,7 +28,6 @@ function MainPagesWrapper(){
 	)
 }
 
-// OtherPagesWrapper 其他从侧面滑入的页面
 function OtherPagesWrapper(){
 	return (
 		<div className="other-pages-wrapper">
