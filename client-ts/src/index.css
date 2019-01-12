@@ -23,13 +23,9 @@ a,button,input,optgroup,select,textarea {
 }
 
 img {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-pointer-events: none;/*禁用鼠标*/
+  -webkit-touch-callout: none; 
+  -webkit-pointer-events: none;
   pointer-events: none;
-}
-
-a {
-
 }
 
 a,p,div,span {
