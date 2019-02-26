@@ -8,7 +8,7 @@ class HotStrategy extends React.Component {
             <div>
 				<LinkTitle title='热门攻略' link="/strategy" backgroundColor="none"/>
                 <HorizontalScroll backgroundColor="none">
-                    12                
+                    21
                 </HorizontalScroll>
             </div>
             

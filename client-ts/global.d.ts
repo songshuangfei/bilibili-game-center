@@ -1,1 +1,4 @@
-type BannerItem = {imgSrc:string,link:string};
+interface pictureLinkI {
+    imgSrc: string
+    link: string
+}
