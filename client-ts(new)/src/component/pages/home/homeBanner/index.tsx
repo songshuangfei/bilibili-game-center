@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Banner from "@/compoments/commonComponent/banner";
+import Banner from "src/compoments/commonComponent/banner";
 import {setHomeBanner} from "src/action/actions";
 import { connect } from 'react-redux';
 
