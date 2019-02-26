@@ -20,7 +20,7 @@
     "jsx": "preserve",
     "baseUrl": "src",
     "paths": {
-        "@/*": [ "src/*" ],
+      "root/*": [ "./*" ],
     }
   },
   "include": [
