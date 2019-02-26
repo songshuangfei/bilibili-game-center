@@ -19,9 +19,9 @@
     "noEmit": true,
     "jsx": "preserve",
     "baseUrl": "src",
-      "paths": {
-          "@/*": [ "src/*" ],
-      }
+    "paths": {
+        "@/*": [ "src/*" ],
+    }
   },
   "include": [
     "src"
