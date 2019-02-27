@@ -1,85 +1,62 @@
-import * as React from 'react';
+import React,{useState, useEffect} from 'react';
 import "./h_scroll.css";
-class HorizontalScroll extends React.Component {
-    public props:{backgroundColor:string,children:any} = {
-        backgroundColor:"",
-        children:null
-    };
-    public state:any;
-    private container:any;// 容器，ref引用
-    private content:any;// 内容，ref引用
-    private startX:number;// 滑到边界，记录当前手指x坐标为起始位置
-    
-    constructor(props:any){
-        super(props);
-        this.state = {
-            duration:"0s",
-            x:0,
-        };
-        this.container = null;
-        this.content = null;
-        this.startX = NaN;
-        
-        this.touchStart = this.touchStart.bind(this)
-        this.touchMove = this.touchMove.bind(this);
-        this.touchEnd = this.touchEnd.bind(this)
-    }
 
-    public render(){
-        return(
-            <div    
-                className="h-scroll-out"
-                style={{background:this.props.backgroundColor}}
-            >
-                <div 
-                    className="h-scroll-container"
-                    ref={(node)=>{this.container = node}}
-                    onTouchStart={this.touchStart}
-                    onTouchMove={this.touchMove}
-                    onTouchEnd={this.touchEnd}
-                    style={{transform: `translateX(${this.state.x}px)`,transitionDuration:this.state.duration}}
-                >
-                    <ul ref={(node)=>{this.content = node}} >
-                        {this.props.children}
-                    </ul>
-                </div>
-            </div>
-        )
-    }
+let container:any = null,// 容器，ref引用
+    content:any = null,// 内容，ref引用
+    startX:number = NaN;// 滑到边界，记录当前手指x坐标为起始位置
 
-    private touchStart(){
-        this.setState({duration:"0s"})// 清除css变换过渡，防止拖动到边界出错
-        // 不能设置为0，否则setState并不会引起更新，估计是与react更新时对新的state判断造成的。所以我们设置成“0s”
-    }
-    private touchMove(e:any){
-        if( this.container.scrollLeft !== 0 &&
-            this.container.scrollLeft + this.container.offsetWidth !== this.content.offsetWidth){
+
+function HorizontalScroll( props:{backgroundColor:string,children: any}){
+    let [duration,setDuration] = useState("0s"),
+    [x,setX] = useState(0);
+
+    let touchStart = ()=>{
+        setDuration('0s');
+    },
+    touchMove = (e:any)=>{
+        if( container.scrollLeft !== 0 &&
+            container.scrollLeft + container.offsetWidth !== content.offsetWidth){
             return;// 滚动条未滑到两边，不作任何处理
         }
-        if(!this.startX){// 滚动条到了两边，记录当前touch的x为起始位置
-            this.startX = e.touches[0].clientX;
+        if(!startX){// 滚动条到了两边，记录当前touch的x为起始位置
+            startX = e.touches[0].clientX;
             return;
         }
-        let offset = e.touches[0].clientX - this.startX;// 计算手指滑动的位置
+        let offset = e.touches[0].clientX - startX;// 计算手指滑动的位置
 
-        if(this.container.scrollLeft === 0 && offset < 0){
+        if(container.scrollLeft === 0 && offset < 0){
             offset = 0;
         }
 
-        if(this.container.scrollLeft + this.container.offsetWidth === this.content.offsetWidth && offset > 0){
+        if(container.scrollLeft + container.offsetWidth === content.offsetWidth && offset > 0){
             offset = 0
         }
-        
-        this.setState({x:offset*0.1});// 滚动条尽头，移动滚动条容器，限制距离为手指滑动的0.2倍
+        setX(offset*0.1);
+    },
+    touchEnd = ()=>{
+        startX = NaN;
+        setX(0);
+        setDuration("0.2s");
     }
-
-    private touchEnd(){
-        this.startX = NaN;// 清除起始位置，以防下次touchMove出错
-        this.setState({// 滚动条容器位置回弹，回弹过渡为0.4s。
-            duration:"0.2s",
-            x:0,
-        })
-    }
+    return(
+        <div    
+            className="h-scroll-out"
+            style={{background:props.backgroundColor}}
+        >
+            <div 
+                className="h-scroll-container"
+                ref={(node)=>{container = node}}
+                onTouchStart={touchStart}
+                onTouchMove={touchMove}
+                onTouchEnd={touchEnd}
+                style={{transform: `translateX(${x}px)`,transitionDuration:duration}}
+            >
+                <ul ref={(node)=>{content = node}} >
+                    {props.children}
+                </ul>
+            </div>
+        </div>
+    )
 }
 
 export default HorizontalScroll;

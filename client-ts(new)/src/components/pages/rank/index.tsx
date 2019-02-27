@@ -1,22 +1,18 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import pageScroll from "root/components/commonFunc/scroll";
 
-class Rank extends React.Component {
-	public componentWillUnmount(){
-		pageScroll.saveScrollTop("rank");
-	}
-
-	public componentDidMount(){
+const Rank = () => {
+	useEffect(()=>{
 		pageScroll.setScrollTopToPage("rank");
-	}
-
-	public render() {
-		return (
-			<div>
-				rank
-			</div>
-		)
-	}
+		return ()=>{
+			pageScroll.saveScrollTop("rank");
+		}
+	})
+	return (
+		<div>
+			rank
+		</div>
+	)
 }
 
 export default Rank;

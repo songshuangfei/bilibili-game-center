@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 import {Link} from "react-router-dom";
-function Search() {
+const Search = () => {
 	return <div>
 		<Link to="/">hhh</Link>
 		<li>1</li>

@@ -1,10 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import {Link} from "react-router-dom";
 import {ImgLoadingIcon} from "root/components/icons"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./banner.css";
-
 
 const Banner = (props:{width:string, height:string, items:Array<{imgSrc:string,link:string}> })=>{
     const content = (
@@ -12,7 +11,6 @@ const Banner = (props:{width:string, height:string, items:Array<{imgSrc:string,l
             showArrows={false}
             showStatus={false}
             showThumbs={false}
-            autoPlay={true}
             infiniteLoop={true}
         >
             {props.items.map(v=>(

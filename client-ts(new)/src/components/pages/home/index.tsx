@@ -1,28 +1,22 @@
-import * as React from 'react';
+import React,{useEffect} from 'react';
 import HomeBanner from "./homeBanner";
 import pageScroll from "root/components/commonFunc/scroll";
 import HotGame from "./hotGame";
 import HotStrategy from "./hotStrategy";
 
-
-class Home extends React.Component {
-	
-	public componentWillUnmount(){
-		pageScroll.saveScrollTop("home");
-	}
-
-	public componentDidMount(){
+function Home(){
+	useEffect(()=>{
 		pageScroll.setScrollTopToPage("home");
-	}
-
-	public render() {
-		return (
-			<div>
-				<HomeBanner/>
-				<HotGame/>
-				<HotStrategy/>
-			</div>
-		)
-	}
+		return ()=>{
+			pageScroll.saveScrollTop("home");
+		}
+	})
+	return(
+		<div>
+			<HomeBanner/>
+			<HotGame/>
+			<HotStrategy/>
+		</div>
+	)
 }
 export default Home;
