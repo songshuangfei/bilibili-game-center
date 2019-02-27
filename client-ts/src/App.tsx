@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { Route, Switch, } from 'react-router-dom';
 import "./app.css";
-import Nav from "./compoments/nav";
-import TitleBar from "./compoments/titleBar";
+import Nav from "./components/nav";
+import TitleBar from "./components/titleBar";
 
-import Home from "./compoments/pages/home";
-import Rank from "./compoments/pages/rank";
-import Find from "./compoments/pages/find";
-import Strategy from "./compoments/pages/strategy";
-import My from "./compoments/pages/my";
+import Home from "./components/pages/home";
+import Rank from "./components/pages/rank";
+import Find from "./components/pages/find";
+import Strategy from "./components/pages/strategy";
+import My from "./components/pages/my";
 
-import Search from "./compoments/pages/search";
+import Search from "./components/pages/search";
 
 function MainPagesWrapper(){
 	return (
