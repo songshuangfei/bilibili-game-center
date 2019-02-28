@@ -1,0 +1,55 @@
+.home-order-game-item {
+    margin: 0 0.6rem;
+    padding-bottom: 0.5rem;
+}
+
+.home-order-game-item .content{
+    width: 10rem;
+    background:  #fff;
+    box-shadow: var(--blue-shadow);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.home-order-game-item .cover {
+    width: 10rem;
+    height: 7rem;
+    background-size: 3rem auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.home-order-game-item .cover img {
+    width: 10rem;
+    height: 7rem;;
+}
+
+.home-order-game-item .content .game-name {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--word-color-primary);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    box-sizing: border-box;
+    padding: 0.6rem 0.4rem;
+    padding-bottom: 0.2rem;
+}
+
+.home-order-game-item .content .ordered-num {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--word-color-light);
+    box-sizing: border-box;
+    padding: 0 0.4rem;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    box-sizing: border-box;
+}
+.home-order-game-item .order-btn {
+    width: 5.4rem;
+    margin: 0.6rem auto;
+    margin-bottom: 1rem;
+}

@@ -18,6 +18,7 @@
 }
 .main-pages-wrapper {
     padding-top: var(--title-bar-height);
+    padding-bottom: var(--page-bottom-blank)
 }
 .other-pages-wrapper {
     
