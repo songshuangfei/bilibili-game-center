@@ -3,7 +3,8 @@ import HomeBanner from "./homeBanner";
 import pageScroll from "src/components/commonFunc/scroll";
 import HotGame from "./hotGame";
 import HotStrategy from "./hotStrategy";
-import OrderGame from "./order-game"
+import OrderGame from "./orderGame";
+import NewGame from "./newGame";
 
 
 class Home extends React.Component {
@@ -23,6 +24,7 @@ class Home extends React.Component {
 				<HotGame/>
 				<HotStrategy/>
 				<OrderGame/>
+				<NewGame/>
 			</div>
 		)
 	}
