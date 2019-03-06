@@ -5,6 +5,8 @@ import HotGame from "./hotGame";
 import HotStrategy from "./hotStrategy";
 import OrderGame from "./orderGame";
 import NewGame from "./newGame";
+import NewestActivity from "./gameActivity/newestActivity"
+import PreviousActivity from "./gameActivity/previousActivity"
 
 
 class Home extends React.Component {
@@ -23,8 +25,10 @@ class Home extends React.Component {
 				<HomeBanner/>
 				<HotGame/>
 				<HotStrategy/>
+				<NewestActivity/>
 				<OrderGame/>
 				<NewGame/>
+				<PreviousActivity/>
 			</div>
 		)
 	}

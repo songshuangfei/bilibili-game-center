@@ -32,6 +32,7 @@ class NewGame extends React.Component {
                     {
                         newGame.map(v=>(
                             <NewGameItem
+                                key={v.gameId}
                                 gameName={v.name}
                                 gameIconSrc={v.icon}
                                 gameId={v.gameId}
