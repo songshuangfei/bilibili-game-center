@@ -26,7 +26,9 @@ const ActivityItem = (props:{
                 </div>
             </div>
             <div className="game-info">
-                <div className="activity-intro">{props.activityIntro}</div>
+                <div className="activity-intro">
+                    <span>{props.activityIntro}</span>
+                </div>
                 <div className="game-score">
                     <img src={starIcon} alt=""/>
                     <span>{props.gameScore}</span>

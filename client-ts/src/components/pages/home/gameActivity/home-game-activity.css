@@ -63,10 +63,13 @@
 .home-activity-item .activity-intro {
     flex: 1;
     height: 1.2rem;
+    overflow: hidden;
+}
+
+.home-activity-item .activity-intro span {
     color: var(--word-color-light);
     font-size: 0.9rem;
-    overflow: hidden;
-    padding-left: 0.4rem;
+    margin-left: 0.4rem;
 }
 
 .home-activity-item .game-score {
