@@ -16,6 +16,7 @@ class PreviousActivity extends React.Component {
                             gameName="bilibili"
                             gameScore="0"
                             activityIntro="bilibili"
+                            gameId={v.toString()}
                         />
                     ))
                 }

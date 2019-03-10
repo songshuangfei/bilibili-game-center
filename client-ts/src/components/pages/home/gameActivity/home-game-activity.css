@@ -34,6 +34,7 @@
 }
 
 .home-activity-item .game-name img {
+    display: inline-block;
     width: 2rem;
     height: 2rem;
     vertical-align: middle;
@@ -77,11 +78,12 @@
     padding: 0 0.4rem;
     height: 1.2rem;
     text-align: center;
+    line-height: 1.2rem;
 }
 
 .home-activity-item .game-score img {
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 1rem;
+    height: 1rem;
     margin-right: 0.2rem;
     vertical-align: middle;
 }

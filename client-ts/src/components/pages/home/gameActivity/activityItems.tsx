@@ -9,7 +9,8 @@ const ActivityItem = (props:{
     gameIconSrc:string,
     gameName:string,
     activityIntro:string,
-    gameScore:string
+    gameScore:string,
+    gameId:string
 })=>{
     return(
         <div className="home-activity-item">

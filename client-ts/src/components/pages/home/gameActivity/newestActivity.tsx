@@ -11,6 +11,7 @@ class NewestActivity extends React.Component {
                     gameName="崩坏三"
                     gameScore="8.4"
                     activityIntro="空之律者觉醒"
+                    gameId="002"
                 />
             </div>
         )

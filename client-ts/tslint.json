@@ -1,7 +1,8 @@
 {
   "rules": {
     "ordered-imports": false,
-    "no-console": false
+    "no-console": false,
+    "jsx-no-lambda":false
   },
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "linterOptions": {
