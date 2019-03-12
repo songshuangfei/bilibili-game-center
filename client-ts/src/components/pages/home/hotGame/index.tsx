@@ -18,18 +18,18 @@ const HotGameItem = (props:{gameName:string,gameIconSrc:string,gameId:string})=>
 class HotGame extends React.Component {
     public render(){
         const hotGame = [
-            {name:"命运-冠位指定",icon:"//192.168.1.101:8000/gameicon/fgo.png",gameId:"001"},
-            {name:"崩坏3",icon:"//192.168.1.101:8000/gameicon/bh3.png",gameId:"002"},
-            {name:"碧蓝航线",icon:"//192.168.1.101:8000/gameicon/blhx.png",gameId:"003"},
-            {name:"梦幻模拟战",icon:"//192.168.1.101:8000/gameicon//mhmnz.png",gameId:"004"},
-            {name:"食梦计划",icon:"//192.168.1.101:8000/gameicon//smjh.png",gameId:"005"},
-            {name:"站双：帕弥什",icon:"//192.168.1.101:8000/gameicon//zs.png",gameId:"006"},
-            {name:"辐射：避难所Online",icon:"//192.168.1.101:8000/gameicon//fs.png",gameId:"007"},
-            {name:"梦幻模拟战",icon:"//192.168.1.101:8000/gameicon//mhmnz.png",gameId:"008"},
-            {name:"梦幻模拟战",icon:"//192.168.1.101:8000/gameicon//mhmnz.png",gameId:"009"},
+            {name:"命运-冠位指定",icon:"//file.suafe.cn/blgc/gameicon/fgo.png",gameId:"001"},
+            {name:"崩坏3",icon:"//file.suafe.cn/blgc/gameicon/bh3.png",gameId:"002"},
+            {name:"碧蓝航线",icon:"//file.suafe.cn/blgc/gameicon/blhx.png",gameId:"003"},
+            {name:"梦幻模拟战",icon:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"004"},
+            {name:"食梦计划",icon:"//file.suafe.cn/blgc/gameicon//smjh.png",gameId:"005"},
+            {name:"站双：帕弥什",icon:"//file.suafe.cn/blgc/gameicon//zs.png",gameId:"006"},
+            {name:"辐射：避难所Online",icon:"//file.suafe.cn/blgc/gameicon//fs.png",gameId:"007"},
+            {name:"梦幻模拟战",icon:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"008"},
+            {name:"梦幻模拟战",icon:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"009"},
         ]
         return(
-            <div>
+            <div className="home-hot-game">
 				<LinkTitle title='精品推荐' link="/hotgame" backgroundColor="#fff"/>
                 <HorizontalScroll backgroundColor="#fff">
                     {hotGame.map( (v) => (

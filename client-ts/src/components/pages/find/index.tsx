@@ -1,5 +1,8 @@
 import * as React from 'react';
-import pageScroll from "src/components/commonFunc/scroll"
+import pageScroll from "src/components/commonFunc/scroll";
+import FindBanner from "./findBanner";
+import FindType from "./findType";
+import OrderNewGame from "./ordrNewGame"
 
 class Find extends React.Component {
 	public componentWillUnmount(){
@@ -13,7 +16,9 @@ class Find extends React.Component {
 	public render() {
 		return (
 			<div>
-				find
+				<FindBanner/>
+				<FindType/>
+				<OrderNewGame/>
 			</div>
 		)
 	}
