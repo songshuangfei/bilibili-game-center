@@ -1,21 +1,26 @@
 import * as React from 'react';
 import pageScroll from "src/components/commonFunc/scroll";
+import GameList from "./game-list";
 import "./rank.css"
 
 class Rank extends React.Component {
-	public state={
+	public state = {
 		tabNow:"hot",
 		tagLeft:"12.5%",
 	}
+	
 	private tabs=['hot','expect','good','new']
 	
 	public tabTouch(i:number){
+		if(this.state.tabNow === this.tabs[i]){
+			console.log(122)
+            return;
+        }
 		const left = 25*i+12.5 +"%";
 		this.setState({
 			tabNow:this.tabs[i],
 			tagLeft:left,
 		});
-		
 	}
 
 	public componentWillUnmount(){
@@ -28,9 +33,10 @@ class Rank extends React.Component {
 
 	public render() {
 		const tabNow = this.state.tabNow;
-		const tabindex = this.tabs.indexOf(tabNow);
+		console.log(window.location.hash)
 		return (
 			<div>
+				<GameList listType={tabNow}/>
 				<div className="rank-type-tabs">
                     <div className={`tab ${tabNow===this.tabs[0]?"tab-active":''}`}  onClick={()=>{this.tabTouch(0)}}>畅销榜</div>
                     <div className={`tab ${tabNow===this.tabs[1]?"tab-active":''}`} onClick={()=>{this.tabTouch(1)}}>期待榜</div>
@@ -38,25 +44,6 @@ class Rank extends React.Component {
                     <div className={`tab ${tabNow===this.tabs[3]?"tab-active":''}`} onClick={()=>{this.tabTouch(3)}}>新游榜</div>
                     <div className="mark" style={{left:this.state.tagLeft}}/>
                 </div>
-				<div className="rank-game-lists">
-					<div className="lists-container" style={{transform:`translateX(-${25*tabindex}%)`}}>
-						<div className="rank-tab-page">
-							<div className="list-content">1
-								<div style={{width:"100px",height:"700px",}}>2</div>2
-							</div>
-						</div>
-						<div className="rank-tab-page">
-							<div className="list-content">1</div>
-						</div>
-						<div className="rank-tab-page">
-							<div className="list-content">1</div>
-						</div>
-						<div className="rank-tab-page">
-							<div className="list-content">1</div>
-						</div>
-					</div>
-				</div>
-				
 			</div>
 		)
 	}
