@@ -3,7 +3,7 @@
     --title-bar-height: 4rem;
     --page-top-blank: 4rem;
     --nav-bar-height: 4.4rem;
-    --page-bottom-blank: 5.4rem;
+    --page-bottom-blank: 4.4rem;
     --page-side-blank: 0.8rem;
 
     /*颜色*/
@@ -18,7 +18,7 @@
 }
 .main-pages-wrapper {
     padding-top: var(--title-bar-height);
-    padding-bottom: var(--page-bottom-blank)
+    padding-bottom: var(--nav-bar-height)
 }
 .other-pages-wrapper {
     

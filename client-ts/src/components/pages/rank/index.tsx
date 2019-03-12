@@ -28,6 +28,7 @@ class Rank extends React.Component {
 
 	public render() {
 		const tabNow = this.state.tabNow;
+		const tabindex = this.tabs.indexOf(tabNow);
 		return (
 			<div>
 				<div className="rank-type-tabs">
@@ -37,7 +38,25 @@ class Rank extends React.Component {
                     <div className={`tab ${tabNow===this.tabs[3]?"tab-active":''}`} onClick={()=>{this.tabTouch(3)}}>新游榜</div>
                     <div className="mark" style={{left:this.state.tagLeft}}/>
                 </div>
-				{this.state.tabNow}
+				<div className="rank-game-lists">
+					<div className="lists-container" style={{transform:`translateX(-${25*tabindex}%)`}}>
+						<div className="rank-tab-page">
+							<div className="list-content">1
+								<div style={{width:"100px",height:"700px",}}>2</div>2
+							</div>
+						</div>
+						<div className="rank-tab-page">
+							<div className="list-content">1</div>
+						</div>
+						<div className="rank-tab-page">
+							<div className="list-content">1</div>
+						</div>
+						<div className="rank-tab-page">
+							<div className="list-content">1</div>
+						</div>
+					</div>
+				</div>
+				
 			</div>
 		)
 	}

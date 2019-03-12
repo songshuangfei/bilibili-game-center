@@ -31,3 +31,24 @@
 .rank-type-tabs .tab-active {
     color: var(--theme-color);
 }
+
+.rank-game-lists {
+    width: 100%;
+    height: calc(100vh - 2.8rem - var(--title-bar-height) - var(--nav-bar-height));
+    overflow-x: hidden;
+}
+
+.rank-game-lists .lists-container {
+    width: 400%;
+    height: 100%;
+    display: inline-flex;
+    transition-duration: 0.2s;
+}
+
+.rank-game-lists .rank-tab-page {
+    width: 25%;
+    height: 100%;
+    background: yellow;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
