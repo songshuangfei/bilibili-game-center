@@ -6,8 +6,8 @@ class NewestActivity extends React.Component {
         return(
             <div>
                 <ActivityItems 
-                    coverSrc="http://file.suafe.cn/blgc/gamenews/2.png"
-                    gameIconSrc="http://file.suafe.cn/blgc/gameicon/bh3.png"
+                    coverSrc="//file.suafe.cn/blgc/gamenews/2.png"
+                    gameIconSrc="//file.suafe.cn/blgc/gameicon/bh3.png"
                     gameName="崩坏三"
                     gameScore="8.4"
                     activityIntro="空之律者觉醒"
