@@ -25,10 +25,10 @@ const OrderGameItem = (props:{coverImgSrc:string,orderedNum:number,gameName:stri
 class OrdrGame extends React.Component {
     public render(){
         const games:Array<{coverSrc:string,gameId:number,gameName:string,orderedNum:number}> =[
-            {coverSrc:"http://file.suafe.cn/blgc/gamecover/4.jpg",gameId:1,gameName:"第五人格",orderedNum:8987},
-            {coverSrc:"http://file.suafe.cn/blgc/gamecover/3.jpg",gameId:2,gameName:"Fate grand order",orderedNum:228223},
-            {coverSrc:"http://file.suafe.cn/blgc/gamecover/1.jpg",gameId:3,gameName:"第五人格1爱神的箭噶法国",orderedNum:2347},
-            {coverSrc:"http://file.suafe.cn/blgc/gamecover/2.jpg",gameId:4,gameName:"第五人格2",orderedNum:8987}
+            {coverSrc:"//file.suafe.cn/blgc/gamecover/4.jpg",gameId:1,gameName:"第五人格",orderedNum:8987},
+            {coverSrc:"//file.suafe.cn/blgc/gamecover/3.jpg",gameId:2,gameName:"Fate grand order",orderedNum:228223},
+            {coverSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",gameId:3,gameName:"第五人格1爱神的箭噶法国",orderedNum:2347},
+            {coverSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",gameId:4,gameName:"第五人格2",orderedNum:8987}
         ]
         return (
             <div>
