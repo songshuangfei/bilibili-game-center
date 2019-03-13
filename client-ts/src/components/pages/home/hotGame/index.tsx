@@ -4,7 +4,6 @@ import GameIcon from "src/components/commonComponent/game-icon";
 import BlueBtn from "src/components/commonComponent/blue-btn";
 import LinkTitle from "src/components/commonComponent/link-title";
 import "./home-hot-game.css"
-// import {ImgLoadingIcon} from "src/components/icons";
 
 const HotGameItem = (props:{gameName:string,gameIconSrc:string,gameId:string})=>{
     return(

@@ -43,6 +43,7 @@ class HotStrategy extends React.Component {
             {coverSrc:"//file.suafe.cn/blgc/videocover/3.jpg",look:12,good:20,summary:"【角色测评】爱就爱房价很贵的计划，嘎达",gameName:"崩坏三",strategyId:3},
             {coverSrc:"//file.suafe.cn/blgc/videocover/4.jpg",look:120,good:20,summary:"【角色测评】爱就爱房价很贵的计划，嘎达",gameName:"崩坏三",strategyId:4},
             {coverSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"【角色测评】爱就爱房价很贵的计划，嘎达",gameName:"崩坏三",strategyId:5},
+            {coverSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"【角色测评】爱就爱房价很贵的计划，嘎达",gameName:"崩坏三",strategyId:6},
         ]
         return(
             <div>

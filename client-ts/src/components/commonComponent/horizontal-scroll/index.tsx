@@ -1,5 +1,6 @@
 import * as React from 'react';
 import "./h_scroll.css";
+
 class HorizontalScroll extends React.Component {
     public props:{backgroundColor:string,children:any};
     public state:any;
@@ -44,6 +45,8 @@ class HorizontalScroll extends React.Component {
         )
     }
 
+
+
     private touchStart(){
         this.setState({duration:"0s"})// 清除css变换过渡，防止拖动到边界出错
         // 不能设置为0，否则setState并不会引起更新，估计是与react更新时对新的state判断造成的。所以我们设置成“0s”
@@ -63,7 +66,7 @@ class HorizontalScroll extends React.Component {
             offset = 0;
         }
 
-        if(this.container.scrollLeft + this.container.offsetWidth === this.content.offsetWidth && offset > 0){
+        if((this.container.scrollLeft + this.container.clientWidth) === this.content.clientWidth && offset > 0){
             offset = 0
         }
         

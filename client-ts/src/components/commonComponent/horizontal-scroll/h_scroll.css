@@ -4,6 +4,7 @@
 }
 
 .h-scroll-container {
+    width: 100%;
     overflow-x: scroll;
     padding-bottom: 20px;
     margin-bottom: -20px;

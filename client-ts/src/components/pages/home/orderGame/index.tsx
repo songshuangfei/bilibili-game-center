@@ -28,7 +28,8 @@ class OrdrGame extends React.Component {
             {coverSrc:"//file.suafe.cn/blgc/gamecover/4.jpg",gameId:1,gameName:"第五人格",orderedNum:8987},
             {coverSrc:"//file.suafe.cn/blgc/gamecover/3.jpg",gameId:2,gameName:"Fate grand order",orderedNum:228223},
             {coverSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",gameId:3,gameName:"第五人格1爱神的箭噶法国",orderedNum:2347},
-            {coverSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",gameId:4,gameName:"第五人格2",orderedNum:8987}
+            {coverSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",gameId:4,gameName:"第五人格2",orderedNum:8987},
+            {coverSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",gameId:5,gameName:"第五人格2",orderedNum:89287},
         ]
         return (
             <div>
