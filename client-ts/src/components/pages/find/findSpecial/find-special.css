@@ -1,0 +1,29 @@
+.find-specials {
+    margin-top: 1rem;
+}
+
+.find-specials .special-item {
+    margin: 0 0.6rem;
+}
+
+.find-specials .special-item .cover {
+    width: 10rem;
+    height: 5rem;
+    overflow: hidden;
+    border-radius: 6px;
+    position: relative;
+}
+
+.find-specials .special-item .cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.find-specials .special-item .cover a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

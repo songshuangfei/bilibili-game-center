@@ -2,7 +2,8 @@ import * as React from 'react';
 import pageScroll from "src/components/commonFunc/scroll";
 import FindBanner from "./findBanner";
 import FindType from "./findType";
-import OrderNewGame from "./ordrNewGame"
+import OrderNewGame from "./ordrNewGame";
+import FindSpecials from "./findSpecial";
 
 class Find extends React.Component {
 	public componentWillUnmount(){
@@ -19,6 +20,7 @@ class Find extends React.Component {
 				<FindBanner/>
 				<FindType/>
 				<OrderNewGame/>
+				<FindSpecials/>
 			</div>
 		)
 	}
