@@ -1,5 +1,6 @@
 .my-user-board {
-    box-shadow: var(--blue-shadow)
+    box-shadow: var(--blue-shadow);
+    background: #fff;
 }
 
 .my-user-board .cover {
