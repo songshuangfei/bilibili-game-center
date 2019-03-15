@@ -1,0 +1,29 @@
+.strategy-hot-game{
+    margin-top: 0.6rem;
+}
+
+.strategy-hot-game .game-item {
+    margin: 0 0.6rem;
+}
+
+.strategy-hot-game .game-item .cover {
+    width: 10rem;
+    height: 5rem;
+    overflow: hidden;
+    border-radius: 6px;
+    position: relative;
+}
+
+.strategy-hot-game .game-item .cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.strategy-hot-game .game-item .cover a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

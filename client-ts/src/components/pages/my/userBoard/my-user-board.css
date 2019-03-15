@@ -1,0 +1,72 @@
+.my-user-board {
+    box-shadow: var(--blue-shadow)
+}
+
+.my-user-board .cover {
+    width: 100%;
+    height: 32vw;
+    position: relative;
+}
+
+.my-user-board .cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.my-user-board .cover .bottom-linear-gradient {
+    width: 100%;
+    height: 3rem;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(transparent,rgba(0,0,0,0.6))
+}
+
+.my-user-board .user-info {
+    width: 100%;
+    height: 6rem;
+    position: absolute;
+    bottom: -3rem;
+    display: flex;
+}
+
+.my-user-board  .head-pic {
+    width: 8rem;
+    height: 6rem;
+}
+
+.my-user-board  .head-pic img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 3rem;
+    margin: 0 1rem;
+}
+
+.my-user-board .info {
+    height: 6rem;
+    background: red;
+    flex: 1;
+}
+
+.my-user-board .follow {
+    margin-top: 3rem;
+    width: 100%;
+    height: 4rem;;
+    display: flex;
+}
+
+.my-user-board .following {
+    flex: 1;
+    height: 4rem;
+}
+
+.my-user-board .follower {
+    flex: 1;
+    height: 4rem;
+}
+
+.my-user-board .follow .v-line {
+    width: 1px;
+    height: 3rem;
+    margin-top: 0.5rem;
+    background-color: #e6e6e6;
+}

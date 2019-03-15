@@ -1,5 +1,6 @@
 import * as React from 'react';
-import pageScroll from "src/components/commonFunc/scroll"
+import pageScroll from "src/components/commonFunc/scroll";
+import StrategyHotGame from "./strategy-hot-game";
 
 class Strategy extends React.Component {
 	public componentWillUnmount(){
@@ -13,7 +14,7 @@ class Strategy extends React.Component {
 	public render() {
 		return (
 			<div>
-				str
+				<StrategyHotGame/>
 			</div>
 		)
 	}

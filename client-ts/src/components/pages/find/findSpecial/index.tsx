@@ -18,9 +18,8 @@ class FindSpecials extends React.Component {
     public render(){
 
         const specials = [
-            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",specialId:"001"},
-            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",specialId:"002"},
-            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/3.jpg",specialId:"003"},
+            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/3.jpg",specialId:"001"},
+            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",specialId:"003"},
             {coverImgSrc:"//file.suafe.cn/blgc/gamecover/4.jpg",specialId:"004"},
             {coverImgSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",specialId:"005"},
             {coverImgSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",specialId:"006"},
