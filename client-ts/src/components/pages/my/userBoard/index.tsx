@@ -5,29 +5,43 @@ import "./my-user-board.css"
 
 class UserBoard extends React.Component {
     public render(){
+        const userData = {
+            coverSrc:"//file.suafe.cn/blgc/userback/default.jpg",
+            follower:"21",
+            following:"56",
+            goodNum:"1423",
+            headImgSrc:"//file.suafe.cn/blgc/userhead/2.jpg",
+            lv:5,
+            sex:"female",
+            uid:"2537832",
+            userName:"町玖",
+        }
+
+        const sexi = userData.sex==="female"?sexIcon.female:sexIcon.male;
+        
         return(
             <div className="my-user-board">
                 <div className="cover">
-                    <img className="cover-img" src={"//file.suafe.cn/blgc/userback/default.jpg"} alt=""/>
+                    <img className="cover-img" src={userData.coverSrc} alt=""/>
                     <div className="bottom-linear-gradient"/>
                     <div className="user-info">
                         <div className="head-pic">
-                            <img src={"//file.suafe.cn/blgc/userhead/2.jpg"} alt=""/>
+                            <img src={userData.headImgSrc} alt=""/>
                         </div>
                         <div className="info">
                             <div className="info-top">
-                                <span className="user-name">{"町玖"}</span>
-                                <img className="user-sex" src={sexIcon.female} alt=""/>
-                                <img className="user-lv" src={lvIcon[4]} alt=""/>
-                                <Link to={`/user/${"001"}`} className="user-detailed-btn">
+                                <span className="user-name">{userData.userName}</span>
+                                <img className="user-sex" src={sexi} alt=""/>
+                                <img className="user-lv" src={lvIcon[userData.lv-1]} alt=""/>
+                                <Link to={`/user/${userData.uid}`} className="user-detailed-btn">
                                     <img  src={rightWhiteIcon} alt=""/>
                                 </Link>
                             </div>
                             <div className="info-bottom">
                                 <img className="uid-icon" src={UidIcon} alt=""/>
-                                <span className="uid">{"4325120"}</span>
+                                <span className="uid">{userData.uid}</span>
                                 <img className="good-num-icon" src={YellowGood} alt=""/>
-                                <span className="good-num">{"120"}</span>
+                                <span className="good-num">{userData.goodNum}</span>
                             </div>
                             
                         </div>
@@ -35,11 +49,13 @@ class UserBoard extends React.Component {
                 </div>
                 <div className="follow">
                     <div className="following">
-                        <span className="title">关注</span><span className="num">{55}</span>
+                        <span className="title">关注</span><span className="num">{userData.following}</span>
+                        <Link to={`/userfollowing/${userData.uid}`}/>
                     </div>
                     <div className="v-line"/>
                     <div className="follower">
-                        <span className="title">粉丝</span><span className="num">{20}</span>
+                        <span className="title">粉丝</span><span className="num">{userData.follower}</span>
+                        <Link to={`/userfollower/${userData.uid}`}/>
                     </div>
                 </div>
             </div>
