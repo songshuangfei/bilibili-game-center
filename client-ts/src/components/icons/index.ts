@@ -36,7 +36,10 @@ import nomsgIcon from "./nomsg.png"
 import nodownloadIcon from "./no-download.png"
 import playIcon from "./play.png"
 
-import ImgLoadingIcon from "./img-loading.png"
+import ImgLoadingIcon from "./img-loading.png";
+
+import YellowGood from "./good-yellow.png";
+import UidIcon from "./uid.png"
 
 
 const sexIcon = {
@@ -45,7 +48,12 @@ const sexIcon = {
 }
 
 const lvIcon = [
-    lv1,lv2,lv3,lv4,lv5,lv6
+    lv1,
+    lv2,
+    lv3,
+    lv4,
+    lv5,
+    lv6
 ]
 
 const menuIcon = {
@@ -71,5 +79,7 @@ export {
     nomsgIcon,
     nodownloadIcon,
     playIcon,
-    ImgLoadingIcon
+    ImgLoadingIcon,
+    UidIcon,
+    YellowGood,
 }
