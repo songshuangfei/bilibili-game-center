@@ -1,6 +1,7 @@
 import * as React from 'react';
 import pageScroll from "src/components/commonFunc/scroll";
-import UserBoard from "./userBoard"
+import UserBoard from "./userBoard";
+import Menu from "./menu"
 
 class My extends React.Component {
 	public componentWillUnmount(){
@@ -15,6 +16,7 @@ class My extends React.Component {
 		return (
 			<div>
 				<UserBoard/>
+				<Menu/>
 			</div>
 		)
 	}
