@@ -35,11 +35,21 @@
     height: 6rem;
 }
 
-.my-user-board  .head-pic img {
+.my-user-board  .head-pic>div {
     width: 6rem;
     height: 6rem;
     border-radius: 3rem;
     margin: 0 1rem;
+    background-size: 4rem 4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.my-user-board  .head-pic img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 3rem;
 }
 
 .my-user-board .info {
