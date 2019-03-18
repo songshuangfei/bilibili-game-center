@@ -7,7 +7,7 @@ class HotComments extends React.Component {
         return(
             <div className="find-hot-comment">
                 <LinkTitle title="热门评论" link="/hotcomment" backgroundColor="none"/>
-                23
+                kjdjkfhsjk
             </div>
         )
     }
