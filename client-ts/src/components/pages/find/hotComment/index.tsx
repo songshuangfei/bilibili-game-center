@@ -1,7 +1,7 @@
 import * as React from "react";
 import LinkTitle from "src/components/commonComponent/link-title";
 import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
-
+import "./find-hot-comment.css"
 
 class HotComments extends React.Component {
     public render(){
