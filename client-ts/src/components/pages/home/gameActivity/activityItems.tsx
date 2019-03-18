@@ -2,6 +2,7 @@ import * as React from 'react';
 import BlueBtn from "src/components/commonComponent/blue-btn";
 import {starIcon} from "src/components/icons";
 import {ImgLoadingIcon} from "src/components/icons";
+import {Link} from "react-router-dom";
 import "./home-game-activity.css";
 
 const ActivityItem = (props:{
@@ -16,6 +17,7 @@ const ActivityItem = (props:{
         <div className="home-activity-item">
             <div className="activity-cover" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
                 <img src={props.coverSrc} alt=""/>
+                <Link to={`/game/${props.gameId}`}/>
             </div>
             <div className="game-download">
                 <div className="game-name">

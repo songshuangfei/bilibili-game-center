@@ -2,8 +2,9 @@ import * as React from 'react';
 import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
 import LinkTitle from "src/components/commonComponent/link-title";
 import {ImgLoadingIcon} from "src/components/icons";
-import BlueBtn from "src/components/commonComponent/blue-btn"
-import "./home-order-game.css"
+import BlueBtn from "src/components/commonComponent/blue-btn";
+import {Link} from "react-router-dom";
+import "./home-order-game.css";
 const OrderGameItem = (props:{coverImgSrc:string,orderedNum:number,gameName:string,gameId:number})=>{
     return(
         <li className="home-order-game-item">
@@ -12,6 +13,7 @@ const OrderGameItem = (props:{coverImgSrc:string,orderedNum:number,gameName:stri
                     backgroundImage:`url(${ImgLoadingIcon})`,
                 }}>
                     <img src={props.coverImgSrc} alt=""/>
+                    <Link to={`/game/${props.gameId}`}/>
                 </div>
                 <div className="game-name">{props.gameName}</div>
                 <div className="ordered-num">{props.orderedNum}人已预约</div>

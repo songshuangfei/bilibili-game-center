@@ -13,7 +13,7 @@
 
 .home-order-game-item .cover {
     width: 10rem;
-    height: 5.6rem;
+    height: 5.8rem;
     background-size: 3rem auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,6 +23,15 @@
 .home-order-game-item .cover img {
     width: 10rem;
     height: 5.8rem;;
+}
+
+.home-order-game-item .cover a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .home-order-game-item .content .game-name {

@@ -92,14 +92,14 @@
 
 .my-menu  .game-update .update-num {
     display: inline-block;
-    width: 1.4rem;
-    height: 1.4rem;
-    line-height: 1.4rem;
-    margin-right: 0.6rem;
-    border-radius: 0.7rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    margin-right: 0.8rem;
+    border-radius: 0.6rem;
     color: #fff;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     background-color: red;
 }
 

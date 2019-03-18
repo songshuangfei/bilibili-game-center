@@ -13,11 +13,21 @@
     background-repeat: no-repeat;
     background-size: 4.2rem 4.2rem;
     background-position: center;
+    position: relative;
 }
 
 .home-activity-item .activity-cover img {
     width: 100%;
     height: 100%;
+}
+
+.home-activity-item .activity-cover a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .home-activity-item .game-download {
