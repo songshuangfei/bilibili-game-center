@@ -18,7 +18,7 @@ const GameUpdate = (props:{num:number}) => {
                     :<div className="update-num">{props.num}</div>
                 }
             </div>
-           <Link to="update"/>
+           <Link to="/update"/>
        </div>
    )
 }
@@ -38,7 +38,7 @@ const Setting = (props:{name:string,iconSrc:string,link:string}) => {
    )
 }
 
-const MenuItem = (props:{name:string,iconSrc:string,link:string,num:number}) => {
+const MenuItem = (props:{name:string,iconSrc:string,link:string,num:number,haveLine:boolean}) => {
      return(
         <div className="menu-item">
             <div className="left">
@@ -49,7 +49,7 @@ const MenuItem = (props:{name:string,iconSrc:string,link:string,num:number}) => 
                 <span className="btn-data">{props.num}</span>
                 <img className="right-icon" src={rightIcon} alt=""/>
             </div>
-            <div className="bottom-line"/>
+            {props.haveLine?<div className="bottom-line"/>:""}
             <Link to={props.link}/>
         </div>
     )
@@ -57,17 +57,27 @@ const MenuItem = (props:{name:string,iconSrc:string,link:string,num:number}) => 
 
 class MyMenu extends React.Component {
     public render(){
+        const datanum = {
+            bigGift:0,
+            bookedGame:8,
+            boughtGame:0,
+            myCollect:0,
+            myEvaluate:0,
+            myGift:0,
+            playedGame:1,
+            updateNum:2,
+        }
         return(
             <div className="my-menu">
-                <GameUpdate num={2}/>
+                <GameUpdate num={datanum.updateNum}/>
                 <div className="options">
-                    <MenuItem name="已玩游戏" iconSrc={menuIcon.played} link="/playedgame" num={1}/>
-                    <MenuItem name="已购游戏" iconSrc={menuIcon.bought} link="/boughtgame" num={0}/>
-                    <MenuItem name="预约游戏" iconSrc={menuIcon.booked} link="/bookedgame" num={7}/>
-                    <MenuItem name="我的评价" iconSrc={menuIcon.evaluate} link="/myevaluate" num={0}/>
-                    <MenuItem name="我的收藏" iconSrc={menuIcon.collect} link="/mycollect" num={10}/>
-                    <MenuItem name="我的礼包" iconSrc={menuIcon.gift} link="/mygift" num={1}/>
-                    <MenuItem name="大会员礼包" iconSrc={menuIcon.bigGift} link="/biggift" num={0}/>
+                    <MenuItem name="已玩游戏" iconSrc={menuIcon.played} link="/playedgame" num={datanum.playedGame} haveLine={true}/>
+                    <MenuItem name="已购游戏" iconSrc={menuIcon.bought} link="/boughtgame" num={datanum.boughtGame} haveLine={true}/>
+                    <MenuItem name="预约游戏" iconSrc={menuIcon.booked} link="/bookedgame" num={datanum.bookedGame} haveLine={true}/>
+                    <MenuItem name="我的评价" iconSrc={menuIcon.evaluate} link="/myevaluate" num={datanum.myEvaluate} haveLine={true}/>
+                    <MenuItem name="我的收藏" iconSrc={menuIcon.collect} link="/mycollect" num={datanum.myCollect} haveLine={true}/>
+                    <MenuItem name="我的礼包" iconSrc={menuIcon.gift} link="/mygift" num={datanum.myGift} haveLine={true}/>
+                    <MenuItem name="大会员礼包" iconSrc={menuIcon.bigGift} link="/biggift" num={datanum.bigGift} haveLine={false}/>
                 </div>
                 <div className="setting">
                     <Setting name="设置" iconSrc={menuIcon.setting} link="/setting"/>
