@@ -6,7 +6,6 @@ import OrderNewGame from "./ordrNewGame";
 import FindSpecials from "./findSpecial";
 import BiliGames from "./biliGame";
 import PayGames from "./payGame";
-import HotComments from "./hotComment";
 
 class Find extends React.Component {
 	public componentWillUnmount(){
@@ -26,7 +25,6 @@ class Find extends React.Component {
 				<FindSpecials/>
 				<BiliGames/>
 				<PayGames/>
-				<HotComments/>
 			</div>
 		)
 	}
