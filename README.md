@@ -47,7 +47,11 @@ src
 
                     
 
-### 构建
+## 构建
 * ` ./client ` 目录 ` npm run build `
 * 拷贝 ` ./client/build/ ` 下的所有内容到 ` ./server/public `
 * ` ./server ` 目录下 ` npm start `
+
+## 重构记录
+* 2019-01-03 package.json移除antd-mobile，移除less，增加react-redux、react
+* 2019-01-03 更改目录解构

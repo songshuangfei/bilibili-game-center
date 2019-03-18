@@ -1,0 +1,9 @@
+.find-pay-game {
+    margin-top: 1.2rem;
+    box-shadow: var(--blue-shadow);
+}
+
+.find-pay-game-item {
+    margin: 0 0.8rem;
+    padding-bottom: 0.2rem;
+}

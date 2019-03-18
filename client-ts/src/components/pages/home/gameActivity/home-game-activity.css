@@ -1,0 +1,94 @@
+.home-activity-item {
+    width: calc(100% - var(--page-side-blank)*2);
+    background: #fff;
+    margin: 1rem var(--page-side-blank);
+    box-shadow: var(--blue-shadow);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.home-activity-item .activity-cover {
+    width: 100%;
+    height: calc(38vw - var(--page-side-blank)*0.76);
+    background-repeat: no-repeat;
+    background-size: 4.2rem 4.2rem;
+    background-position: center;
+}
+
+.home-activity-item .activity-cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.home-activity-item .game-download {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0.6rem;
+}
+
+.home-activity-item .game-name {
+    flex: 1;
+    height: 2rem;
+    overflow: hidden;
+}
+
+.home-activity-item .game-name img {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 0.6rem;
+}
+
+.home-activity-item .game-name span {
+    font-size: 0.9rem;
+    color: var(--word-color-primary);
+    vertical-align: middle;
+}
+
+.home-activity-item .d-btn {
+    width: 5rem;
+    height: 2rem;
+    padding: 0 0.4rem
+}
+
+.home-activity-item .game-info {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0.4rem;
+    padding-bottom: 0.8rem;
+}
+
+.home-activity-item .activity-intro {
+    flex: 1;
+    height: 1.2rem;
+    overflow: hidden;
+}
+
+.home-activity-item .activity-intro span {
+    color: var(--word-color-light);
+    font-size: 0.9rem;
+    margin-left: 0.4rem;
+}
+
+.home-activity-item .game-score {
+    width: 5rem;
+    padding: 0 0.4rem;
+    height: 1.2rem;
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+.home-activity-item .game-score img {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.2rem;
+    vertical-align: middle;
+}
+
+.home-activity-item .game-score span {
+    font-size: 0.7rem;
+    color: var(--word-color-light);
+}
