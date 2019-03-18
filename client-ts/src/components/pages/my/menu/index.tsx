@@ -15,7 +15,7 @@ const GameUpdate = (props:{num:number}) => {
                 {
                     props.num===0?
                     <span>无可用更新</span>
-                    :props.num
+                    :<div className="update-num">{props.num}</div>
                 }
             </div>
            <Link to="update"/>
@@ -59,7 +59,7 @@ class MyMenu extends React.Component {
     public render(){
         return(
             <div className="my-menu">
-                <GameUpdate num={0}/>
+                <GameUpdate num={2}/>
                 <div className="options">
                     <MenuItem name="已玩游戏" iconSrc={menuIcon.played} link="/playedgame" num={1}/>
                     <MenuItem name="已购游戏" iconSrc={menuIcon.bought} link="/boughtgame" num={0}/>

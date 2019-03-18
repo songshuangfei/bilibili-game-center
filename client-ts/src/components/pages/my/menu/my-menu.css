@@ -89,4 +89,17 @@
     box-shadow: var(--blue-shadow);
 }
 
+.my-menu  .game-update .update-num {
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    margin-right: 0.6rem;
+    border-radius: 0.7rem;
+    color: #fff;
+    text-align: center;
+    font-size: 0.8rem;
+    background-color: red;
+}
+
 
