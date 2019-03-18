@@ -82,6 +82,7 @@
     height: 1px;
     position: absolute;
     left: 1.4rem;
+    bottom: 0;
 }
 
 .my-menu  .game-update {
