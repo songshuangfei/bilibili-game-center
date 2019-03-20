@@ -6,15 +6,20 @@
 }
 
 .link-title .title-name {
+    height: 1.2rem;
     line-height: 1.2rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--word-color-primary);
     flex: 1;
 }
 
-.link-title a, .link-title img {
+.link-title a {
     display: block;
     width: 1.2rem;
     height: 1.2rem;
 }
 
+.link-title img {
+    width: 1.2rem;
+    height: 1.2rem;
+}

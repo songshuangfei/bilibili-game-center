@@ -2,7 +2,8 @@
   "rules": {
     "ordered-imports": false,
     "no-console": false,
-    "jsx-no-lambda":false
+    "jsx-no-lambda":false,
+    "object-literal-sort-keys": false
   },
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "linterOptions": {

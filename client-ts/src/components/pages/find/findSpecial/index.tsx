@@ -2,12 +2,13 @@ import * as React from 'react';
 import LinkTitle from "src/components/commonComponent/link-title";
 import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
 import {Link} from "react-router-dom";
+import {ImgLoadingIcon} from "src/components/icons";
 import "./find-special.css";
 
 const SpecialItem = (props:{coverImgSrc:string,specialId:string})=>{
     return(
         <li className="special-item">
-            <div className="cover">
+            <div className="cover" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
                 <img src={props.coverImgSrc} alt=""/>
                 <Link to={`/special/${props.specialId}`} />
             </div>

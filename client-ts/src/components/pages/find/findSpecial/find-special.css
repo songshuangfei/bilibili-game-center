@@ -12,6 +12,10 @@
     overflow: hidden;
     border-radius: 6px;
     position: relative;
+    background-color: #fff;
+    background-size: 4rem 4rem;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .find-specials .special-item .cover img {

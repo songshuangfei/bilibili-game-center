@@ -44,18 +44,20 @@
 }
 
 .home-hot-strategy-item .strategy-summary {
+    padding-top: 0.4rem;
    width: 10rem;
 }
 .home-hot-strategy-item .strategy-summary .summary {
-   width: 10rem;
-   height: 3rem;
-   box-sizing: border-box;
-   padding: 0.4rem;
-   line-height: 1.1rem;
-   overflow: hidden;
-   word-break: break-all;
-   color: var(--word-color-primary);
-   font-size: 0.9rem;
+    margin: 0;
+    width: 10rem;
+    height: 2.4rem;
+    box-sizing: border-box;
+    padding:0 0.4rem;
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+    overflow: hidden;
+    word-break: break-all;
+    color: var(--word-color-primary);
 }
 
 .home-hot-strategy-item .strategy-summary .game-name {

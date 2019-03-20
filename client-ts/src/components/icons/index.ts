@@ -3,6 +3,7 @@ import rightWhiteIcon from "./right-white.png"
 import eyeIcon from "./eye.png"
 import goodIcon from "./good.png"
 import starIcon from "./star.png"
+import starGrayIcon from "./star-gray.png"
 import loadingIcon from "./loading.png"
 import fiveStarIcon from "./score-star"
 import goodGrayIcon from "./good-gray.png"
@@ -40,6 +41,7 @@ import ImgLoadingIcon from "./img-loading.png";
 
 import YellowGood from "./good-yellow.png";
 import UidIcon from "./uid.png"
+import CommaIcon from "./comma.png"
 
 
 const sexIcon = {
@@ -65,6 +67,7 @@ export {
     eyeIcon,
     goodIcon,
     starIcon, 
+    starGrayIcon,
     loadingIcon,
     fiveStarIcon,
     goodGrayIcon,
@@ -82,4 +85,5 @@ export {
     ImgLoadingIcon,
     UidIcon,
     YellowGood,
+    CommaIcon,
 }

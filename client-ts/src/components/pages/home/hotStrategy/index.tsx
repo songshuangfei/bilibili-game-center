@@ -26,7 +26,7 @@ const HotStrategyItem = (props:{
                     </div>
                 </div>
                 <div className="strategy-summary">
-                    <div className="summary">{props.summary}</div>
+                    <p className="summary">{props.summary}</p>
                     <div className="game-name">{props.gameName}</div>
                 </div>
                 <Link to={`/strategy/${props.strategyId}`}/>
@@ -38,12 +38,12 @@ const HotStrategyItem = (props:{
 class HotStrategy extends React.Component {
     public render(){
         const games:Array<{coverSrc:string,look:number, good:number,summary:string,gameName:string,strategyId:number}> =[
-            {coverSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:1032,good:20,summary:"【角色测评】爱就爱房价很贵的计划，嘎达",gameName:"崩坏三",strategyId:1},
-            {coverSrc:"//file.suafe.cn/blgc/videocover/2.jpg",look:10,good:20,summary:"【角色测评】爱就爱房价很贵的计划，嘎达",gameName:"崩坏三",strategyId:2},
-            {coverSrc:"//file.suafe.cn/blgc/videocover/3.jpg",look:12,good:20,summary:"【角色测评】爱就爱房价很贵的计划，嘎达",gameName:"崩坏三",strategyId:3},
-            {coverSrc:"//file.suafe.cn/blgc/videocover/4.jpg",look:120,good:20,summary:"【角色测评】爱就爱房价很贵的计划，嘎达",gameName:"崩坏三",strategyId:4},
-            {coverSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"【角色测评】爱就爱房价很贵的计划，嘎达",gameName:"崩坏三",strategyId:5},
-            {coverSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"【角色测评】爱就爱房价很贵的计划，嘎达",gameName:"崩坏三",strategyId:6},
+            {coverSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:1032,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:1},
+            {coverSrc:"//file.suafe.cn/blgc/videocover/2.jpg",look:10,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:2},
+            {coverSrc:"//file.suafe.cn/blgc/videocover/3.jpg",look:12,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:3},
+            {coverSrc:"//file.suafe.cn/blgc/videocover/4.jpg",look:120,good:20,summary:"这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:4},
+            {coverSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:5},
+            {coverSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"这是一条攻略的摘要。。。",gameName:"崩坏三",strategyId:6},
         ]
         return(
             <div>
