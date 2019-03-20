@@ -1,0 +1,13 @@
+.find-game-class {
+    margin-top: 2rem;
+}
+
+.find-game-class .game-class-item {
+    margin-top: 1rem;
+    box-shadow: var(--blue-shadow);
+}
+
+.find-game-class .game-class-item .game-class-game-item{
+    margin: 0 0.8rem;
+    padding-bottom: 0.2rem;
+}
