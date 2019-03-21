@@ -1,0 +1,20 @@
+.strategy-list {
+    margin-top: 0.6rem;
+}
+
+.strategy-list .strategy-list-title {
+    width: 100%;
+    padding: 1rem var(--page-side-blank);
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    color: var(--word-color-primary);
+}
+
+.strategy-list .strategy-item {
+    width: calc(100% - var(--page-side-blank)*2);
+    margin: 0 var(--page-side-blank);
+    margin-top: 1rem;
+    border-radius: 6px;
+    box-shadow: var(--blue-shadow);
+    background: #fff;
+}

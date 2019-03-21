@@ -1,7 +1,7 @@
 import * as React from "react";
 import LinkTitle from "src/components/commonComponent/link-title";
 import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
-import {CommaIcon, starIcon, starGrayIcon} from "src/components/icons";
+import {CommaIcon, starIcon, starGrayIcon, ImgLoadingIcon} from "src/components/icons";
 import {Link} from "react-router-dom"
 import "./find-hot-comment.css";
 
@@ -43,7 +43,7 @@ const CommentItem = (props:{
                 <div className="comment-info">
                     <div className="user-game">
                         <div className="user-score">
-                            <div className="head"><img src={props.commenterHeadSrc} alt=""/></div>
+                            <div className="head" style={{backgroundImage:`url(${ImgLoadingIcon})`}}><img src={props.commenterHeadSrc} alt=""/></div>
                             <div className="user-name"><span>{props.commenterName}</span></div>
                             <div className="score-star">
                                 <Stars num={props.commentScore}/>
@@ -53,7 +53,7 @@ const CommentItem = (props:{
                             <div><span>评价：{props.gameName}</span></div>
                         </div>
                     </div>
-                    <div className="game-icon">
+                    <div className="game-icon" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
                         <img src={props.gameIconSrc} alt=""/>
                     </div>
                 </div>
