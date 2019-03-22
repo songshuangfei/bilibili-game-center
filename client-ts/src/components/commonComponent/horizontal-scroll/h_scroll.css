@@ -1,9 +1,9 @@
-.h-scroll-out {
+.common-h-scroll-out {
     width: 100%;
     overflow: hidden;
 }
 
-.h-scroll-container {
+.common-h-scroll-container {
     width: 100%;
     overflow-x: scroll;
     padding-bottom: 20px;
@@ -12,7 +12,7 @@
     transition-timing-function: ease-in-out;
 }
 
-.h-scroll-container>ul {
+.common-h-scroll-container>ul {
     list-style: none;
     margin: 0;
     padding: 0;

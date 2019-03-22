@@ -5,7 +5,7 @@ import "./blue-btn.css";
 const BlueBtn = (props:{width:string,height:string,name:string,link:string}) => {
     return(
         <div 
-            className="blue-btn" 
+            className="common-blue-btn" 
             style={{
                 height:props.height,
                 lineHeight:props.height,

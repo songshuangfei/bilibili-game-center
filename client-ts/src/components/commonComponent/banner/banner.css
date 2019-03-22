@@ -1,9 +1,9 @@
-.banner-out {
+.common-banner-out {
     background-size: 4.2rem auto;
     background-position: center;
     background-repeat: no-repeat;
 }
-.banner-link {
+.common-banner-link {
     display: block;
     width: 100%;
     height: 100%;

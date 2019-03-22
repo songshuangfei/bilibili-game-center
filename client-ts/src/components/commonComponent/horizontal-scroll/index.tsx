@@ -26,11 +26,11 @@ class HorizontalScroll extends React.Component {
     public render(){
         return(
             <div    
-                className="h-scroll-out"
+                className="common-h-scroll-out"
                 style={{background:this.props.backgroundColor}}
             >
                 <div 
-                    className="h-scroll-container"
+                    className="common-h-scroll-container"
                     ref={(node)=>{this.container = node}}
                     onTouchStart={this.touchStart}
                     onTouchMove={this.touchMove}

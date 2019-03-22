@@ -5,8 +5,8 @@ import "./link-title.css";
 
 const LinkTitle = (props:{title:string,link:string,backgroundColor:string}) => {
     return(
-        <div className="link-title" style={{backgroundColor:props.backgroundColor}}>
-            <div className="title-name">
+        <div className="common-link-title" style={{backgroundColor:props.backgroundColor}}>
+            <div className="common-title-name">
                 {props.title}
             </div>
             <Link to={props.link}>

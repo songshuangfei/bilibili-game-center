@@ -1,12 +1,12 @@
-.game-icon {
+.common-game-icon {
     width: 4.2rem;
 }
-.game-icon a {
+.common-game-icon a {
     width: 4.2rem;
     display: block;
 }
 
-.game-icon img {
+.common-game-icon img {
     display: block;
     width: 4.2rem;
     height: 4.2rem;
@@ -15,7 +15,7 @@
     margin: 0;
 }
 
-.game-icon-name {
+.common-game-icon-name {
     width: 90%;
     margin: 0.8rem 5%;
     font-size: 0.8rem;

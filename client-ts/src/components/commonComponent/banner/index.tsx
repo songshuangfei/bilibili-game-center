@@ -18,13 +18,13 @@ const Banner = (props:{width:string, height:string, items:Array<{imgSrc:string,l
             {props.items.map(v=>(
                 <div key={v.link}>
                     <img style={{height:props.height}}  src={v.imgSrc} alt=""/>
-                    <Link to={v.link} className="banner-link"/>
+                    <Link to={v.link} className="common-banner-link"/>
                 </div>
             ))}
         </Carousel>
     );
     return(
-        <div className="banner-out" style={{
+        <div className="common-banner-out" style={{
             backgroundColor:"#fff",
             backgroundImage:`url(${ImgLoadingIcon})`,
             height:props.height,

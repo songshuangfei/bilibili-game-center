@@ -1,11 +1,11 @@
-.link-title{
+.common-link-title{
     width: 100%;
     padding: 1rem var(--page-side-blank);
     box-sizing: border-box;
     display: flex;
 }
 
-.link-title .title-name {
+.common-link-title .common-title-name {
     height: 1.2rem;
     line-height: 1.2rem;
     font-size: 0.9rem;
@@ -13,13 +13,13 @@
     flex: 1;
 }
 
-.link-title a {
+.common-link-title a {
     display: block;
     width: 1.2rem;
     height: 1.2rem;
 }
 
-.link-title img {
+.common-link-title img {
     width: 1.2rem;
     height: 1.2rem;
 }

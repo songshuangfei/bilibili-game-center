@@ -1,16 +1,16 @@
-.blue-btn {
+.common-blue-btn {
     background: var(--theme-color);
     box-shadow: 0 2px 8px rgba(71, 187, 255, 0.5);
     border-radius: 1.1rem;
     color: #fff;
 }
 
-.blue-btn:active {
+.common-blue-btn:active {
     color: var(--theme-color);
     background-color: #fff;
 }
 
-.blue-btn a {
+.common-blue-btn a {
     display: block;
     width: 100%;
     height: 100%;
