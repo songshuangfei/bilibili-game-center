@@ -134,14 +134,14 @@
 .strategy-list .strategy-info span {
     font-size: 0.7rem;
     color: var(--word-color-light);
-    vertical-align: middle;
 }
 
 .strategy-list .strategy-info .strategy-hot-info img {
-    vertical-align: middle;
     width: 0.8rem;
     height: 0.8rem;
     margin-right: 0.2rem;
+    vertical-align: middle;
+    
 }
 
 .strategy-list .strategy-info .strategy-hot-info .good-icon {
