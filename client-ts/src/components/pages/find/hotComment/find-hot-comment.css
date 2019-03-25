@@ -39,6 +39,10 @@
     overflow: hidden;
 }
 
+.find-hot-comment .abstract span {
+    vertical-align: text-bottom;
+}
+
 .find-hot-comment .div-line {
     width: 17.2rem;
     margin-left: 1.4rem;

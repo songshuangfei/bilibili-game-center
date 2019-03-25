@@ -37,7 +37,9 @@ const CommentItem = (props:{
                     <img src={CommaIcon} alt=""/>
                 </div>
                 <p className="abstract">
-                    {props.commentAbstract}
+                    <span>
+                        {props.commentAbstract}
+                    </span>
                 </p>
                 <div className="div-line"/>
                 <div className="comment-info">
@@ -67,7 +69,7 @@ class HotComments extends React.Component {
         const data =[
             {
                 gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",
-                commentAbstract:"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要",
+                commentAbstract:"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要这是一条评论的摘要，这是一条评论的摘要",
                 commentId:"001",
                 commentScore:5,
                 commenterHeadSrc:"//file.suafe.cn/blgc/userhead/1.jpg",

@@ -26,7 +26,11 @@ const HotStrategyItem = (props:{
                     </div>
                 </div>
                 <div className="strategy-summary">
-                    <p className="summary">{props.summary}</p>
+                    <p className="summary">
+                        <span>
+                            {props.summary}
+                        </span>
+                    </p>
                     <div className="game-name">{props.gameName}</div>
                 </div>
                 <Link to={`/strategy/${props.strategyId}`}/>

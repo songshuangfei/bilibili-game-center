@@ -28,7 +28,11 @@ const StrategyItem = (props:{
             <div className="strategy-cover" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
                 <img src={props.coverSrc} alt=""/>
             </div>
-            <p className="strategy-abstract">{props.abstract}</p>
+            <p className="strategy-abstract">
+                <span>
+                    {props.abstract}
+                </span>
+            </p>
             <div className="strategy-info">
                 <div className="game-and-type">
                     <span>{props.strategyType}·{props.gameName}</span>

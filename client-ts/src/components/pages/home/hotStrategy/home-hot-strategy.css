@@ -45,8 +45,9 @@
 
 .home-hot-strategy-item .strategy-summary {
     padding-top: 0.4rem;
-   width: 10rem;
+    width: 10rem;
 }
+
 .home-hot-strategy-item .strategy-summary .summary {
     margin: 0;
     width: 10rem;
@@ -58,6 +59,10 @@
     overflow: hidden;
     word-break: break-all;
     color: var(--word-color-primary);
+}
+
+.home-hot-strategy-item .strategy-summary .summary span {
+    vertical-align: text-bottom;
 }
 
 .home-hot-strategy-item .strategy-summary .game-name {

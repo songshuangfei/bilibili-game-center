@@ -30,6 +30,7 @@
     padding:0 0.8rem;
 }
 
+
 .strategy-list .publisher-info {
     display: flex;
     height: 1.5rem;
@@ -94,10 +95,15 @@
 .strategy-list .strategy-abstract {
     margin: 0.8rem 0;
     font-size: 0.9rem;
-    height: 2rem;
-    line-height: 1rem;
+    height: 2.4rem;
+    line-height: 1.2rem;
     overflow: hidden;
     color:var(--word-color-light);
+}
+
+
+.strategy-list .strategy-abstract span {
+    vertical-align: text-bottom;
 }
 
 .strategy-list .strategy-info {
