@@ -33,10 +33,27 @@
     padding-right: 1rem;
 }
 
-.my-menu  .game-update .right span {
+.my-menu  .game-update .right>span {
     font-size: 0.7rem;
     color: var(--word-color-light);
     vertical-align: middle;
+}
+
+.my-menu  .game-update .update-num {
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    margin-right: 0.8rem;
+    border-radius: 0.6rem;
+    text-align: center;
+    background-color: red;
+}
+
+.my-menu  .game-update .update-num>span{
+    vertical-align: middle;
+    font-size: 0.7rem;
+    color: #fff;
 }
 
 .my-menu .menu-item .icon,
@@ -90,17 +107,6 @@
     box-shadow: var(--blue-shadow);
 }
 
-.my-menu  .game-update .update-num {
-    display: inline-block;
-    width: 1.2rem;
-    height: 1.2rem;
-    line-height: 1.2rem;
-    margin-right: 0.8rem;
-    border-radius: 0.6rem;
-    color: #fff;
-    text-align: center;
-    font-size: 0.7rem;
-    background-color: red;
-}
+
 
 
