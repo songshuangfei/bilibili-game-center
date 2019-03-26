@@ -1,0 +1,146 @@
+.common-strategy-item {
+    width: calc(100% - var(--page-side-blank)*2);
+    margin: 0 var(--page-side-blank);
+    margin-top: 1rem;
+    border-radius: 6px;
+    box-shadow: var(--blue-shadow);
+    background: #fff;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.common-strategy-item .publisher-info,
+.common-strategy-item .strategy-title,
+.common-strategy-item .strategy-abstract,
+.common-strategy-item .strategy-info {
+    width: 100%;
+    box-sizing: border-box;
+    padding:0 0.8rem;
+}
+
+
+.common-strategy-item .publisher-info {
+    display: flex;
+    height: 1.5rem;
+}
+
+.common-strategy-item .publisher-info .head-pic {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1.5rem 1.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.common-strategy-item .publisher-info .publisher-name {
+    flex: 1;
+    height: 1.5rem;;
+    line-height: 1.5rem;
+}
+
+.common-strategy-item .publisher-info .head-pic img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.75rem;;
+}
+
+.common-strategy-item .publisher-info .publisher-name span {
+    font-size: 0.7rem;
+    margin-left: 0.5rem;
+    color: var(--word-color-light);
+    vertical-align: middle;
+}
+
+.common-strategy-item .strategy-title {
+    height: 1.4rem;
+    margin: 0.8rem 0;
+    line-height: 1.4rem;
+    overflow: hidden;
+    font-size: 1rem;
+    color: var(--word-color-primary);
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.common-strategy-item .strategy-title span {
+    vertical-align: middle;
+}
+
+.common-strategy-item .strategy-cover {
+    width: 100%;
+    height: calc(30vw - var(--page-side-blank)*0.6);
+    background-size: 4rem 4rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.common-strategy-item .strategy-cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.common-strategy-item .strategy-abstract {
+    margin: 0.8rem 0;
+    font-size: 0.9rem;
+    height: 2.4rem;
+    line-height: 1.2rem;
+    overflow: hidden;
+    color:var(--word-color-light);
+}
+
+
+.common-strategy-item .strategy-abstract span {
+    vertical-align: text-bottom;
+}
+
+.common-strategy-item .strategy-info {
+    display: flex;
+    height: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.common-strategy-item .strategy-info .game-and-type {
+    flex: 1;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.7rem;
+    color: var(--word-color-light);
+}
+
+
+.common-strategy-item .strategy-info .strategy-hot-info {
+    width: 8rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    text-align: right;
+}
+
+.common-strategy-item .strategy-info span {
+    font-size: 0.7rem;
+    color: var(--word-color-light);
+}
+
+.common-strategy-item .strategy-info .strategy-hot-info img {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 0.2rem;
+    vertical-align: middle;
+    
+}
+
+.common-strategy-item .strategy-info .strategy-hot-info .good-icon {
+    margin-left: 1.4rem;
+}
+
+.common-strategy-item .strategy-item>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
