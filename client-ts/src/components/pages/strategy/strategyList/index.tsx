@@ -1,5 +1,6 @@
 import * as React from "react";
-import StrategyItem from "src/components/commonComponent/strategy-item"
+import StrategyItem from "src/components/commonComponent/strategy-item";
+import NoLinkTitle from "src/components/commonComponent/no-link-title"
 import "./strategy-list.css";
 
 class StrategyList extends React.Component {
@@ -53,7 +54,7 @@ class StrategyList extends React.Component {
         ]
         return(
             <div className="strategy-list">
-                <div className="strategy-list-title">最新攻略</div>
+                <NoLinkTitle title="最新攻略" backgroundColor="none"/>
                     {
                         data.map(v=>(
                             <StrategyItem

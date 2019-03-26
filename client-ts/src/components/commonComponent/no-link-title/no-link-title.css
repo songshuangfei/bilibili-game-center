@@ -1,0 +1,15 @@
+.common-no-link-title{
+    width: 100%;
+    padding: 1rem var(--page-side-blank);
+    box-sizing: border-box;
+    display: flex;
+}
+
+.common-no-link-title .title-name {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+    color: var(--word-color-primary);
+    flex: 1;
+}
+
