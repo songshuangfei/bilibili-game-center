@@ -10,7 +10,7 @@ class NewestActivity extends React.Component {
                     gameIconSrc="//file.suafe.cn/blgc/gameicon/bh3.png"
                     gameName="崩坏三"
                     gameScore="8.4"
-                    activityIntro="空之律者觉醒"
+                    activityIntro="空之律者觉醒空之律者觉醒空之律者觉醒空之律者觉醒空之律者觉醒"
                     gameId="002"
                 />
             </div>

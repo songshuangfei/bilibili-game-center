@@ -15,8 +15,10 @@ const OrderGameItem = (props:{coverImgSrc:string,orderedNum:number,gameName:stri
                     <img src={props.coverImgSrc} alt=""/>
                     <Link to={`/game/${props.gameId}`}/>
                 </div>
-                <div className="game-name">{props.gameName}</div>
-                <div className="ordered-num">{props.orderedNum}人已预约</div>
+                <div className="order-info">
+                    <div className="game-name">{props.gameName}</div>
+                    <div className="ordered-num">{props.orderedNum}人已预约</div>
+                </div>
                 <div className="order-btn">
                     <BlueBtn width="5.4rem" name="预约" height="2rem" link={`/game/${props.gameId}`}/>
                 </div>

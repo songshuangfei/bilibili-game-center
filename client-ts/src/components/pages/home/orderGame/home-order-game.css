@@ -34,28 +34,35 @@
     left: 0;
 }
 
+.home-order-game-item .order-info {
+    width: 100%;
+    padding: 0 0.4rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
 .home-order-game-item .content .game-name {
+    height: 1.2rem;
+    line-height: 1.2rem;
     text-align: center;
     font-size: 0.9rem;
     color: var(--word-color-primary);
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
-    box-sizing: border-box;
-    padding: 0.6rem 0.4rem;
-    padding-bottom: 0.2rem;
+    margin-top: 0.6rem;
 }
 
 .home-order-game-item .content .ordered-num {
+    height: 1.2rem;
+    line-height: 1.2rem;
     text-align: center;
     font-size: 0.8rem;
     color: var(--word-color-light);
-    box-sizing: border-box;
-    padding: 0 0.4rem;
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
-    box-sizing: border-box;
+    margin-top: 0.4rem;
 }
 .home-order-game-item .order-btn {
     width: 5.4rem;

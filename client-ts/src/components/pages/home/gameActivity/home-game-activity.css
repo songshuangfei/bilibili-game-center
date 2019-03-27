@@ -67,19 +67,23 @@
     width: 100%;
     display: flex;
     box-sizing: border-box;
-    padding: 0.4rem;
+    padding: 0 0.4rem;
+    margin: 0.4rem 0;
     padding-bottom: 0.8rem;
 }
 
 .home-activity-item .activity-intro {
     flex: 1;
     height: 1.2rem;
+    line-height: 1.2rem;
     overflow: hidden;
+    color: var(--word-color-light);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
 }
 
 .home-activity-item .activity-intro span {
-    color: var(--word-color-light);
-    font-size: 0.9rem;
     margin-left: 0.4rem;
 }
 
