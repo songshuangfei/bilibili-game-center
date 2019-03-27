@@ -14,7 +14,7 @@ const GameUpdate = (props:{num:number}) => {
             <div className="right">
                 {
                     props.num===0?
-                    <span>无可用更新</span>
+                    <span className="no-update">无可用更新</span>
                     :<div className="update-num"><span>{props.num}</span></div>
                 }
             </div>

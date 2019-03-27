@@ -33,7 +33,7 @@
     padding-right: 1rem;
 }
 
-.my-menu  .game-update .right>span {
+.my-menu  .game-update .right .no-update {
     font-size: 0.7rem;
     color: var(--word-color-light);
     vertical-align: middle;
@@ -41,18 +41,20 @@
 
 .my-menu  .game-update .update-num {
     display: inline-block;
-    width: 1.2rem;
-    height: 1.2rem;
-    line-height: 1.2rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
     margin-right: 0.8rem;
-    border-radius: 0.6rem;
+    border-radius: 0.7rem;
     text-align: center;
     background-color: red;
+    font-size: 0.8rem;
+    color: #fff;
+    vertical-align: middle;
 }
 
-.my-menu  .game-update .update-num>span{
-    font-size: 0.7rem;
-    color: #fff;
+.my-menu  .game-update .update-num span {
+    vertical-align: middle;
 }
 
 .my-menu .menu-item .icon,
