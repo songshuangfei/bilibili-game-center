@@ -18,6 +18,10 @@ const pageScroll = {
    
     setScrollTopToPage(pageName:string):void{
         document.documentElement.scrollTop = document.body.scrollTop = this._value[pageName];
+    },
+
+    setPageScrollWithValue(v:number){
+        document.documentElement.scrollTop = document.body.scrollTop = 0;
     }
 }
 

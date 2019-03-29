@@ -13,9 +13,10 @@ class Rank extends React.Component {
 	
 	public tabTouch(i:number){
 		if(this.state.tabNow === this.tabs[i]){
-			console.log(122)
+			console.log("tab未改变");
             return;
-        }
+		}
+		pageScroll.setPageScrollWithValue(0);// 切换要回到顶部
 		const left = 25*i+12.5 +"%";
 		this.setState({
 			tabNow:this.tabs[i],

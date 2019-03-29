@@ -25,7 +25,7 @@ const CommentItem = (props:{
     commentAbstract:string,
     commenterHeadSrc:string,
     commenterName:string,
-    commentScore:number,
+    commentStarNum:number,
     gameName:string,
     gameIconSrc:string,
 
@@ -48,7 +48,7 @@ const CommentItem = (props:{
                             <div className="head" style={{backgroundImage:`url(${ImgLoadingIcon})`}}><img src={props.commenterHeadSrc} alt=""/></div>
                             <div className="user-name"><span>{props.commenterName}</span></div>
                             <div className="score-star">
-                                <Stars num={props.commentScore}/>
+                                <Stars num={props.commentStarNum}/>
                             </div>
                         </div>
                         <div className="game-name">
@@ -71,14 +71,14 @@ class HotComments extends React.Component {
                 gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",
                 commentAbstract:"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要这是一条评论的摘要，这是一条评论的摘要",
                 commentId:"001",
-                commentScore:5,
+                commentStarNum:5,
                 commenterHeadSrc:"//file.suafe.cn/blgc/userhead/1.jpg",
                 commenterName:"夏池萤",
                 gameName:"崩坏三"
             },{
                 commentAbstract:"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要",
                 commentId:"002",
-                commentScore:5,
+                commentStarNum:5,
                 commenterHeadSrc:"//file.suafe.cn/blgc/userhead/2.jpg",
                 commenterName:"跨越时空的思念",
                 gameIconSrc:"//file.suafe.cn/blgc/gameicon/fgo.png",
@@ -86,7 +86,7 @@ class HotComments extends React.Component {
             },{
                 commentAbstract:"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要",
                 commentId:"003",
-                commentScore:3,
+                commentStarNum:3,
                 commenterHeadSrc:"//file.suafe.cn/blgc/userhead/3.jpg",
                 commenterName:"子欲何",
                 gameIconSrc:"//file.suafe.cn/blgc/gameicon/mhmnz.png",
@@ -94,7 +94,7 @@ class HotComments extends React.Component {
             },{
                 commentAbstract:"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要",
                 commentId:"004",
-                commentScore:3,
+                commentStarNum:3,
                 commenterHeadSrc:"//file.suafe.cn/blgc/userhead/3.jpg",
                 commenterName:"子欲何",
                 gameIconSrc:"//file.suafe.cn/blgc/gameicon/mhmnz.png",
@@ -113,7 +113,7 @@ class HotComments extends React.Component {
                                 commentAbstract={v.commentAbstract}
                                 commenterHeadSrc={v.commenterHeadSrc}
                                 commenterName={v.commenterName}
-                                commentScore={v.commentScore}
+                                commentStarNum={v.commentStarNum}
                                 gameIconSrc={v.gameIconSrc}
                                 gameName={v.gameName}
                             />
