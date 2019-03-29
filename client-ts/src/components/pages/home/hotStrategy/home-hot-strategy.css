@@ -32,8 +32,12 @@
     position: absolute;
     bottom: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.4));
+    display: flex;
+}
+
+.home-hot-strategy-item .hot-info>div{
+    height: 1.2rem;
     line-height: 1.2rem;
-    
 }
 
 .home-hot-strategy-item .hot-info img {
@@ -44,7 +48,7 @@
 }
 
 .home-hot-strategy-item .hot-info span {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #fff;
 }
 

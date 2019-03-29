@@ -21,10 +21,10 @@ const HotStrategyItem = (props:{
                 }}>
                     <img className="cover-img" src={props.coverImgSrc} alt=""/>
                     <div className="hot-info">
-                        <img src={eyeIcon} alt=""/>
-                        <span>{props.look}</span>
-                        <img src={goodIcon} alt=""/>
-                        <span>{props.good}</span>
+                        <div><img src={eyeIcon} alt=""/></div>
+                        <div><span>{props.look}</span></div>
+                        <div><img src={goodIcon} alt=""/></div>
+                        <div><span>{props.good}</span></div>
                     </div>
                 </div>
                 <div className="strategy-summary">
