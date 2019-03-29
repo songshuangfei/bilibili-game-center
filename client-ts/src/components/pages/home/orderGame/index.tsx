@@ -5,7 +5,7 @@ import {ImgLoadingIcon} from "src/components/icons";
 import BlueBtn from "src/components/commonComponent/blue-btn";
 import {Link} from "react-router-dom";
 import "./home-order-game.css";
-const OrderGameItem = (props:{coverImgSrc:string,orderedNum:number,gameName:string,gameId:number})=>{
+const OrderGameItem = (props:homeOrderGameItemI)=>{
     return(
         <li className="home-order-game-item">
             <div className="content">
@@ -28,12 +28,12 @@ const OrderGameItem = (props:{coverImgSrc:string,orderedNum:number,gameName:stri
 }
 class OrdrGame extends React.Component {
     public render(){
-        const games:Array<{coverSrc:string,gameId:number,gameName:string,orderedNum:number}> =[
-            {coverSrc:"//file.suafe.cn/blgc/gamecover/4.jpg",gameId:1,gameName:"第五人格",orderedNum:8987},
-            {coverSrc:"//file.suafe.cn/blgc/gamecover/3.jpg",gameId:2,gameName:"Fate grand order",orderedNum:228223},
-            {coverSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",gameId:3,gameName:"第五人格1爱神的箭噶法国",orderedNum:2347},
-            {coverSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",gameId:4,gameName:"第五人格2",orderedNum:8987},
-            {coverSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",gameId:5,gameName:"第五人格2",orderedNum:89287},
+        const games:homeOrderGameItemI[] =[
+            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/4.jpg",gameId:1,gameName:"第五人格",orderedNum:8987},
+            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/3.jpg",gameId:2,gameName:"Fate grand order",orderedNum:228223},
+            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",gameId:3,gameName:"第五人格1爱神的箭噶法国",orderedNum:2347},
+            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",gameId:4,gameName:"第五人格2",orderedNum:8987},
+            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",gameId:5,gameName:"第五人格2",orderedNum:89287},
         ]
         return (
             <div>
@@ -43,7 +43,7 @@ class OrdrGame extends React.Component {
                         games.map(v=>(
                             <OrderGameItem 
                                 key={v.gameId} 
-                                coverImgSrc={v.coverSrc} 
+                                coverImgSrc={v.coverImgSrc} 
                                 orderedNum={v.orderedNum}
                                 gameName={v.gameName}
                                 gameId={v.gameId}

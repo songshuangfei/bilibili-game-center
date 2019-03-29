@@ -36,9 +36,23 @@ const homeNewGame = (
       return state;
   }
 }
+
+const homeHotStrategy = (
+  state:homeStrategyItemI[] = [], 
+  action:{type:actionTypes,items:homeStrategyItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getHomeHotStrategy:
+      return action.items;
+    default:
+      return state;
+  }
+}
+
   
 export default combineReducers({
   homeBanner,
   homeHotGame,
-  homeNewGame
+  homeNewGame,
+  homeHotStrategy,
 })

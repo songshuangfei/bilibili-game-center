@@ -15,8 +15,14 @@ const setHomeNewGame = (items:gameIconItemI[]) =>({
     type:actionTypes.getHomeNewGame,
 });
 
+const setHomeHotStrategy = (items:homeStrategyItemI[]) =>({
+    items,
+    type:actionTypes.getHomeHotStrategy,
+});
+
 export {
     setHomeBanner,
     setHomeHotGame,
-    setHomeNewGame
+    setHomeNewGame,
+    setHomeHotStrategy,
 };

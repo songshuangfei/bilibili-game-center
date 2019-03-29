@@ -34,7 +34,6 @@ class Rank extends React.Component {
 
 	public render() {
 		const tabNow = this.state.tabNow;
-		console.log(window.location.hash)
 		return (
 			<div>
 				<GameList listType={tabNow}/>

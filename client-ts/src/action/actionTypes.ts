@@ -4,6 +4,7 @@ enum actionTypes {
     getHomeBanner,
     getHomeHotGame,
     getHomeNewGame,
+    getHomeHotStrategy,
 }
 
 export default actionTypes;

@@ -11,3 +11,21 @@ interface gameIconItemI {
     gameIconSrc:string,
     gameId:string
 }
+
+// home strategy item
+interface homeStrategyItemI {
+    coverImgSrc:string,
+    look:number,
+    good:number,
+    summary:string,
+    gameName:string,
+    strategyId:number,
+}
+
+// home order game item 
+interface homeOrderGameItemI {
+    coverImgSrc:string,
+    orderedNum:number,
+    gameName:string,
+    gameId:number
+}

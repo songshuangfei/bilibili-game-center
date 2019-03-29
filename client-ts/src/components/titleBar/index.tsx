@@ -82,7 +82,7 @@ const MyTitle = ()=>{
             <Link className="title-link-block" to="#"/>
             <div className="page-name">我的</div>
             <Link className="title-link-block" to="#"/>
-            <Link className="title-link-block" to="/download">
+            <Link className="title-link-block" to="/mydownload">
                 <img src={titleIcon.myDownload} alt=""/>
             </Link>
         </div>

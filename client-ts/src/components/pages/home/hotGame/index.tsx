@@ -50,6 +50,7 @@ class HotGame extends React.Component {
 				<LinkTitle title='精品推荐' link="/hotgame" backgroundColor="#fff"/>
                 <HorizontalScroll backgroundColor="#fff">
                     {
+                        // 没有数据返回一组代替数据
                         this.props.items.length === 0?
                         [1,2,3,4,5,6,7,8,9].map(
                             v=><HotGameItem key={v} gameId="" gameIconSrc={ImgLoadingIcon} gameName="bilibili"/>
