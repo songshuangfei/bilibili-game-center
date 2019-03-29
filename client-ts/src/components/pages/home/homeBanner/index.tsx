@@ -4,14 +4,14 @@ import {setHomeBanner} from "src/action/actions";
 import { connect } from 'react-redux';
 
 class HomeBanner extends React.Component {
-    public props: {items:Array<{imgSrc:string,link:string}>,sethomeBanner:(items:Array<{imgSrc:string,link:string}>) =>any};
+    public props: {items:bannerItemI[],sethomeBanner:(items:bannerItemI[]) =>any};
     
     public componentDidMount(){
         if(this.props.items.length!==0){
             return;
         }
-        console.log("get home banner")
-        const clitems:Array<{imgSrc:string,link:string}> = [
+        console.log("get home banner");
+        const clitems:bannerItemI[] = [
 			{imgSrc:"//file.suafe.cn/blgc/activityimg/2.jpg",link:"/game/001"},
 			{imgSrc:"//file.suafe.cn/blgc/activityimg/1.jpg",link:"1232323"},
 			{imgSrc:"//file.suafe.cn/blgc/activityimg/3.jpg",link:"12"}
@@ -19,7 +19,6 @@ class HomeBanner extends React.Component {
         const that =this;
         setTimeout(() => {
             that.props.sethomeBanner(clitems);
-            console.log(121221121212)
         }, 3000);
     }
 
@@ -32,6 +31,6 @@ export default connect(
     (state:any) => ({
         items: state.homeBanner
     }),(dispatch:any) => ({
-        sethomeBanner: (items:Array<{imgSrc:string,link:string}>) => dispatch(setHomeBanner(items))
+        sethomeBanner: (items:bannerItemI[]) => dispatch(setHomeBanner(items))
     })
 )(HomeBanner)

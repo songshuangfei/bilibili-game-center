@@ -2,7 +2,10 @@ import * as React from 'react';
 import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
 import GameIcon from "src/components/commonComponent/game-icon";
 import LinkTitle from "src/components/commonComponent/link-title";
-import "./home-new-game.css"
+import {ImgLoadingIcon} from "src/components/icons";
+import "./home-new-game.css";
+import { setHomeNewGame} from "src/action/actions";
+import { connect } from 'react-redux';
 
 
 const NewGameItem = (props:{gameName:string,gameIconSrc:string,gameId:string})=>{
@@ -13,39 +16,62 @@ const NewGameItem = (props:{gameName:string,gameIconSrc:string,gameId:string})=>
     )
 }
 class NewGame extends React.Component {
+    public props: {items:gameIconItemI[],setHomeNewGame:(items:gameIconItemI[]) =>any};
+    public componentDidMount(){
+        if(this.props.items.length!==0){
+            return;
+        }
+        console.log("get home new game");
+        const newGame:gameIconItemI[] = [
+            {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"004"},
+            {gameName:"食梦计划",gameIconSrc:"//file.suafe.cn/blgc/gameicon//smjh.png",gameId:"005"},
+            {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"008"},
+            {gameName:"命运-冠位指定",gameIconSrc:"//file.suafe.cn/blgc/gameicon/fgo.png",gameId:"001"},
+            {gameName:"崩坏3",gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",gameId:"002"},
+            {gameName:"碧蓝航线",gameIconSrc:"//file.suafe.cn/blgc/gameicon/blhx.png",gameId:"003"},
+            {gameName:"站双：帕弥什",gameIconSrc:"//file.suafe.cn/blgc/gameicon//zs.png",gameId:"006"},
+            {gameName:"辐射：避难所Online",gameIconSrc:"//file.suafe.cn/blgc/gameicon//fs.png",gameId:"007"},
+            {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"009"},
+        ];
+        const that =this;
+        setTimeout(() => {
+            that.props.setHomeNewGame(newGame);
+        }, 3000);
+    }
+
     public render(){
-        const newGame = [
-            {name:"碧蓝航线",icon:"//file.suafe.cn/blgc/gameicon/blhx.png",gameId:"003"},
-            {name:"食梦计划",icon:"//file.suafe.cn/blgc/gameicon//smjh.png",gameId:"005"},
-            {name:"站双：帕弥什",icon:"//file.suafe.cn/blgc/gameicon//zs.png",gameId:"006"},
-            {name:"辐射：避难所Online",icon:"//file.suafe.cn/blgc/gameicon//fs.png",gameId:"007"},
-            {name:"梦幻模拟战",icon:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"008"},
-            {name:"命运-冠位指定",icon:"//file.suafe.cn/blgc/gameicon/fgo.png",gameId:"001"},
-            {name:"崩坏3",icon:"//file.suafe.cn/blgc/gameicon/bh3.png",gameId:"002"},
-            {name:"梦幻模拟战",icon:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"004"},
-            {name:"梦幻模拟战",icon:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"009"},
-        ]
         return(
             <div>
 				<LinkTitle title='新游推荐' link="/newgame" backgroundColor="none"/>
+                
                 <HorizontalScroll backgroundColor="#none">
-                    {
-                        newGame.map(v=>(
-                            <NewGameItem
-                                key={v.gameId}
-                                gameName={v.name}
-                                gameIconSrc={v.icon}
+                {
+                        this.props.items.length === 0?
+                        [1,2,3,4,5,6,7,8,9].map(
+                            v=><NewGameItem key={v} gameId="" gameIconSrc={ImgLoadingIcon} gameName="bilibili"/>
+                        ):
+                        this.props.items.map( (v) => (
+                            <NewGameItem 
+                                key={v.gameId }
                                 gameId={v.gameId}
+                                gameIconSrc={v.gameIconSrc}
+                                gameName={v.gameName}
                             />
                         ))
                     }
-                    {/* {[1,2,3,4,5,6,7,8,9].map(v=><HotGameItem key={v} gameId="" gameIconSrc={ImgLoadingIcon} gameName="bilibili"/>)} */}
                 </HorizontalScroll>
             </div>
         )
     }
 }
 
-export default NewGame;
+
+export default connect(
+    (state:any) => ({
+        items: state.homeNewGame
+    }),(dispatch:any) => ({
+        setHomeNewGame: (items:gameIconItemI[]) => dispatch(setHomeNewGame(items))
+    })
+)(NewGame)
 
 

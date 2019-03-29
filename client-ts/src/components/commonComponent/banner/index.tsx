@@ -6,7 +6,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./banner.css";
 
 
-const Banner = (props:{width:string, height:string, items:Array<{imgSrc:string,link:string}> })=>{
+const Banner = (props:{width:string, height:string, items:bannerItemI[] })=>{
     const content = (
         <Carousel 
             showArrows={false}
