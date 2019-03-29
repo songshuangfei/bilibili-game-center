@@ -3,16 +3,8 @@ import Banner from "src/components/commonComponent/banner";
 import {setHomeBanner} from "src/action/actions";
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state:any) => ({
-    items: state.homeBanner
-});
-  
-const mapDispatchToProps = (dispatch:any) => ({
-    sethomeBanner: (items:any) => dispatch(setHomeBanner(items))
-});
-
 class HomeBanner extends React.Component {
-    public props: {items:any,sethomeBanner:any};
+    public props: {items:Array<{imgSrc:string,link:string}>,sethomeBanner:(items:Array<{imgSrc:string,link:string}>) =>any};
     
     public componentDidMount(){
         if(this.props.items.length!==0){
@@ -27,6 +19,7 @@ class HomeBanner extends React.Component {
         const that =this;
         setTimeout(() => {
             that.props.sethomeBanner(clitems);
+            console.log(121221121212)
         }, 3000);
     }
 
@@ -36,6 +29,9 @@ class HomeBanner extends React.Component {
 }
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+    (state:any) => ({
+        items: state.homeBanner
+    }),(dispatch:any) => ({
+        sethomeBanner: (items:Array<{imgSrc:string,link:string}>) => dispatch(setHomeBanner(items))
+    })
 )(HomeBanner)
