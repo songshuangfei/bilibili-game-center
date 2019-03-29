@@ -43,7 +43,6 @@ class Rank extends React.Component {
                     <div className={`tab ${tabNow===this.tabs[2]?"tab-active":''}`} onClick={()=>{this.tabTouch(2)}}>口碑榜</div>
                     <div className={`tab ${tabNow===this.tabs[3]?"tab-active":''}`} onClick={()=>{this.tabTouch(3)}}>新游榜</div>
                     <div className="mark" style={{left:this.state.tagLeft}}/>
-					emm
                 </div>
 			</div>
 		)

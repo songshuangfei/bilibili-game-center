@@ -5,6 +5,7 @@
     display: flex;
     position: fixed;
     top: var(--title-bar-height);
+    box-shadow: var(--blue-shadow)
 }
 
 .rank-type-tabs .tab {

@@ -9,7 +9,7 @@ class StrategyList extends React.Component {
             {
                 publisherHeadSrc:"//file.suafe.cn/blgc/userhead/1.jpg",
                 publisherName:"夏池萤",
-                strategyTitle:"这是一个攻略标题",
+                strategyTitle:"这是一个攻略标题这是一个攻略标题这是一个攻略标题",
                 coverSrc:"//file.suafe.cn/blgc/strategy/cover/1.png",
                 abstract:"这是一条攻略摘要，这是一条攻略摘要，这是一条攻略摘要，这是一条攻略摘要这是一条攻略摘要这是一条攻略摘要这是一条攻略摘要",
                 gameName:"阴阳师",
