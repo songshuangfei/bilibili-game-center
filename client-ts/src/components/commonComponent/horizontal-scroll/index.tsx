@@ -99,7 +99,6 @@ class HorizontalScroll extends React.Component {
             duration:"0.2s",
             x:0,
         })
-        console.log(this.container.scrollLeft)
     }
 }
 

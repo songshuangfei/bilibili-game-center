@@ -5,6 +5,7 @@ enum actionTypes {
     getHomeHotGame,
     getHomeNewGame,
     getHomeHotStrategy,
+    getHomeOrderGame,
 }
 
 export default actionTypes;

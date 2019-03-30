@@ -22,10 +22,11 @@ interface homeStrategyItemI {
     strategyId:number,
 }
 
+// -----------------------------开始时注意这里-IIIIIIIIIIIIIIIIII--------------------------------
 // home order game item 
 interface homeOrderGameItemI {
     coverImgSrc:string,
     orderedNum:number,
     gameName:string,
-    gameId:number
+    gameId:string
 }
