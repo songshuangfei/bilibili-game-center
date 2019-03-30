@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
 import LinkTitle from "src/components/commonComponent/link-title";
 import {ImgLoadingIcon} from "src/components/icons";

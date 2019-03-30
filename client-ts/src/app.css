@@ -14,7 +14,7 @@
     --blue-shadow: 0 1px 1px rgba(44, 145, 185, 0.096);
 }
 .App {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 .main-pages-wrapper {
     padding-top: var(--title-bar-height);
