@@ -41,20 +41,29 @@
     flex: 1;
     height: 2rem;
     overflow: hidden;
+    display: flex;
+}
+
+.home-activity-item .game-name>div {
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.home-activity-item .game-name .icon {
+    background-size: 2rem 2rem;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .home-activity-item .game-name img {
-    display: inline-block;
     width: 2rem;
     height: 2rem;
-    vertical-align: middle;
     margin-right: 0.6rem;
 }
 
 .home-activity-item .game-name span {
     font-size: 0.9rem;
     color: var(--word-color-primary);
-    vertical-align: middle;
 }
 
 .home-activity-item .d-btn {

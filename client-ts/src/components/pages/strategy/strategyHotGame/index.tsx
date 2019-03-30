@@ -3,12 +3,13 @@ import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
 import {Link} from "react-router-dom";
 import {ImgLoadingIcon} from "src/components/icons";
 import "./strategy-hot-game.css";
+import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 const GamelItem = (props:{coverImgSrc:string,GameId:string})=>{
     return(
         <li className="game-item">
             <div className="cover" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
-                <img src={props.coverImgSrc} alt=""/>
+                <ImgOnlineSrc src={props.coverImgSrc} alt=""/>
                 <Link to={`/strgame/${props.GameId}`} />
             </div>
         </li>

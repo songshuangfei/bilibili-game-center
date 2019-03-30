@@ -2,6 +2,7 @@ import * as React from "react";
 import {rightWhiteIcon, sexIcon, lvIcon, UidIcon, YellowGood, ImgLoadingIcon} from "src/components/icons";
 import {Link} from "react-router-dom"
 import "./my-user-board.css"
+import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 class UserBoard extends React.Component {
     public render(){
@@ -22,12 +23,12 @@ class UserBoard extends React.Component {
         return(
             <div className="my-user-board">
                 <div className="cover">
-                    <img className="cover-img" src={userData.coverSrc} alt=""/>
+                    <ImgOnlineSrc className="cover-img" src={userData.coverSrc} alt=""/>
                     <div className="bottom-linear-gradient"/>
                     <div className="user-info">
                         <div className="head-pic">
                             <div style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
-                                <img src={userData.headImgSrc} alt=""/>
+                                <ImgOnlineSrc src={userData.headImgSrc} alt=""/>
                             </div>
                         </div>
                         <div className="info">

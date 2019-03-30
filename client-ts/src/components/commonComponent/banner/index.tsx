@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {ImgLoadingIcon} from "src/components/icons"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./banner.css";
+import ImgOnlineSrc from '../img-online-src';
 
 
 const Banner = (props:{width:string, height:string, items:bannerItemI[] })=>{
@@ -17,7 +18,7 @@ const Banner = (props:{width:string, height:string, items:bannerItemI[] })=>{
         >
             {props.items.map(v=>(
                 <div key={v.link}>
-                    <img style={{height:props.height}}  src={v.imgSrc} alt=""/>
+                    <ImgOnlineSrc style={{height:props.height}}  src={v.imgSrc} alt=""/>
                     <Link to={v.link} className="common-banner-link"/>
                 </div>
             ))}

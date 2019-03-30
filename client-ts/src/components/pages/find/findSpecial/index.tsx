@@ -4,12 +4,13 @@ import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
 import {Link} from "react-router-dom";
 import {ImgLoadingIcon} from "src/components/icons";
 import "./find-special.css";
+import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 const SpecialItem = (props:{coverImgSrc:string,specialId:string})=>{
     return(
         <li className="special-item">
             <div className="cover" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
-                <img src={props.coverImgSrc} alt=""/>
+                <ImgOnlineSrc src={props.coverImgSrc} alt=""/>
                 <Link to={`/special/${props.specialId}`} />
             </div>
         </li>

@@ -15,24 +15,47 @@ class ImgOnlineSrc extends React.Component {
         opacity:0
     }
 
+    public duration = "0.2s";
+    public opacity = 0;
+
     public onLoadHandler(){
-        this.setState({opacity:1})
+        this.opacity = 1;
+        this.forceUpdate()
+    }
+
+    public componentWillMount(){
+        if(this.isImdComplete()){
+            this.duration = "0";
+            this.opacity = 1;
+        }else{
+            this.duration = "0.2s";
+            this.opacity = 0;
+        }
     }
     
     public render() {
         return <img  
             style={{
                 ...this.props.style,
-                transitionDuration:"0.2s",
+                transitionDuration:this.duration,
                 transitionTimingFunction:"ease-in-out",
-                opacity:this.state.opacity,
+                opacity:this.opacity,
             }}
             className={this.props.className} 
             src={this.props.src} 
             alt={this.props.alt}
-
             onLoad={()=>this.onLoadHandler()}
         />
+    }
+
+    private isImdComplete:()=>boolean = ()=> {
+        const myImg = new Image();    
+            myImg.src = this.props.src;    
+        if(myImg.complete) {    
+            return true;  
+        }else{    
+            return false;  
+        } 
     }
 }
 

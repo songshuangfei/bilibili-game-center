@@ -8,6 +8,7 @@ import "./home-order-game.css";
 
 import { setHomeOrderGame } from "src/action/actions";
 import { connect } from 'react-redux';
+import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 const OrderGameItem = (props:homeOrderGameItemI)=>{
     return(
@@ -16,7 +17,7 @@ const OrderGameItem = (props:homeOrderGameItemI)=>{
                 <div className="cover" style={{
                     backgroundImage:`url(${ImgLoadingIcon})`,
                 }}>
-                    <img src={props.coverImgSrc} alt=""/>
+                    <ImgOnlineSrc src={props.coverImgSrc} alt=""/>
                     <Link to={`/game/${props.gameId}`}/>
                 </div>
                 <div className="order-info">

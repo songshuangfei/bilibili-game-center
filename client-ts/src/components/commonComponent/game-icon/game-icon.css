@@ -1,20 +1,26 @@
-.common-game-icon {
+.common-game-icon .icon {
     width: 4.2rem;
-}
-.common-game-icon a {
-    width: 4.2rem;
-    display: block;
+    height: 4.2rem;
+    position: relative;
+    background-size: 4.2rem 4.2rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
 .common-game-icon img {
-    display: block;
     width: 4.2rem;
     height: 4.2rem;
-    /* background: yellow; */
-    border-radius: 12px;
-    margin: 0;
 }
 
+.common-game-icon a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .common-game-icon-name {
     width: 90%;
     margin: 0.8rem 5%;

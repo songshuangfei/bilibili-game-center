@@ -2,6 +2,7 @@ import * as React from "react";
 import {ImgLoadingIcon, eyeGrayIcon, goodGrayIcon} from"src/components/icons"
 import "./strategy-item.css";
 import { Link } from 'react-router-dom';
+import ImgOnlineSrc from '../img-online-src';
 
 const StrategyItem = (props:{
     publisherHeadSrc:string,
@@ -19,7 +20,7 @@ const StrategyItem = (props:{
         <div className="common-strategy-item">
             <div className="publisher-info">
                 <div className="head-pic" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
-                    <img src={props.publisherHeadSrc} alt=""/>
+                    <ImgOnlineSrc src={props.publisherHeadSrc} alt=""/>
                 </div>
                 <div className="publisher-name"><span>{props.publisherName}</span></div>
             </div>
@@ -27,7 +28,7 @@ const StrategyItem = (props:{
                 <span>{props.strategyTitle}</span>
             </div>
             <div className="strategy-cover" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
-                <img src={props.coverSrc} alt=""/>
+                <ImgOnlineSrc src={props.coverSrc} alt=""/>
             </div>
             <p className="strategy-abstract">
                 <span>

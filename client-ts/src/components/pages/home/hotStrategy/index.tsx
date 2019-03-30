@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import "./home-hot-strategy.css";
 import { setHomeHotStrategy } from "src/action/actions";
 import { connect } from 'react-redux';
+import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 const HotStrategyItem = (props:homeStrategyItemI)=>{
     return(
@@ -14,7 +15,7 @@ const HotStrategyItem = (props:homeStrategyItemI)=>{
                 <div className="cover" style={{
                     backgroundImage:`url(${ImgLoadingIcon})`,
                 }}>
-                    <img className="cover-img" src={props.coverImgSrc} alt=""/>
+                    <ImgOnlineSrc className="cover-img" src={props.coverImgSrc} alt=""/>
                     <div className="hot-info">
                         <div><img src={eyeIcon} alt=""/></div>
                         <div><span>{props.look}</span></div>

@@ -4,6 +4,7 @@ import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
 import {CommaIcon, starIcon, starGrayIcon, ImgLoadingIcon} from "src/components/icons";
 import {Link} from "react-router-dom"
 import "./find-hot-comment.css";
+import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 const Stars =(props:{num:number})=>{
     const p = [1,2,3,4,5];
@@ -45,7 +46,9 @@ const CommentItem = (props:{
                 <div className="comment-info">
                     <div className="user-game">
                         <div className="user-score">
-                            <div className="head" style={{backgroundImage:`url(${ImgLoadingIcon})`}}><img src={props.commenterHeadSrc} alt=""/></div>
+                            <div className="head" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
+                                <ImgOnlineSrc src={props.commenterHeadSrc} alt=""/>
+                            </div>
                             <div className="user-name"><span>{props.commenterName}</span></div>
                             <div className="score-star">
                                 <Stars num={props.commentStarNum}/>
@@ -56,7 +59,7 @@ const CommentItem = (props:{
                         </div>
                     </div>
                     <div className="game-icon" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
-                        <img src={props.gameIconSrc} alt=""/>
+                        <ImgOnlineSrc src={props.gameIconSrc} alt=""/>
                     </div>
                 </div>
                 <Link to={`/comment/${props.commentId}`}/>

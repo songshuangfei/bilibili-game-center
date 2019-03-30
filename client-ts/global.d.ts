@@ -1,18 +1,23 @@
-
-// banner item 类型
+/**
+ * banner item 类型
+ */
 interface bannerItemI {
     imgSrc:string,
     link:string
 }
 
-// game icon item 类型
+/**
+ * game icon item 类型
+ */
 interface gameIconItemI {
     gameName:string,
     gameIconSrc:string,
     gameId:string
 }
 
-// home strategy item
+/**
+ * home strategy item 类型
+ */
 interface homeStrategyItemI {
     coverImgSrc:string,
     look:number,
@@ -22,8 +27,9 @@ interface homeStrategyItemI {
     strategyId:number,
 }
 
-// -----------------------------开始时注意这里-IIIIIIIIIIIIIIIIII--------------------------------
-// home order game item 
+/**
+ * home order game item 类型
+ */
 interface homeOrderGameItemI {
     coverImgSrc:string,
     orderedNum:number,

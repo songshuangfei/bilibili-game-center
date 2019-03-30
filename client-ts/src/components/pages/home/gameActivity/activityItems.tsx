@@ -4,6 +4,7 @@ import {starIcon} from "src/components/icons";
 import {ImgLoadingIcon} from "src/components/icons";
 import {Link} from "react-router-dom";
 import "./home-game-activity.css";
+import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 const ActivityItem = (props:{
     coverSrc:string,
@@ -16,13 +17,17 @@ const ActivityItem = (props:{
     return(
         <div className="home-activity-item">
             <div className="activity-cover" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
-                <img src={props.coverSrc} alt=""/>
+                <ImgOnlineSrc src={props.coverSrc} alt=""/>
                 <Link to={`/game/${props.gameId}`}/>
             </div>
             <div className="game-download">
                 <div className="game-name">
-                    <img src={props.gameIconSrc} alt=""/>
-                    <span>{props.gameName}</span>
+                    <div className="icon" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
+                        <ImgOnlineSrc src={props.gameIconSrc} alt=""/>
+                    </div>
+                    <div>
+                        <span>{props.gameName}</span>
+                    </div>
                 </div>
                 <div className="d-btn">
                     <BlueBtn width="5rem" height="2rem" name="下载" link="#"/>

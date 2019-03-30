@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import BlueBtn from "src/components/commonComponent/blue-btn";
 import {ImgLoadingIcon,fiveStarIcon} from "src/components/icons" ;
 import "./game-list-item.css";
+import ImgOnlineSrc from '../img-online-src';
 
 const GameScore =(props:{score:number})=>{
     const keys = [1,2,3,4,5];
@@ -46,7 +47,7 @@ const GameListItem = (props:{
                 <div className="ranking" style={{color:rankingColor}}>{props.ranking}</div>
                 <div className="icon-pic">
                     <div style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
-                        <img src={props.gameIconSrc} alt=""/>
+                        <ImgOnlineSrc src={props.gameIconSrc} alt=""/>
                     </div>
                     <Link to={`/game/${props.gameId}`}/>
                 </div>

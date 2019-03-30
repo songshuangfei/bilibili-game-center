@@ -2,7 +2,6 @@ import * as React from 'react';
 import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
 import GameIcon from "src/components/commonComponent/game-icon";
 import LinkTitle from "src/components/commonComponent/link-title";
-import {ImgLoadingIcon} from "src/components/icons";
 import "./home-new-game.css";
 import { setHomeNewGame} from "src/action/actions";
 import { connect } from 'react-redux';
@@ -48,7 +47,7 @@ class NewGame extends React.Component {
                 {
                         this.props.items.length === 0?
                         [1,2,3,4,5,6,7,8,9].map(
-                            v=><NewGameItem key={v} gameId="" gameIconSrc={ImgLoadingIcon} gameName="bilibili"/>
+                            v=><NewGameItem key={v} gameId="" gameIconSrc="" gameName="bilibili"/>
                         ):
                         this.props.items.map( (v) => (
                             <NewGameItem 

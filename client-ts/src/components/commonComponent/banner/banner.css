@@ -31,3 +31,7 @@
 .carousel .control-dots .dot.selected {
     background: #f45a8d;
 }
+
+.carousel .slide {
+    background: none;
+}
