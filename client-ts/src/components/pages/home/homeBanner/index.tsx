@@ -11,13 +11,14 @@ class HomeBanner extends React.Component {
             return;
         }
         console.log("get home banner");
-        const clitems:bannerItemI[] = [
-			{imgSrc:"//file.suafe.cn/blgc/activityimg/2.jpg",link:"/game/001"},
-			{imgSrc:"//file.suafe.cn/blgc/activityimg/1.jpg",link:"1232323"},
-			{imgSrc:"//file.suafe.cn/blgc/activityimg/3.jpg",link:"12"}
-        ];
+        
         const that =this;
         setTimeout(() => {
+            const clitems:bannerItemI[] = [
+                {imgSrc:"//file.suafe.cn/blgc/activityimg/2.jpg",link:"/game/001"},
+                {imgSrc:"//file.suafe.cn/blgc/activityimg/1.jpg",link:"1232323"},
+                {imgSrc:"//file.suafe.cn/blgc/activityimg/3.jpg",link:"12"}
+            ];
             that.props.sethomeBanner(clitems);
         }, 3000);
     }

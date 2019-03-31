@@ -25,10 +25,16 @@ const setHomeOrderGame = (items:homeOrderGameItemI[]) =>({
     type:actionTypes.getHomeOrderGame,
 });
 
+const setHomeNewestActivity = (item:homeActivityItemI) =>({
+    item,
+    type:actionTypes.getHomeNewestActivity,
+});
+
 export {
     setHomeBanner,
     setHomeHotGame,
     setHomeNewGame,
     setHomeHotStrategy,
     setHomeOrderGame,
+    setHomeNewestActivity
 };

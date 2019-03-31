@@ -24,7 +24,7 @@ interface homeStrategyItemI {
     good:number,
     summary:string,
     gameName:string,
-    strategyId:number,
+    strategyId:string,
 }
 
 /**
@@ -34,5 +34,17 @@ interface homeOrderGameItemI {
     coverImgSrc:string,
     orderedNum:number,
     gameName:string,
+    gameId:string
+}
+
+/**
+ * home activity  item 类型
+ */
+interface homeActivityItemI {
+    coverSrc:string,
+    gameIconSrc:string,
+    gameName:string,
+    activityIntro:string,
+    gameScore:string,
     gameId:string
 }

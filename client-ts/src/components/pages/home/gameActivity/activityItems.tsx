@@ -6,19 +6,13 @@ import {Link} from "react-router-dom";
 import "./home-game-activity.css";
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
-const ActivityItem = (props:{
-    coverSrc:string,
-    gameIconSrc:string,
-    gameName:string,
-    activityIntro:string,
-    gameScore:string,
-    gameId:string
-})=>{
+const ActivityItem = (props:homeActivityItemI)=>{
+    const gameLink = props.gameId===""?"#":`/game/${props.gameId}`;
     return(
         <div className="home-activity-item">
             <div className="activity-cover" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
                 <ImgOnlineSrc src={props.coverSrc} alt=""/>
-                <Link to={`/game/${props.gameId}`}/>
+                <Link to={gameLink}/>
             </div>
             <div className="game-download">
                 <div className="game-name">

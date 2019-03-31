@@ -27,7 +27,6 @@ class ImgOnlineSrc extends React.Component {
     }
 
     public componentWillMount(){
-        console.log(this.isImdComplete());
         if(this.isImdComplete()){
             this.duration = "0";
             this.opacity = 1;

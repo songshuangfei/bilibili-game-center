@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 const HotStrategyItem = (props:homeStrategyItemI)=>{
+    const strategyGameLink = props.strategyId===""?"#":`/strategy/${props.strategyId}`;
     return(
         <li className="home-hot-strategy-item">
             <div className="content">
@@ -31,7 +32,7 @@ const HotStrategyItem = (props:homeStrategyItemI)=>{
                     </p>
                     <div className="game-name">{props.gameName}</div>
                 </div>
-                <Link to={`/strategy/${props.strategyId}`}/>
+                <Link to={strategyGameLink}/>
             </div>            
         </li>
     )
@@ -46,16 +47,17 @@ class HotStrategy extends React.Component {
         }
         console.log("get home hot startegy")
 
-        const strategys:homeStrategyItemI[] =[
-            {coverImgSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:1032,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:1},
-            {coverImgSrc:"//file.suafe.cn/blgc/videocover/2.jpg",look:10,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:2},
-            {coverImgSrc:"//file.suafe.cn/blgc/videocover/3.jpg",look:12,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:3},
-            {coverImgSrc:"//file.suafe.cn/blgc/videocover/4.jpg",look:120,good:20,summary:"这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:4},
-            {coverImgSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:5},
-            {coverImgSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"这是一条攻略的摘要。。。",gameName:"崩坏三",strategyId:6},
-        ]
+        
         const that =this;
         setTimeout(() => {
+            const strategys:homeStrategyItemI[] =[
+                {coverImgSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:1032,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:"1"},
+                {coverImgSrc:"//file.suafe.cn/blgc/videocover/2.jpg",look:10,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:"2"},
+                {coverImgSrc:"//file.suafe.cn/blgc/videocover/3.jpg",look:12,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:"3"},
+                {coverImgSrc:"//file.suafe.cn/blgc/videocover/4.jpg",look:120,good:20,summary:"这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:"4"},
+                {coverImgSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:"5"},
+                {coverImgSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"这是一条攻略的摘要。。。",gameName:"崩坏三",strategyId:"6"},
+            ]
             that.props.setHomeHotStrategy(strategys);
         }, 3000);
     }
@@ -75,7 +77,7 @@ class HotStrategy extends React.Component {
                                 good={0}
                                 summary="bilibili"
                                 gameName="bili"
-                                strategyId={v}
+                                strategyId=""
                             />
                         )):
                         this.props.items.map(v=>(

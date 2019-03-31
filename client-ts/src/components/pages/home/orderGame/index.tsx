@@ -11,6 +11,8 @@ import { connect } from 'react-redux';
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 const OrderGameItem = (props:homeOrderGameItemI)=>{
+    const gameLink = props.gameId===""?"#":`/game/${props.gameId}`;
+
     return(
         <li className="home-order-game-item">
             <div className="content">
@@ -18,7 +20,7 @@ const OrderGameItem = (props:homeOrderGameItemI)=>{
                     backgroundImage:`url(${ImgLoadingIcon})`,
                 }}>
                     <ImgOnlineSrc src={props.coverImgSrc} alt=""/>
-                    <Link to={`/game/${props.gameId}`}/>
+                    <Link to={gameLink}/>
                 </div>
                 <div className="order-info">
                     <div className="game-name">{props.gameName}</div>
@@ -90,7 +92,7 @@ class OrdrGame extends React.Component {
 
 export default connect(
     (state:any)=>({
-        items:state.HomeOrderGame
+        items:state.homeOrderGame
     }),(dispatch:any)=>({
         setHomeOrderGame:(items:homeOrderGameItemI[]) => dispatch(setHomeOrderGame(items))
     })

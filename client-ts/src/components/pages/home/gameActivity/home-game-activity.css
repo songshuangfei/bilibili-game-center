@@ -50,6 +50,9 @@
 }
 
 .home-activity-item .game-name .icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.6rem;
     background-size: 2rem 2rem;
     background-repeat: no-repeat;
     background-position: center;
@@ -58,7 +61,6 @@
 .home-activity-item .game-name img {
     width: 2rem;
     height: 2rem;
-    margin-right: 0.6rem;
 }
 
 .home-activity-item .game-name span {

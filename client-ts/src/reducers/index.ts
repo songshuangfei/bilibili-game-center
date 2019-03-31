@@ -1,6 +1,12 @@
 import { combineReducers } from 'redux'
 import actionTypes from "../action/actionTypes"
 
+/**
+ * return the state of home banner
+ * @param state hombanner state
+ * @param action action to update data of homebanner
+ * 
+ */
 const homeBanner = (
     state:bannerItemI[] = [], 
     action:{type:actionTypes,items:bannerItemI[]}
@@ -49,9 +55,9 @@ const homeHotStrategy = (
   }
 }
 
-const HomeOrderGame = (
+const homeOrderGame = (
   state: homeOrderGameItemI[] = [],
-  action:{type:actionTypes.getHomeOrderGame, items:homeOrderGameItemI[]}
+  action:{type:actionTypes, items:homeOrderGameItemI[]}
 ) => {
   switch (action.type) {
     case actionTypes.getHomeOrderGame:
@@ -61,11 +67,24 @@ const HomeOrderGame = (
     }
 }
 
-  
+const homeNewestActivity = (
+  state = {},
+  action:{type:actionTypes, item:homeActivityItemI}
+) => {
+  switch (action.type) {
+    case actionTypes.getHomeNewestActivity:
+        return action.item;
+      default:
+        return state;
+    }
+}
+
+
 export default combineReducers({
   homeBanner,
   homeHotGame,
   homeNewGame,
   homeHotStrategy,
-  HomeOrderGame
+  homeOrderGame,
+  homeNewestActivity,
 })

@@ -1,6 +1,9 @@
 import * as React from 'react';
 import "./h_scroll.css";
 
+/**
+ * 用该组件包裹数个用<li>包裹的item
+ */
 class HorizontalScroll extends React.Component {
     public props:{backgroundColor:string,children:any};
     public state:any;
