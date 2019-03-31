@@ -6,12 +6,12 @@ class PreviousActivity extends React.Component {
     public render(){
         return(
             <div>
-                
+                12
                 {
                     [0,1,2,3,4].map(v=>(
                         <ActivityItems 
                             key={v}
-                            coverSrc="#"
+                            coverSrc=""
                             gameIconSrc={ImgLoadingIcon}
                             gameName="bilibili"
                             gameScore="0"

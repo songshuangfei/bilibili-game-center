@@ -55,7 +55,6 @@ class ImgOnlineSrc extends React.Component {
         if(this.props.src === ""){
             return false;
         }
-
         const myImg = new Image();    
         myImg.src = this.props.src;    
         const isComplete = myImg.complete
