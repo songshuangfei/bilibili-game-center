@@ -19,11 +19,15 @@ class ImgOnlineSrc extends React.Component {
     public opacity = 0;
 
     public onLoadHandler(){
+        if(this.props.src === ""){
+            return
+        }
         this.opacity = 1;
         this.forceUpdate()
     }
 
     public componentWillMount(){
+        console.log(this.isImdComplete());
         if(this.isImdComplete()){
             this.duration = "0";
             this.opacity = 1;
@@ -49,9 +53,14 @@ class ImgOnlineSrc extends React.Component {
     }
 
     private isImdComplete:()=>boolean = ()=> {
+        if(this.props.src === ""){
+            return false;
+        }
+
         const myImg = new Image();    
-            myImg.src = this.props.src;    
-        if(myImg.complete) {    
+        myImg.src = this.props.src;    
+        const isComplete = myImg.complete
+        if(isComplete) {    
             return true;  
         }else{    
             return false;  
