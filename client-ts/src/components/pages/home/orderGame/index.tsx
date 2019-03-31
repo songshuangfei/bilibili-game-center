@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 const OrderGameItem = (props:homeOrderGameItemI)=>{
-    const gameLink = props.gameId===""?"#":`/game/${props.gameId}`;
+    const gameLink = props.gameId===""?"#":`/game?id=${props.gameId}`;
 
     return(
         <li className="home-order-game-item">

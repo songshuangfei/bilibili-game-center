@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 const HotStrategyItem = (props:homeStrategyItemI)=>{
-    const strategyGameLink = props.strategyId===""?"#":`/strategy/${props.strategyId}`;
+    const strategyGameLink = props.strategyId===""?"#":`/strategypage?id=${props.strategyId}`;
     return(
         <li className="home-hot-strategy-item">
             <div className="content">

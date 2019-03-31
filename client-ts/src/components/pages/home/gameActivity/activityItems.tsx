@@ -7,7 +7,7 @@ import "./home-game-activity.css";
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 
 const ActivityItem = (props:homeActivityItemI)=>{
-    const gameLink = props.gameId===""?"#":`/game/${props.gameId}`;
+    const gameLink = props.gameId===""?"#":`/game?id=${props.gameId}`;
     return(
         <div className="home-activity-item">
             <div className="activity-cover" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>

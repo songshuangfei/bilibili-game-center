@@ -5,7 +5,7 @@ import "./game-icon.css";
 import ImgOnlineSrc from '../img-online-src';
 
 const GameIcon = (props:gameIconItemI)=> {
-    const gameLink = (!props.gameId)?"#":`/game/${props.gameId}`;
+    const gameLink = (!props.gameId)?"#":`/game?id=${props.gameId}`;
     return (
         <div className="common-game-icon">
             <div className="icon" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>

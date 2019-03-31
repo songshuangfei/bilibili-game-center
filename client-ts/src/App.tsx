@@ -11,6 +11,7 @@ import Strategy from "./components/pages/strategy";
 import My from "./components/pages/my";
 
 import Search from "./components/pages/search";
+import GamePage from './components/pages/gamePage';
 
 function MainPagesWrapper(){
 	return (
@@ -33,6 +34,7 @@ function OtherPagesWrapper(){
 		<div className="other-pages-wrapper">
 			<Switch>
 				<Route path="/search" component={Search}/>
+				<Route path="/game" component={GamePage} ss="12"/>
 			</Switch>
 		</div>
 	)
