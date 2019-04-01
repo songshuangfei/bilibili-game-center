@@ -1,5 +1,5 @@
 import actionTypes from "./actionTypes";
-
+// home
 const setHomeBanner = (items:bannerItemI[]) =>({
     items,
     type:actionTypes.getHomeBanner,
@@ -30,11 +30,18 @@ const setHomeNewestActivity = (item:homeActivityItemI) =>({
     type:actionTypes.getHomeNewestActivity,
 });
 
+// find 
+const setFindBanner = (items:bannerItemI[]) =>({
+    items,
+    type:actionTypes.getFindBanner,
+});
+
 export {
     setHomeBanner,
     setHomeHotGame,
     setHomeNewGame,
     setHomeHotStrategy,
     setHomeOrderGame,
-    setHomeNewestActivity
+    setHomeNewestActivity,
+    setFindBanner
 };

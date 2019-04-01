@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import actionTypes from "../action/actionTypes"
 
+// home
 /**
  * return the state of home banner
  * @param state hombanner state
@@ -80,6 +81,22 @@ const homeNewestActivity = (
 }
 
 
+// find
+
+const findBanner = (
+  state:bannerItemI[] = [], 
+  action:{type:actionTypes,items:bannerItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getFindBanner:
+      return action.items;
+    default:
+      return state;
+  }
+}
+
+
+
 export default combineReducers({
   homeBanner,
   homeHotGame,
@@ -87,4 +104,5 @@ export default combineReducers({
   homeHotStrategy,
   homeOrderGame,
   homeNewestActivity,
+  findBanner,
 })
