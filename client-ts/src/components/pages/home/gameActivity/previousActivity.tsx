@@ -1,5 +1,6 @@
 import * as React from 'react';
 import ActivityItems from "./activityItems";
+import {ListAutoLoading, loadingState} from "src/components/commonComponent/list-auto-loading"
 
 class PreviousActivity extends React.Component {
     public render(){
@@ -18,6 +19,7 @@ class PreviousActivity extends React.Component {
                         />
                     ))
                 }
+                <ListAutoLoading now={loadingState.loading} failedRetry={()=>{console.log("failed")}}/>
             </div>
         )
     }

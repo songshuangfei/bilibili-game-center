@@ -3,6 +3,8 @@ import "./find-game-class.css";
 import HorizontalScroll from 'src/components/commonComponent/horizontal-scroll';
 import GameIcon from 'src/components/commonComponent/game-icon';
 import LinkTitle from 'src/components/commonComponent/link-title';
+import { ListAutoLoading, loadingState } from 'src/components/commonComponent/list-auto-loading';
+
 const GameItem = (props:{gameName:string,gameIconSrc:string,gameId:string})=>{
     return(
         <li className="game-class-game-item">
@@ -98,6 +100,7 @@ class GameClassify extends React.Component {
                         />
                     ))
                 }
+                <ListAutoLoading now={loadingState.loading} failedRetry={()=>{console.log("failed")}}/>
             </div>
         )
     }

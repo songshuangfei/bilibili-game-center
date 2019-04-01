@@ -5,6 +5,7 @@
     box-shadow: var(--blue-shadow);
     border-radius: 6px;
     overflow: hidden;
+    margin-bottom: 0;
 }
 
 .home-activity-item .activity-cover {

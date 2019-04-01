@@ -1,0 +1,43 @@
+.common-list-auto-loading {
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+}
+
+.common-list-auto-loading .loading-icon {
+    width: 2rem;
+    height: 2rem;
+    margin: 0 auto;
+}
+
+.common-list-auto-loading .loading-icon img {
+    width: 100%;
+    height: 100%;
+    animation: rotate 1.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+    form { transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+.common-list-auto-loading .failed {
+    color: var(--word-color-light);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.common-list-auto-loading .retry-btn {
+    width: 4rem;
+    height: 2rem;
+    margin: 0 auto;
+    margin-top: 0.4rem;
+}
+
+.common-list-auto-loading .nomore {
+    color: var(--word-color-light);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
