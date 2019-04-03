@@ -19,14 +19,15 @@
 }
 
 .find-specials .special-item .cover img {
-    width: 100%;
-    height: 100%;
+    width: 10rem;
+    height: 5rem;
+    display: block;
 }
 
 .find-specials .special-item .cover a {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 10rem;
+    height: 5rem;
     position: absolute;
     top: 0;
     left: 0;

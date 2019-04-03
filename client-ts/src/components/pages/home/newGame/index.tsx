@@ -7,7 +7,7 @@ import { setHomeNewGame} from "src/action/actions";
 import { connect } from 'react-redux';
 
 
-const NewGameItem = (props:{gameName:string,gameIconSrc:string,gameId:string})=>{
+const NewGameItem = (props:gameIconItemI)=>{
     return(
         <li className="home-new-game-item">
             <GameIcon gameIconSrc={props.gameIconSrc} gameId={props.gameId} gameName={props.gameName}/>

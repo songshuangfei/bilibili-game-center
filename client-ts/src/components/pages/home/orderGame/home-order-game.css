@@ -21,6 +21,7 @@
 }
 
 .home-order-game-item .cover img {
+    display: block;
     width: 10rem;
     height: 5.8rem;;
 }

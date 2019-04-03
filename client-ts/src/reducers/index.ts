@@ -95,7 +95,65 @@ const findBanner = (
   }
 }
 
+const findSpecial = (
+  state:bannerWithIdItemI[] = [], 
+  action:{type:actionTypes,items:bannerWithIdItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getFindSpecial:
+      return action.items;
+    default:
+      return state;
+  }
+}
 
+const findOrdrNewGame = (
+  state:gameIconItemI[] = [], 
+  action:{type:actionTypes,items:gameIconItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getFindOrdrNewGame:
+      return action.items;
+    default:
+      return state;
+  }
+}
+
+const findBiliGame= (
+  state:gameIconItemI[] = [], 
+  action:{type:actionTypes,items:gameIconItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getFindBiliGame:
+      return action.items;
+    default:
+      return state;
+  }
+}
+
+const findPayGame= (
+  state:gameIconItemI[] = [], 
+  action:{type:actionTypes,items:gameIconItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getFindPayGame:
+      return action.items;
+    default:
+      return state;
+  }
+}
+
+const findHotComment= (
+  state:findHotCommentItemI[] = [], 
+  action:{type:actionTypes,items:findHotCommentItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getFindHotComment:
+      return action.items;
+    default:
+      return state;
+  }
+}
 
 export default combineReducers({
   homeBanner,
@@ -105,4 +163,9 @@ export default combineReducers({
   homeOrderGame,
   homeNewestActivity,
   findBanner,
+  findSpecial,
+  findOrdrNewGame,
+  findBiliGame,
+  findPayGame,
+  findHotComment
 })

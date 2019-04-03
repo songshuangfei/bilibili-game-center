@@ -22,6 +22,7 @@
 }
 
 .home-hot-strategy-item .cover-img {
+    display: block;
     width: 10rem;
     height: 6rem;
 }

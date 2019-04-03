@@ -36,6 +36,31 @@ const setFindBanner = (items:bannerItemI[]) =>({
     type:actionTypes.getFindBanner,
 });
 
+const setFindSpecial = (items:bannerWithIdItemI[]) =>({
+    items,
+    type:actionTypes.getFindSpecial,
+});
+
+const setFindOrdrNewGame = (items:gameIconItemI[]) =>({
+    items,
+    type:actionTypes.getFindOrdrNewGame,
+});
+
+const setFindBiliGame = (items:gameIconItemI[]) =>({
+    items,
+    type:actionTypes.getFindBiliGame,
+});
+
+const setFindPayGame = (items:gameIconItemI[]) =>({
+    items,
+    type:actionTypes.getFindPayGame,
+});
+
+const setFindHotComment = (items:findHotCommentItemI[]) =>({
+    items,
+    type:actionTypes.getFindHotComment,
+});
+
 export {
     setHomeBanner,
     setHomeHotGame,
@@ -43,5 +68,10 @@ export {
     setHomeHotStrategy,
     setHomeOrderGame,
     setHomeNewestActivity,
-    setFindBanner
+    setFindBanner,
+    setFindSpecial,
+    setFindOrdrNewGame,
+    setFindBiliGame,
+    setFindPayGame,
+    setFindHotComment
 };

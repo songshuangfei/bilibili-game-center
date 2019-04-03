@@ -31,11 +31,13 @@ class ImgOnlineSrc extends React.Component {
     public render() {
         // 空src返回空img
         if(this.props.src === ""){
-            return <img src="" 
-                style={this.props.style} 
-                className={this.props.className} 
-                alt={this.props.alt}
-            />
+            return (
+                <img src="" 
+                    style={this.props.style} 
+                    className={this.props.className} 
+                    alt={this.props.alt}
+                />
+            )
         }
 
         // 根据图片加载状况设置透明度
@@ -45,18 +47,20 @@ class ImgOnlineSrc extends React.Component {
             this.opacity = 0;
         }
 
-        return <img  
-            style={{
-                ...this.props.style,
-                transitionDuration:"0.2s",
-                transitionTimingFunction:"ease-in-out",
-                opacity:this.opacity,
-            }}
-            className={this.props.className} 
-            src={this.props.src} 
-            alt={this.props.alt}
-            onLoad={()=>this.onLoadHandler()}
-        />
+        return (
+            <img  
+                style={{
+                    ...this.props.style,
+                    transitionDuration:"0.2s",
+                    transitionTimingFunction:"ease-in-out",
+                    opacity:this.opacity,
+                }}
+                className={this.props.className} 
+                src={this.props.src} 
+                alt={this.props.alt}
+                onLoad={()=>this.onLoadHandler()}
+            />
+        )
     }
 
     /**

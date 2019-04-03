@@ -48,3 +48,28 @@ interface homeActivityItemI {
     gameScore:string,
     gameId:string
 }
+
+
+/**
+ * banner item 类型
+ */
+interface bannerWithIdItemI {
+    imgSrc:string,
+    id:string
+}
+
+interface findHotCommentItemI {
+    commentId:string,
+    commentAbstract:string,
+    commenterHeadSrc:string,
+    commenterName:string,
+    commentStarNum:number,
+    gameName:string,
+    gameIconSrc:string,
+}
+
+interface FindGameClassifyItemI {
+    classifyName:string,
+    classifyId:string,
+    games:gameIconItemI[]
+}

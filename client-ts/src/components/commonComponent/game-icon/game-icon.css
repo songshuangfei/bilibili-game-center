@@ -10,6 +10,7 @@
 }
 
 .common-game-icon img {
+    display: block;
     width: 4.2rem;
     height: 4.2rem;
 }
