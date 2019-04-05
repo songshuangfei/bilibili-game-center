@@ -1,9 +1,14 @@
 /**
- * banner item 类型
+ * banner item with http link 类型
  */
 interface bannerItemI {
     imgSrc:string,
     link:string
+}
+
+interface bannerWithIdItemI {
+    imgSrc:string,
+    id:string
 }
 
 /**
@@ -51,12 +56,9 @@ interface homeActivityItemI {
 
 
 /**
- * banner item 类型
+ * banner item with id 类型
  */
-interface bannerWithIdItemI {
-    imgSrc:string,
-    id:string
-}
+
 
 interface findHotCommentItemI {
     commentId:string,
@@ -72,4 +74,33 @@ interface FindGameClassifyItemI {
     classifyName:string,
     classifyId:string,
     games:gameIconItemI[]
+}
+
+interface userInfoBasicI {
+    userName:string,
+    uid:string,
+    headImgSrc:string
+}
+
+interface userPageInfoI {
+    coverSrc:string,
+    follower:number,
+    following:number,
+    goodNum:number,
+    headImgSrc:string,
+    lv:number,
+    sex:string,
+    uid:string,
+    userName:string,
+}
+
+interface myMenuDataI {
+    bigGift:number,
+    bookedGame:number,
+    boughtGame:number,
+    myCollect:number,
+    myEvaluate:number,
+    myGift:number,
+    playedGame:number,
+    updateNum:number,    
 }

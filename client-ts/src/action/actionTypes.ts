@@ -10,7 +10,10 @@ enum actionTypes {
     getFindOrdrNewGame,
     getFindBiliGame,
     getFindPayGame,
-    getFindHotComment
+    getFindHotComment,
+    getStrategyHotGame,
+    getMyUserBoard,
+    getMyMenu
 }
 
 export default actionTypes;

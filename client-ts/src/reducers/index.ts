@@ -119,7 +119,7 @@ const findOrdrNewGame = (
   }
 }
 
-const findBiliGame= (
+const findBiliGame = (
   state:gameIconItemI[] = [], 
   action:{type:actionTypes,items:gameIconItemI[]}
 ) => {
@@ -131,7 +131,7 @@ const findBiliGame= (
   }
 }
 
-const findPayGame= (
+const findPayGame = (
   state:gameIconItemI[] = [], 
   action:{type:actionTypes,items:gameIconItemI[]}
 ) => {
@@ -143,13 +143,49 @@ const findPayGame= (
   }
 }
 
-const findHotComment= (
+const findHotComment = (
   state:findHotCommentItemI[] = [], 
   action:{type:actionTypes,items:findHotCommentItemI[]}
 ) => {
   switch (action.type) {
   case actionTypes.getFindHotComment:
       return action.items;
+    default:
+      return state;
+  }
+}
+
+const strategyHotGame = (
+  state:bannerWithIdItemI[] = [], 
+  action:{type:actionTypes,items:bannerWithIdItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getStrategyHotGame:
+      return action.items;
+    default:
+      return state;
+  }
+}
+
+const myUserBoard = (
+  state = {}, 
+  action:{type:actionTypes,item:userPageInfoI}
+) => {
+  switch (action.type) {
+  case actionTypes.getMyUserBoard:
+      return action.item;
+    default:
+      return state;
+  }
+}
+
+const myMenu = (
+  state = {}, 
+  action:{type:actionTypes,item:myMenuDataI}
+) => {
+  switch (action.type) {
+  case actionTypes.getMyMenu:
+      return action.item;
     default:
       return state;
   }
@@ -167,5 +203,8 @@ export default combineReducers({
   findOrdrNewGame,
   findBiliGame,
   findPayGame,
-  findHotComment
+  findHotComment,
+  strategyHotGame,
+  myUserBoard,
+  myMenu
 })

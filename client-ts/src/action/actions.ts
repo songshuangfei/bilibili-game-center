@@ -61,6 +61,22 @@ const setFindHotComment = (items:findHotCommentItemI[]) =>({
     type:actionTypes.getFindHotComment,
 });
 
+const setStrategyHotGame = (items:bannerWithIdItemI[]) =>({
+    items,
+    type:actionTypes.getStrategyHotGame,
+});
+
+// my
+const setMyUserBoard= (item:userPageInfoI) =>({
+    item,
+    type:actionTypes.getMyUserBoard,
+});
+
+const setMyMenu= (item:myMenuDataI) =>({
+    item,
+    type:actionTypes.getMyMenu,
+});
+
 export {
     setHomeBanner,
     setHomeHotGame,
@@ -73,5 +89,8 @@ export {
     setFindOrdrNewGame,
     setFindBiliGame,
     setFindPayGame,
-    setFindHotComment
+    setFindHotComment,
+    setStrategyHotGame,
+    setMyUserBoard,
+    setMyMenu
 };

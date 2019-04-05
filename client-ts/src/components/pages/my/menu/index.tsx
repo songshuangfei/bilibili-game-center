@@ -1,7 +1,8 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
 import {menuIcon,rightIcon} from "../../../icons"
-
+import { connect } from "react-redux";
+import { setMyMenu } from "src/action/actions";
 import "./my-menu.css";
 
 const GameUpdate = (props:{num:number}) => {
@@ -56,28 +57,52 @@ const MenuItem = (props:{name:string,iconSrc:string,link:string,num:number,haveL
 }
 
 class MyMenu extends React.Component {
-    public render(){
-        const datanum = {
-            bigGift:0,
-            bookedGame:8,
-            boughtGame:0,
-            myCollect:0,
-            myEvaluate:0,
-            myGift:0,
-            playedGame:1,
-            updateNum:2,
+    public props:{item:myMenuDataI, setMyMenu:(item: myMenuDataI)=>void}
+
+    public componentDidMount(){
+        if(JSON.stringify(this.props.item) !== "{}"){
+            return;
         }
+        console.log("get home my menu")
+
+        const that =this;
+        setTimeout(() => {
+            const datanum:myMenuDataI = {
+                bigGift:0,
+                bookedGame:8,
+                boughtGame:0,
+                myCollect:0,
+                myEvaluate:0,
+                myGift:0,
+                playedGame:1,
+                updateNum:2,
+            }
+            that.props.setMyMenu(datanum);
+        }, 3000);
+    }
+
+    public render(){
+        const {
+            bigGift,
+            bookedGame,
+            boughtGame,
+            myCollect,
+            myEvaluate,
+            myGift,
+            playedGame,
+            updateNum
+        } = this.props.item;
         return(
             <div className="my-menu">
-                <GameUpdate num={datanum.updateNum}/>
+                <GameUpdate num={updateNum?updateNum:0}/>
                 <div className="options">
-                    <MenuItem name="已玩游戏" iconSrc={menuIcon.played} link="/playedgame" num={datanum.playedGame} haveLine={true}/>
-                    <MenuItem name="已购游戏" iconSrc={menuIcon.bought} link="/boughtgame" num={datanum.boughtGame} haveLine={true}/>
-                    <MenuItem name="预约游戏" iconSrc={menuIcon.booked} link="/bookedgame" num={datanum.bookedGame} haveLine={true}/>
-                    <MenuItem name="我的评价" iconSrc={menuIcon.evaluate} link="/myevaluate" num={datanum.myEvaluate} haveLine={true}/>
-                    <MenuItem name="我的收藏" iconSrc={menuIcon.collect} link="/mycollect" num={datanum.myCollect} haveLine={true}/>
-                    <MenuItem name="我的礼包" iconSrc={menuIcon.gift} link="/mygift" num={datanum.myGift} haveLine={true}/>
-                    <MenuItem name="大会员礼包" iconSrc={menuIcon.bigGift} link="/biggift" num={datanum.bigGift} haveLine={false}/>
+                    <MenuItem name="已玩游戏" iconSrc={menuIcon.played} link="/playedgame" num={playedGame?playedGame:0} haveLine={true}/>
+                    <MenuItem name="已购游戏" iconSrc={menuIcon.bought} link="/boughtgame" num={boughtGame?boughtGame:0} haveLine={true}/>
+                    <MenuItem name="预约游戏" iconSrc={menuIcon.booked} link="/bookedgame" num={bookedGame?bookedGame:0} haveLine={true}/>
+                    <MenuItem name="我的评价" iconSrc={menuIcon.evaluate} link="/myevaluate" num={myEvaluate?myEvaluate:0} haveLine={true}/>
+                    <MenuItem name="我的收藏" iconSrc={menuIcon.collect} link="/mycollect" num={myCollect?myCollect:0} haveLine={true}/>
+                    <MenuItem name="我的礼包" iconSrc={menuIcon.gift} link="/mygift" num={myGift?myGift:0} haveLine={true}/>
+                    <MenuItem name="大会员礼包" iconSrc={menuIcon.bigGift} link="/biggift" num={bigGift?bigGift:0} haveLine={false}/>
                 </div>
                 <div className="setting">
                     <Setting name="设置" iconSrc={menuIcon.setting} link="/setting"/>
@@ -87,4 +112,10 @@ class MyMenu extends React.Component {
     }
 }
 
-export default MyMenu;
+export default connect(
+    (state:any) => ({
+        item: state.myMenu
+    }),(dispatch:any) => ({
+        setMyMenu: (item:myMenuDataI) => dispatch(setMyMenu(item))
+    })
+)(MyMenu)
