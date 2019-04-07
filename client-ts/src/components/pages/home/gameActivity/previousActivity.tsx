@@ -10,7 +10,7 @@ class PreviousActivity extends React.Component {
         setTimeout(() => {
             const f = Math.random();
             if(f>0.5){
-                const data:homeActivityItmeI[] =[{},{},{}];
+                const data:homeActivityItmeI[] =[];
                 succeed(data);
             }else{
                 failed();
@@ -19,7 +19,7 @@ class PreviousActivity extends React.Component {
     }
 
     public requestSucceedAction = (data:homeActivityItmeI[])=>{
-        this.forceUpdate();
+        this.forceUpdate();// or dispatch
         console.log("succeed\n","data:",data)
     }
 
@@ -28,7 +28,6 @@ class PreviousActivity extends React.Component {
     }
 
     public render(){
-        console.log("emmmmmmm")
         return(
             <AutoLoadList 
                 request={this.request} 

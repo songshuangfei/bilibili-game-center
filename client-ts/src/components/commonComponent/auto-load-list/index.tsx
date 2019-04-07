@@ -37,12 +37,20 @@ class AutoLoadList extends React.Component {
     }
 
     
-    public requestSucceed = (data:any) => {
+    public requestSucceed = (data:any[]) => {
         /* 请求成功的中间层函数*/
         if(!this.isMount){
             // 如果组件没挂载就不执行该回调
             return;
         }
+        if(data.length === 0){
+            // 请求到的数组长度为0就将状态设置为nomore，将停止所有请求
+            this.setState({
+                loadingState:loadingState.nomore
+            });
+            return;
+        }
+
         this.setState({
             loadingState:loadingState.ready
         });
