@@ -1,72 +1,40 @@
 import * as React from 'react';
 import ActivityItems from "./activityItems";
-import {ListAutoLoading, loadingState} from "src/components/commonComponent/list-auto-loading";
-import scrollMonitor from "src/components/commonFunc/scrollMonitor"
+import AutoLoadList from "src/components/commonComponent/auto-load-list"
 
 
 class PreviousActivity extends React.Component {
-    public state = {
-        loadingState:loadingState.ready
-    }
-    private isMount = true;
-
-    public requestSucceed(){
-        console.log("succeed");
-        this.setState({
-            loadingState:loadingState.ready
-        })
-    }
-
-    public requestFailed(){
-        console.log("failed")
-        this.setState({
-            loadingState:loadingState.failed
-        })
-    }
-
-    public request (){
-        this.setState({// 设置状态
-            loadingState:loadingState.loading
-        });
+    
+    public request = (succeed:(data:homeActivityItmeI[])=>void,failed:()=>void) => {
+        console.log("request start")
         setTimeout(() => {
-            if(!this.isMount){
-                // 如果组件没挂载就不执行回调
-                return;
-            }
             const f = Math.random();
             if(f>0.5){
-                this.requestSucceed();
+                const data:homeActivityItmeI[] =[{},{},{}];
+                succeed(data);
             }else{
-                this.requestFailed();
+                failed();
             }
         }, 3000);
     }
 
-    public arrivedBottomAction(){
-        if(this.state.loadingState !== loadingState.ready){
-            return;
-        }
-        // 只有为ready状态才能自动请求
-        this.request();
+    public requestSucceedAction = (data:homeActivityItmeI[])=>{
+        this.forceUpdate();
+        console.log("succeed\n","data:",data)
     }
 
-    public failedRetry(){
-        // 失败时手动触发的函数
-        this.request();
+    public requestFailedAction = ()=>{
+        console.log("need not do anything")
     }
 
-    public componentWillUnmount(){
-        this.isMount = false;
-        scrollMonitor.stop()
-    }
-    
-    public componentDidMount(){
-        this.isMount = true;
-        scrollMonitor.start(()=>this.arrivedBottomAction())
-    }
     public render(){
+        console.log("emmmmmmm")
         return(
-            <div>
+            <AutoLoadList 
+                request={this.request} 
+                requestSucceedAction={this.requestSucceedAction}
+                requestFailedAction={this.requestFailedAction}
+            >
                 {
                     [0,1,2,3,4].map(v=>(
                         <ActivityItems 
@@ -80,8 +48,7 @@ class PreviousActivity extends React.Component {
                         />
                     ))
                 }
-                <ListAutoLoading now={this.state.loadingState} failedRetry={()=>{this.failedRetry()}}/>
-            </div>
+            </AutoLoadList>
         )
     }
 }

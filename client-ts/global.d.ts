@@ -104,3 +104,7 @@ interface myMenuDataI {
     playedGame:number,
     updateNum:number,    
 }
+
+interface homeActivityItmeI {
+    
+}

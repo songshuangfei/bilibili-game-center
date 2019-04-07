@@ -1,7 +1,6 @@
 import * as React from 'react';
 import GameListItem from "src/components/commonComponent/game-list-item"
 import "./rank-game-list.css";
-import { ListAutoLoading, loadingState } from 'src/components/commonComponent/list-auto-loading';
 
 
 class GameList extends React.Component {
@@ -35,7 +34,6 @@ class GameList extends React.Component {
                     ))
                 }
                 gamelist for {this.props.listType}
-                <ListAutoLoading now={loadingState.loading} failedRetry={()=>{console.log("failed")}}/>
             </div>
         )
     }
