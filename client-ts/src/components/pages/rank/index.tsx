@@ -46,6 +46,7 @@ class Rank extends React.Component {
 	}
 }
 
+
 export default connect(
     (state:any) => ({
         item: state.rankPageTab
