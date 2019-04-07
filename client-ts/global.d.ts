@@ -1,6 +1,12 @@
+// common interfact
 /**
  * banner item with http link 类型
  */
+interface requestErrorI {
+    statusCode:string,
+    msg:string
+}
+
 interface bannerItemI {
     imgSrc:string,
     link:string
@@ -9,6 +15,20 @@ interface bannerItemI {
 interface bannerWithIdItemI {
     imgSrc:string,
     id:string
+}
+
+interface userInfoBasicI {
+    userName:string,
+    uid:string,
+    headImgSrc:string
+}
+
+interface pageTabIndexI {
+    tabIndex:number
+}
+
+interface ListRequestIiemI {
+    // just empty(any)
 }
 
 /**
@@ -20,6 +40,8 @@ interface gameIconItemI {
     gameId:string
 }
 
+
+// interface of home page
 /**
  * home strategy item 类型
  */
@@ -54,12 +76,11 @@ interface homeActivityItemI {
     gameId:string
 }
 
+// interface of find page
 
 /**
- * banner item with id 类型
+ * find hot comment 
  */
-
-
 interface findHotCommentItemI {
     commentId:string,
     commentAbstract:string,
@@ -76,12 +97,11 @@ interface FindGameClassifyItemI {
     games:gameIconItemI[]
 }
 
-interface userInfoBasicI {
-    userName:string,
-    uid:string,
-    headImgSrc:string
-}
 
+// interface of user page
+/**
+ * user info 
+ */
 interface userPageInfoI {
     coverSrc:string,
     follower:number,
@@ -94,6 +114,9 @@ interface userPageInfoI {
     userName:string,
 }
 
+/**
+ * interface of my page menu 
+ */
 interface myMenuDataI {
     bigGift:number,
     bookedGame:number,
@@ -105,6 +128,4 @@ interface myMenuDataI {
     updateNum:number,    
 }
 
-interface homeActivityItmeI {
-    
-}
+

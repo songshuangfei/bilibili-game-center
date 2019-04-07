@@ -13,7 +13,8 @@ enum actionTypes {
     getFindHotComment,
     getStrategyHotGame,
     getMyUserBoard,
-    getMyMenu
+    getMyMenu,
+    getRankPageTab
 }
 
 export default actionTypes;

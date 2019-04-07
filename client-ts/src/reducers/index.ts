@@ -191,6 +191,18 @@ const myMenu = (
   }
 }
 
+const rankPageTab = (
+  state:pageTabIndexI = {tabIndex:0}, 
+  action:{type:actionTypes,item:pageTabIndexI}
+) => {
+  switch (action.type) {
+  case actionTypes.getRankPageTab:
+      return action.item;
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   homeBanner,
   homeHotGame,
@@ -206,5 +218,6 @@ export default combineReducers({
   findHotComment,
   strategyHotGame,
   myUserBoard,
-  myMenu
+  myMenu,
+  rankPageTab,
 })

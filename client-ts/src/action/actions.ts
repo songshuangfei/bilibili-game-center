@@ -77,6 +77,11 @@ const setMyMenu= (item:myMenuDataI) =>({
     type:actionTypes.getMyMenu,
 });
 
+const setRankPageTab = (item:pageTabIndexI) =>({
+    item,
+    type:actionTypes.getRankPageTab,
+});
+
 export {
     setHomeBanner,
     setHomeHotGame,
@@ -92,5 +97,6 @@ export {
     setFindHotComment,
     setStrategyHotGame,
     setMyUserBoard,
-    setMyMenu
+    setMyMenu,
+    setRankPageTab
 };
