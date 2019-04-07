@@ -1,27 +1,23 @@
 import * as React from 'react';
 import pageScroll from "src/components/commonFunc/scroll";
 import GameList from "./game-list";
-import "./rank.css"
+import "./rank.css";
+import {setRankPageTab} from "src/action/actions";
+import { connect } from 'react-redux';
 
 class Rank extends React.Component {
-	public state = {
-		tabNow:"hot",
-		tagLeft:"12.5%",
-	}
-	
+	public props:{item:pageTabIndexI,setRankPageTab:(item:pageTabIndexI)=>void}
+
 	private tabs=['hot','expect','good','new']
 	
-	public tabTouch(i:number){
-		if(this.state.tabNow === this.tabs[i]){
+	public tabTouch(nextIndex:number){
+		if(this.props.item.tabIndex === nextIndex){
 			console.log("tab未改变");
             return;
 		}
 		pageScroll.setPageScrollWithValue(0);// 切换要回到顶部
-		const left = 25*i+12.5 +"%";
-		this.setState({
-			tabNow:this.tabs[i],
-			tagLeft:left,
-		});
+		const pageTab:pageTabIndexI = {tabIndex:nextIndex}
+		this.props.setRankPageTab(pageTab)
 	}
 
 	public componentWillUnmount(){
@@ -33,20 +29,27 @@ class Rank extends React.Component {
 	}
 
 	public render() {
-		const tabNow = this.state.tabNow;
+		const tabNowIndex = this.props.item.tabIndex;
+		const markLeft = 25*tabNowIndex+12.5 +"%";
 		return (
 			<div>
-				<GameList listType={tabNow}/>
+				<GameList listType={this.tabs[tabNowIndex]}/>
 				<div className="rank-type-tabs">
-                    <div className={`tab ${tabNow===this.tabs[0]?"tab-active":''}`}  onClick={()=>{this.tabTouch(0)}}>畅销榜</div>
-                    <div className={`tab ${tabNow===this.tabs[1]?"tab-active":''}`} onClick={()=>{this.tabTouch(1)}}>期待榜</div>
-                    <div className={`tab ${tabNow===this.tabs[2]?"tab-active":''}`} onClick={()=>{this.tabTouch(2)}}>口碑榜</div>
-                    <div className={`tab ${tabNow===this.tabs[3]?"tab-active":''}`} onClick={()=>{this.tabTouch(3)}}>新游榜</div>
-                    <div className="mark" style={{left:this.state.tagLeft}}/>
+                    <div className={`tab ${tabNowIndex===0?"tab-active":''}`}  onClick={()=>{this.tabTouch(0)}}>畅销榜</div>
+                    <div className={`tab ${tabNowIndex===1?"tab-active":''}`} onClick={()=>{this.tabTouch(1)}}>期待榜</div>
+                    <div className={`tab ${tabNowIndex===2?"tab-active":''}`} onClick={()=>{this.tabTouch(2)}}>口碑榜</div>
+                    <div className={`tab ${tabNowIndex===3?"tab-active":''}`} onClick={()=>{this.tabTouch(3)}}>新游榜</div>
+                    <div className="mark" style={{left:markLeft}}/>
                 </div>
 			</div>
 		)
 	}
 }
 
-export default Rank;
+export default connect(
+    (state:any) => ({
+        item: state.rankPageTab
+    }),(dispatch:any) => ({
+        setRankPageTab: (item:pageTabIndexI) => dispatch(setRankPageTab(item))
+    })
+)(Rank)
