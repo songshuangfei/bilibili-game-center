@@ -26,6 +26,12 @@ const Failed =(props:{retry:()=>void})=>{
     )
 }
 
+const Wait =()=>{
+    return(
+        <div className="common-list-auto-loading"/>
+    )
+}
+
 const NoMore = ()=>(
     <div className="common-list-auto-loading">
         <div className="nomore">(〜￣△￣)〜没有更多了</div>
@@ -33,6 +39,7 @@ const NoMore = ()=>(
 )
 
 enum loadingState {
+    ready,
     loading,
     failed,
     nomore,
@@ -41,17 +48,16 @@ enum loadingState {
 /**
  * @param props 
  */
-class ListAutoLoading extends React.Component {
-    public props:{now:loadingState, failedRetry:()=>void}
-    public render(){
-        switch (this.props.now){
-        case loadingState.loading:
-            return <Loading/>
-        case loadingState.failed:
-            return <Failed retry={this.props.failedRetry}/>
-        case loadingState.nomore:
-            return <NoMore/>
-        }
+function ListAutoLoading (props:{now:loadingState, failedRetry:()=>void}) {
+    switch (props.now){
+    case loadingState.loading:
+        return <Loading/>
+    case loadingState.failed:
+        return <Failed retry={props.failedRetry}/>
+    case loadingState.nomore:
+        return <NoMore/>
+    case loadingState.ready:
+        return <Wait/> 
     }
 }
 

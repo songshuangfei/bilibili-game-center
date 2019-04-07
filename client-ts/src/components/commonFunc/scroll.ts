@@ -7,21 +7,21 @@ const pageScroll = {
     },
 
     _resetPageScroll():void{
-        document.documentElement.scrollTop = document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     },
 
     saveScrollTop(pageName:string):void{
-        const scrollTop:number = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        const scrollTop:number = document.documentElement.scrollTop;
         this._value[pageName] = scrollTop;
         this._resetPageScroll();
     },
    
     setScrollTopToPage(pageName:string):void{
-        document.documentElement.scrollTop = document.body.scrollTop = this._value[pageName];
+        document.documentElement.scrollTop = this._value[pageName];
     },
 
     setPageScrollWithValue(v:number){
-        document.documentElement.scrollTop = document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
 }
 

@@ -1,6 +1,6 @@
 .common-list-auto-loading {
-    padding-top: 1.4rem;
-    padding-bottom: 1.4rem;
+    min-height: 4rem;
+    margin-top: 1rem;
 }
 
 .common-list-auto-loading .loading-icon {
