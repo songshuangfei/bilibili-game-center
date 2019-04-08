@@ -15,6 +15,7 @@ class NewestActivity extends React.Component {
         const that =this;
         setTimeout(() => {
             const activity:homeActivityItemI = {
+                activityId:"12",
                 coverSrc:"//file.suafe.cn/blgc/gamenews/2.png",
                 gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",
                 gameName:"崩坏三",
@@ -31,6 +32,7 @@ class NewestActivity extends React.Component {
                 {
                     JSON.stringify(this.props.item) === "{}"?
                     <ActivityItems 
+                        activityId=""
                         coverSrc=""
                         gameIconSrc=""
                         gameName="bilibili"
@@ -39,6 +41,7 @@ class NewestActivity extends React.Component {
                         gameId=""
                     />:
                     <ActivityItems 
+                        activityId={this.props.item.activityId}
                         coverSrc={this.props.item.coverSrc}
                         gameIconSrc={this.props.item.gameIconSrc}
                         gameName={this.props.item.gameName}

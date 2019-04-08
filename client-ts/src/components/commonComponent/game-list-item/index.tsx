@@ -31,15 +31,15 @@ const GameScore =(props:{score:number})=>{
     )
 }
 
-const GameListItem = (props:{
-    gameId:string,
-    gameName:string,
-    gameIconSrc:string,
-    gameType:string,
-    gameSize:string,
-    ranking:number,
-    score:number,// 这三个可选属性是必有一个得，信息面板第三条根据其改变
-})=>{
+const GameOrderNum =(props:{ordernum:number})=>{
+    return(
+        <div className="game-order-num">
+            <span className="num">{props.ordernum}</span><span>人已预约</span>
+        </div>
+    )
+}
+
+const GameListItem = (props:gameListItemI)=>{
     const rankingColor = props.ranking<=3?"#22ade5":"#959595";
     return(
         <div className="common-game-list-item">
@@ -49,15 +49,18 @@ const GameListItem = (props:{
                     <div style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
                         <ImgOnlineSrc src={props.gameIconSrc} alt=""/>
                     </div>
-                    <Link to={`/game/${props.gameId}`}/>
+                    <Link to={props.gameId===""?"#":`/game?id=${props.gameId}`}/>
                 </div>
                 <div className="info">
                     <div className="game-name">{props.gameName}</div>
                     <div className="game-type-size">{props.gameType}/{props.gameSize}</div>
                     <div className="game-score-or-other">
-                        <GameScore score={props.score}/>
+                        {
+                            props.score?<GameScore score={props.score}/>
+                            :props.orderNum?<GameOrderNum ordernum={props.orderNum}/>:""
+                        }
                     </div>
-                    <Link to={`/game/${props.gameId}`}/>
+                    <Link to={props.gameId===""?"#":`/game?id=${props.gameId}`}/>
                 </div>
                 <div className="download-btn">
                     <div>

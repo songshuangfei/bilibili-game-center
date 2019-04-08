@@ -5,6 +5,7 @@ enum actionTypes {
     getHomeHotStrategy,
     getHomeOrderGame,
     getHomeNewestActivity,
+    getHomePreviousActivity,
     getFindBanner,
     getFindSpecial,
     getFindOrdrNewGame,
@@ -14,7 +15,8 @@ enum actionTypes {
     getStrategyHotGame,
     getMyUserBoard,
     getMyMenu,
-    getRankPageTab
+    getRankPageTab,
 }
+
 
 export default actionTypes;

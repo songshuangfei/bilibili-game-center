@@ -30,6 +30,11 @@ const setHomeNewestActivity = (item:homeActivityItemI) =>({
     type:actionTypes.getHomeNewestActivity,
 });
 
+
+const setHomePreviousActivity = (items:homeActivityItemI[]) =>({
+    items,
+    type:actionTypes.getHomePreviousActivity,
+});
 // find 
 const setFindBanner = (items:bannerItemI[]) =>({
     items,
@@ -89,6 +94,7 @@ export {
     setHomeHotStrategy,
     setHomeOrderGame,
     setHomeNewestActivity,
+    setHomePreviousActivity,
     setFindBanner,
     setFindSpecial,
     setFindOrdrNewGame,

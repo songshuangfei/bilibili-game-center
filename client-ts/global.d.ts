@@ -27,10 +27,20 @@ interface pageTabIndexI {
     tabIndex:number
 }
 
-interface ListRequestIiemI {
+interface listRequestIiemI {
     // just empty(any)
 }
 
+interface gameListItemI {
+    gameId:string,
+    gameName:string,
+    gameIconSrc:string,
+    gameType:string,
+    gameSize:string,
+    ranking:number,
+    score?:number,
+    orderNum?:number
+}
 /**
  * game icon item 类型
  */
@@ -68,6 +78,7 @@ interface homeOrderGameItemI {
  * home activity  item 类型
  */
 interface homeActivityItemI {
+    activityId:string,
     coverSrc:string,
     gameIconSrc:string,
     gameName:string,

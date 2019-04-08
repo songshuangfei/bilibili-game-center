@@ -81,6 +81,17 @@
     display: flex;
 }
 
+.common-game-list-item .info .game-score-or-other .game-order-num {
+    font-size: 0.7rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    color: var(--word-color-light);
+}
+
+.common-game-list-item .info .game-score-or-other .game-order-num .num {
+    color: var(--theme-color)
+}
+
 .common-game-list-item .info .game-score-or-other .game-score>div {
     height: 1.4rem;
     line-height: 1.4rem;

@@ -203,6 +203,18 @@ const rankPageTab = (
   }
 }
 
+const homePreviousActivity = (
+  state:homeActivityItemI[] = [], 
+  action:{type:actionTypes,items:homeActivityItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getHomePreviousActivity:
+      return [...state,...action.items];
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   homeBanner,
   homeHotGame,
@@ -210,6 +222,7 @@ export default combineReducers({
   homeHotStrategy,
   homeOrderGame,
   homeNewestActivity,
+  homePreviousActivity,
   findBanner,
   findSpecial,
   findOrdrNewGame,
@@ -220,4 +233,5 @@ export default combineReducers({
   myUserBoard,
   myMenu,
   rankPageTab,
+  
 })

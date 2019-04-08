@@ -30,7 +30,7 @@ class Rank extends React.Component {
 
 	public render() {
 		const tabNowIndex = this.props.item.tabIndex;
-		const markLeft = 25*tabNowIndex+12.5 +"%";
+		const markLeft = 25*tabNowIndex + 12.5 +"%";
 		return (
 			<div>
 				<GameList listType={this.tabs[tabNowIndex]}/>
@@ -45,7 +45,6 @@ class Rank extends React.Component {
 		)
 	}
 }
-
 
 export default connect(
     (state:any) => ({
