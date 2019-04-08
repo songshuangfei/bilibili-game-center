@@ -10,7 +10,7 @@ class NewestActivity extends React.Component {
         if(JSON.stringify(this.props.item) !== "{}"){
             return;
         }
-        console.log("get home newest activity game")
+        // console.log("get home newest activity game")
 
         const that =this;
         setTimeout(() => {

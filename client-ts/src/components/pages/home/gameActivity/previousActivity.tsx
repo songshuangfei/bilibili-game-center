@@ -9,7 +9,7 @@ class PreviousActivity extends React.Component {
 	public props:{items:homeActivityItemI[],setHomePreviousActivity:(items:homeActivityItemI[])=>void}
 
     public request = (succeed:(data:homeActivityItemI[])=>void,failed:(err:requestErrorI)=>void) => {
-        console.log("request start")
+        // console.log("request start")
         setTimeout(() => {
             const f = Math.random();
             if(f>0.5){
@@ -107,7 +107,6 @@ class PreviousActivity extends React.Component {
     }
 
     public render(){
-        console.log(this.props.items)
         return(
             <div>
                 <AutoLoadList 

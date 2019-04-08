@@ -13,7 +13,7 @@ class UserBoard extends React.Component {
         if(JSON.stringify(this.props.item) !== "{}"){
             return;
         }
-        console.log("get home my user board")
+        // console.log("get home my user board")
 
         const that =this;
         setTimeout(() => {

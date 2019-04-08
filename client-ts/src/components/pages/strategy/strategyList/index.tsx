@@ -2,7 +2,6 @@ import * as React from "react";
 import StrategyItem from "src/components/commonComponent/strategy-item";
 import NoLinkTitle from "src/components/commonComponent/no-link-title"
 import "./strategy-list.css";
-import { ListAutoLoading, loadingState } from 'src/components/commonComponent/list-auto-loading-show-board';
 
 class StrategyList extends React.Component {
     public render(){
@@ -73,7 +72,6 @@ class StrategyList extends React.Component {
                             />
                         ))
                     }
-                <ListAutoLoading now={loadingState.loading} failedRetry={()=>{console.log("failed")}}/>
             </div>
         )
     }

@@ -41,7 +41,7 @@ class OrdrGame extends React.Component {
         if(this.props.items.length!==0){
             return;
         }
-        console.log("get home order game");
+        // console.log("get home order game");
 
         const games:homeOrderGameItemI[] =[
             {coverImgSrc:"//file.suafe.cn/blgc/gamecover/4.jpg",gameId:"1",gameName:"第五人格",orderedNum:8987},

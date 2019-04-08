@@ -26,7 +26,7 @@ class FindSpecials extends React.Component {
         if(this.props.items.length !== 0){
             return;
         }
-        console.log("get home find special")
+        // console.log("get home find special")
 
         const that =this;
         setTimeout(() => {

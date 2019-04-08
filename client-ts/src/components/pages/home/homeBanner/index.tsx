@@ -10,7 +10,7 @@ class HomeBanner extends React.Component {
         if(this.props.items.length!==0){
             return;
         }
-        console.log("get home banner");
+        // console.log("get home banner");
         
         const that =this;
         setTimeout(() => {

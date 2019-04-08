@@ -11,7 +11,7 @@ class FindBanner extends React.Component {
         if(this.props.items.length !== 0){
             return;
         }
-        console.log("get home find banner")
+        // console.log("get home find banner")
 
         const that =this;
         setTimeout(() => {

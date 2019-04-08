@@ -21,7 +21,7 @@ class PayGames extends React.Component {
         if(this.props.items.length !== 0){
             return;
         }
-        console.log("get home find pay game")
+        // console.log("get home find pay game")
 
         const that =this;
         setTimeout(() => {

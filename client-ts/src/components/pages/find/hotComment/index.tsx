@@ -68,7 +68,7 @@ class HotComments extends React.Component {
         if(this.props.items.length !== 0){
             return;
         }
-        console.log("get home find hot comments")
+        // console.log("get home find hot comments")
 
         const that =this;
         setTimeout(() => {
@@ -111,8 +111,6 @@ class HotComments extends React.Component {
         }, 3000);
     }
     public render(){
-        
-        console.log(this.props)
         return(
             <div className="find-hot-comment">
                 <LinkTitle title="热门评论" link="/hotcomment" backgroundColor="none"/>

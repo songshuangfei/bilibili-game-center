@@ -21,7 +21,7 @@ class BiliGames extends React.Component {
         if(this.props.items.length !== 0){
             return;
         }
-        console.log("get home find bili game")
+        // console.log("get home find bili game")
 
         const that =this;
         setTimeout(() => {

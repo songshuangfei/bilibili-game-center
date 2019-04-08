@@ -21,7 +21,7 @@ class OrderNewGame extends React.Component {
         if(this.props.items.length !== 0){
             return;
         }
-        console.log("get home find order game")
+        // console.log("get home find order game")
 
         const that =this;
         setTimeout(() => {

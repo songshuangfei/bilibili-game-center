@@ -3,7 +3,6 @@ import {Link} from "react-router-dom"
 
 class NotFound extends React.Component {
     public render(){
-        console.log("404")
         return(
             <div>
                 该页面不存在

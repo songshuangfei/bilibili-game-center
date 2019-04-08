@@ -1,14 +1,14 @@
 import * as React from 'react';
 import GameListItem from "src/components/commonComponent/game-list-item";
-
 import AutoLoadList from "src/components/commonComponent/auto-load-list";
 import {setRankHotGameList} from "src/action/actions";
 import { connect } from 'react-redux';
+
 class GameListForHot extends React.Component {
     public props:{items:gameListItemI[],setRankHotGameList:(items:gameListItemI[])=>void}
 
     public request = (succeed:(data:gameListItemI[])=>void,failed:(err:requestErrorI)=>void) => {
-        console.log("request start")
+        // console.log("request start")
         setTimeout(() => {
             const f = Math.random();
             if(f>0.1){
@@ -88,7 +88,6 @@ class GameListForHot extends React.Component {
     }
 
     public render(){
-        console.log("hhhhhh",this.props.items)
         return (
             <div className="rank-game-list">
                 <AutoLoadList 

@@ -20,7 +20,7 @@ class NewGame extends React.Component {
         if(this.props.items.length!==0){
             return;
         }
-        console.log("get home new game");
+        // console.log("get home new game");
         
         const that =this;
         setTimeout(() => {

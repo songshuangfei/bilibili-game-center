@@ -24,7 +24,7 @@ class StrategyHotGame extends React.Component {
         if(this.props.items.length !== 0){
             return;
         }
-        console.log("get home strategy hot game")
+        // console.log("get home strategy hot game")
 
         const that =this;
         setTimeout(() => {
