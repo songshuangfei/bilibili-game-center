@@ -215,6 +215,20 @@ const homePreviousActivity = (
   }
 }
 
+const rankHotGameList = (
+  state:gameListItemI[] = [], 
+  action:{type:actionTypes,items:gameListItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getRankHotGameList:
+      return [...state,...action.items];
+    default:
+      return state;
+  }
+}
+
+
+
 export default combineReducers({
   homeBanner,
   homeHotGame,
@@ -223,6 +237,7 @@ export default combineReducers({
   homeOrderGame,
   homeNewestActivity,
   homePreviousActivity,
+  rankHotGameList,
   findBanner,
   findSpecial,
   findOrdrNewGame,

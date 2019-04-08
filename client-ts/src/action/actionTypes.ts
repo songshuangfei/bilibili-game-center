@@ -6,6 +6,7 @@ enum actionTypes {
     getHomeOrderGame,
     getHomeNewestActivity,
     getHomePreviousActivity,
+    getRankHotGameList,
     getFindBanner,
     getFindSpecial,
     getFindOrdrNewGame,

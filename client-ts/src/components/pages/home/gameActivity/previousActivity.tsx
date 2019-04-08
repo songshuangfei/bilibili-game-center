@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 class PreviousActivity extends React.Component {
 	public props:{items:homeActivityItemI[],setHomePreviousActivity:(items:homeActivityItemI[])=>void}
 
-    public request = (succeed:(data:homeActivityItemI[])=>void,failed:(err:any)=>void) => {
+    public request = (succeed:(data:homeActivityItemI[])=>void,failed:(err:requestErrorI)=>void) => {
         console.log("request start")
         setTimeout(() => {
             const f = Math.random();

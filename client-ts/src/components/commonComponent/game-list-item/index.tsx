@@ -39,7 +39,16 @@ const GameOrderNum =(props:{ordernum:number})=>{
     )
 }
 
-const GameListItem = (props:gameListItemI)=>{
+const GameListItem = (props:{
+    gameId:string,
+    gameName:string,
+    gameIconSrc:string,
+    gameType:string,
+    gameSize:string,
+    ranking:number,
+    score?:number,
+    orderNum?:number
+})=>{
     const rankingColor = props.ranking<=3?"#22ade5":"#959595";
     return(
         <div className="common-game-list-item">

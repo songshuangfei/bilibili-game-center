@@ -30,7 +30,6 @@ const setHomeNewestActivity = (item:homeActivityItemI) =>({
     type:actionTypes.getHomeNewestActivity,
 });
 
-
 const setHomePreviousActivity = (items:homeActivityItemI[]) =>({
     items,
     type:actionTypes.getHomePreviousActivity,
@@ -87,6 +86,11 @@ const setRankPageTab = (item:pageTabIndexI) =>({
     type:actionTypes.getRankPageTab,
 });
 
+const setRankHotGameList = (items:gameListItemI[]) =>({
+    items,
+    type:actionTypes.getRankHotGameList,
+});
+
 export {
     setHomeBanner,
     setHomeHotGame,
@@ -104,5 +108,6 @@ export {
     setStrategyHotGame,
     setMyUserBoard,
     setMyMenu,
-    setRankPageTab
+    setRankPageTab,
+    setRankHotGameList
 };

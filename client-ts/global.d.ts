@@ -37,7 +37,6 @@ interface gameListItemI {
     gameIconSrc:string,
     gameType:string,
     gameSize:string,
-    ranking:number,
     score?:number,
     orderNum?:number
 }
