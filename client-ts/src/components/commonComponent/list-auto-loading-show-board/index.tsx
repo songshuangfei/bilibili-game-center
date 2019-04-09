@@ -9,6 +9,7 @@ const Loading =()=>{
             <div className="loading-icon">
                 <img src={loadingIcon} alt=""/>
             </div>
+            <span className="loading-word">加载中...</span>
         </div>
     )
 }
