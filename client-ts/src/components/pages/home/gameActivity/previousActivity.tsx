@@ -69,7 +69,7 @@ class PreviousActivity extends React.Component {
                 }];
 
                 const data4:homeActivityItemI[]=[]
-
+                // 请求不到数据时一定要返回空数组---------AutoLoadList需要一个空数组判断是否停止加载
                 const pagenum = this.props.items.length/2
                 let data:any ;
                 switch (pagenum){

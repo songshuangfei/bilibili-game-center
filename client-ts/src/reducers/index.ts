@@ -227,7 +227,42 @@ const rankHotGameList = (
   }
 }
 
+const rankExpectGameList = (
+  state:gameListItemI[] = [], 
+  action:{type:actionTypes,items:gameListItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getRankExpectGameList:
+      return [...state,...action.items];
+    default:
+      return state;
+  }
+}
 
+
+const rankGoodGameList = (
+  state:gameListItemI[] = [], 
+  action:{type:actionTypes,items:gameListItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getRankGoodGameList:
+      return [...state,...action.items];
+    default:
+      return state;
+  }
+}
+
+const rankNewGameList = (
+  state:gameListItemI[] = [], 
+  action:{type:actionTypes,items:gameListItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getRankNewGameList:
+      return [...state,...action.items];
+    default:
+      return state;
+  }
+}
 
 export default combineReducers({
   homeBanner,
@@ -238,6 +273,9 @@ export default combineReducers({
   homeNewestActivity,
   homePreviousActivity,
   rankHotGameList,
+  rankExpectGameList,
+  rankGoodGameList,
+  rankNewGameList,
   findBanner,
   findSpecial,
   findOrdrNewGame,

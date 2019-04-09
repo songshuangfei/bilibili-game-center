@@ -52,7 +52,8 @@ class GameListForHot extends React.Component {
                 const data4:gameListItemI[]=[]
 
                 const pagenum = this.props.items.length/9
-                let data:gameListItemI[] ;
+                let data:gameListItemI[];
+                // 没有数据一定要返回空数组-----------------------------
                 switch (pagenum){
                     case 0:
                         data=data1;

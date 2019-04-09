@@ -91,6 +91,21 @@ const setRankHotGameList = (items:gameListItemI[]) =>({
     type:actionTypes.getRankHotGameList,
 });
 
+const setRankExpectGameList = (items:gameListItemI[]) =>({
+    items,
+    type:actionTypes.getRankExpectGameList,
+});
+
+const setRankGoodGameList = (items:gameListItemI[]) =>({
+    items,
+    type:actionTypes.getRankGoodGameList,
+});
+
+const setRankNewGameList = (items:gameListItemI[]) =>({
+    items,
+    type:actionTypes.getRankNewGameList,
+});
+
 export {
     setHomeBanner,
     setHomeHotGame,
@@ -109,5 +124,8 @@ export {
     setMyUserBoard,
     setMyMenu,
     setRankPageTab,
-    setRankHotGameList
+    setRankHotGameList,
+    setRankExpectGameList,
+    setRankGoodGameList,
+    setRankNewGameList,
 };
