@@ -264,6 +264,30 @@ const rankNewGameList = (
   }
 }
 
+const findGameClassify = (
+  state:findGameClassifyItemI[] = [], 
+  action:{type:actionTypes,items:findGameClassifyItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getFindGameClassify:
+      return [...state,...action.items];
+    default:
+      return state;
+  }
+}
+
+const strPageStrategyList = (
+  state:strategyListItemI[] = [], 
+  action:{type:actionTypes,items:strategyListItemI[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getStrPageStrategyList:
+      return [...state,...action.items];
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   homeBanner,
   homeHotGame,
@@ -272,6 +296,7 @@ export default combineReducers({
   homeOrderGame,
   homeNewestActivity,
   homePreviousActivity,
+  rankPageTab,
   rankHotGameList,
   rankExpectGameList,
   rankGoodGameList,
@@ -282,9 +307,9 @@ export default combineReducers({
   findBiliGame,
   findPayGame,
   findHotComment,
+  findGameClassify,
   strategyHotGame,
+  strPageStrategyList,
   myUserBoard,
   myMenu,
-  rankPageTab,
-  
 })

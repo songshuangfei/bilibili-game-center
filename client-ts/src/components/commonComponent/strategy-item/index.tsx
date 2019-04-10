@@ -4,18 +4,7 @@ import "./strategy-item.css";
 import { Link } from 'react-router-dom';
 import ImgOnlineSrc from '../img-online-src';
 
-const StrategyItem = (props:{
-    publisherHeadSrc:string,
-    publisherName:string,
-    strategyTitle:string,
-    coverSrc:string,
-    abstract:string,
-    gameName:string,
-    strategyType:string,
-    readNum:string,
-    goodNum:string,
-    strategyId:string
-})=>{
+const StrategyItem = (props:strategyListItemI)=>{
     return(
         <div className="common-strategy-item">
             <div className="publisher-info">
@@ -46,7 +35,7 @@ const StrategyItem = (props:{
                     <span>{props.goodNum}</span>
                 </div>
             </div>
-            <Link to={`/strategyid/${props.strategyId}`}/>
+            <Link to={props.strategyId===""?"#":`/strategyid?id=${props.strategyId}`}/>
         </div>
     )
 }

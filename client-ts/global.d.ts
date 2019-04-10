@@ -49,6 +49,18 @@ interface gameIconItemI {
     gameId:string
 }
 
+interface strategyListItemI {
+    publisherHeadSrc:string,
+    publisherName:string,
+    strategyTitle:string,
+    coverSrc:string,
+    abstract:string,
+    gameName:string,
+    strategyType:string,
+    readNum:string,
+    goodNum:string,
+    strategyId:string
+}
 
 // interface of home page
 /**
@@ -101,7 +113,7 @@ interface findHotCommentItemI {
     gameIconSrc:string,
 }
 
-interface FindGameClassifyItemI {
+interface findGameClassifyItemI {
     classifyName:string,
     classifyId:string,
     games:gameIconItemI[]

@@ -7,7 +7,7 @@ import FindSpecials from "./findSpecial";
 import BiliGames from "./biliGame";
 import PayGames from "./payGame";
 import HotComments from "./hotComment";
-import GameClassify from "./gameClassify"
+import FindGameClassify from "./gameClassify"
 
 class Find extends React.Component {
 	public componentWillUnmount(){
@@ -28,7 +28,7 @@ class Find extends React.Component {
 				<BiliGames/>
 				<PayGames/>
 				<HotComments/>
-				<GameClassify/>
+				<FindGameClassify/>
 			</div>
 		)
 	}

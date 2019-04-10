@@ -106,6 +106,17 @@ const setRankNewGameList = (items:gameListItemI[]) =>({
     type:actionTypes.getRankNewGameList,
 });
 
+
+const setFindGameClassify = (items:findGameClassifyItemI[]) =>({
+    items,
+    type:actionTypes.getFindGameClassify,
+});
+
+const setStrPageStrategyList = (items:strategyListItemI[]) =>({
+    items,
+    type:actionTypes.getStrPageStrategyList,
+});
+
 export {
     setHomeBanner,
     setHomeHotGame,
@@ -121,6 +132,7 @@ export {
     setFindPayGame,
     setFindHotComment,
     setStrategyHotGame,
+    setStrPageStrategyList,
     setMyUserBoard,
     setMyMenu,
     setRankPageTab,
@@ -128,4 +140,5 @@ export {
     setRankExpectGameList,
     setRankGoodGameList,
     setRankNewGameList,
+    setFindGameClassify,
 };

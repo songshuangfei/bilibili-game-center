@@ -1,7 +1,7 @@
 import * as React from 'react';
 import pageScroll from "src/components/commonFunc/scroll";
 import StrategyHotGame from "./strategyHotGame";
-import StrategyList from "./strategyList"
+import StrPageStrategyList from "./strategyList"
 class Strategy extends React.Component {
 	public componentWillUnmount(){
 		pageScroll.saveScrollTop("strategy");
@@ -15,7 +15,7 @@ class Strategy extends React.Component {
 		return (
 			<div>
 				<StrategyHotGame/>
-				<StrategyList/>
+				<StrPageStrategyList/>
 			</div>
 		)
 	}
