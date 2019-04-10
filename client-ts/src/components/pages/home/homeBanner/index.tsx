@@ -2,11 +2,13 @@ import * as React from 'react';
 import Banner from "src/components/commonComponent/banner";
 import {setHomeBanner} from "src/action/actions";
 import { connect } from 'react-redux';
+import { homeBannerApi } from "src/api-request/"
 
 class HomeBanner extends React.Component {
     public props: {items:bannerItemI[],sethomeBanner:(items:bannerItemI[]) =>any};
     
     public componentDidMount(){
+        homeBannerApi();
         if(this.props.items.length!==0){
             return;
         }
