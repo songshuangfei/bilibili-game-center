@@ -16,10 +16,10 @@
 .App {
     /* overflow-x: hidden; */
 }
-.main-pages-wrapper {
+.title-pages-wrapper {
     padding-top: var(--title-bar-height);
     padding-bottom: var(--nav-bar-height)
 }
-.other-pages-wrapper {
+.no-title-pages-wrapper {
     
 }

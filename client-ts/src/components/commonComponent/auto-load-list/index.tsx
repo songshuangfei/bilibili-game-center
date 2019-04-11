@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {ListAutoLoading, loadingState} from "src/components/commonComponent/list-auto-loading-show-board";
+import {ListAutoLoadingShowBoard, loadingState} from "src/components/commonComponent/list-auto-loading-show-board";
 import scrollMonitor from "src/components/commonFunc/scrollMonitor"
 
 /**
@@ -97,7 +97,7 @@ class AutoLoadList extends React.Component {
         return(
             <div>
                 {this.props.children}
-                <ListAutoLoading now={this.state.loadingState} failedRetry={()=>{this.failedRetry()}}/>
+                <ListAutoLoadingShowBoard now={this.state.loadingState} failedRetry={()=>{this.failedRetry()}}/>
             </div>
         )
     }

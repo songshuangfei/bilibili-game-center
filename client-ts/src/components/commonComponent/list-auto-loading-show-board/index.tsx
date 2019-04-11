@@ -49,7 +49,7 @@ enum loadingState {
 /**
  * @param props 
  */
-function ListAutoLoading (props:{now:loadingState, failedRetry:()=>void}) {
+function ListAutoLoadingShowBoard (props:{now:loadingState, failedRetry:()=>void}) {
     switch (props.now){
     case loadingState.loading:
         return <Loading/>
@@ -63,6 +63,6 @@ function ListAutoLoading (props:{now:loadingState, failedRetry:()=>void}) {
 }
 
 export {
-    ListAutoLoading,
+    ListAutoLoadingShowBoard,
     loadingState
 };

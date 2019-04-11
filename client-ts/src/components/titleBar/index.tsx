@@ -2,8 +2,25 @@ import * as React from "react";
 import { Route,Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
 import titleIcon from "./icons";
+import { RouteComponentProps } from 'react-router-dom';
 import "./titleBar.css";
 
+// 只有返回键的title
+const OnlyBackBtnTitlebar = (props:{titleName:string,clickToBack:()=>void,hasBoxShadow:boolean})=>{
+    let outStyle;
+    props.hasBoxShadow?outStyle={}:outStyle={boxShadow:"none"}
+    return (
+        <div className="title-bar-out" style={outStyle}>
+            <Link className="title-link-block" to="#" onClick={props.clickToBack}>
+                <img src={titleIcon.back} alt=""/>
+            </Link>
+            <Link className="title-link-block" to="#"/>
+            <div className="page-name">{props.titleName}</div>
+            <Link className="title-link-block" to="#"/>
+            <Link className="title-link-block" to="#"/>
+        </div>
+    )
+}
 
 const HomeTitle = ()=>{
     return (
@@ -89,6 +106,14 @@ const MyTitle = ()=>{
     )
 }
 
+const MsgTitle = (props: RouteComponentProps)=>(
+    <OnlyBackBtnTitlebar titleName="我的消息" clickToBack={props.history.goBack} hasBoxShadow={true}/>
+)
+
+const MyDownloadTitle = (props: RouteComponentProps)=>(
+    <OnlyBackBtnTitlebar titleName="我的下载" clickToBack={props.history.goBack} hasBoxShadow={true}/>
+)
+
 const TitleBar= () => {
     return(
         <Switch>
@@ -97,6 +122,8 @@ const TitleBar= () => {
             <Route path="/find" component={FindTitle}/>
             <Route path="/strategy" component={StrategyTitle}/>
             <Route path="/my" component={MyTitle}/>
+            <Route path="/msg" component={MsgTitle}/>
+            <Route path="/mydownload" component={MyDownloadTitle}/>
         </Switch>
     )
 }

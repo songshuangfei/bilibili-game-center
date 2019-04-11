@@ -1,0 +1,40 @@
+.msg-type-tabs {
+    width: 100%;
+    height: 2.8rem;
+    background: #fff;
+    display: flex;
+    position: fixed;
+    z-index: 999;
+    top: var(--title-bar-height);
+    box-shadow: var(--blue-shadow)
+}
+
+.msg-type-tabs .tab {
+    flex: 1;
+    height: 2.8rem;
+    font-size: 0.9rem;
+    color: var(--word-color-primary);
+    text-align: center;
+    line-height: 2.8rem;
+}
+
+
+.msg-type-tabs .mark {
+    width: 1rem;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--theme-color);
+    position: absolute;
+    bottom: 0;
+    margin-left: -0.5rem;
+    left: 16.7%;
+    transition-duration: 0.2s;
+}
+
+.msg-type-tabs .tab-active {
+    color: var(--theme-color);
+}
+
+.msg-content {
+    padding-top: 2.8rem
+}

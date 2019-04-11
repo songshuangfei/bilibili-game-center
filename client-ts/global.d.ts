@@ -150,4 +150,11 @@ interface myMenuDataI {
     updateNum:number,    
 }
 
+interface msgItemI {
+    senderName:string,
+    senderHeadsrc:string,
+    sendTime:string,
+    msgContent:string
+}
+
 

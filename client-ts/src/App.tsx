@@ -12,29 +12,35 @@ import My from "./components/pages/my";
 
 import Search from "./components/pages/search";
 import GamePage from './components/pages/gamePage';
+import MsgPage from "./components/pages/msg";
+import MyDownload  from "./components/pages/my-download";
 
 function MainPagesWrapper(){
+	const pathNow:string = window.location.pathname;
+		const isManPage:boolean = ['/','/rank','/find','/strategy','/my'].indexOf(pathNow)===-1?false:true; 
 	return (
-		<div className="main-pages-wrapper">
+		<div className="title-pages-wrapper">
 			<Switch>
 				<Route exact={true} path="/" component={Home}/>
 				<Route path="/rank" component={Rank}/>
 				<Route path="/find" component={Find}/>
 				<Route path="/strategy" component={Strategy}/>
 				<Route path="/my" component={My}/>
+				<Route path="/msg" component={MsgPage} />
+				<Route path="/mydownload" component={MyDownload} />
 			</Switch>
 			<TitleBar/>
-			<Nav/>
+			{isManPage?<Nav/>:""}
 		</div>
 	)
 }
 
 function OtherPagesWrapper(){
 	return (
-		<div className="other-pages-wrapper">
+		<div className="no-title-pages-wrapper">
 			<Switch>
 				<Route path="/search" component={Search}/>
-				<Route path="/game" component={GamePage} ss="12"/>
+				<Route path="/game" component={GamePage} />
 			</Switch>
 		</div>
 	)
@@ -43,10 +49,10 @@ function OtherPagesWrapper(){
 class App extends React.Component {
 	public render() {
 		const pathNow:string = window.location.pathname;
-		const isMainPage:boolean = ['/','/rank','/find','/strategy','/my'].indexOf(pathNow)===-1?false:true; 
+		const isTitlePage:boolean = ['/','/rank','/find','/strategy','/my','/msg',"/mydownload"].indexOf(pathNow)===-1?false:true; 
 		return (
 			<div className="App">
-				{isMainPage?<MainPagesWrapper/>:<OtherPagesWrapper/>}
+				{isTitlePage?<MainPagesWrapper/>:<OtherPagesWrapper/>}
 			</div>
 		);
 	}
