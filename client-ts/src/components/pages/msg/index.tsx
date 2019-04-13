@@ -44,17 +44,33 @@ class MsgPage extends React.Component {
         })
         setTimeout(() => {
             const f = Math.random();
-            if(f>0.5){
+            if(f>0.2){
                 const data2:msgItemI[]=[]
                 const data1:msgItemI[]=[
-                    {senderName:"画画",
+                    {senderName:"nem",
                     senderHeadsrc:"//file.suafe.cn/blgc/userhead/6.jpg",
                     sendTime:"4-12",
-                    msgContent:"hello!"},
+                    msgContent:"hello!hello?",
+                    senderId:"01"
+                },
                     {senderName:"emm",
                     senderHeadsrc:"//file.suafe.cn/blgc/userhead/5.jpg",
                     sendTime:"4-11",
-                    msgContent:"Hi!"},
+                    msgContent:"Hi!",
+                    senderId:"01"
+                },
+                    {senderName:"archer",
+                    senderHeadsrc:"//file.suafe.cn/blgc/userhead/4.jpg",
+                    sendTime:"4-11",
+                    msgContent:"Hi!",
+                    senderId:"01"
+                },
+                    {senderName:"saber",
+                    senderHeadsrc:"//file.suafe.cn/blgc/userhead/3.jpg",
+                    sendTime:"4-11",
+                    msgContent:"Hi!",
+                    senderId:"01"
+                },
                 ]
                 const data3:msgItemI[]=[]
                 this.setState({

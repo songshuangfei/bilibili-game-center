@@ -154,7 +154,8 @@ interface msgItemI {
     senderName:string,
     senderHeadsrc:string,
     sendTime:string,
-    msgContent:string
+    msgContent:string,
+    senderId:string
 }
 
 
