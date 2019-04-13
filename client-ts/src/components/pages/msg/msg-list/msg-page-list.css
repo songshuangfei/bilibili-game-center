@@ -4,3 +4,8 @@
     height: auto;
     margin: 6rem auto;
 }
+.msg-list .msg-item {
+    width: 100%;
+    height: 4rem;
+    background: #fff;
+}

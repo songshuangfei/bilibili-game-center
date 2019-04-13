@@ -4,7 +4,7 @@ import {nomsgIcon} from "src/components/icons"
 
 const MsgItem = (props:msgItemI)=>{
     return(
-        <div>
+        <div className="msg-item">
             {props.msgContent}
             {props.sendTime}
             {props.senderName}
@@ -20,7 +20,6 @@ const MsgList = (props:{msgs:msgItemI[]}) => {
                 <img className="no-msg-icon" src={nomsgIcon} alt=""/>:
                 props.msgs.map(v=>
                     <MsgItem 
-                    // ---------------------------
                         key={v.senderHeadsrc}
                         msgContent={v.msgContent}
                         sendTime={v.sendTime}
@@ -34,10 +33,3 @@ const MsgList = (props:{msgs:msgItemI[]}) => {
 }
 
 export default  MsgList;
-
-// private tabs = ["reply","attitude","inform"];
-
-// class 
-// export {
-
-// }

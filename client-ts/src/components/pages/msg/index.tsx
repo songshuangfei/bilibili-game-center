@@ -11,12 +11,14 @@ import MsgList from "./msg-list"
 
 class MsgPage extends React.Component {
     public state:{
+        loadingState:loadingState,
         isLoaded:boolean,
         tabIndex:number,
         reply:msgItemI[],
         attitude:msgItemI[],
         inform:msgItemI[]
     } = {
+        loadingState:loadingState.ready,
         isLoaded:false,
         tabIndex:0,
         reply:[],
@@ -37,30 +39,39 @@ class MsgPage extends React.Component {
     }
     
     public request = () => {
-        console.log("reqing")
+        this.setState({
+            loadingState:loadingState.loading
+        })
         setTimeout(() => {
-            const data1:msgItemI[]=[]
-            const data2:msgItemI[]=[
-                {senderName:"string",
-                senderHeadsrc:"string",
-                sendTime:"string",
-                msgContent:"string"},
-                {senderName:"string",
-                senderHeadsrc:"string",
-                sendTime:"string",
-                msgContent:"string"},
-                {senderName:"string",
-                senderHeadsrc:"string",
-                sendTime:"string",
-                msgContent:"string"},
-            ]
-            const data3:msgItemI[]=[]
-            this.setState({
-                isLoaded:true,
-                reply:data1,
-                attitude:data2,
-                inform:data3
-            })
+            const f = Math.random();
+            if(f>0.5){
+                const data2:msgItemI[]=[]
+                const data1:msgItemI[]=[
+                    {senderName:"画画",
+                    senderHeadsrc:"//file.suafe.cn/blgc/userhead/6.jpg",
+                    sendTime:"4-12",
+                    msgContent:"hello!"},
+                    {senderName:"emm",
+                    senderHeadsrc:"//file.suafe.cn/blgc/userhead/5.jpg",
+                    sendTime:"4-11",
+                    msgContent:"Hi!"},
+                ]
+                const data3:msgItemI[]=[]
+                this.setState({
+                    isLoaded:true,
+                    loadingState:loadingState.ready,
+                    reply:data1,
+                    attitude:data2,
+                    inform:data3
+                })
+            }else{
+                // do nothing
+                this.setState({
+                    isLoaded:false,
+                    loadingState:loadingState.failed,
+                })
+            }
+            
         }, 1000);
 
     }
@@ -78,7 +89,7 @@ class MsgPage extends React.Component {
                     {
                         this.state.isLoaded?
                         <MsgList msgs={this.state[this.tabs[tabNowIndex]]}/>:
-                        <ListAutoLoadingShowBoard now={loadingState.loading} failedRetry={this.request}/>
+                        <ListAutoLoadingShowBoard now={this.state.loadingState} failedRetry={this.request}/>
                     }
                 </div>
                 <div className="msg-type-tabs">
