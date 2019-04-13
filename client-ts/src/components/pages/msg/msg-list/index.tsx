@@ -5,9 +5,9 @@ import {nomsgIcon} from "src/components/icons"
 const MsgItem = (props:msgItemI)=>{
     return(
         <div className="msg-item">
-            {props.msgContent}
-            {props.sendTime}
-            {props.senderName}
+            {props.msgContent}|
+            {props.sendTime}|
+            {props.senderName}|
             {props.senderHeadsrc}
         </div>
     )
