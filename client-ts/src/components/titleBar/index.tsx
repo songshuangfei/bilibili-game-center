@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Route,Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
-import titleIcon from "./icons";
+import titleIcon from "src/components/icons/title-icons";
 import { RouteComponentProps } from 'react-router-dom';
 import "./titleBar.css";
 

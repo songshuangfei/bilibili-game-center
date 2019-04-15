@@ -1,7 +1,7 @@
 import * as React from "react";
 import { NavLink } from 'react-router-dom';
 import "./nav.css";
-import { navIcon } from './icons';
+import { navIcon } from 'src/components/icons/nav-icons';
 
 function LinkItems(props:{selfPath:string,linkName:string,icon:any,iconActive:any}){
     const pathNameNow: string = window.location.pathname;
