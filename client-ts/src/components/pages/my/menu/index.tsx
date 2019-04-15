@@ -1,6 +1,9 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
-import {menuIcon,rightIcon} from "../../../icons"
+import {rightIcon} from "src/components/icons"
+import menuIcon from "src/components/icons/menu"
+
+
 import { connect } from "react-redux";
 import { setMyMenu } from "src/action/actions";
 import "./my-menu.css";

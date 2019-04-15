@@ -1,13 +1,13 @@
-import home from "./home/home.png"
-import homeAct from "./home/home-active.png"
-import find from "./find/find.png"
-import findAct from "./find/find-active.png"
-import rank from "./rank/rank.png"
-import rankAct from "./rank/rank-active.png"
-import strategy from "./strategy/strategy.png"
-import strategyAct from "./strategy/strategy-active.png"
-import my from "./my/my.png"
-import myAct from "./my/my-active.png"
+import home from "./home.png"
+import homeAct from "./home-active.png"
+import find from "./find.png"
+import findAct from "./find-active.png"
+import rank from "./rank.png"
+import rankAct from "./rank-active.png"
+import strategy from "./strategy.png"
+import strategyAct from "./strategy-active.png"
+import my from "./my.png"
+import myAct from "./my-active.png"
 const navIcon = {
 	find,
 	findAct,

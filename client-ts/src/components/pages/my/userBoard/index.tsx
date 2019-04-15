@@ -1,5 +1,7 @@
 import * as React from "react";
-import {rightWhiteIcon, sexIcon, lvIcon, UidIcon, YellowGood, ImgLoadingIcon} from "src/components/icons";
+import {rightWhiteIcon, sexIcon,  UidIcon, YellowGood, ImgLoadingIcon} from "src/components/icons";
+import lvIcon  from "src/components/icons/lv";
+
 import {Link} from "react-router-dom"
 import "./my-user-board.css"
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
