@@ -10,7 +10,7 @@ import Find from "./components/pages/find";
 import Strategy from "./components/pages/strategy";
 import My from "./components/pages/my";
 
-import Search from "./components/pages/search";
+import Search from "./components/pages/search/";
 import GamePage from './components/pages/gamePage';
 import MsgPage from "./components/pages/msg";
 import MyDownload  from "./components/pages/my-download";

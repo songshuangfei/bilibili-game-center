@@ -1,0 +1,17 @@
+.keyword-match .keys {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #fff;
+}
+
+.keyword-match .key-item {
+    font-size: 0.8rem;
+    color: var(--word-color-primary);
+    box-sizing: border-box;
+    padding: 0.8rem var(--page-side-blank)
+}
+
+.keyword-match .matched {
+    color: #fb7299;
+}
