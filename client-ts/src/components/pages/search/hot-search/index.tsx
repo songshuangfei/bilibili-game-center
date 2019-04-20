@@ -5,7 +5,7 @@ import "./hot-search.css";
 function HotSearch (props:{hotSearchKeys:string[],clickGetKey:(key:string)=>void}){
     return(
         <div className="search-hot-keys">
-            <NoLinkTitle title="热搜游戏" backgroundColor="none"/>
+            <NoLinkTitle title="热搜游戏" backgroundColor="none" showBlueMark={false}/>
             <div className="keys">
                 {
                     props.hotSearchKeys.map(v=>(

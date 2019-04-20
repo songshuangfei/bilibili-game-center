@@ -47,13 +47,18 @@ const GameListItem = (props:{
     gameSize:string,
     ranking:number,
     score?:number,
-    orderNum?:number
+    orderNum?:number,
+    showIndex:boolean
 })=>{
     const rankingColor = props.ranking<=3?"#22ade5":"#959595";
     return(
         <div className="common-game-list-item">
             <div className="content">
-                <div className="ranking" style={{color:rankingColor}}>{props.ranking}</div>
+                {
+                    props.showIndex?
+                    <div className="ranking" style={{color:rankingColor}}>{props.ranking}</div>:
+                    ""
+                }
                 <div className="icon-pic">
                     <div style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
                         <ImgOnlineSrc src={props.gameIconSrc} alt=""/>

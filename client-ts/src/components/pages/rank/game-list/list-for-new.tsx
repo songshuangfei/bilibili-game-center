@@ -106,6 +106,7 @@ class GameListForNew extends React.Component {
                                 gameSize={v.gameSize}
                                 ranking={i+1}
                                 score={v.score}
+                                showIndex={true}
                             />
                         ))
                     }

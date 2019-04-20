@@ -19,7 +19,7 @@ class  Search extends React.Component {
 	}
 
 	public componentDidMount(){
-			this.getHotSearch();
+		this.getHotSearch();
 	}
 
 	public render () {

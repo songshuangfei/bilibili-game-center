@@ -107,6 +107,7 @@ class GameListForHot extends React.Component {
                                 gameSize={v.gameSize}
                                 score={v.score}
                                 ranking={i+1}
+                                showIndex={true}
                             />
                         ))
                     }
