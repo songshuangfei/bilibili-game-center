@@ -1,7 +1,7 @@
 # 仿bilibili游戏中心
 
 ## 简介
-使用react仿写的哔哩哔哩游戏中心。
+使用react仿写的哔哩哔哩游戏中心。本来是用es6写的项目，后来用typescript重写了前端项目，使用es写的旧版本在es分支。
 
 [演示地址（请使用移动版Chrome或PC Chrome 的开发者工具查看）](http://blgc.suafe.cn)
 
