@@ -84,7 +84,7 @@ function gameRankApi (type:rankApiTypes,page:number,size:number,succeed:(data:ga
             const err:requestErrorI ={statusCode:"500",msg:"err"}
             failed(err);
         }
-    }, 500);
+    }, 300);
 }
 
 // new game rank api
@@ -131,7 +131,7 @@ function newGameRankApi (page:number,size:number,succeed:(data:newGameListItemI[
             const err:requestErrorI ={statusCode:"500",msg:"err"}
             failed(err);
         }
-    }, 600);
+    }, 300);
 }
 
 

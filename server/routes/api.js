@@ -1,15 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var games =  require('../db/games')
-var home =  require('../db/home')
-var strategy =  require('../db/strategy')
-var users =  require('../db/users')
-var my =  require('../db/my')
-var find  =  require('../db/find')
+var games =  require('../db/games');
+var home =  require('../db/home');
+var strategy =  require('../db/strategy');
+var users =  require('../db/users');
+var my =  require('../db/my');
+var find  =  require('../db/find');
 
 /* GET home page. */
 router.get('/carousel', function(req, res, next) {//首页轮播图
-  res.json({'carousel':home.carousel})
+  res.json({'carousel':home.carousel});
 });
 
 router.get('/hotgame', function(req, res, next) {//首页热门游戏

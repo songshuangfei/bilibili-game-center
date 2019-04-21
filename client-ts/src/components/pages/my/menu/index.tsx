@@ -3,10 +3,10 @@ import {Link} from "react-router-dom";
 import {rightIcon} from "src/components/icons"
 import menuIcon from "src/components/icons/menu"
 
-
 import { connect } from "react-redux";
 import { setMyMenu } from "src/action/actions";
 import "./my-menu.css";
+import {myMenuData} from "src/api-request/my"
 
 const GameUpdate = (props:{num:number}) => {
     return(
@@ -69,19 +69,9 @@ class MyMenu extends React.Component {
         // console.log("get  my menu")
 
         const that =this;
-        setTimeout(() => {
-            const datanum:myMenuDataI = {
-                bigGift:0,
-                bookedGame:8,
-                boughtGame:0,
-                myCollect:0,
-                myEvaluate:0,
-                myGift:0,
-                playedGame:1,
-                updateNum:2,
-            }
-            that.props.setMyMenu(datanum);
-        }, 3000);
+        myMenuData(data=>{
+            that.props.setMyMenu(data);
+        })
     }
 
     public render(){

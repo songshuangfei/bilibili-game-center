@@ -7,6 +7,7 @@ import "./my-user-board.css"
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 import { connect } from "react-redux";
 import { setMyUserBoard } from "src/action/actions";
+import {myUserInfo} from "src/api-request/my"
 
 class UserBoard extends React.Component {
     public props:{item:userPageInfoI, setMyUserBoard:(item: userPageInfoI)=>void}
@@ -18,20 +19,9 @@ class UserBoard extends React.Component {
         // console.log("get home my user board")
 
         const that =this;
-        setTimeout(() => {
-            const userData:userPageInfoI = {
-                coverSrc:"//file.suafe.cn/blgc/userback/default.jpg",
-                follower:21,
-                following:56,
-                goodNum:1423,
-                headImgSrc:"//file.suafe.cn/blgc/userhead/2.jpg",
-                lv:5,
-                sex:"female",
-                uid:"2537832",
-                userName:"夏池萤",
-            }
-            that.props.setMyUserBoard(userData);
-        }, 3000);
+        myUserInfo(data=>{
+            that.props.setMyUserBoard(data);
+        })
     }
 
     public render(){

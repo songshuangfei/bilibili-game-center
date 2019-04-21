@@ -178,7 +178,7 @@ function searchApi(
             failed(err);
         }
         
-    }, 500);
+    }, 300);
 }
 
 function searchStrategyApi(
@@ -200,7 +200,7 @@ function searchStrategyApi(
             failed(err);
         }
         
-    }, 500);
+    }, 300);
 }
 
 export {
