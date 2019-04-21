@@ -6,12 +6,8 @@
 [演示地址（请使用移动版Chrome或PC Chrome 的开发者工具查看）](http://blgc.suafe.cn)
 
 ## 部分截图展示
-<img src="doc/img/home.jpg" width = "220" />
-<img src="doc/img/rank.jpg" width = "220" />
-<img src="doc/img/find.jpg" width = "220" />
-<img src="doc/img/strategy.jpg" width = "220" />
-<img src="doc/img/my.jpg" width = "220" />
-<img src="doc/img/search.jpg" width = "220" />
+<img src="doc/img/home.jpg" width = "220" /><img src="doc/img/rank.jpg" width = "220" /><img src="doc/img/find.jpg" width = "220" />
+<img src="doc/img/strategy.jpg" width = "220" /><img src="doc/img/my.jpg" width = "220" /><img src="doc/img/search.jpg" width = "220" />
 
 ## 项目特色
 * 精心仿写的ui，高还原哔哩哔哩游戏中。
