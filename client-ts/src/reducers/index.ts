@@ -228,8 +228,8 @@ const rankHotGameList = (
 }
 
 const rankExpectGameList = (
-  state:gameListItemI[] = [], 
-  action:{type:actionTypes,items:gameListItemI[]}
+  state:newGameListItemI[] = [], 
+  action:{type:actionTypes,items:newGameListItemI[]}
 ) => {
   switch (action.type) {
   case actionTypes.getRankExpectGameList:

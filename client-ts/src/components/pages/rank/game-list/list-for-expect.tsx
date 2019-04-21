@@ -5,15 +5,15 @@ import {setRankExpectGameList} from "src/action/actions";
 import { connect } from 'react-redux';
 
 class GameListForExpect extends React.Component {
-    public props:{items:gameListItemI[],setRankExpectGameList:(items:gameListItemI[])=>void}
+    public props:{items:newGameListItemI[],setRankExpectGameList:(items:newGameListItemI[])=>void}
 
-    public request = (succeed:(data:gameListItemI[])=>void,failed:(err:requestErrorI)=>void) => {
+    public request = (succeed:(data:newGameListItemI[])=>void,failed:(err:requestErrorI)=>void) => {
         // console.log("request start")
         setTimeout(() => {
             const f = Math.random();
             if(f>0.1){
                 // 模拟成功
-                const data1:gameListItemI[]=[
+                const data1:newGameListItemI[]=[
                     {gameId:"0011",gameName:"命运-冠位指(Fate/Go)",gameIconSrc:"//file.suafe.cn/blgc/gameicon/fgo.png",gameType:"卡牌",gameSize:"568M",orderNum:12213},
                     {gameId:"0051",gameName:"撒旦",gameIconSrc:"//file.suafe.cn/blgc/gameicon/fs.png",gameType:"卡牌",gameSize:"568M",orderNum:32431},
                     {gameId:"0031",gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon/mhmnz.png",gameType:"卡牌",gameSize:"568M",orderNum:6465},
@@ -25,7 +25,7 @@ class GameListForExpect extends React.Component {
                     {gameId:"0081",gameName:"撒旦",gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",gameType:"卡牌",gameSize:"568M",orderNum:345345},
                 ]
 
-                const data2:gameListItemI[]=[
+                const data2:newGameListItemI[]=[
                     {gameId:"0012",gameName:"命运-冠位指(Fate/Go)",gameIconSrc:"//file.suafe.cn/blgc/gameicon/fgo.png",gameType:"卡牌",gameSize:"568M",orderNum:12213},
                     {gameId:"0052",gameName:"撒旦",gameIconSrc:"//file.suafe.cn/blgc/gameicon/fs.png",gameType:"卡牌",gameSize:"568M",orderNum:32431},
                     {gameId:"0032",gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon/mhmnz.png",gameType:"卡牌",gameSize:"568M",orderNum:6465},
@@ -37,7 +37,7 @@ class GameListForExpect extends React.Component {
                     {gameId:"0082",gameName:"撒旦",gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",gameType:"卡牌",gameSize:"568M",orderNum:345345},
                 ]
 
-                const data3:gameListItemI[]=[
+                const data3:newGameListItemI[]=[
                     {gameId:"0013",gameName:"命运-冠位指(Fate/Go)",gameIconSrc:"//file.suafe.cn/blgc/gameicon/fgo.png",gameType:"卡牌",gameSize:"568M",orderNum:12213},
                     {gameId:"0053",gameName:"撒旦",gameIconSrc:"//file.suafe.cn/blgc/gameicon/fs.png",gameType:"卡牌",gameSize:"568M",orderNum:32431},
                     {gameId:"0033",gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon/mhmnz.png",gameType:"卡牌",gameSize:"568M",orderNum:6465},
@@ -49,10 +49,10 @@ class GameListForExpect extends React.Component {
                     {gameId:"0083",gameName:"撒旦",gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",gameType:"卡牌",gameSize:"568M",orderNum:345345},
                 ]
 
-                const data4:gameListItemI[]=[]
+                const data4:newGameListItemI[]=[]
 
                 const pagenum = this.props.items.length/9
-                let data:gameListItemI[] ;
+                let data:newGameListItemI[] ;
                 switch (pagenum){
                     case 0:
                         data=data1;
@@ -77,7 +77,7 @@ class GameListForExpect extends React.Component {
         }, 3000);
     }
 
-    public requestSucceedAction = (data:gameListItemI[])=>{
+    public requestSucceedAction = (data:newGameListItemI[])=>{
         this.props.setRankExpectGameList(data)
         // console.log("succeed\n","data:",data)
     }
@@ -104,9 +104,9 @@ class GameListForExpect extends React.Component {
                             gameIconSrc={v.gameIconSrc}
                             gameType={v.gameType}
                             gameSize={v.gameSize}
-                            score={v.score}
                             ranking={i+1}
                             showIndex={true}
+                            orderNum={v.orderNum}
                         />
                     ))
                 }
@@ -121,6 +121,6 @@ export default connect(
     (state:any) => ({
         items: state.rankExpectGameList
     }),(dispatch:any) => ({
-        setRankExpectGameList: (items:gameListItemI[]) => dispatch(setRankExpectGameList(items))
+        setRankExpectGameList: (items:newGameListItemI[]) => dispatch(setRankExpectGameList(items))
     })
 )(GameListForExpect)

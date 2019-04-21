@@ -91,7 +91,7 @@ const setRankHotGameList = (items:gameListItemI[]) =>({
     type:actionTypes.getRankHotGameList,
 });
 
-const setRankExpectGameList = (items:gameListItemI[]) =>({
+const setRankExpectGameList = (items:newGameListItemI[]) =>({
     items,
     type:actionTypes.getRankExpectGameList,
 });

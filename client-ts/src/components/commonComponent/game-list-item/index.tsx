@@ -70,8 +70,11 @@ const GameListItem = (props:{
                     <div className="game-type-size">{props.gameType}/{props.gameSize}</div>
                     <div className="game-score-or-other">
                         {
-                            props.score?<GameScore score={props.score}/>
-                            :props.orderNum?<GameOrderNum ordernum={props.orderNum}/>:""
+                            props.score?<GameScore score={props.score}/>:""
+                        }
+                        {
+                            props.orderNum?<GameOrderNum ordernum={props.orderNum}/>:""
+
                         }
                     </div>
                     <Link to={props.gameId===""?"#":`/game?id=${props.gameId}`}/>

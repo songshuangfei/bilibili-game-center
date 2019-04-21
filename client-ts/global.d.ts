@@ -37,8 +37,16 @@ interface gameListItemI {
     gameIconSrc:string,
     gameType:string,
     gameSize:string,
-    score?:number,
-    orderNum?:number
+    score:number,
+}
+
+interface newGameListItemI {
+    gameId:string,
+    gameName:string,
+    gameIconSrc:string,
+    gameType:string,
+    gameSize:string,
+    orderNum:number
 }
 /**
  * game icon item 类型

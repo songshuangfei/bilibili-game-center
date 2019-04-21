@@ -6,6 +6,7 @@ import LinkTitle from "src/components/commonComponent/link-title";
 import "./home-hot-game.css";
 import {setHomeHotGame} from "src/action/actions";
 import { connect } from 'react-redux';
+import {homeHotGamesApi} from "src/api-request/home"
 
 const HotGameItem = (props:gameIconItemI)=>{
     return(
@@ -24,22 +25,10 @@ class HotGame extends React.Component {
             return;
         }
         // console.log("get home hot game")
-
         const that =this;
-        setTimeout(() => {
-            const hotGames:gameIconItemI[] = [
-                {gameName:"命运-冠位指定",gameIconSrc:"//file.suafe.cn/blgc/gameicon/fgo.png",gameId:"001"},
-                {gameName:"崩坏3",gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",gameId:"002"},
-                {gameName:"碧蓝航线",gameIconSrc:"//file.suafe.cn/blgc/gameicon/blhx.png",gameId:"003"},
-                {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"004"},
-                {gameName:"食梦计划",gameIconSrc:"//file.suafe.cn/blgc/gameicon//smjh.png",gameId:"005"},
-                {gameName:"站双：帕弥什",gameIconSrc:"//file.suafe.cn/blgc/gameicon//zs.png",gameId:"006"},
-                {gameName:"辐射：避难所Online",gameIconSrc:"//file.suafe.cn/blgc/gameicon//fs.png",gameId:"007"},
-                {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"008"},
-                {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"009"},
-            ]
-            that.props.setHomeHotGame(hotGames);
-        }, 3000);
+        homeHotGamesApi((data)=>{
+            that.props.setHomeHotGame(data);
+        })
     }
     
     public render(){

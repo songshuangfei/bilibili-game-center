@@ -7,6 +7,7 @@ import "./home-hot-strategy.css";
 import { setHomeHotStrategy } from "src/action/actions";
 import { connect } from 'react-redux';
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
+import { homeStrategyApi } from "src/api-request/home"
 
 const HotStrategyItem = (props:homeStrategyItemI)=>{
     const strategyGameLink = props.strategyId===""?"#":`/strategypage?id=${props.strategyId}`;
@@ -46,22 +47,13 @@ class HotStrategy extends React.Component {
             return;
         }
         // console.log("get home hot startegy")
-        
         const that =this;
-        setTimeout(() => {
-            const strategys:homeStrategyItemI[] =[
-                {coverImgSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:1032,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:"1"},
-                {coverImgSrc:"//file.suafe.cn/blgc/videocover/2.jpg",look:10,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:"2"},
-                {coverImgSrc:"//file.suafe.cn/blgc/videocover/3.jpg",look:12,good:20,summary:"【角色测评】这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:"3"},
-                {coverImgSrc:"//file.suafe.cn/blgc/videocover/4.jpg",look:120,good:20,summary:"这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:"4"},
-                {coverImgSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"这是一条攻略的摘要，这是一条攻略的摘要，",gameName:"崩坏三",strategyId:"5"},
-                {coverImgSrc:"//file.suafe.cn/blgc/videocover/1.jpg",look:130,good:20,summary:"这是一条攻略的摘要。。。",gameName:"崩坏三",strategyId:"6"},
-            ]
-            that.props.setHomeHotStrategy(strategys);
-        }, 3000);
+        homeStrategyApi(data=>{
+            that.props.setHomeHotStrategy(data);
+        })
     }
+
     public render(){
-        
         return(
             <div>
 				<LinkTitle title='热门攻略' link="/strategy" backgroundColor="none"/>
@@ -93,7 +85,6 @@ class HotStrategy extends React.Component {
                     }
                 </HorizontalScroll>
             </div>
-            
         )
     }
 }

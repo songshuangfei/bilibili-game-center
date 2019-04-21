@@ -2,6 +2,7 @@ import * as React from 'react';
 import ActivityItems from "./activityItems";
 import {setHomeNewestActivity} from "src/action/actions";
 import { connect } from 'react-redux';
+import {homeNewestActivityApi} from "src/api-request/home"
 
 class NewestActivity extends React.Component {
     public props: {item:homeActivityItemI,setHomeNewestActivity:(item:homeActivityItemI) =>any};
@@ -11,20 +12,10 @@ class NewestActivity extends React.Component {
             return;
         }
         // console.log("get home newest activity game")
-
         const that =this;
-        setTimeout(() => {
-            const activity:homeActivityItemI = {
-                activityId:"12",
-                coverSrc:"//file.suafe.cn/blgc/gamenews/2.png",
-                gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",
-                gameName:"崩坏三",
-                activityIntro:"空之律者觉醒",
-                gameScore:"8.4",
-                gameId:"002"
-            }
-            that.props.setHomeNewestActivity(activity);
-        }, 3000);
+        homeNewestActivityApi(data=>{
+            that.props.setHomeNewestActivity(data);
+        })
     }
     public render(){
         return(

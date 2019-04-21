@@ -4,15 +4,15 @@ import LinkTitle from "src/components/commonComponent/link-title";
 import {ImgLoadingIcon} from "src/components/icons";
 import BlueBtn from "src/components/commonComponent/blue-btn";
 import {Link} from "react-router-dom";
-import "./home-order-game.css";
-
 import { setHomeOrderGame } from "src/action/actions";
 import { connect } from 'react-redux';
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
+import {homeOrderGameApi} from "src/api-request/home";
+import "./home-order-game.css";
+
 
 const OrderGameItem = (props:homeOrderGameItemI)=>{
     const gameLink = props.gameId===""?"#":`/game?id=${props.gameId}`;
-
     return(
         <li className="home-order-game-item">
             <div className="content">
@@ -34,7 +34,7 @@ const OrderGameItem = (props:homeOrderGameItemI)=>{
     )
 }
 
-class OrdrGame extends React.Component {
+class OrderGame extends React.Component {
     public props: {items:homeOrderGameItemI[],setHomeOrderGame:(items:homeOrderGameItemI[]) =>any};
 
     public componentDidMount(){
@@ -42,23 +42,13 @@ class OrdrGame extends React.Component {
             return;
         }
         // console.log("get home order game");
-
-        const games:homeOrderGameItemI[] =[
-            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/4.jpg",gameId:"1",gameName:"第五人格",orderedNum:8987},
-            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/3.jpg",gameId:"2",gameName:"Fate grand order",orderedNum:228223},
-            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",gameId:"3",gameName:"第五人格1爱神的箭噶法国",orderedNum:2347},
-            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",gameId:"4",gameName:"第五人格2",orderedNum:8987},
-            {coverImgSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",gameId:"5",gameName:"第五人格2",orderedNum:89287},
-        ]
-
         const that =this;
-        setTimeout(() => {
-            that.props.setHomeOrderGame(games);
-        }, 3000);
+        homeOrderGameApi(data=>{
+            that.props.setHomeOrderGame(data);
+        })
     }
 
     public render(){
-        
         return (
             <div>
                 <LinkTitle title="预约中心" link="order" backgroundColor="none"/>
@@ -96,4 +86,4 @@ export default connect(
     }),(dispatch:any)=>({
         setHomeOrderGame:(items:homeOrderGameItemI[]) => dispatch(setHomeOrderGame(items))
     })
-)(OrdrGame);
+)(OrderGame);
