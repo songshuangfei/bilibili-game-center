@@ -8,7 +8,6 @@ import {
 import MsgList from "./msg-list"
 import {msgApi} from "src/api-request/msg"
 
-
 class MsgPage extends React.Component {
     public state:{
         loadingState:loadingState,

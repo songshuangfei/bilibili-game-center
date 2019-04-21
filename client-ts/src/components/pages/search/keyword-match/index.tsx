@@ -5,19 +5,6 @@ class  KeywordMatch extends React.Component {
 	public state:{matchedKeys:string[]}={
 		matchedKeys:[]
 	}
-
-	
-	// public componentWillReceiveProps(nextprops:any){
-	// 	console.log(nextprops)
-	// 	this.websocketGetMatchedKeys()
-	// }
-	
-	// public componentDidMount(){
-	// 	this.setState({
-	// 		matchedKeys:["21",'123']
-	// 	})
-	// }
-
 	public render () {
 		const inputkey = this.props.keyword;
 		return(
@@ -43,10 +30,5 @@ class  KeywordMatch extends React.Component {
 		)
 	}
 	
-	// private websocketGetMatchedKeys () {
-	// 	this.setState({
-	// 		matchedKeys:["21",'123']
-	// 	})
-	// }
 }
 export default KeywordMatch;
