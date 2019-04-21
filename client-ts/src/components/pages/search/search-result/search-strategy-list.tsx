@@ -12,7 +12,7 @@ class SearchStrategyList extends React.Component{
     } = {
         strategys:[]
     }
-    public request = (succeed:(data:homeActivityItemI[])=>void,failed:(err:requestErrorI)=>void) => {
+    public request = (succeed:(data:strategyListItemI[])=>void,failed:(err:requestErrorI)=>void) => {
         // console.log("request start")
         setTimeout(() => {
             const f = Math.random();
@@ -165,7 +165,7 @@ class SearchStrategyList extends React.Component{
                 const data4:strategyListItemI[]=[]
                 // 请求不到数据时一定要返回空数组---------AutoLoadList需要一个空数组判断是否停止加载
                 const pagenum = this.state.strategys.length/4;
-                let data:any ;
+                let data:strategyListItemI[] ;
                 switch (pagenum){
                     case 0:
                     data=data1;

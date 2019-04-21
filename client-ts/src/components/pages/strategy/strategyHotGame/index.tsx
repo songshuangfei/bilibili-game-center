@@ -6,6 +6,7 @@ import "./strategy-hot-game.css";
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 import { connect } from "react-redux";
 import { setStrategyHotGame } from "src/action/actions";
+import { strategyHotGameApi } from "src/api-request/strategy"
 
 const GamelItem = (props:{coverImgSrc:string,GameId:string})=>{
     return(
@@ -25,18 +26,10 @@ class StrategyHotGame extends React.Component {
             return;
         }
         // console.log("get home strategy hot game")
-
         const that =this;
-        setTimeout(() => {
-            const games:bannerWithIdItemI[] = [
-                {imgSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",id:"003"},
-                {imgSrc:"//file.suafe.cn/blgc/gamecover/4.jpg",id:"004"},
-                {imgSrc:"//file.suafe.cn/blgc/gamecover/3.jpg",id:"001"},
-                {imgSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",id:"005"},
-                {imgSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",id:"006"},
-            ]
-            that.props.setStrategyHotGame(games);
-        }, 3000);
+        strategyHotGameApi(data=>{
+            that.props.setStrategyHotGame(data);
+        })
     }
     public render(){
         return(

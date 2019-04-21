@@ -7,7 +7,7 @@ import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 import {connect} from "react-redux";
 import { setFindSpecial } from "src/action/actions"
 import { Link } from 'react-router-dom';
-import {findFindSpecialsApi} from "src/api-request/find"
+import {findSpecialsApi} from "src/api-request/find"
 
 const SpecialItem = (props:bannerWithIdItemI)=>{
     return(
@@ -29,7 +29,7 @@ class FindSpecials extends React.Component {
         // console.log("get home find special")
 
         const that =this;
-        findFindSpecialsApi(data=>{
+        findSpecialsApi(data=>{
             that.props.setFindSpecial(data);
         })
     }

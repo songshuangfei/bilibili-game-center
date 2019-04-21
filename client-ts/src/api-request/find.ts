@@ -26,7 +26,7 @@ function findOrderNewGameApi (succeed:(data:gameIconItemI[])=>void, failed?:()=>
     }, 1500);
 }
 
-function findFindSpecialsApi (succeed:(data:bannerWithIdItemI[])=>void, failed?:()=>void) {
+function findSpecialsApi (succeed:(data:bannerWithIdItemI[])=>void, failed?:()=>void) {
     setTimeout(() => {
         const data:bannerWithIdItemI[] = [
             {imgSrc:"//file.suafe.cn/blgc/gamecover/3.jpg",id:"001"},
@@ -115,7 +115,7 @@ function findHotCommentsApi (succeed:(data:findHotCommentItemI[])=>void, failed?
 }
 
 
-function findFindGameClassifyApi (page:number,size:number,succeed:(data:findGameClassifyItemI[])=>void, failed:(err:requestErrorI)=>void) {
+function findGameClassifyApi (page:number,size:number,succeed:(data:findGameClassifyItemI[])=>void, failed:(err:requestErrorI)=>void) {
     const dataSource:findGameClassifyItemI[] = [
         {
             classifyName:"独立游戏",
@@ -262,9 +262,9 @@ function findFindGameClassifyApi (page:number,size:number,succeed:(data:findGame
 export {
     findBannerApi,
     findOrderNewGameApi,
-    findFindSpecialsApi,
+    findSpecialsApi,
     findBiliGamesApi,
     findPayGamesApi,
     findHotCommentsApi,
-    findFindGameClassifyApi,
+    findGameClassifyApi,
 }

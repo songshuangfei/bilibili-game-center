@@ -6,7 +6,7 @@ import LinkTitle from 'src/components/commonComponent/link-title';
 import AutoLoadList from "src/components/commonComponent/auto-load-list";
 import {setFindGameClassify} from "src/action/actions";
 import { connect } from 'react-redux';
-import { findFindGameClassifyApi } from "src/api-request/find"
+import { findGameClassifyApi } from "src/api-request/find"
 
 const GameItem = (props:{gameName:string,gameIconSrc:string,gameId:string})=>{
     return(
@@ -42,7 +42,7 @@ class FindGameClassify extends React.Component {
         // console.log("request start")
         const size = 4;
         const page = Math.ceil(this.props.items.length/size);
-        findFindGameClassifyApi(page,size,data=>{
+        findGameClassifyApi(page,size,data=>{
             succeed(data);
         },err=>{
             failed(err);
