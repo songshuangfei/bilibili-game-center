@@ -66,8 +66,6 @@ class MyMenu extends React.Component {
         if(JSON.stringify(this.props.item) !== "{}"){
             return;
         }
-        // console.log("get  my menu")
-
         const that =this;
         myMenuData(data=>{
             that.props.setMyMenu(data);

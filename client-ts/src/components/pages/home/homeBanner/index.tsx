@@ -11,7 +11,6 @@ class HomeBanner extends React.Component {
         if(this.props.items.length!==0){
             return;
         }
-        // console.log("get home banner");
         const that =this;
         homeBannerApi((data)=>{
             that.props.sethomeBanner(data);

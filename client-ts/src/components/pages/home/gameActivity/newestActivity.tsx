@@ -11,7 +11,6 @@ class NewestActivity extends React.Component {
         if(JSON.stringify(this.props.item) !== "{}"){
             return;
         }
-        // console.log("get home newest activity game")
         const that =this;
         homeNewestActivityApi(data=>{
             that.props.setHomeNewestActivity(data);

@@ -70,7 +70,6 @@ class HotComments extends React.Component {
         if(this.props.items.length !== 0){
             return;
         }
-        // console.log("get home find hot comments")
 
         const that =this;
         findHotCommentsApi(data=>{

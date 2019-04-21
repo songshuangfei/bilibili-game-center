@@ -16,8 +16,6 @@ class UserBoard extends React.Component {
         if(JSON.stringify(this.props.item) !== "{}"){
             return;
         }
-        // console.log("get home my user board")
-
         const that =this;
         myUserInfo(data=>{
             that.props.setMyUserBoard(data);

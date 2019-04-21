@@ -12,7 +12,6 @@ class Rank extends React.Component {
 	
 	public tabTouch(nextIndex:number){
 		if(this.props.item.tabIndex === nextIndex){
-			// console.log("tab未改变");
             return;
 		}
 		pageScroll.setPageScrollWithValue(0);// 切换要回到顶部

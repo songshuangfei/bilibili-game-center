@@ -9,7 +9,6 @@ class PreviousActivity extends React.Component {
 	public props:{items:homeActivityItemI[],setHomePreviousActivity:(items:homeActivityItemI[])=>void}
 
     public request = (succeed:(data:homeActivityItemI[])=>void,failed:(err:requestErrorI)=>void) => {
-        // console.log("request start")
         const size = 4;
         // 向上取整是当最后一次抓取数据后不足一页的数据，会出现小数
         const page = Math.ceil(this.props.items.length/size);
@@ -22,12 +21,10 @@ class PreviousActivity extends React.Component {
 
     public requestSucceedAction = (data:homeActivityItemI[])=>{
         this.props.setHomePreviousActivity(data)
-        // console.log("succeed\n","data:",data)
     }
 
     public requestFailedAction = (err:requestErrorI)=>{
         console.log(err.statusCode," ",err.msg)
-        // console.log("need not do anything")
     }
 
     public render(){

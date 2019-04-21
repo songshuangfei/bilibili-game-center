@@ -10,7 +10,6 @@ class GameListForExpect extends React.Component {
     public props:{items:newGameListItemI[],setRankExpectGameList:(items:newGameListItemI[])=>void}
 
     public request = (succeed:(data:newGameListItemI[])=>void,failed:(err:requestErrorI)=>void) => {
-        // console.log("request start")
         const size = 10;
         const page = Math.ceil(this.props.items.length/size);
         newGameRankApi(page,size,data=>{

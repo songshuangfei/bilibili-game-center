@@ -24,7 +24,6 @@ class HotGame extends React.Component {
         if(this.props.items.length!==0){
             return;
         }
-        // console.log("get home hot game")
         const that =this;
         homeHotGamesApi((data)=>{
             that.props.setHomeHotGame(data);

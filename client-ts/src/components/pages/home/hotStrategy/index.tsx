@@ -46,7 +46,6 @@ class HotStrategy extends React.Component {
         if(this.props.items.length!==0){
             return;
         }
-        // console.log("get home hot startegy")
         const that =this;
         homeStrategyApi(data=>{
             that.props.setHomeHotStrategy(data);

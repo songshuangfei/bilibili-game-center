@@ -28,7 +28,6 @@ class SearchStrategyList extends React.Component{
 
     public requestFailedAction = (err:requestErrorI)=>{
         console.log(err.statusCode," ",err.msg)
-        // console.log("need not do anything")
     }
 
     public render(){

@@ -165,7 +165,6 @@ function searchApi(
     )=>void, 
     failed:(err:requestErrorI)=>void
 ){
-    console.log(keyword)
     setTimeout(() => {
         const f = Math.random();
         if(f>0.1){
