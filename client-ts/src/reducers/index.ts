@@ -288,6 +288,18 @@ const strPageStrategyList = (
   }
 }
 
+const searchHotKeys = (
+  state:string[] = [], 
+  action:{type:actionTypes,items:string[]}
+) => {
+  switch (action.type) {
+  case actionTypes.getSearchHotKeys:
+      return action.items;
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   homeBanner,
   homeHotGame,
@@ -312,4 +324,5 @@ export default combineReducers({
   strPageStrategyList,
   myUserBoard,
   myMenu,
+  searchHotKeys,
 })

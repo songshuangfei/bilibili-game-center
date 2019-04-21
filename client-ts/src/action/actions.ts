@@ -117,6 +117,11 @@ const setStrPageStrategyList = (items:strategyListItemI[]) =>({
     type:actionTypes.getStrPageStrategyList,
 });
 
+const setSearchHotKeys = (items:string[]) =>({
+    items,
+    type:actionTypes.getSearchHotKeys,
+});
+
 export {
     setHomeBanner,
     setHomeHotGame,
@@ -141,4 +146,5 @@ export {
     setRankGoodGameList,
     setRankNewGameList,
     setFindGameClassify,
+    setSearchHotKeys,
 };

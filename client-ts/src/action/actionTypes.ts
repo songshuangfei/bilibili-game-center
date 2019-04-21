@@ -22,6 +22,7 @@ enum actionTypes {
     getMyUserBoard,
     getMyMenu,
     getRankPageTab,
+    getSearchHotKeys,
 }
 
 

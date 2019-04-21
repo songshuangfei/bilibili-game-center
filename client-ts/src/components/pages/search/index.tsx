@@ -10,16 +10,10 @@ class  Search extends React.Component {
 	public props:RouteComponentProps;
 	public state:{
 		keyword:string,
-		hotSearchKeys:string[],
 		isSearched:boolean
 	} = {
 		keyword:"",
-		hotSearchKeys:[],
 		isSearched:false
-	}
-
-	public componentDidMount(){
-		this.getHotSearch();
 	}
 
 	public render () {
@@ -58,7 +52,6 @@ class  Search extends React.Component {
 							this.state.keyword === ""?
 							<HotSearch 
 								clickGetKey={this.getClickedKeyword} 
-								hotSearchKeys={this.state.hotSearchKeys}
 							/>:
 							<KeywordMatch 
 								keyword={this.state.keyword}
@@ -69,14 +62,6 @@ class  Search extends React.Component {
 				</div>
 			</div>
 		)
-	}
-
-	private getHotSearch = ()=>{
-		setTimeout(() => {
-			this.setState({
-				hotSearchKeys:["Fate","约会大作战","崩坏3rd","第五人格","妈妈把我的游戏藏起来了"]
-			})
-		}, 2000);
 	}
 
 	private keywordChangeHandler = (e:React.ChangeEvent<HTMLInputElement>)=>{

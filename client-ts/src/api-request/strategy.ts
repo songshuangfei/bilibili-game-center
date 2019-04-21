@@ -9,7 +9,7 @@ function strategyHotGameApi (succeed:(data:bannerWithIdItemI[])=>void, failed?:(
             {imgSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",id:"006"},
         ]
         succeed(data);
-    }, 2000);
+    }, 4000);
 }
 
 function strPageStrategyListApi (page:number,size:number,succeed:(data:strategyListItemI[])=>void, failed:(err:requestErrorI)=>void) {
@@ -201,7 +201,7 @@ function strPageStrategyListApi (page:number,size:number,succeed:(data:strategyL
             const err:requestErrorI ={statusCode:"500",msg:"err"}
             failed(err);
         }
-    }, 2000);
+    }, 400);
 }
 
 export {

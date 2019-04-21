@@ -6,7 +6,7 @@ function findBannerApi (succeed:(data:bannerItemI[])=>void, failed?:()=>void) {
             {imgSrc:"//file.suafe.cn/blgc/activityimg/3.jpg",link:"12"}
         ];
         succeed(data)
-    }, 1200);
+    }, 400);
 }
 
 function findOrderNewGameApi (succeed:(data:gameIconItemI[])=>void, failed?:()=>void) {
@@ -23,7 +23,7 @@ function findOrderNewGameApi (succeed:(data:gameIconItemI[])=>void, failed?:()=>
             {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"004"},
         ]
         succeed(data)
-    }, 1500);
+    }, 800);
 }
 
 function findSpecialsApi (succeed:(data:bannerWithIdItemI[])=>void, failed?:()=>void) {
@@ -36,7 +36,7 @@ function findSpecialsApi (succeed:(data:bannerWithIdItemI[])=>void, failed?:()=>
             {imgSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",id:"006"},
         ]
         succeed(data)
-    }, 1500);
+    }, 700);
 }
 
 function findBiliGamesApi (succeed:(data:gameIconItemI[])=>void, failed?:()=>void) {
@@ -53,7 +53,7 @@ function findBiliGamesApi (succeed:(data:gameIconItemI[])=>void, failed?:()=>voi
             {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"004"},
         ]
         succeed(data)
-    }, 2000);
+    }, 700);
 }
 
 function findPayGamesApi (succeed:(data:gameIconItemI[])=>void, failed?:()=>void) {
@@ -70,7 +70,7 @@ function findPayGamesApi (succeed:(data:gameIconItemI[])=>void, failed?:()=>void
             {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"004"},
         ]
         succeed(data)
-    }, 2000);
+    }, 500);
 }
 
 function findHotCommentsApi (succeed:(data:findHotCommentItemI[])=>void, failed?:()=>void) {
@@ -111,7 +111,7 @@ function findHotCommentsApi (succeed:(data:findHotCommentItemI[])=>void, failed?
             },
         ]
         succeed(data)
-    }, 2000);
+    }, 600);
 }
 
 

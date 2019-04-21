@@ -13,7 +13,7 @@ function homeBannerApi (succeed:(data:bannerItemI[])=>void, failed?:()=>void) {
         ];
         succeed(data)
 
-    }, 2000);
+    }, 500);
 }
 
 // for home
@@ -29,7 +29,7 @@ function homeStrategyApi (succeed:(data:homeStrategyItemI[])=>void, failed?:()=>
         ]
         succeed(data)
 
-    }, 3000);
+    }, 500);
 }
 
 // for home
@@ -48,7 +48,7 @@ function homeHotGamesApi (succeed:(data:gameIconItemI[])=>void, failed?:()=>void
         ]
         succeed(data)
 
-    }, 2500);
+    }, 700);
 }
 
 // for home
@@ -67,7 +67,7 @@ function homeNewGamesApi (succeed:(data:gameIconItemI[])=>void, failed?:()=>void
         ];
         succeed(data)
 
-    }, 2700);
+    }, 800);
 }
 
 // for home
@@ -81,7 +81,7 @@ function homeOrderGameApi (succeed:(data:homeOrderGameItemI[])=>void, failed?:()
             {coverImgSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",gameId:"5",gameName:"第五人格2",orderedNum:89287},
         ]
         succeed(data)
-    }, 2000);
+    }, 900);
 }
 
 // for home
@@ -97,7 +97,7 @@ function homeNewestActivityApi (succeed:(data:homeActivityItemI)=>void, failed?:
             gameId:"002"
         }
         succeed(data)
-    }, 2000);
+    }, 600);
 }
 
 // for home
@@ -165,7 +165,7 @@ function homePreviousActivityApi (page:number,size:number,succeed:(data:homeActi
             const err:requestErrorI ={statusCode:"500",msg:"err"}
             failed(err);
         }
-    }, 2000);
+    }, 600);
 }
 
 
