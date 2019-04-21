@@ -102,7 +102,6 @@ function homeNewestActivityApi (succeed:(data:homeActivityItemI)=>void, failed?:
 
 // for home
 function homePreviousActivityApi (page:number,size:number,succeed:(data:homeActivityItemI[])=>void, failed:(err:requestErrorI)=>void) {
-    console.log(page,size)
     const dataSource:homeActivityItemI[]=[
         {
             activityId:"1",
