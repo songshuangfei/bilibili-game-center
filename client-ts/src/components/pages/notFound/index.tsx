@@ -1,16 +1,22 @@
 import * as React from "react";
-import {Link} from "react-router-dom"
+import { RouteComponentProps} from "react-router-dom";
+import "./notfound.css";
 
-class NotFound extends React.Component {
-    public render(){
-        return(
-            <div>
-                该页面不存在
-                <br/>
-                <Link to="/">返回主页</Link>
+
+function NotFound (props:RouteComponentProps){
+    return(
+        <div className="not-found-page">
+            <p className="info">
+                这个页面没做～(￣▽￣～)
+            </p>
+            <p className="path">
+                path: {props.location.pathname}
+            </p>
+            <div className="back-btn" onClick={props.history.goBack}>
+                返回
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default NotFound;

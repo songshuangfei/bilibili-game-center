@@ -1,0 +1,22 @@
+.not-found-page .info {
+    text-align: center;
+    color: var(--word-color-primary);
+    font-size: 1.4rem;
+}
+.not-found-page .path {
+    text-align: center;
+    color: #189ace;
+    font-size: 2rem;
+}
+
+.not-found-page .back-btn {
+    background: var(--theme-color);
+    box-shadow: 0 2px 8px rgba(71, 187, 255, 0.5);
+    border-radius: 1.1rem;
+    color: #fff;
+    width: 6rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    text-align: center;
+    margin:  1rem auto;
+}

@@ -166,4 +166,10 @@ interface msgItemI {
     senderId:string
 }
 
+interface msgsI {
+    reply:msgItemI[],
+    attitude:msgItemI[],
+    inform:msgItemI[]
+}
+
 

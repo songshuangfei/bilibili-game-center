@@ -9,6 +9,7 @@ html{font-size:12px}
 
 * {
   -webkit-overflow-scrolling:touch; /*在移动端滚动更流畅*/
+  -webkit-tap-highlight-color:transparent;
 }
 
 body {

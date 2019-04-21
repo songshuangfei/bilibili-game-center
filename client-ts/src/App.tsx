@@ -14,6 +14,7 @@ import Search from "./components/pages/search/";
 import GamePage from './components/pages/gamePage';
 import MsgPage from "./components/pages/msg";
 import MyDownload  from "./components/pages/my-download";
+import NotFound from "./components/pages/notFound"
 
 function MainPagesWrapper(){
 	const pathNow:string = window.location.pathname;
@@ -41,6 +42,7 @@ function OtherPagesWrapper(){
 			<Switch>
 				<Route path="/search" component={Search}/>
 				<Route path="/game" component={GamePage} />
+				<Route path="*" component={NotFound} />
 			</Switch>
 		</div>
 	)

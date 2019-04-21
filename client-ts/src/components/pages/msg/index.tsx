@@ -1,12 +1,12 @@
 import * as React from 'react';
 import pageScroll from "src/components/commonFunc/scroll";
 import "./msg-page.css";
-
 import {
     ListAutoLoadingShowBoard,
     loadingState
 } from "src/components/commonComponent/list-auto-loading-show-board";
 import MsgList from "./msg-list"
+import {msgApi} from "src/api-request/msg"
 
 
 class MsgPage extends React.Component {
@@ -41,55 +41,18 @@ class MsgPage extends React.Component {
     public request = () => {
         this.setState({
             loadingState:loadingState.loading
-        })
-        setTimeout(() => {
-            const f = Math.random();
-            if(f>0.2){
-                const data2:msgItemI[]=[]
-                const data1:msgItemI[]=[
-                    {senderName:"nem",
-                    senderHeadsrc:"//file.suafe.cn/blgc/userhead/6.jpg",
-                    sendTime:"4-12",
-                    msgContent:"hello!hello?",
-                    senderId:"01"
-                },
-                    {senderName:"emm",
-                    senderHeadsrc:"//file.suafe.cn/blgc/userhead/5.jpg",
-                    sendTime:"4-11",
-                    msgContent:"Hi!",
-                    senderId:"01"
-                },
-                    {senderName:"archer",
-                    senderHeadsrc:"//file.suafe.cn/blgc/userhead/4.jpg",
-                    sendTime:"4-11",
-                    msgContent:"Hi!",
-                    senderId:"01"
-                },
-                    {senderName:"saber",
-                    senderHeadsrc:"//file.suafe.cn/blgc/userhead/3.jpg",
-                    sendTime:"4-11",
-                    msgContent:"Hi!",
-                    senderId:"01"
-                },
-                ]
-                const data3:msgItemI[]=[]
-                this.setState({
-                    isLoaded:true,
-                    loadingState:loadingState.ready,
-                    reply:data1,
-                    attitude:data2,
-                    inform:data3
-                })
-            }else{
-                // do nothing
-                this.setState({
-                    isLoaded:false,
-                    loadingState:loadingState.failed,
-                })
-            }
-            
-        }, 1000);
+        });
 
+        const that = this;
+        msgApi(data=>{
+            that.setState({
+                isLoaded:true,
+                loadingState:loadingState.ready,
+                reply:data.reply,
+                attitude:data.attitude,
+                inform:data.inform
+            })
+        })
     }
 
     public componentDidMount() {
