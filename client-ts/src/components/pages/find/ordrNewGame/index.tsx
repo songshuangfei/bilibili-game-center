@@ -4,7 +4,8 @@ import GameIcon from "src/components/commonComponent/game-icon";
 import LinkTitle from "src/components/commonComponent/link-title";
 import { connect } from "react-redux";
 import { setFindOrdrNewGame } from "src/action/actions"
-import "./find-new-game.css"
+import "./find-new-game.css";
+import {findOrderNewGameApi} from "src/api-request/find"
 
 const OrderGameItem = (props:gameIconItemI)=>{
     return(
@@ -24,20 +25,10 @@ class OrderNewGame extends React.Component {
         // console.log("get home find order game")
 
         const that =this;
-        setTimeout(() => {
-            const newGame:gameIconItemI[] = [
-                {gameName:"辐射：避难所Online",gameIconSrc:"//file.suafe.cn/blgc/gameicon//fs.png",gameId:"007"},
-                {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"009"},
-                {gameName:"碧蓝航线",gameIconSrc:"//file.suafe.cn/blgc/gameicon/blhx.png",gameId:"003"},
-                {gameName:"食梦计划",gameIconSrc:"//file.suafe.cn/blgc/gameicon//smjh.png",gameId:"005"},
-                {gameName:"站双：帕弥什",gameIconSrc:"//file.suafe.cn/blgc/gameicon//zs.png",gameId:"006"},
-                {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"008"},
-                {gameName:"命运-冠位指定",gameIconSrc:"//file.suafe.cn/blgc/gameicon/fgo.png",gameId:"001"},
-                {gameName:"崩坏3",gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",gameId:"002"},
-                {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"004"},
-            ]
-            that.props.setFindOrdrNewGame(newGame);
-        }, 3000);
+        findOrderNewGameApi(data=>{
+            that.props.setFindOrdrNewGame(data);
+        })
+       
     }
     public render(){
         return(

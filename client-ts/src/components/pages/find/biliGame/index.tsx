@@ -3,8 +3,9 @@ import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
 import GameIcon from "src/components/commonComponent/game-icon";
 import LinkTitle from "src/components/commonComponent/link-title";
 import { connect } from "react-redux";
-import { setFindBiliGame } from "src/action/actions"
-import "./find-bili-game.css"
+import { setFindBiliGame } from "src/action/actions";
+import "./find-bili-game.css";
+import {findBiliGamesApi} from "src/api-request/find";
 
 const BiliGameItem = (props:{gameName:string,gameIconSrc:string,gameId:string})=>{
     return(
@@ -24,20 +25,10 @@ class BiliGames extends React.Component {
         // console.log("get home find bili game")
 
         const that =this;
-        setTimeout(() => {
-            const biligame:gameIconItemI[] = [
-                {gameName:"命运-冠位指定",gameIconSrc:"//file.suafe.cn/blgc/gameicon/fgo.png",gameId:"001"},
-                {gameName:"碧蓝航线",gameIconSrc:"//file.suafe.cn/blgc/gameicon/blhx.png",gameId:"003"},
-                {gameName:"辐射：避难所Online",gameIconSrc:"//file.suafe.cn/blgc/gameicon//fs.png",gameId:"007"},
-                {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"009"},
-                {gameName:"食梦计划",gameIconSrc:"//file.suafe.cn/blgc/gameicon//smjh.png",gameId:"005"},
-                {gameName:"站双：帕弥什",gameIconSrc:"//file.suafe.cn/blgc/gameicon//zs.png",gameId:"006"},
-                {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"008"},
-                {gameName:"崩坏3",gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",gameId:"002"},
-                {gameName:"梦幻模拟战",gameIconSrc:"//file.suafe.cn/blgc/gameicon//mhmnz.png",gameId:"004"},
-            ]
-            that.props.setFindBiliGame(biligame);
-        }, 3000);
+        findBiliGamesApi(data=>{
+            that.props.setFindBiliGame(data);
+        })
+
     }
 
     public render(){

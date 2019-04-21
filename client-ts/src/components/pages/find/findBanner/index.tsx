@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Banner from "src/components/commonComponent/banner";
-import {setFindBanner} from "src/action/actions"
-import { connect } from "react-redux"
+import {setFindBanner} from "src/action/actions";
+import {findBannerApi} from "src/api-request/find"
+import { connect } from "react-redux";
 
 class FindBanner extends React.Component {
     public props:{items:bannerItemI[], setFindBanner:(items:bannerItemI[])=>void}
@@ -12,16 +13,10 @@ class FindBanner extends React.Component {
             return;
         }
         // console.log("get home find banner")
-
         const that =this;
-        setTimeout(() => {
-            const clitems:bannerItemI[] = [
-                {imgSrc:"//file.suafe.cn/blgc/activityimg/1.jpg",link:"1232323"},
-                {imgSrc:"//file.suafe.cn/blgc/activityimg/2.jpg",link:"/game/001"},
-                {imgSrc:"//file.suafe.cn/blgc/activityimg/3.jpg",link:"12"}
-            ];
-            that.props.setFindBanner(clitems);
-        }, 3000);
+        findBannerApi(data=>{
+            that.props.setFindBanner(data);
+        })
     }
     public render(){
         return <Banner width="100%" height="32vw" items={this.props.items}/>

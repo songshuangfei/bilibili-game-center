@@ -6,7 +6,9 @@ import {Link} from "react-router-dom"
 import "./find-hot-comment.css";
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 import { connect } from "react-redux";
-import { setFindHotComment } from "src/action/actions"
+import { setFindHotComment } from "src/action/actions";
+import { findHotCommentsApi } from "src/api-request/find";
+
 
 const Stars =(props:{num:number})=>{
     const p = [1,2,3,4,5];
@@ -71,44 +73,9 @@ class HotComments extends React.Component {
         // console.log("get home find hot comments")
 
         const that =this;
-        setTimeout(() => {
-            const data:findHotCommentItemI[] =[
-                {
-                    gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",
-                    commentAbstract:"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要这是一条评论的摘要，这是一条评论的摘要",
-                    commentId:"001",
-                    commentStarNum:5,
-                    commenterHeadSrc:"//file.suafe.cn/blgc/userhead/1.jpg",
-                    commenterName:"夏池萤",
-                    gameName:"崩坏三"
-                },{
-                    commentAbstract:"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要",
-                    commentId:"002",
-                    commentStarNum:5,
-                    commenterHeadSrc:"//file.suafe.cn/blgc/userhead/2.jpg",
-                    commenterName:"跨越时空的思念",
-                    gameIconSrc:"//file.suafe.cn/blgc/gameicon/fgo.png",
-                    gameName:"FGO"
-                },{
-                    commentAbstract:"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要",
-                    commentId:"003",
-                    commentStarNum:3,
-                    commenterHeadSrc:"//file.suafe.cn/blgc/userhead/3.jpg",
-                    commenterName:"子欲何",
-                    gameIconSrc:"//file.suafe.cn/blgc/gameicon/mhmnz.png",
-                    gameName:"梦幻模拟战"
-                },{
-                    commentAbstract:"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要",
-                    commentId:"004",
-                    commentStarNum:3,
-                    commenterHeadSrc:"//file.suafe.cn/blgc/userhead/3.jpg",
-                    commenterName:"子欲何",
-                    gameIconSrc:"//file.suafe.cn/blgc/gameicon/mhmnz.png",
-                    gameName:"梦幻模拟战"
-                },
-            ]
+        findHotCommentsApi(data=>{
             that.props.setFindHotComment(data);
-        }, 3000);
+        })
     }
     public render(){
         return(

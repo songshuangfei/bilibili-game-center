@@ -1,13 +1,13 @@
 import * as React from 'react';
 import LinkTitle from "src/components/commonComponent/link-title";
 import HorizontalScroll from "src/components/commonComponent/horizontal-scroll";
-// import {Link} from "react-router-dom";
 import {ImgLoadingIcon} from "src/components/icons";
 import "./find-special.css";
 import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 import {connect} from "react-redux";
 import { setFindSpecial } from "src/action/actions"
 import { Link } from 'react-router-dom';
+import {findFindSpecialsApi} from "src/api-request/find"
 
 const SpecialItem = (props:bannerWithIdItemI)=>{
     return(
@@ -29,16 +29,9 @@ class FindSpecials extends React.Component {
         // console.log("get home find special")
 
         const that =this;
-        setTimeout(() => {
-            const specials:bannerWithIdItemI[] = [
-                {imgSrc:"//file.suafe.cn/blgc/gamecover/3.jpg",id:"001"},
-                {imgSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",id:"003"},
-                {imgSrc:"//file.suafe.cn/blgc/gamecover/4.jpg",id:"004"},
-                {imgSrc:"//file.suafe.cn/blgc/gamecover/2.jpg",id:"005"},
-                {imgSrc:"//file.suafe.cn/blgc/gamecover/1.jpg",id:"006"},
-            ]
-            that.props.setFindSpecial(specials);
-        }, 3000);
+        findFindSpecialsApi(data=>{
+            that.props.setFindSpecial(data);
+        })
     }
 
     public render(){
@@ -55,7 +48,6 @@ class FindSpecials extends React.Component {
                             <SpecialItem key={v.id} imgSrc={v.imgSrc} id={v.id}/>
                         ))
                     }
-                    
                 </HorizontalScroll>
             </div>
         )
