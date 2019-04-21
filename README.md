@@ -23,6 +23,9 @@
 
 * 前后端分离。
 
+## 目录说明
+* client-ts
+
 ## 前端技术栈
 * react
 * react-redux
