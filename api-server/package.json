@@ -5,16 +5,19 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsc -w ",
-    "start":"nodemon ./dist/index.js",
+    "start": "nodemon ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.7.0"
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0"
   },
   "devDependencies": {
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.40",
     "nodemon": "^1.18.11",
     "typescript": "^3.4.4"
   }
