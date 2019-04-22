@@ -1,3 +1,3 @@
 module.exports = {
-    allowHost:"blgc.suafe.cn"
+    allowHost:"http://blgc.suafe.cn"
 }
