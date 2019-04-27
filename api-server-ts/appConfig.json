@@ -1,0 +1,7 @@
+{
+    "AllowOrigin":"http://blgc.cuafe.cn",
+    "cookieMaxAge":16,
+    "tokenMaxAge":15,
+    "loginOverdueDays":14,
+    "tokenSecretKey":"emm"
+}
