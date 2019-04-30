@@ -1,14 +1,69 @@
 import * as fs from "fs";
 
-const db = function (jsonName:string) {
-    return  new Promise<any>((rs,rj)=>{
-        fs.readFile(`./data/${jsonName}`,(err, data)=>{
+const { mediaFileRoot } = JSON.parse(fs.readFileSync("appConfig.json").toString());;
+
+// 给src数据加上静态资源艮路径
+function rowPreprocessing(rows:any[],jsonName:string){
+    let resRows:any[]=[...rows];
+    switch(jsonName){
+    case "users":
+        for(let row of resRows){
+            row["headPicSrc"] = mediaFileRoot + row["headPicSrc"];
+            row["coverSrc"] = mediaFileRoot + row["coverSrc"];
+        }
+        break;
+    case "homeBanner":
+        for(let row of resRows){
+            row["imgSrc"] = mediaFileRoot + row["imgSrc"];
+        }
+        break;
+    case "findBanner":
+        for(let row of resRows){
+            row["imgSrc"] = mediaFileRoot + row["imgSrc"];
+        }
+        break;
+    case "publishedGames":
+        for(let row of resRows){
+            row["gameIconSrc"] = mediaFileRoot + row["gameIconSrc"];
+        }
+        break;
+    case "unpublishedGames":
+        for(let row of resRows){
+            row["gameIconSrc"] = mediaFileRoot + row["gameIconSrc"];
+        }
+        break;
+    case "strategys":
+        for(let row of resRows){
+            row["coverSrc"] = mediaFileRoot + row["coverSrc"];
+        }
+        break;
+    case "gameActivities":
+        for(let row of resRows){
+            row["coverSrc"] = mediaFileRoot + row["coverSrc"];
+        }
+        break;
+    default:
+        break;
+    }
+    return resRows;
+}
+
+function _getJson (jsonName:string){
+    return new Promise<any[]>((rs,rj)=>{
+        fs.readFile(`./data/${jsonName}.json`,(err, data)=>{
             if (err) {
                 rj(err);
             } else {
-                rs(JSON.parse(data.toString()).data);
+                let row = JSON.parse(data.toString());
+                rs(rowPreprocessing(row,jsonName));
             }
         })
     });
 }
-export default db;
+
+async function getJson(jsonName:string):Promise<any[]>{
+    const rows = await _getJson(jsonName);
+    return rows;
+}
+
+export default getJson;

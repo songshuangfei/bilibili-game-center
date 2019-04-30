@@ -1,21 +1,14 @@
-// import axios from "axios";
-// import { appconfig } from "src/appConfig"
-// const {apiRoot} = appconfig
+import axios from "axios";
+import { appconfig } from "src/appConfig"
+const {apiRoot} = appconfig
 
 
 // withCredentials: true
 
 // for home
-function homeBannerApi (succeed:(data:bannerItemI[])=>void, failed?:()=>void) {
-    setTimeout(() => {
-        const data:bannerItemI[] = [
-            {imgSrc:"//file.suafe.cn/blgc/activityimg/2.jpg",link:"/game/001"},
-            {imgSrc:"//file.suafe.cn/blgc/activityimg/1.jpg",link:"1232323"},
-            {imgSrc:"//file.suafe.cn/blgc/activityimg/3.jpg",link:"12"}
-        ];
-        succeed(data)
-
-    }, 300);
+async function homeBannerApi (succeed:(data:bannerItemI[])=>void, failed?:()=>void) {
+    const res  =  await axios.get(`${apiRoot}/homebanner`);
+    succeed(res.data.homeBanner );
 }
 
 // for home
@@ -87,87 +80,20 @@ function homeOrderGameApi (succeed:(data:homeOrderGameItemI[])=>void, failed?:()
 }
 
 // for home
-function homeNewestActivityApi (succeed:(data:homeActivityItemI)=>void, failed?:()=>void) {
-    setTimeout(() => {
-        const data:homeActivityItemI = {
-            activityId:"12",
-            coverSrc:"//file.suafe.cn/blgc/gamenews/2.png",
-            gameIconSrc:"//file.suafe.cn/blgc/gameicon/bh3.png",
-            gameName:"崩坏三",
-            activityIntro:"空之律者觉醒",
-            gameScore:"8.4",
-            gameId:"002"
-        }
-        succeed(data)
-    }, 300);
+async function homeNewestActivityApi (succeed:(data:homeActivityItemI)=>void, failed?:()=>void) {
+    const res  =  await axios.get(`${apiRoot}/activity/newest`);
+    succeed(res.data.item);
+    console.log(res.data.item)
 }
 
 // for home
-function homePreviousActivityApi (page:number,size:number,succeed:(data:homeActivityItemI[])=>void, failed:(err:requestErrorI)=>void) {
-    const dataSource:homeActivityItemI[]=[
-        {
-            activityId:"1",
-            coverSrc:'//file.suafe.cn/blgc/gamenews/1.png',
-            gameIconSrc:'//file.suafe.cn/blgc/gameicon/fgo.png',
-            gameName:'命运-冠位指定',
-            activityIntro:'这是一个活动简介',
-            gameScore:'6.4',
-            gameId:'1212'
-        },{
-            activityId:"2",
-            coverSrc:'//file.suafe.cn/blgc/gamenews/2.png',
-            gameIconSrc:'//file.suafe.cn/blgc/gameicon/bh3.png',
-            gameName:'崩坏3rd',
-            activityIntro:'这是一个活动简介',
-            gameScore:'8.4',
-            gameId:'1212'
-        },{
-            activityId:"3",
-            coverSrc:'//file.suafe.cn/blgc/gamenews/3.png',
-            gameIconSrc:'//file.suafe.cn/blgc/gameicon/mhmnz.png',
-            gameName:'游戏名',
-            activityIntro:'这是一个活动简介',
-            gameScore:'6.4',
-            gameId:'12212'
-        },{
-            activityId:"4",
-            coverSrc:'//file.suafe.cn/blgc/gamenews/4.png',
-            gameIconSrc:'//file.suafe.cn/blgc/gameicon/zs.png',
-            gameName:'游戏名',
-            activityIntro:'这是一个活动简介',
-            gameScore:'6.4',
-            gameId:'1212'
-        },{
-            activityId:"5",
-            coverSrc:'//file.suafe.cn/blgc/gamenews/5.png',
-            gameIconSrc:'//file.suafe.cn/blgc/gameicon/blhx.png',
-            gameName:'碧蓝幻想',
-            activityIntro:'这是一个活动简介',
-            gameScore:'6.4',
-            gameId:'1212'
-        },{
-            activityId:"6",
-            coverSrc:'//file.suafe.cn/blgc/gamenews/1.png',
-            gameIconSrc:'//file.suafe.cn/blgc/gameicon/zs.png',
-            gameName:'游戏名',
-            activityIntro:'这是一个活动简介',
-            gameScore:'6.4',
-            gameId:'1212'
-        }
-    ]
-    setTimeout(() => {
-        const f = Math.random();
-        if(f>0.2){
-            // 模拟成功
-            const data = dataSource.slice(page*size,(page+1)*size);
-            // 数据不足返回不足page的数组，无数据返回空数组
-            succeed(data)
-        }else{
-            // 模拟失败
-            const err:requestErrorI ={statusCode:"500",msg:"err"}
-            failed(err);
-        }
-    }, 200);
+async function homePreviousActivityApi (page:number,size:number,succeed:(data:homeActivityItemI[])=>void, failed:(err:any)=>void) {
+    try {
+        const res  =  await axios.get(`${apiRoot}/activity/prev?page=${page}&size=${size}`);
+        succeed(res.data.page);
+    } catch (error) {
+        failed(error);
+    }
 }
 
 

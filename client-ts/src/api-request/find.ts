@@ -115,7 +115,7 @@ function findHotCommentsApi (succeed:(data:findHotCommentItemI[])=>void, failed?
 }
 
 
-function findGameClassifyApi (page:number,size:number,succeed:(data:findGameClassifyItemI[])=>void, failed:(err:requestErrorI)=>void) {
+function findGameClassifyApi (page:number,size:number,succeed:(data:findGameClassifyItemI[])=>void, failed:(err:any)=>void) {
     const dataSource:findGameClassifyItemI[] = [
         {
             classifyName:"独立游戏",
@@ -253,7 +253,7 @@ function findGameClassifyApi (page:number,size:number,succeed:(data:findGameClas
             succeed(data)
         }else{
         // failed
-            const err:requestErrorI ={statusCode:"500",msg:"err"}
+            const err:any ={statusCode:"500",msg:"err"}
             failed(err);
         }
     }, 200);

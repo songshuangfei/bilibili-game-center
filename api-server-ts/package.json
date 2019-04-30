@@ -6,23 +6,24 @@
   "scripts": {
     "dev": "tsc -w ",
     "build": "tsc",
-    "server": "nodemon ./dist/index.js",
+    "devServer": "nodemon ./dist/index.js",
     "start": "node ./dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r ts-node/register src/**/*.test.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jsonwebtoken": "^8.5.1",
-    "koa": "^2.7.0",
-    "koa-router": "^7.4.0"
+    "koa": "^2.7.0"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^8.3.2",
     "@types/koa": "^2.0.48",
     "@types/koa-router": "^7.0.40",
+    "mocha": "^6.1.4",
     "nodemon": "^1.18.11",
+    "ts-node": "^8.1.0",
     "typescript": "^3.4.4"
   }
 }

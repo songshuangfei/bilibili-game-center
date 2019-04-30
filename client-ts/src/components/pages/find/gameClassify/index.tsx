@@ -38,7 +38,7 @@ const GameClassItem = (props:findGameClassifyItemI)=>{
 
 class FindGameClassify extends React.Component {
 	public props:{items:findGameClassifyItemI[],setFindGameClassify:(items:findGameClassifyItemI[])=>void}
-    public request = (succeed:(data:findGameClassifyItemI[])=>void,failed:(err:requestErrorI)=>void) => {
+    public request = (succeed:(data:findGameClassifyItemI[])=>void,failed:(err:any)=>void) => {
         const size = 4;
         const page = Math.ceil(this.props.items.length/size);
         findGameClassifyApi(page,size,data=>{
@@ -52,7 +52,7 @@ class FindGameClassify extends React.Component {
         this.props.setFindGameClassify(data)
     }
 
-    public requestFailedAction = (err:requestErrorI)=>{
+    public requestFailedAction = (err:any)=>{
         console.log(err.statusCode," ",err.msg)
     }
     public render(){

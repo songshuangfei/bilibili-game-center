@@ -44,7 +44,7 @@ const GameListItem = (props:{
     gameName:string,
     gameIconSrc:string,
     gameType:string,
-    gameSize:string,
+    gameSize?:string,
     ranking:number,
     score?:number,
     orderNum?:number,
@@ -67,7 +67,9 @@ const GameListItem = (props:{
                 </div>
                 <div className="info">
                     <div className="game-name">{props.gameName}</div>
-                    <div className="game-type-size">{props.gameType}/{props.gameSize}</div>
+                    <div className="game-type-size">
+                        {props.gameType}{props.gameSize?"/"+props.gameType:""}
+                    </div>
                     <div className="game-score-or-other">
                         {
                             props.score?<GameScore score={props.score}/>:""

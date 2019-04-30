@@ -2,10 +2,7 @@
 /**
  * banner item with http link 类型
  */
-interface requestErrorI {
-    statusCode:string,
-    msg:string
-}
+
 
 interface bannerItemI {
     imgSrc:string,
@@ -45,7 +42,6 @@ interface newGameListItemI {
     gameName:string,
     gameIconSrc:string,
     gameType:string,
-    gameSize:string,
     orderNum:number
 }
 /**

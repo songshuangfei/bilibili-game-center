@@ -10,9 +10,9 @@ import { strPageStrategyListApi } from "src/api-request/strategy"
 class StrPageStrategyList extends React.Component {
 	public props:{items:strategyListItemI[],setStrPageStrategyList:(items:strategyListItemI[])=>void}
 
-    public request = (succeed:(data:strategyListItemI[])=>void,failed:(err:requestErrorI)=>void) => {
+    public request = (succeed:(data:strategyListItemI[])=>void,failed:(err:any)=>void) => {
         const size = 5;
-        const page = Math.ceil(this.props.items.length/size);
+        const page = Math.ceil(this.props.items.length/size)+1;
         strPageStrategyListApi(page,size,data=>{
             succeed(data)
         },err=>{
@@ -24,8 +24,8 @@ class StrPageStrategyList extends React.Component {
         this.props.setStrPageStrategyList(data)
     }
 
-    public requestFailedAction = (err:requestErrorI)=>{
-        console.log(err.statusCode," ",err.msg)
+    public requestFailedAction = (err:any)=>{
+        console.log(err)
     }
     
     public render(){

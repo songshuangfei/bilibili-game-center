@@ -4,7 +4,6 @@ import * as fs from "fs"
 const { 
     tokenSecretKey,
     tokenMaxAge, 
-    loginOverdueDays
 } = JSON.parse(fs.readFileSync("appConfig.json").toString());
 
 /**
@@ -49,8 +48,6 @@ async function parseUserToken(userToken: string):Promise<{err: jwt.VerifyErrors,
         }
     }
 }
-
-
 
 export {
     createUserToken,

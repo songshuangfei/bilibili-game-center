@@ -3,16 +3,16 @@ import GameListItem from "src/components/commonComponent/game-list-item";
 import AutoLoadList from "src/components/commonComponent/auto-load-list";
 import {setRankExpectGameList} from "src/action/actions";
 import { connect } from 'react-redux';
-import { newGameRankApi } from "src/api-request/rank"
+import { expectGameRankApi } from "src/api-request/rank"
 
 
 class GameListForExpect extends React.Component {
     public props:{items:newGameListItemI[],setRankExpectGameList:(items:newGameListItemI[])=>void}
 
-    public request = (succeed:(data:newGameListItemI[])=>void,failed:(err:requestErrorI)=>void) => {
+    public request = (succeed:(data:newGameListItemI[])=>void,failed:(err:any)=>void) => {
         const size = 10;
-        const page = Math.ceil(this.props.items.length/size);
-        newGameRankApi(page,size,data=>{
+        const page = Math.ceil(this.props.items.length/size)+1;
+        expectGameRankApi(page,size,data=>{
             succeed(data);
         },(err)=>{
             failed(err);
@@ -23,7 +23,7 @@ class GameListForExpect extends React.Component {
         this.props.setRankExpectGameList(data)
     }
 
-    public requestFailedAction = (err:requestErrorI)=>{
+    public requestFailedAction = (err:any)=>{
         console.log(err.statusCode," ",err.msg)
     }
 
@@ -43,7 +43,6 @@ class GameListForExpect extends React.Component {
                             gameName={v.gameName}
                             gameIconSrc={v.gameIconSrc}
                             gameType={v.gameType}
-                            gameSize={v.gameSize}
                             ranking={i+1}
                             showIndex={true}
                             orderNum={v.orderNum}

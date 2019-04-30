@@ -10,9 +10,9 @@ import scrollMonitor from "src/components/commonFunc/scrollMonitor"
  */
 class AutoLoadList extends React.Component {
     public props:{
-        request:(succeed:(data:listRequestIiemI[])=>void,failed:(err:requestErrorI)=>void)=>void,
+        request:(succeed:(data:listRequestIiemI[])=>void,failed:(err:any)=>void)=>void,
         requestSucceedAction:(data:listRequestIiemI[])=>void,
-        requestFailedAction:(err:requestErrorI)=>void,
+        requestFailedAction:(err:any)=>void,
         children:any
     }
 
@@ -58,7 +58,7 @@ class AutoLoadList extends React.Component {
         this.props.requestSucceedAction(data);
     }
 
-    public requestFailed = (err:requestErrorI) => {
+    public requestFailed = (err:any) => {
         /* 请求失败的中间层函数*/
         if(!this.isMount){
             return;

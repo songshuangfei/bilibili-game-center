@@ -1,7 +1,5 @@
-{
-    "data":[
-        {},
-        {},
-        {}
-    ]
-}
+[
+    {"imgSrc":"/banner/2.jpg","link":"http://example.com"},
+    {"imgSrc":"/banner/1.jpg","link":"http://example.com"},
+    {"imgSrc":"/banner/3.jpg","link":"http://example.com"}
+]

@@ -8,10 +8,11 @@ import {homePreviousActivityApi} from "src/api-request/home"
 class PreviousActivity extends React.Component {
 	public props:{items:homeActivityItemI[],setHomePreviousActivity:(items:homeActivityItemI[])=>void}
 
-    public request = (succeed:(data:homeActivityItemI[])=>void,failed:(err:requestErrorI)=>void) => {
+    public request = (succeed:(data:homeActivityItemI[])=>void,failed:(err:any)=>void) => {
         const size = 4;
         // 向上取整是当最后一次抓取数据后不足一页的数据，会出现小数
-        const page = Math.ceil(this.props.items.length/size);
+        // 要获取的页数应该是当前页数加1
+        const page = Math.ceil(this.props.items.length/size) + 1;
         homePreviousActivityApi(page,size,data=>{
             succeed(data);
         },err=>{
@@ -23,8 +24,8 @@ class PreviousActivity extends React.Component {
         this.props.setHomePreviousActivity(data)
     }
 
-    public requestFailedAction = (err:requestErrorI)=>{
-        console.log(err.statusCode," ",err.msg)
+    public requestFailedAction = (err:any)=>{
+        console.log(err)
     }
 
     public render(){

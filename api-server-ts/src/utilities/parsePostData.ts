@@ -4,7 +4,6 @@ import parseQueryStr from "./parseQueryStr"
 
 type CtxType = Koa.ParameterizedContext;
 
-
 export default function (ctx: CtxType) {
     return new Promise<any>((rs, rj) => {
         try {

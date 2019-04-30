@@ -1,7 +1,8 @@
 import * as Koa from "koa";
 import * as fs from "fs";
-import { parsePostData } from "../utility";
+import { parsePostData } from "../utilities";
 import { createUserToken } from "../token/userToken";
+import { DB } from "../db"
 
 // config
 const { cookieMaxAge } = JSON.parse(fs.readFileSync("appConfig.json").toString());;
@@ -28,7 +29,9 @@ apiRoutes.push({
     handleFunc:async (ctx:CtxType)=>{
         // ctx.cookies.set();
         let postBody = await parsePostData(ctx);
-        if (postBody.uid === "001" && postBody.pwd === "123456") {
+        let db = new DB();
+        let userData = await db.useTable("users").select("uid","pwd").where("uid",postBody.uid).result();
+        if (postBody.pwd === userData[0].pwd) {
             // 生成token
             const token = createUserToken(postBody.uid); 
             // 设置cookie
@@ -58,17 +61,6 @@ apiRoutes.push({
         // 已经被前面中间件验证
         ctx.cookies.set('userToken','',{signed:false,maxAge:0})
         ctx.body = {status:1001};
-    }
-});
-
-// token未过期返回
-// 自动登录
-apiRoutes.push({
-    method:"GET",
-    path:"/login",
-    handleFunc:async (ctx:CtxType)=>{
-        // 已经被前面中间件验证
-        ctx.body = {status: 1011};
     }
 });
 

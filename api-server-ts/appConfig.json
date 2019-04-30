@@ -1,7 +1,7 @@
 {
-    "AllowOrigin":"http://blgc.cuafe.cn",
+    "AllowOrigin":"http://192.168.1.101:3000",
     "cookieMaxAge":16,
     "tokenMaxAge":15,
-    "loginOverdueDays":14,
-    "tokenSecretKey":"emm"
+    "tokenSecretKey":"emm",
+    "mediaFileRoot":"http://file.suafe.cn/blgc"
 }

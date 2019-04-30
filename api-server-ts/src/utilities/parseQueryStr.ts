@@ -4,6 +4,5 @@ export default function (queryStr: string){
         let t = item.split('=');
         result[t[0]] = t[1]
     }
-
     return result;
 }

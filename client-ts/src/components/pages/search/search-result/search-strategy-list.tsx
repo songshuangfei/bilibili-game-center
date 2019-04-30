@@ -12,7 +12,7 @@ class SearchStrategyList extends React.Component{
         setStrategy:(items:strategyListItemI[])=>void
     };
 
-    public request = (succeed:(data:strategyListItemI[])=>void,failed:(err:requestErrorI)=>void) => {
+    public request = (succeed:(data:strategyListItemI[])=>void,failed:(err:any)=>void) => {
         const size = this.props.size;
         const page = Math.ceil(this.props.items.length/size);
         searchStrategyApi(this.props.keyword, page, size, data=>{
@@ -26,7 +26,7 @@ class SearchStrategyList extends React.Component{
         this.props.setStrategy(data)
     }
 
-    public requestFailedAction = (err:requestErrorI)=>{
+    public requestFailedAction = (err:any)=>{
         console.log(err.statusCode," ",err.msg)
     }
 

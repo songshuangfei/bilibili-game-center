@@ -9,9 +9,9 @@ import { gameRankApi, rankApiTypes } from "src/api-request/rank"
 class GameListForGood extends React.Component {
     public props:{items:gameListItemI[],setRankGoodGameList:(items:gameListItemI[])=>void}
     
-    public request = (succeed:(data:gameListItemI[])=>void,failed:(err:requestErrorI)=>void) => {
+    public request = (succeed:(data:gameListItemI[])=>void,failed:(err:any)=>void) => {
         const size = 10;
-        const page = Math.ceil(this.props.items.length/size);
+        const page = Math.ceil(this.props.items.length/size)+1;
         gameRankApi(rankApiTypes.good,page,size,data=>{
             succeed(data);
         },(err)=>{
@@ -23,7 +23,7 @@ class GameListForGood extends React.Component {
         this.props.setRankGoodGameList(data)
     }
 
-    public requestFailedAction = (err:requestErrorI)=>{
+    public requestFailedAction = (err:any)=>{
         console.log(err.statusCode," ",err.msg)
     }
     public render(){

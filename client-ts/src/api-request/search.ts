@@ -163,7 +163,7 @@ function searchApi(
     succeed:(
         gameData:gameListItemI[],strategydata:strategyListItemI[]
     )=>void, 
-    failed:(err:requestErrorI)=>void
+    failed:(err:any)=>void
 ){
     setTimeout(() => {
         const f = Math.random();
@@ -173,7 +173,7 @@ function searchApi(
             // 4个item------------------
             succeed(resGame,resStrategy)
         }else {
-            const err:requestErrorI = {msg:"err",statusCode:"500"}
+            const err:any = {msg:"err",statusCode:"500"}
             failed(err);
         }
         
@@ -187,7 +187,7 @@ function searchStrategyApi(
     succeed:(
         data:strategyListItemI[]
     )=>void, 
-    failed:(err:requestErrorI)=>void
+    failed:(err:any)=>void
 ){
     setTimeout(() => {
         const f = Math.random();
@@ -195,7 +195,7 @@ function searchStrategyApi(
             const data = [...strategySourceData].slice(page*size,(page+1)*size);
             succeed(data)
         }else {
-            const err:requestErrorI = {msg:"err",statusCode:"500"}
+            const err:any = {msg:"err",statusCode:"500"}
             failed(err);
         }
         
