@@ -83,8 +83,8 @@ interface homeStrategyItemI {
  * home order game item 类型
  */
 interface homeOrderGameItemI {
-    coverImgSrc:string,
-    orderedNum:number,
+    gameCover:string,
+    orderNum:number,
     gameName:string,
     gameId:string
 }

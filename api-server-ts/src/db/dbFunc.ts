@@ -107,10 +107,13 @@ async function activityDataMerge (actRawRows:any[],withTime?:boolean){
     let result:any[] = [];
     for (const kv of actRawRows.entries()) {
         let db = new DB();
-        let gameRows = await db.useTable("publishedGames").select("gameIconSrc","gameName","score").where("gameId",kv[1].gameId).result();
+        let gameRows = await db.useTable("publishedGames").select("gameId","gameIconSrc","gameName","score").where("gameId",kv[1].gameId).result();
         result.push({
             ...filteredRow[kv[0]],
-            ...gameRows[0]
+            gameId:gameRows[0].gameId,
+            gameName:gameRows[0].gameName,
+            gameIconSrc:gameRows[0].gameIconSrc,
+            gameScore:gameRows[0].score
         })
     };
     return result;
@@ -212,6 +215,80 @@ async function strategyNewestList(page:number, size:number,withTime?:boolean){
     return mergedDataRows.slice((page-1)*size,page*size);
 }
 
+
+//---------------------------------------------------------------------------
+async function commentDataMearge(commentRows:any[]){
+    let filteredRow = colFilter(commentRows, ["commentId","commentAbstract","commentStarNum"]);
+    let result:any[]=[];
+    for (const kv of commentRows.entries()) {
+        let db1 = new DB(),
+            db2 = new DB();
+        let gameRows = await db1.useTable("publishedGames").select("gameIconSrc","gameName").where("gameId",kv[1].gameId).result();
+        let userRows = await db2.useTable("users").select("userName","headPicSrc").where("uid",kv[1].publisherId).result();
+        result.push({
+            ...filteredRow[kv[0]],
+            gameIconSrc:gameRows[0].gameIconSrc,
+            gameName:gameRows[0].gameName,
+            commenterHeadSrc:userRows[0].headPicSrc,
+            commenterName:userRows[0].userName,
+        })
+    }
+    return result;
+}
+
+/**
+ * 
+ * @param page 
+ * @param size 
+ * 返回最热评论的列表分页
+ */
+async function hotCommentPaging(page:number, size:number){
+    let db = new DB();
+    // 获取活动数据
+    let commentRows = await db.useTable("comment").result();
+    commentRows.sort((a, b)=>{
+        return b.hotIndex - a.hotIndex;
+    });
+    //获取外键数据
+    let mergedDataRows = await commentDataMearge(commentRows);
+    return mergedDataRows.slice((page-1)*size,page*size);
+}
+//----------------------------------------------------------------
+async function gameClassifyDataMerge(classIfyRows:any){
+    let filteredRow = colFilter(classIfyRows, ["classifyName","classifyId"]);
+    let result:any[]=[];
+    for (const kv of classIfyRows.entries()) {
+        // 获取每个分类里的游戏
+        let games:any=[];
+        for (const id of kv[1].gamesId) {
+            let db = new DB();
+            let gameRows = await db.useTable("publishedGames").select("gameIconSrc","gameName","gameId").where("gameId",id).result();
+            games.push(gameRows[0]);
+        }
+        result.push({
+            ...filteredRow[kv[0]],
+            games:games
+        })
+    }
+    return result;
+}
+/**
+ * 
+ * @param page 
+ * @param size 
+ * 返回游戏分类的列表分页
+ */
+async function gameClassifypaging(page:number, size:number){
+    let db = new DB();
+    // 获取活动数据
+    let classIfyRows = await db.useTable("gameClassify").result();
+    console .log(classIfyRows[0])
+    let mergedDataRows = await gameClassifyDataMerge(classIfyRows);
+
+    //获取外键数据
+    return mergedDataRows.slice((page-1)*size,page*size);
+}
+
 export {
     hotGameListPaging,
     goodGameListPaging,
@@ -219,5 +296,7 @@ export {
     expectGameListPaging,
     gameActivityNewestone,
     gameActivityPrev,
-    strategyNewestList
+    strategyNewestList,
+    hotCommentPaging,
+    gameClassifypaging
 }

@@ -5,7 +5,9 @@ import {
     expectGameListPaging,
     gameActivityNewestone,
     gameActivityPrev,
-    strategyNewestList
+    strategyNewestList,
+    hotCommentPaging,
+    gameClassifypaging
 } from "./dbFunc";
 import * as assert from "assert";
 
@@ -56,6 +58,16 @@ describe('db/dbFunc模块测试', function() {
         let d1 = new Date(a[0].publishDate),
             d2 = new Date(a[1].publishDate);
         assert.ok(d1 >= d2);
+    });
+
+    it('最热评论列表热门指数递减',async function() {
+        let a = await hotCommentPaging(1,2);
+    });
+
+    
+    it('游戏分类列表',async function() {
+        let a = await gameClassifypaging(1,2);
+        // console.log(a[0].games)
     });
 });
 

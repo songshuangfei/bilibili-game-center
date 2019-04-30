@@ -13,11 +13,12 @@ const GamelItem = (props:{coverImgSrc:string,GameId:string})=>{
         <li className="game-item">
             <div className="cover" style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
                 <ImgOnlineSrc src={props.coverImgSrc} alt=""/>
-                <Link to={props.GameId===""?"#":`/gamestrg?id=${props.GameId}`} />
+                <Link to={props.GameId===""?"#":`/gamestrg?gameid=${props.GameId}`} />
             </div>
         </li>
     )
 }
+
 class StrategyHotGame extends React.Component {
     public props:{items:bannerWithIdItemI[], setStrategyHotGame:(items: bannerWithIdItemI[])=>void}
 

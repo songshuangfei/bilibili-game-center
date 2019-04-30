@@ -68,7 +68,7 @@ const GameListItem = (props:{
                 <div className="info">
                     <div className="game-name">{props.gameName}</div>
                     <div className="game-type-size">
-                        {props.gameType}{props.gameSize?"/"+props.gameType:""}
+                        {props.gameType}{props.gameSize?"/"+props.gameSize:""}
                     </div>
                     <div className="game-score-or-other">
                         {

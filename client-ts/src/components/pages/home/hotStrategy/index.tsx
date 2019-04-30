@@ -10,7 +10,7 @@ import ImgOnlineSrc from 'src/components/commonComponent/img-online-src';
 import { homeStrategyApi } from "src/api-request/home"
 
 const HotStrategyItem = (props:homeStrategyItemI)=>{
-    const strategyGameLink = props.strategyId===""?"#":`/strategypage?id=${props.strategyId}`;
+    const strategyGameLink = props.strategyId===""?"#":`/video?id=${props.strategyId}`;
     return(
         <li className="home-hot-strategy-item">
             <div className="content">

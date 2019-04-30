@@ -7,7 +7,9 @@ import {
     expectGameListPaging,
     gameActivityNewestone,
     gameActivityPrev,
-    strategyNewestList
+    strategyNewestList,
+    hotCommentPaging,
+    gameClassifypaging
 } from "../db/dbFunc";
 
 type CtxType = Koa.ParameterizedContext;
@@ -27,7 +29,8 @@ function isPagingQueryAvalible(ctx:CtxType):boolean{
     }
     return true;
 }
-// route 
+
+// routes
 const apiRoutes:{
     path:string, 
     method:string,
@@ -35,17 +38,7 @@ const apiRoutes:{
 }[] = [];
 
 // add route 
-apiRoutes.push({
-    method:"GET",
-    path:"/userinfo",
-    handleFunc:async (ctx:CtxType)=>{
-        let db = new DB();
-        let data = await db.useTable("users").select("uid","userName","headPicSrc").where("uid","001").result();
-        ctx.body = {data:data};
-    }
-});
-
-// add route 
+/*------------------------------banner ↓-----------------------------------*/
 apiRoutes.push({
     method:"GET",
     path:"/homebanner",
@@ -61,11 +54,15 @@ apiRoutes.push({
     path:"/findbanner",
     handleFunc:async (ctx:CtxType)=>{
         let db = new DB();
-        let homeBanners = await db.useTable("findBanner").result();
-        ctx.body = {data:homeBanners};
+        let data = await db.useTable("findBanner").result();
+        ctx.body = {findBanner:data};
     }
 });
+/*------------------------------banner ↑-----------------------------------*/
 
+
+
+/*------------------------------rank list ↓-----------------------------------*/
 // query page=[number]&size=[number]
 apiRoutes.push({
     method:"GET",
@@ -129,7 +126,71 @@ apiRoutes.push({
         ctx.body = {page:rows};
     }
 });
+/*------------------------------rank list ↑-----------------------------------*/
 
+
+
+/*------------------------------activity ↓-----------------------------------*/
+// query none
+apiRoutes.push({
+    method:"GET",
+    path:"/activity/newest",
+    handleFunc:async (ctx:CtxType)=>{
+        let item = await gameActivityNewestone();
+        ctx.body = {item:item};
+    }
+});
+
+// query page=[number]&size=[number]
+apiRoutes.push({
+    method:"GET",
+    path:"/activity/prev",
+    handleFunc:async (ctx:CtxType)=>{
+        if(!isPagingQueryAvalible(ctx)){
+            badRequestHandler(ctx);
+            return;
+        }
+        let rows = await gameActivityPrev(ctx.query.page,ctx.query.size);
+        ctx.body = {page:rows};
+    }
+});
+/*------------------------------activity ↑-----------------------------------*/
+
+
+/*------------------------------paging ↓-----------------------------------*/
+// query page=[number]&size=[number]
+apiRoutes.push({
+    method:"GET",
+    path:"/strategylist",
+    handleFunc:async (ctx:CtxType)=>{
+        if(!isPagingQueryAvalible(ctx)){
+            badRequestHandler(ctx);
+            return;
+        }
+        let rows = await strategyNewestList(ctx.query.page,ctx.query.size);
+        ctx.body = {page:rows};
+    }
+});
+
+// query page=[number]&size=[number]
+apiRoutes.push({
+    method:"GET",
+    path:"/gameclassify",
+    handleFunc:async (ctx:CtxType)=>{
+        if(!isPagingQueryAvalible(ctx)){
+            badRequestHandler(ctx);
+            return;
+        }
+        let rows = await gameClassifypaging(ctx.query.page,ctx.query.size);
+        ctx.body = {page:rows};
+    }
+});
+/*------------------------------paging ↑-----------------------------------*/
+
+
+
+
+/*------------------------------list ↓-----------------------------------*/
 // query type=[string]&num=[number]
 apiRoutes.push({
     method:"GET",
@@ -155,49 +216,201 @@ apiRoutes.push({
             return;
         }
         let rows = await hotGameListPaging(1,ctx.query.num,keys);
-        ctx.body = {data:rows};
+        ctx.body = {list:rows};
+    }
+});
+
+
+// query type=[string]&num=[number]
+apiRoutes.push({
+    method:"GET",
+    path:"/newgames",
+    handleFunc:async (ctx:CtxType)=>{
+        if( !ctx.query.type || 
+            !ctx.query.num ||
+            !Number(ctx.query.num)
+        ){
+            badRequestHandler(ctx);
+            return;
+        }
+        let keys:string[] =[];
+        switch(ctx.query.type){
+        case "basic":
+            keys =["gameId","gameName","gameIconSrc"];
+            break;
+        case "all":
+            keys = ["gameId","gameName","gameIconSrc","gameType","gameSize","score"];
+            break;
+        default:
+            badRequestHandler(ctx);
+            return;
+        }
+        let rows = await newGameListPaging(1,ctx.query.num,keys);
+        ctx.body = {list:rows};
+    }
+});
+
+// query type=[string]&num=[number]
+apiRoutes.push({
+    method:"GET",
+    path:"/ordergames",
+    handleFunc:async (ctx:CtxType)=>{
+        if( !ctx.query.type || 
+            !ctx.query.num ||
+            !Number(ctx.query.num)
+        ){
+            badRequestHandler(ctx);
+            return;
+        }
+        let keys:string[] =[];
+        switch(ctx.query.type){
+        case "basic":
+            keys = ["gameId","gameName","gameIconSrc"];
+            break;
+        case "banner":
+            keys = ["gameId","gameName","gameCover","orderNum"];
+            break;
+        default:
+            badRequestHandler(ctx);
+            return;
+        }
+        let rows = await expectGameListPaging(1,ctx.query.num,keys);
+        ctx.body = {list:rows};
+    }
+});
+
+
+// query num=[number]
+apiRoutes.push({
+    method:"GET",
+    path:"/videostrategy",
+    handleFunc:async (ctx:CtxType)=>{
+        if( !ctx.query.num ||
+            !Number(ctx.query.num)
+        ){
+            badRequestHandler(ctx);
+            return;
+        }
+
+        let db = new DB();
+        let rows = await db.useTable("videoStrategy").result();
+        ctx.body = {list:rows.slice(0,ctx.query.num)};
     }
 });
 
 // query none
 apiRoutes.push({
     method:"GET",
-    path:"/activity/newest",
+    path:"/hotgames/banner",
     handleFunc:async (ctx:CtxType)=>{
-        let item = await gameActivityNewestone();
-        ctx.body = {item:item};
-    }
-});
-
-// query page=[number]&size=[number]
-apiRoutes.push({
-    method:"GET",
-    path:"/activity/prev",
-    handleFunc:async (ctx:CtxType)=>{
-        if(!isPagingQueryAvalible(ctx)){
+        if( !ctx.query.num ||
+            !Number(ctx.query.num)
+        ){
             badRequestHandler(ctx);
             return;
         }
-        let rows = await gameActivityPrev(ctx.query.page,ctx.query.size);
-        ctx.body = {page:rows};
+        let rows = await hotGameListPaging(1,ctx.query.num,[
+            "gameId","gameCover"
+        ]);
+        let res:any[] = [];
+        for (const row of rows) {
+            res.push({
+                imgSrc:row.gameCover,
+                id:row.gameId
+            })
+        }
+        ctx.body = {list:res};
     }
 });
 
-// query page=[number]&size=[number]
+
+
+// query type=[string]&num=[number]
 apiRoutes.push({
     method:"GET",
-    path:"/strategylist",
+    path:"/biligames",
     handleFunc:async (ctx:CtxType)=>{
-        if(!isPagingQueryAvalible(ctx)){
+        if( !ctx.query.num ||
+            !Number(ctx.query.num)
+        ){
             badRequestHandler(ctx);
             return;
         }
-        let rows = await strategyNewestList(ctx.query.page,ctx.query.size);
-        ctx.body = {page:rows};
+
+        let keys:string[] = [];
+        switch(ctx.query.type){
+            case "basic":
+                keys = ["gameId","gameName","gameIconSrc"];
+                break;
+            case "all":
+                keys = ["gameId","gameName","gameIconSrc","gameType","gameSize","score"];
+                break;
+            default:
+                badRequestHandler(ctx);
+                return;
+            }
+
+        let db = new DB();
+        let rows = await db.useTable("publishedGames")
+            .select(...keys)
+            .where("isBiliGame",true)
+            .result();
+        ctx.body = {list:rows.slice(0,ctx.query.num)};
     }
 });
 
 
+// query type=[string]&num=[number]
+apiRoutes.push({
+    method:"GET",
+    path:"/paygames",
+    handleFunc:async (ctx:CtxType)=>{
+        if( !ctx.query.num ||
+            !Number(ctx.query.num)
+        ){
+            badRequestHandler(ctx);
+            return;
+        }
+
+        let keys:string[] = [];
+        switch(ctx.query.type){
+            case "basic":
+                keys = ["gameId","gameName","gameIconSrc"];
+                break;
+            case "all":
+                keys = ["gameId","gameName","gameIconSrc","gameType","gameSize","score"];
+                break;
+            default:
+                badRequestHandler(ctx);
+                return;
+            }
+
+        let db = new DB();
+        let rows = await db.useTable("publishedGames")
+            .select(...keys)
+            .where("isPayGame",true)
+            .result();
+        ctx.body = {list:rows.slice(0,ctx.query.num)};
+    }
+});
+
+// query num=[number]
+apiRoutes.push({
+    method:"GET",
+    path:"/hotcomments",
+    handleFunc:async (ctx:CtxType)=>{
+        if( !ctx.query.num ||
+            !Number(ctx.query.num)
+        ){
+            badRequestHandler(ctx);
+            return;
+        }
+
+        let rows = await hotCommentPaging(1,ctx.query.num);
+        ctx.body = {list:rows};
+    }
+});
+/*------------------------------list ↑-----------------------------------*/
 export default function () {
     return async function ( ctx: CtxType, next:()=>Promise<any>) {
         for(const route of apiRoutes){

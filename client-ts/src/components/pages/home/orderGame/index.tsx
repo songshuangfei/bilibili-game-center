@@ -19,12 +19,12 @@ const OrderGameItem = (props:homeOrderGameItemI)=>{
                 <div className="cover" style={{
                     backgroundImage:`url(${ImgLoadingIcon})`,
                 }}>
-                    <ImgOnlineSrc src={props.coverImgSrc} alt=""/>
+                    <ImgOnlineSrc src={props.gameCover} alt=""/>
                     <Link to={gameLink}/>
                 </div>
                 <div className="order-info">
                     <div className="game-name">{props.gameName}</div>
-                    <div className="ordered-num">{props.orderedNum}人已预约</div>
+                    <div className="ordered-num">{props.orderNum}人已预约</div>
                 </div>
                 <div className="order-btn">
                     <BlueBtn width="5.4rem" name="预约" height="2rem" link={`/game/${props.gameId}`}/>
@@ -57,8 +57,8 @@ class OrderGame extends React.Component {
                         [1,2,3,4,5,6,7,8,9].map((v)=>(
                             <OrderGameItem 
                                 key={v} 
-                                coverImgSrc=""
-                                orderedNum={0}
+                                gameCover=""
+                                orderNum={0}
                                 gameName="bilibili"
                                 gameId=""
                             />
@@ -66,8 +66,8 @@ class OrderGame extends React.Component {
                         this.props.items.map(v=>(
                             <OrderGameItem 
                                 key={v.gameId} 
-                                coverImgSrc={v.coverImgSrc} 
-                                orderedNum={v.orderedNum}
+                                gameCover={v.gameCover} 
+                                orderNum={v.orderNum}
                                 gameName={v.gameName}
                                 gameId={v.gameId}
                             />

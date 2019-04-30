@@ -40,7 +40,7 @@ class FindGameClassify extends React.Component {
 	public props:{items:findGameClassifyItemI[],setFindGameClassify:(items:findGameClassifyItemI[])=>void}
     public request = (succeed:(data:findGameClassifyItemI[])=>void,failed:(err:any)=>void) => {
         const size = 4;
-        const page = Math.ceil(this.props.items.length/size);
+        const page = Math.ceil(this.props.items.length/size)+1;
         findGameClassifyApi(page,size,data=>{
             succeed(data);
         },err=>{

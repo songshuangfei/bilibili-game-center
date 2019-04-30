@@ -25,11 +25,13 @@ function rowPreprocessing(rows:any[],jsonName:string){
     case "publishedGames":
         for(let row of resRows){
             row["gameIconSrc"] = mediaFileRoot + row["gameIconSrc"];
+            row["gameCover"] = mediaFileRoot + row["gameCover"];
         }
         break;
     case "unpublishedGames":
         for(let row of resRows){
             row["gameIconSrc"] = mediaFileRoot + row["gameIconSrc"];
+            row["gameCover"] = mediaFileRoot + row["gameCover"];
         }
         break;
     case "strategys":
@@ -42,6 +44,11 @@ function rowPreprocessing(rows:any[],jsonName:string){
             row["coverSrc"] = mediaFileRoot + row["coverSrc"];
         }
         break;
+    case "videoStrategy":
+        for(let row of resRows){
+            row["coverImgSrc"] = mediaFileRoot + row["coverImgSrc"];
+        }
+    break;
     default:
         break;
     }

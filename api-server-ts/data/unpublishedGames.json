@@ -1,15 +1,15 @@
 [
-    {"gameId":"201","gameName":"命运-冠位指定","gameIconSrc":"/gameicon/fgo.png","gameType":"卡牌","orderNum":2324},
-    {"gameId":"202","gameName":"爱丽丝与仙境猫","gameIconSrc":"/gameicon/ailisi.png","gameType":"卡牌","orderNum":1234},
-    {"gameId":"203","gameName":"崩坏3rd","gameIconSrc":"/gameicon/bh3.png","gameType":"ARPG","orderNum":6434},
-    {"gameId":"204","gameName":"碧蓝幻想","gameIconSrc":"/gameicon/blhx.png","gameType":"射击","orderNum":53423},
-    {"gameId":"205","gameName":"漫威：超级争霸","gameIconSrc":"/gameicon/cjzb.png","gameType":"射击","orderNum":5245},
-    {"gameId":"206","gameName":"荒岛大胃王","gameIconSrc":"/gameicon/dwdw.png","gameType":"冒险","orderNum":423},
-    {"gameId":"207","gameName":"辐射：避难所","gameIconSrc":"/gameicon/fs.png","gameType":"冒险","orderNum":234},
-    {"gameId":"208","gameName":"黑月","gameIconSrc":"/gameicon/hy.png","gameType":"解密","orderNum":32431},
-    {"gameId":"209","gameName":"梦幻模拟战","gameIconSrc":"/gameicon/mhmnz.png","gameType":"解密","orderNum":3453},
-    {"gameId":"210","gameName":"魔王与公主","gameIconSrc":"/gameicon/mwygz.png","gameType":"解密","orderNum":4224},
-    {"gameId":"211","gameName":"战区英雄","gameIconSrc":"/gameicon/zqyx.png","gameType":"射击","orderNum":234234},
-    {"gameId":"212","gameName":"战双","gameIconSrc":"/gameicon/zs.png","gameType":"射击","orderNum":234},
-    {"gameId":"213","gameName":"权力的游戏凛冬将至","gameIconSrc":"/gameicon/ldjz.png","gameType":"解密","orderNum":2345}
+    {"gameId":"201","gameName":"命运-冠位指定","gameIconSrc":"/gameicon/fgo.png","gameType":"卡牌","orderNum":2324,"gameCover":"/gamecover/3.jpg"},
+    {"gameId":"202","gameName":"爱丽丝与仙境猫","gameIconSrc":"/gameicon/ailisi.png","gameType":"卡牌","orderNum":1234,"gameCover":"/gamecover/2.jpg"},
+    {"gameId":"203","gameName":"崩坏3rd","gameIconSrc":"/gameicon/bh3.png","gameType":"ARPG","orderNum":6434,"gameCover":"/gamecover/1.jpg"},
+    {"gameId":"204","gameName":"碧蓝幻想","gameIconSrc":"/gameicon/blhx.png","gameType":"射击","orderNum":53423,"gameCover":"/gamecover/2.jpg"},
+    {"gameId":"205","gameName":"漫威：超级争霸","gameIconSrc":"/gameicon/cjzb.png","gameType":"射击","orderNum":5245,"gameCover":"/gamecover/3.jpg"},
+    {"gameId":"206","gameName":"荒岛大胃王","gameIconSrc":"/gameicon/dwdw.png","gameType":"冒险","orderNum":423,"gameCover":"/gamecover/4.jpg"},
+    {"gameId":"207","gameName":"辐射：避难所","gameIconSrc":"/gameicon/fs.png","gameType":"冒险","orderNum":234,"gameCover":"/gamecover/3.jpg"},
+    {"gameId":"208","gameName":"黑月","gameIconSrc":"/gameicon/hy.png","gameType":"解密","orderNum":32431,"gameCover":"/gamecover/2.jpg"},
+    {"gameId":"209","gameName":"梦幻模拟战","gameIconSrc":"/gameicon/mhmnz.png","gameType":"解密","orderNum":3453,"gameCover":"/gamecover/2.jpg"},
+    {"gameId":"210","gameName":"魔王与公主","gameIconSrc":"/gameicon/mwygz.png","gameType":"解密","orderNum":4224,"gameCover":"/gamecover/1.jpg"},
+    {"gameId":"211","gameName":"战区英雄","gameIconSrc":"/gameicon/zqyx.png","gameType":"射击","orderNum":234234,"gameCover":"/gamecover/4.jpg"},
+    {"gameId":"212","gameName":"战双","gameIconSrc":"/gameicon/zs.png","gameType":"射击","orderNum":234,"gameCover":"/gamecover/3.jpg"},
+    {"gameId":"213","gameName":"凛冬将至","gameIconSrc":"/gameicon/ldjz.png","gameType":"解密","orderNum":2345,"gameCover":"/gamecover/3.jpg"}
 ]

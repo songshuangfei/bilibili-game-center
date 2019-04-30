@@ -1,5 +1,5 @@
 [
-    {"uid":"001","pwd":"123","userName":"test1","sex":"male","lv":2,"headPicSrc":"/userhead/1.jpg","coverSrc":"/default.jpg"},
-    {"uid":"002","pwd":"124","userName":"test2","sex":"female","lv":1,"headPicSrc":"/userhead/2.jpg","coverSrc":"/default.jpg"},
+    {"uid":"001","pwd":"123","userName":"用户1","sex":"male","lv":2,"headPicSrc":"/userhead/1.jpg","coverSrc":"/default.jpg"},
+    {"uid":"002","pwd":"124","userName":"用户2","sex":"female","lv":1,"headPicSrc":"/userhead/2.jpg","coverSrc":"/default.jpg"},
     {"uid":"003","pwd":"125","userName":"suafe","sex":"female","lv":5,"headPicSrc":"/userhead/3.jpg","coverSrc":"/default.jpg"}
 ]
