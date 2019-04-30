@@ -287,6 +287,12 @@ async function gameClassifypaging(page:number, size:number){
 }
 
 
+/**
+ * 
+ * @param keyword 
+ * @param actnum 
+ * 第一搜索结果
+ */
 async function search(keyword:string,actnum:number){
     let db = new DB();
     // 获取活动数据
@@ -307,6 +313,41 @@ async function search(keyword:string,actnum:number){
     let strategyRows = await db2.useTable("strategys").select().result();
     let mergedData = await strategyDataMerge(strategyRows);
 
+    let strategyResult:any[]=[];
+    for (const row of mergedData) {
+        for (const id of gamesId) {
+            if(row.gameId === id ){
+                strategyResult.push(row);
+                break;
+            }
+        }
+    }
+
+    //获取外键数据
+    return {
+        games:gameResult,
+        strategies:strategyResult.slice(0,actnum)
+    }
+}
+
+
+
+async function strategySearchList(keyword:string,page:number,size:number){
+    let db = new DB();
+    // 获取活动数据
+    let gameRows = await db.useTable("publishedGames").select("gameName","gameId").result();
+    let gamesId:string[]=[];
+
+    for (const row of gameRows) {
+        if(row.gameName.indexOf(keyword)!==-1){
+            gamesId.push(row.gameId);
+        }
+    };
+
+    let db2 = new DB();
+    let strategyRows = await db2.useTable("strategys").select().result();
+    let mergedData = await strategyDataMerge(strategyRows);
+
     let activityResult:any[]=[];
     for (const row of mergedData) {
         for (const id of gamesId) {
@@ -316,13 +357,10 @@ async function search(keyword:string,actnum:number){
             }
         }
     }
-
     //获取外键数据
-    return {
-        games:gameResult,
-        activities:activityResult
-    }
+    return activityResult.slice((page-1)*size,page*size);
 }
+
 
 export {
     hotGameListPaging,
@@ -334,5 +372,6 @@ export {
     strategyNewestList,
     hotCommentPaging,
     gameClassifypaging,
-    search
+    search,
+    strategySearchList
 }

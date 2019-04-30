@@ -8,7 +8,8 @@ import {
     strategyNewestList,
     hotCommentPaging,
     gameClassifypaging,
-    search
+    search,
+    strategySearchList
 } from "./dbFunc";
 import * as assert from "assert";
 
@@ -62,11 +63,14 @@ describe('db/dbFunc模块测试', function() {
     
     it('游戏分类列表',async function() {
         let a = await gameClassifypaging(1,2);
-        // console.log(a[0].games)
     });
 
-    it("1212",async ()=>{
+    it("search",async ()=>{
         let a = await search("崩坏",3);
+    })
+
+    it("search攻略列表",async ()=>{
+        let a = await strategySearchList("崩坏",2,3);
         console.log(a)
     })
 });

@@ -26,14 +26,14 @@ async function searchApi(
 
     try {
         const res  =  await axios.get(`${apiRoot}/search?key=${keyword}&actnum=${strategyPageSize}`);
-        succeed(res.data.data.games,res.data.data.activities);
+        succeed(res.data.data.games,res.data.data.strategies);
     } catch (error) {
         failed(error);
         
     }
 }
 
-function searchStrategyApi(
+async function searchStrategyApi(
     keyword:string,
     page:number,
     size:number,
@@ -42,8 +42,13 @@ function searchStrategyApi(
     )=>void, 
     failed:(err:any)=>void
 ){
-    succeed([]);
-    // 没做
+    // query key=[string]
+    try {
+        const res  =  await axios.get(`${apiRoot}/searchstrgy?key=${keyword}&page=${page}&size=${size}`);
+        succeed(res.data.strategies);
+    } catch (error) {
+        failed(error);
+    }
 }
 
 export {

@@ -10,7 +10,8 @@ import {
     strategyNewestList,
     hotCommentPaging,
     gameClassifypaging,
-    search
+    search,
+    strategySearchList
 } from "../db/dbFunc";
 
 type CtxType = Koa.ParameterizedContext;
@@ -435,6 +436,21 @@ apiRoutes.push({
         }
         let data = await search(ctx.query.key,ctx.query.actnum)
         ctx.body = {data: data};
+    }
+});
+
+// query key=[string]&page=[string]&size=[number]
+apiRoutes.push({
+    method:"GET",
+    path:"/searchstrgy",
+    handleFunc:async (ctx:CtxType)=>{
+        console.log(ctx.query.key,ctx.query.page,ctx.query.size)
+        if(!isPagingQueryAvalible(ctx)||!ctx.query.key){
+            badRequestHandler(ctx);
+            return;
+        }
+        let data = await strategySearchList(ctx.query.key,ctx.query.page,ctx.query.size)
+        ctx.body = {strategies: data};
     }
 });
 /*------------------------------list ↑-----------------------------------*/

@@ -17,7 +17,7 @@ class  AutoSearchBoard extends React.Component {
     }
     
     private maxgameNum = 3;
-    private strategyPageSize = 5;
+    private strategyPageSize = 3;
 
     private isUnMounted:boolean = true;
 
