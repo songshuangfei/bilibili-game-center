@@ -102,8 +102,8 @@ async function expectGameListPaging (page:number, size:number, cols:string[]){
  * @param actRawRows 
  * 返回完整的游戏活动数据列表
  */
-async function activityDataMerge (actRawRows:any[],withTime?:boolean){
-    let filteredRow = colFilter(actRawRows, ["activityId","coverSrc","activityIntro",withTime?"publishDate":""]);
+async function activityDataMerge (actRawRows:any[]){
+    let filteredRow = colFilter(actRawRows, ["activityId","coverSrc","activityIntro"]);
     let result:any[] = [];
     for (const kv of actRawRows.entries()) {
         let db = new DB();
@@ -145,10 +145,9 @@ async function gameActivityNewestone (){
  * 
  * @param page 
  * @param size 
- * @param withTime 测试参数
  * 返回按时间排序（最新）的一个活动列表分页
  */
-async function gameActivityPrev(page:number, size:number,withTime?:boolean){
+async function gameActivityPrev(page:number, size:number){
     let db = new DB();
     // 获取活动数据
     let actRows = await db.useTable("gameActivities").result();
@@ -162,7 +161,7 @@ async function gameActivityPrev(page:number, size:number,withTime?:boolean){
         }
     });
     //获取外键数据
-    let mergedDataRows = await activityDataMerge(actRows,withTime);
+    let mergedDataRows = await activityDataMerge(actRows);
     
     // 去除最新的一个
     let prevactRows = mergedDataRows.slice(1);
@@ -170,8 +169,8 @@ async function gameActivityPrev(page:number, size:number,withTime?:boolean){
 }
 
 // -----------------------------------------------------------------------------------
-async function strategyDataMerge(strategyRows:any[],withTime?:boolean) {
-    let filteredRow = colFilter(strategyRows, ["strategyId","strategyTitle","coverSrc","abstract","strategyType","readNum","goodNum",withTime?"publishDate":""]);
+async function strategyDataMerge(strategyRows:any[]) {
+    let filteredRow = colFilter(strategyRows, ["strategyId","strategyTitle","coverSrc","abstract","strategyType","readNum","goodNum","gameId"]);
     let result:any[] = [];
     for (const kv of strategyRows.entries()) {
         let db1 = new DB(),
@@ -191,12 +190,11 @@ async function strategyDataMerge(strategyRows:any[],withTime?:boolean) {
  * 
  * @param page 
  * @param size 
- * @param withTime 一个用于测试的参数
  * @returns 
  * 返回一个最新攻略列表分页
  * 
  */
-async function strategyNewestList(page:number, size:number,withTime?:boolean){
+async function strategyNewestList(page:number, size:number){
     let db = new DB();
     // 获取活动数据
     let strategyRows = await db.useTable("strategys").result();
@@ -211,7 +209,7 @@ async function strategyNewestList(page:number, size:number,withTime?:boolean){
     });
 
     //获取外键数据
-    let mergedDataRows = await strategyDataMerge(strategyRows,withTime);
+    let mergedDataRows = await strategyDataMerge(strategyRows);
     return mergedDataRows.slice((page-1)*size,page*size);
 }
 
@@ -282,11 +280,48 @@ async function gameClassifypaging(page:number, size:number){
     let db = new DB();
     // 获取活动数据
     let classIfyRows = await db.useTable("gameClassify").result();
-    console .log(classIfyRows[0])
     let mergedDataRows = await gameClassifyDataMerge(classIfyRows);
 
     //获取外键数据
     return mergedDataRows.slice((page-1)*size,page*size);
+}
+
+
+async function search(keyword:string,actnum:number){
+    let db = new DB();
+    // 获取活动数据
+    let gameRows = await db.useTable("publishedGames").select(
+        "gameId","gameName","gameIconSrc","gameType","gameSize","score",
+    ).result();
+    let gameResult:any[]=[];
+    let gamesId:string[]=[];
+
+    for (const row of gameRows) {
+        if(row.gameName.indexOf(keyword)!==-1){
+            gameResult.push(row);
+            gamesId.push(row.gameId);
+        }
+    };
+
+    let db2 = new DB();
+    let strategyRows = await db2.useTable("strategys").select().result();
+    let mergedData = await strategyDataMerge(strategyRows);
+
+    let activityResult:any[]=[];
+    for (const row of mergedData) {
+        for (const id of gamesId) {
+            if(row.gameId === id ){
+                activityResult.push(row);
+                break;
+            }
+        }
+    }
+
+    //获取外键数据
+    return {
+        games:gameResult,
+        activities:activityResult
+    }
 }
 
 export {
@@ -298,5 +333,6 @@ export {
     gameActivityPrev,
     strategyNewestList,
     hotCommentPaging,
-    gameClassifypaging
+    gameClassifypaging,
+    search
 }

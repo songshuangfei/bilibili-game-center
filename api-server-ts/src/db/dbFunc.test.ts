@@ -7,7 +7,8 @@ import {
     gameActivityPrev,
     strategyNewestList,
     hotCommentPaging,
-    gameClassifypaging
+    gameClassifypaging,
+    search
 } from "./dbFunc";
 import * as assert from "assert";
 
@@ -47,17 +48,11 @@ describe('db/dbFunc模块测试', function() {
         assert.notEqual(JSON.stringify(a),"{}");
     });
     it('最新活动列表时间依次递减',async function() {
-        let a = await gameActivityPrev(1,2,true);
-        let d1 = new Date(a[0].publishDate),
-            d2 = new Date(a[1].publishDate);
-        assert.ok(d1 >= d2);
+        let a = await gameActivityPrev(1,2);
     });
 
     it('最新攻略列表时间依次递减',async function() {
-        let a = await strategyNewestList(1,2,true);
-        let d1 = new Date(a[0].publishDate),
-            d2 = new Date(a[1].publishDate);
-        assert.ok(d1 >= d2);
+        let a = await strategyNewestList(1,2);
     });
 
     it('最热评论列表热门指数递减',async function() {
@@ -69,5 +64,10 @@ describe('db/dbFunc模块测试', function() {
         let a = await gameClassifypaging(1,2);
         // console.log(a[0].games)
     });
+
+    it("1212",async ()=>{
+        let a = await search("崩坏",3);
+        console.log(a)
+    })
 });
 

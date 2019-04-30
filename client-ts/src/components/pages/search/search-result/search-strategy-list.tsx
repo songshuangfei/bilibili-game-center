@@ -14,7 +14,7 @@ class SearchStrategyList extends React.Component{
 
     public request = (succeed:(data:strategyListItemI[])=>void,failed:(err:any)=>void) => {
         const size = this.props.size;
-        const page = Math.ceil(this.props.items.length/size);
+        const page = Math.ceil(this.props.items.length/size)+1;
         searchStrategyApi(this.props.keyword, page, size, data=>{
             succeed(data);
         },err=>{

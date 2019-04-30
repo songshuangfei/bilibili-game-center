@@ -11,6 +11,8 @@
     {"gameId":"110","gameName":"梦幻模拟战","gameIconSrc":"/gameicon/mhmnz.png","gameType":"解密","gameSize":"348M","score":8.9,"hotIndex":"4902","publishDate":"Mon Apr 17 2019 22:47:19 GMT+0800 (中国标准时间)","gameCover":"/gamecover/1.jpg","isBiliGame":true,"isPayGame":true},
     {"gameId":"111","gameName":"魔王与公主","gameIconSrc":"/gameicon/mwygz.png","gameType":"解密","gameSize":"348M","score":7.8,"hotIndex":"6492","publishDate":"Mon Apr 30 2017 22:47:19 GMT+0800 (中国标准时间)","gameCover":"/gamecover/2.jpg","isBiliGame":true,"isPayGame":false},
     {"gameId":"112","gameName":"战区英雄","gameIconSrc":"/gameicon/zqyx.png","gameType":"射击","gameSize":"648M","score":7.8,"hotIndex":"46292","publishDate":"Mon Apr 27 2019 22:47:19 GMT+0800 (中国标准时间)","gameCover":"/gamecover/3.jpg","isBiliGame":false,"isPayGame":true},
-    {"gameId":"113","gameName":"战双","gameIconSrc":"/gameicon/zs.png","gameType":"射击","gameSize":"648M","score":2.8,"hotIndex":"41292","publishDate":"Mon Apr 23 2019 22:47:19 GMT+0800 (中国标准时间)","gameCover":"/gamecover/4.jpg","isBiliGame":true,"isPayGame":true}
+    {"gameId":"113","gameName":"战双","gameIconSrc":"/gameicon/zs.png","gameType":"射击","gameSize":"648M","score":2.8,"hotIndex":"41292","publishDate":"Mon Apr 23 2019 22:47:19 GMT+0800 (中国标准时间)","gameCover":"/gamecover/4.jpg","isBiliGame":true,"isPayGame":true},
+    {"gameId":"114","gameName":"崩坏2","gameIconSrc":"/gameicon/bh3.png","gameType":"ARPG","gameSize":"428M","score":7.1,"hotIndex":"4922","publishDate":"Mon Apr 29 2019 21:47:19 GMT+0800 (中国标准时间)","gameCover":"/gamecover/2.jpg","isBiliGame":true,"isPayGame":false}
+
 ]
 

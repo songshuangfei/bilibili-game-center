@@ -9,7 +9,8 @@ import {
     gameActivityPrev,
     strategyNewestList,
     hotCommentPaging,
-    gameClassifypaging
+    gameClassifypaging,
+    search
 } from "../db/dbFunc";
 
 type CtxType = Koa.ParameterizedContext;
@@ -408,6 +409,32 @@ apiRoutes.push({
 
         let rows = await hotCommentPaging(1,ctx.query.num);
         ctx.body = {list:rows};
+    }
+});
+
+// query num=[number]
+apiRoutes.push({
+    method:"GET",
+    path:"/hotsearch",
+    handleFunc:async (ctx:CtxType)=>{
+        ctx.body = {keys: ["崩坏","fgo","Fate","约会大作战","崩坏3rd","第五人格","妈妈把我的游戏藏起来了"]};
+    }
+});
+
+// query key=[string]&actnum=[number]
+apiRoutes.push({
+    method:"GET",
+    path:"/search",
+    handleFunc:async (ctx:CtxType)=>{
+        if( !ctx.query.key ||
+            !ctx.query.actnum ||
+            !Number(ctx.query.actnum)
+        ){
+            badRequestHandler(ctx);
+            return;
+        }
+        let data = await search(ctx.query.key,ctx.query.actnum)
+        ctx.body = {data: data};
     }
 });
 /*------------------------------list ↑-----------------------------------*/

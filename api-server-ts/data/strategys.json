@@ -26,7 +26,7 @@
     {
         "strategyId":"303",
         "publisherId":"001",
-        "gameId":"105",
+        "gameId":"103",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/3.png",
         "abstract":"这是一条攻略摘要，这是一条攻略摘要，这是一条攻略摘要，这是一条攻略摘要这是一条攻略摘要这是一条攻略摘要这是一条攻略摘要",
@@ -38,7 +38,7 @@
     {
         "strategyId":"304",
         "publisherId":"002",
-        "gameId":"108",
+        "gameId":"114",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/4.png",
         "abstract":"这是一条攻略摘要，这是一条攻略摘要，这是一条攻略摘要，这是一条攻略摘要这是一条攻略摘要这是一条攻略摘要这是一条攻略摘要",

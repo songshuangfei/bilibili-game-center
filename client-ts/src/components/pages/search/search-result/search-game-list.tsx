@@ -17,6 +17,7 @@ function SearchGameList (props:{games:gameListItemI[]}){
                         gameType={v.gameType}
                         ranking={i+1}
                         showIndex={false}
+                        score={v.score}
                     />
                 ))
             }
