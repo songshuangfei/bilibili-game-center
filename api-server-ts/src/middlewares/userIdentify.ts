@@ -36,7 +36,7 @@ export default function (reqs: {method: string, path: string}[]) {
                 }
                 // token解析成功
                 // 可获取token内容
-                console.log(parsedToken.uid + "is verified and passed");
+                console.log(parsedToken.uid + " is verified and passed");
                 // 验证通过继续向后
                 break;
             }
