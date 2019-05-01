@@ -31,7 +31,7 @@ class UserBoard extends React.Component {
                     <div className="user-info">
                         <div className="head-pic">
                             <div style={{backgroundImage:`url(${ImgLoadingIcon})`}}>
-                                <ImgOnlineSrc src={this.props.item.headImgSrc} alt=""/>
+                                <ImgOnlineSrc src={this.props.item.headPicSrc} alt=""/>
                             </div>
                         </div>
                         <div className="info">

@@ -21,9 +21,11 @@ app.use(normalApi());
 app.use(testPage());// 开发中测试api的页面
 
 // user api前的身份验证
-// 哪些请求需要验证token后才能继续
+// 以下api需要验证touken
 app.use(userIdentify([
     {method: "GET",path: "/login"},
+    {method: "GET",path: "/user/info"},
+    {method: "GET",path: "/user/menu"}
 ]));
 
 app.use(userApi());

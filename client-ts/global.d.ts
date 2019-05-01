@@ -133,7 +133,7 @@ interface userPageInfoI {
     follower:number,
     following:number,
     goodNum:number,
-    headImgSrc:string,
+    headPicSrc:string,
     lv:number,
     sex:string,
     uid:string,

@@ -77,6 +77,36 @@ apiRoutes.push({
     }
 });
 
+// user information
+apiRoutes.push({
+    method:"GET",
+    path:"/user/info",
+    handleFunc:async (ctx:CtxType)=>{
+        // 已经被前面中间件验证
+        let uid = ctx.cookies.get("uid");
+        let db = new DB();
+        let userRows = await db.useTable("users").select(
+            "follower","following","goodNum","headPicSrc","lv","sex","uid","userName","coverSrc"
+        ).where("uid",uid).result();
+        ctx.body = {info:userRows[0]};
+    }
+});
+
+// user`s menu information
+apiRoutes.push({
+    method:"GET",
+    path:"/user/menu",
+    handleFunc:async (ctx:CtxType)=>{
+        // 已经被前面中间件验证
+        let uid = ctx.cookies.get("uid");
+        let db = new DB();
+        let userRows = await db.useTable("users").select(
+            "bigGift","bookedGame","boughtGame","myCollect","myEvaluate","myGift","playedGame","updateNum"
+        ).where("uid",uid).result();
+        ctx.body = {menuInfo:userRows[0]};
+    }
+});
+
 export default function () {
     return async function ( ctx: CtxType, next:()=>Promise<any>) {
         for(const route of apiRoutes){
