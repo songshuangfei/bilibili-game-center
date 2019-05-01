@@ -14,7 +14,8 @@ import Search from "./components/pages/search/";
 import GamePage from './components/pages/gamePage';
 import MsgPage from "./components/pages/msg";
 import MyDownload  from "./components/pages/my-download";
-import NotFound from "./components/pages/notFound"
+import NotFound from "./components/pages/notFound";
+import Setting from "./components/pages/setting"
 
 function MainPagesWrapper(){
 	const pathNow:string = window.location.pathname;
@@ -29,6 +30,7 @@ function MainPagesWrapper(){
 				<Route path="/my" component={My}/>
 				<Route path="/msg" component={MsgPage} />
 				<Route path="/mydownload" component={MyDownload} />
+				<Route path="/setting" component={Setting} />
 			</Switch>
 			<TitleBar/>
 			{isManPage?<Nav/>:""}
@@ -51,7 +53,7 @@ function OtherPagesWrapper(){
 class App extends React.Component {
 	public render() {
 		const pathNow:string = window.location.pathname;
-		const isTitlePage:boolean = ['/','/rank','/find','/strategy','/my','/msg',"/mydownload"].indexOf(pathNow)===-1?false:true; 
+		const isTitlePage:boolean = ['/','/rank','/find','/strategy','/my','/msg',"/mydownload","/setting"].indexOf(pathNow)===-1?false:true; 
 		return (
 			<div className="App">
 				{isTitlePage?<MainPagesWrapper/>:<OtherPagesWrapper/>}

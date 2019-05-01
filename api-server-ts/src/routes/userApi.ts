@@ -28,9 +28,13 @@ apiRoutes.push({
     path:"/login",
     handleFunc:async (ctx:CtxType)=>{
         // ctx.cookies.set();
-        let postBody = await parsePostData(ctx);
+        let postBody = await parsePostData(ctx,"json");
         let db = new DB();
         let userData = await db.useTable("users").select("uid","pwd").where("uid",postBody.uid).result();
+        if(userData.length === 0){
+            ctx.body = {status: 1002};// 无用户
+            return;            
+        }
         if (postBody.pwd === userData[0].pwd) {
             // 生成token
             const token = createUserToken(postBody.uid); 
@@ -38,7 +42,7 @@ apiRoutes.push({
             ctx.cookies.set("uid",postBody.uid, {maxAge: cookieMaxAge*24*60*60*1000});
 
             // 是否保存登录状态
-            if (postBody.rememberme === 'on') {
+            if (postBody.rememberme === true) {
                 // 保存cookie
                 ctx.cookies.set("userToken", token , {maxAge: cookieMaxAge*24*60*60*1000});
             } else {
@@ -59,14 +63,14 @@ apiRoutes.push({
     path:"/logout",
     handleFunc:async (ctx:CtxType)=>{
         // 已经被前面中间件验证
-        ctx.cookies.set('userToken','',{signed:false,maxAge:0})
+        ctx.cookies.set('userToken','',{maxAge:0})
         ctx.body = {status:1001};
     }
 });
 
 apiRoutes.push({
     method:"GET",
-    path:"/follow",
+    path:"/login",
     handleFunc:async (ctx:CtxType)=>{
         // 已经被前面中间件验证
         ctx.body = {status:1011};

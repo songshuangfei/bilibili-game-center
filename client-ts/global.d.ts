@@ -167,5 +167,3 @@ interface msgsI {
     attitude:msgItemI[],
     inform:msgItemI[]
 }
-
-

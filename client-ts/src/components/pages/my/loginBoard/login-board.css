@@ -1,0 +1,72 @@
+.login-board {
+    width: 100%;
+    height: 18rem;
+    position: absolute;
+    margin-top: -9rem;
+    top:40%;
+}
+
+.login-board h3 {
+    text-align: center;
+    color:var(--theme-color);
+    padding-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.login-board .input-box {
+    width: 90%;
+    height: 100%;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+
+.login-board input[type="text"],
+.login-board input[type="password"]{
+    display: block;
+    border: none;
+    height: 2.4rem;
+    outline: none;
+    width: 80%;
+    font-size: 0.8rem;
+    margin: 0.8rem auto;
+    color: var(--word-color-primary);
+    border-radius: 6px;
+    padding: 0 0.4rem;
+    box-sizing: border-box;
+}
+
+.login-board .inline-input-box {
+    width: 80%;
+    margin: 0.2rem auto;    
+}
+
+
+.login-board input[type="checkbox"] {
+    outline: none;
+    vertical-align: middle;
+
+}
+
+.login-board input[type="checkbox"]:focus{
+    outline: none;
+}
+
+.login-board .remember-me {
+    font-size: 0.8rem;
+    color: var(--word-color-primary);
+    vertical-align: middle;
+}
+
+.login-board .submit-btn {
+    width: 80%;
+    margin: 0.4rem auto;
+}
+
+.login-board .inform {
+    font-size: 0.8rem;
+    color: #ff5f4a;
+}
+
+.login-board .hied-real-submit {
+    display: none;
+}

@@ -23,6 +23,7 @@ enum actionTypes {
     getMyMenu,
     getRankPageTab,
     getSearchHotKeys,
+    getLoginState
 }
 
 

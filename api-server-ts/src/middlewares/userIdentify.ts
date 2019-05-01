@@ -18,6 +18,8 @@ function  authenticationExpired(ctx: CtxType) {
 //  middleware
 export default function (reqs: {method: string, path: string}[]) {
     return async function ( ctx: CtxType, next:() => Promise<any>) {
+        const userToken = ctx.cookies.get("userToken");
+        console.log(userToken)
         for (const v of reqs) {
             if (ctx.path === v.path && ctx.method === v.method) {
                 const userToken = ctx.cookies.get("userToken");

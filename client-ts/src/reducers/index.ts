@@ -300,6 +300,18 @@ const searchHotKeys = (
   }
 }
 
+const loginState = (
+  state:number = 0, 
+  action:{type:actionTypes,state:number}
+) => {
+  switch (action.type) {
+  case actionTypes.getLoginState:
+      return action.state;
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   homeBanner,
   homeHotGame,
@@ -325,4 +337,5 @@ export default combineReducers({
   myUserBoard,
   myMenu,
   searchHotKeys,
+  loginState
 })

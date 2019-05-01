@@ -24,7 +24,6 @@ app.use(testPage());// 开发中测试api的页面
 // 哪些请求需要验证token后才能继续
 app.use(userIdentify([
     {method: "GET",path: "/login"},
-    {method: "GET",path: "/follow"},
 ]));
 
 app.use(userApi());

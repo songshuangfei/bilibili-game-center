@@ -122,6 +122,11 @@ const setSearchHotKeys = (items:string[]) =>({
     type:actionTypes.getSearchHotKeys,
 });
 
+const setLoginState = (state:number) =>({
+    state,
+    type:actionTypes.getLoginState,
+});
+
 export {
     setHomeBanner,
     setHomeHotGame,
@@ -147,4 +152,5 @@ export {
     setRankNewGameList,
     setFindGameClassify,
     setSearchHotKeys,
+    setLoginState
 };

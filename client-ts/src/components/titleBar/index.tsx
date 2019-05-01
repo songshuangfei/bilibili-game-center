@@ -114,6 +114,10 @@ const MyDownloadTitle = (props: RouteComponentProps)=>(
     <OnlyBackBtnTitlebar titleName="我的下载" clickToBack={props.history.goBack} hasBoxShadow={true}/>
 )
 
+const SettingTitle = (props: RouteComponentProps)=>(
+    <OnlyBackBtnTitlebar titleName="设置" clickToBack={props.history.goBack} hasBoxShadow={true}/>
+)
+
 const TitleBar= () => {
     return(
         <Switch>
@@ -124,6 +128,7 @@ const TitleBar= () => {
             <Route path="/my" component={MyTitle}/>
             <Route path="/msg" component={MsgTitle}/>
             <Route path="/mydownload" component={MyDownloadTitle}/>
+            <Route path="/setting" component={SettingTitle}/>
         </Switch>
     )
 }

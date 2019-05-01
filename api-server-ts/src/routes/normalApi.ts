@@ -444,7 +444,6 @@ apiRoutes.push({
     method:"GET",
     path:"/searchstrgy",
     handleFunc:async (ctx:CtxType)=>{
-        console.log(ctx.query.key,ctx.query.page,ctx.query.size)
         if(!isPagingQueryAvalible(ctx)||!ctx.query.key){
             badRequestHandler(ctx);
             return;

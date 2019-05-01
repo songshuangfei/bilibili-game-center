@@ -1,9 +1,10 @@
 import axios from "axios";
 import { appconfig } from "src/appConfig"
 const {apiRoot} = appconfig;
+axios.defaults.baseURL =apiRoot;
 
 async function searchHotKeysApi (succeed:(data:string[])=>void, failed?:()=>void) {
-    const res  =  await axios.get(`${apiRoot}/hotsearch`);
+    const res  =  await axios.get(`/hotsearch`);
     succeed(res.data.keys);
 }
 /**
@@ -25,7 +26,7 @@ async function searchApi(
 ){
 
     try {
-        const res  =  await axios.get(`${apiRoot}/search?key=${keyword}&actnum=${strategyPageSize}`);
+        const res  =  await axios.get(`/search?key=${keyword}&actnum=${strategyPageSize}`);
         succeed(res.data.data.games,res.data.data.strategies);
     } catch (error) {
         failed(error);
@@ -44,7 +45,7 @@ async function searchStrategyApi(
 ){
     // query key=[string]
     try {
-        const res  =  await axios.get(`${apiRoot}/searchstrgy?key=${keyword}&page=${page}&size=${size}`);
+        const res  =  await axios.get(`/searchstrgy?key=${keyword}&page=${page}&size=${size}`);
         succeed(res.data.strategies);
     } catch (error) {
         failed(error);
