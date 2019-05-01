@@ -28,6 +28,9 @@ import YellowGood from "./good-yellow.png";
 import UidIcon from "./uid.png"
 import CommaIcon from "./comma.png"
 
+import checkboxGray from "./check-box-gray.png";
+import checkboxBlue from "./check-box-blue.png";
+
 
 const sexIcon = {
     female,
@@ -60,4 +63,6 @@ export {
     UidIcon,
     YellowGood,
     CommaIcon,
+    checkboxGray,
+    checkboxBlue
 }

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {Login} from "src/api-request/my";
 import "./login-board.css";
-import BlueBtn from "src/components/commonComponent/blue-btn"
+import BlueBtn from "src/components/commonComponent/blue-btn";
+import {checkboxGray,checkboxBlue} from "src/components/icons"
 
 class LoginBoard extends React.Component{
     public props:{logSucceedDispatch:()=>void}
@@ -35,6 +36,7 @@ class LoginBoard extends React.Component{
                         />
                         <div className="inline-input-box">
                             <input 
+                                style={{backgroundImage:`url(${this.state.rememberme?checkboxBlue:checkboxGray})`}}
                                 type="checkbox" 
                                 checked={this.state.rememberme} 
                                 onChange={()=>this.setState( (ps:any) =>({

@@ -1,7 +1,7 @@
 [
     {
         "strategyId":"301",
-        "publisherId":"001",
+        "publisherId":"10001",
         "gameId":"101",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/1.png",
@@ -13,7 +13,7 @@
     },
     {
         "strategyId":"302",
-        "publisherId":"002",
+        "publisherId":"10002",
         "gameId":"103",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/2.png",
@@ -25,7 +25,7 @@
     },
     {
         "strategyId":"303",
-        "publisherId":"001",
+        "publisherId":"10001",
         "gameId":"103",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/3.png",
@@ -37,7 +37,7 @@
     },
     {
         "strategyId":"304",
-        "publisherId":"002",
+        "publisherId":"10002",
         "gameId":"114",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/4.png",
@@ -49,7 +49,7 @@
     },
     {
         "strategyId":"305",
-        "publisherId":"002",
+        "publisherId":"10002",
         "gameId":"112",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/5.png",
@@ -61,7 +61,7 @@
     },
     {
         "strategyId":"306",
-        "publisherId":"001",
+        "publisherId":"10001",
         "gameId":"114",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/1.png",
@@ -73,7 +73,7 @@
     },
     {
         "strategyId":"307",
-        "publisherId":"002",
+        "publisherId":"10002",
         "gameId":"103",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/2.png",
@@ -85,7 +85,7 @@
     },
     {
         "strategyId":"308",
-        "publisherId":"001",
+        "publisherId":"10001",
         "gameId":"103",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/3.png",
@@ -97,7 +97,7 @@
     },
     {
         "strategyId":"309",
-        "publisherId":"002",
+        "publisherId":"10002",
         "gameId":"108",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/4.png",
@@ -109,7 +109,7 @@
     },
     {
         "strategyId":"310",
-        "publisherId":"002",
+        "publisherId":"10002",
         "gameId":"110",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/5.png",
@@ -121,7 +121,7 @@
     },
     {
         "strategyId":"311",
-        "publisherId":"001",
+        "publisherId":"10001",
         "gameId":"105",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/3.png",
@@ -133,7 +133,7 @@
     },
     {
         "strategyId":"312",
-        "publisherId":"002",
+        "publisherId":"10002",
         "gameId":"108",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/4.png",
@@ -145,7 +145,7 @@
     },
     {
         "strategyId":"313",
-        "publisherId":"002",
+        "publisherId":"10002",
         "gameId":"103",
         "strategyTitle":"这是一个攻略标题",
         "coverSrc":"/strategycover/5.png",

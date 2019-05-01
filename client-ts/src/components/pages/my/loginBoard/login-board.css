@@ -42,12 +42,19 @@
 
 
 .login-board input[type="checkbox"] {
-    outline: none;
     vertical-align: middle;
-
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    background-size: 1rem 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.login-board input[type="checkbox"]:focus{
+.login-board input[type="checkbox"]:focus {
     outline: none;
 }
 
@@ -64,7 +71,7 @@
 
 .login-board .inform {
     font-size: 0.8rem;
-    color: #ff5f4a;
+    color: #e70000;
 }
 
 .login-board .hied-real-submit {

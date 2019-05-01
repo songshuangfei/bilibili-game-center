@@ -4,7 +4,7 @@
         "commentAbstract":"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要这是一条评论的摘要，这是一条评论的摘要",
         "commentStarNum":5,
         "gameId":"101",
-        "publisherId":"001",
+        "publisherId":"10001",
         "hotIndex":662
     },
     {
@@ -12,7 +12,7 @@
         "commentAbstract":"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要这是一条评论的摘要，这是一条评论的摘要",
         "commentStarNum":4,
         "gameId":"102",
-        "publisherId":"003",
+        "publisherId":"10003",
         "hotIndex":66612
     },
     {
@@ -20,7 +20,7 @@
         "commentAbstract":"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要这是一条评论的摘要，这是一条评论的摘要",
         "commentStarNum":3,
         "gameId":"103",
-        "publisherId":"001",
+        "publisherId":"10001",
         "hotIndex":662
     },
     {
@@ -28,7 +28,7 @@
         "commentAbstract":"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要这是一条评论的摘要，这是一条评论的摘要",
         "commentStarNum":3,
         "gameId":"104",
-        "publisherId":"001",
+        "publisherId":"10001",
         "hotIndex":24662
     },
     {
@@ -36,7 +36,7 @@
         "commentAbstract":"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要这是一条评论的摘要，这是一条评论的摘要",
         "commentStarNum":5,
         "gameId":"106",
-        "publisherId":"001",
+        "publisherId":"10001",
         "hotIndex":6462
     },
     {
@@ -44,7 +44,7 @@
         "commentAbstract":"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要这是一条评论的摘要，这是一条评论的摘要",
         "commentStarNum":5,
         "gameId":"106",
-        "publisherId":"003",
+        "publisherId":"10003",
         "hotIndex":6620
     },
     {
@@ -52,7 +52,7 @@
         "commentAbstract":"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要这是一条评论的摘要，这是一条评论的摘要",
         "commentStarNum":5,
         "gameId":"107",
-        "publisherId":"001",
+        "publisherId":"10001",
         "hotIndex":6672
     },
     {
@@ -60,7 +60,7 @@
         "commentAbstract":"这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要，这是一条评论的摘要这是一条评论的摘要，这是一条评论的摘要",
         "commentStarNum":5,
         "gameId":"108",
-        "publisherId":"001",
+        "publisherId":"10001",
         "hotIndex":6628
     }
 ]
