@@ -133,10 +133,10 @@
     
     2. 修改`appConfig.ts`里的配置如下
 
-        ```js diff
+        ```diff
         const appconfig = {
         -    apiRoot:"http://192.168.1.101:8000"
-            +apiRoot:"http://api.example.com/blgc"
+        +    apiRoot:"http://api.example.com/blgc"
         }
         export {
             appconfig
@@ -153,12 +153,12 @@
     
     2. 修改`appConfig.json`配置
 
-        ```json diff
+        ```diff json
         {
-            -"AllowOrigin":"http://192.168.1.101:3000",
-            +"AllowOrigin":"http://blgc.example.com",
-            -"mediaFileRoot":"",
-            +"mediaFileRoot":"http://file.example.com/blgc",
+        -    "AllowOrigin":"http://192.168.1.101:3000",
+        +    "AllowOrigin":"http://blgc.example.com",
+        -    "mediaFileRoot":"",
+        +    "mediaFileRoot":"http://file.example.com/blgc",
              "cookieMaxAge":16,
              "tokenMaxAge":15,
              "tokenSecretKey":"emm",
