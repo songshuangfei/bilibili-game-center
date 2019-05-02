@@ -228,13 +228,16 @@
 |:-|:-|:-|:-|:-|:-|
 |/login|POST|-|{uid: string,pwd: string, rememberme:boolean}|{"status": [number]}|status：1001登录成功，1002密码错误|
 
+登录成功后会在cookie设置好token。
+
 #### 自动登录验证
 
 |path|method|query|post data|response|respons可能|
 |:-|:-|:-|:-|:-|:-|
 |/login|GET|-|-|{"status": [number]}|status:1011自动登录成功|
 
-登录成功后会在cookie设置好token。
+当token过期或无token将会得到一个403的http状态。
+403时status1012: 无token（未登陆过)，1013: token过期（会删除token）
 
 #### 获取已登录用户信息
 
