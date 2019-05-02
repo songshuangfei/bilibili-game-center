@@ -133,9 +133,9 @@
     
     2. 修改`appConfig.ts`里的配置如下
 
-        ```js
+        ```js diff
         const appconfig = {
-            -apiRoot:"http://192.168.1.101:8000"
+        -    apiRoot:"http://192.168.1.101:8000"
             +apiRoot:"http://api.example.com/blgc"
         }
         export {
@@ -153,7 +153,7 @@
     
     2. 修改`appConfig.json`配置
 
-        ```json
+        ```json diff
         {
             -"AllowOrigin":"http://192.168.1.101:3000",
             +"AllowOrigin":"http://blgc.example.com",
