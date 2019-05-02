@@ -234,6 +234,7 @@
 |path|method|query|post data|response|respons可能|
 |:-|:-|:-|:-|:-|:-|
 |/login|GET|-|-|{"status": [number]}|status:1011自动登录成功|
+
 当token过期或无token将会得到一个403的http状态。
 403时status1012: 无token（未登陆过)，1013: token过期（会删除token）
 
@@ -242,6 +243,7 @@
 |path|method|query|post data|response|
 |:-|:-|:-|:-|:-|
 |/user/info|GET|-|-|{"info":{}}|
+
 当token过期或无token将会得到一个403的http状态。
 403时status1012: 无token（未登陆过)，1013: token过期（会删除token）
 
@@ -250,6 +252,7 @@
 |path|method|query|post data|response|
 |:-|:-|:-|:-|:-|
 |/user/menu|GET|-|-|{"menuInfo":{}}|
+
 当token过期或无token将会得到一个403的http状态。
 403时status1012: 无token（未登陆过)，1013: token过期（会删除token）
 
