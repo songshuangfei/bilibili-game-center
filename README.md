@@ -114,8 +114,6 @@
 * 后端api
 * http媒体文件
 
-先约定域名（表中域名/ip/url换成你自己的）
-
 |项目|url|
 |:-|:-|
 |前端页面|`blgc.example.com`|
@@ -137,8 +135,8 @@
 
         ```js
         const appconfig = {
-        -    apiRoot:"http://192.168.1.101:8000"
-        +    apiRoot:"http://api.example.com/blgc"
+            -apiRoot:"http://192.168.1.101:8000"
+            +apiRoot:"http://api.example.com/blgc"
         }
         export {
             appconfig
@@ -157,10 +155,10 @@
 
         ```json
         {
-        -     "AllowOrigin":"http://192.168.1.101:3000",
-        +     "AllowOrigin":"http://blgc.example.com",
-        -     "mediaFileRoot":"",
-        +     "mediaFileRoot":"http://file.example.com/blgc",
+            -"AllowOrigin":"http://192.168.1.101:3000",
+            +"AllowOrigin":"http://blgc.example.com",
+            -"mediaFileRoot":"",
+            +"mediaFileRoot":"http://file.example.com/blgc",
              "cookieMaxAge":16,
              "tokenMaxAge":15,
              "tokenSecretKey":"emm",
@@ -202,55 +200,55 @@
 
     |path|method|query|post data|response|说明|
     |:-|:-|:-|:-|:-|:-|
-    |`/homebanner`|GET|-|-|`{"homeBanner":[]}`|首页轮播图|
-    |`/findbanner`|GET|-|-|`{"findBanner":[]}`|发现页轮播图|
-    |`/rank/hot`|GET|`page=[number]&size=[number]`|-|`{"page":[]}`|热门排行游戏列表|
-    |`/rank/good`|GET|`page=[number]&size=[number]`|-|`{"page":[]}`|好评排行游戏列表|
-    |`/rank/new`|GET|`page=[number]&size=[number]`|-|`{"page":[]}`|新游戏排行列表|
-    |`/rank/expect`|GET|`page=[number]&size=[number]`|-|`{"page":[]}`|期待排行游戏列表|
-    |`/activity/newest`|GET|-|-|`{"item":{}}`|最新游戏活动|
-    |`/activity/prev`|GET|`page=[number]&size=[number]`|-|`{"page":[]}`|以前游戏活动|
-    |`/strategylist`|GET|`page=[number]&size=[number]`|-|`{"page":[]}`|攻略列表|
-    |`/gameclassify`|GET|`page=[number]&size=[number]`|-|`{"page":[]}`|游戏分类列表|
-    |`/hotgames`|GET|`type=[basic | all]&num=[number]`|-|`{"list":[]}`|热门游戏列表|
-    |`/newgames`|GET|`type=[basic | all]&num=[number]`|-|`{"list":[]}`|新游列表|
-    |`/ordergames`|GET|`type=[basic | banner]&num=[number]`|-|`{"list":[]}`|可预约游戏列表|
-    |`/videostrategy`|GET|`&num=[number]`|-|`{"list":[]}`|视频攻略|
-    |`/hotgames/banner`|GET|-|-|`{"list":[]}`|热门游戏banner|
-    |`/biligames`|GET|`type=[basic | all]&num=[number]`|-|`{"list":[]}`|bilibili游戏列表|
-    |`/paygames`|GET|`type=[basic | all]&num=[number]`|-|`{"list":[]}`|付费游戏列表|
-    |`/hotcomments`|GET|`num=[number]`|-|`{"list":[]}`|热门评论|
-    |`/hotsearch`|GET|`num=[number]`|-|`{"keys":[]}`|热门搜索关键词|
-    |`/search`|GET|`key=[string]&actnum=[number]`|-|`{"data":{"games":[],"strategies":[]}}`|游戏和攻略搜索|
-    |`/searchstrgy`|GET|`key=[string]&page=[string]&size=[number]`|-|`{"strategies":[]}`|攻略搜索|
+    |/homebanner|GET|-|-|{"homeBanner":[]}|首页轮播图|
+    |/findbanner|GET|-|-|{"findBanner":[]}|发现页轮播图|
+    |/rank/hot|GET|page=[number]&size=[number]|-|{"page":[]}|热门排行游戏列表|
+    |/rank/good|GET|page=[number]&size=[number]|-|{"page":[]}|好评排行游戏列表|
+    |/rank/new|GET|page=[number]&size=[number]|-|{"page":[]}|新游戏排行列表|
+    |/rank/expect|GET|page=[number]&size=[number]|-|{"page":[]}|期待排行游戏列表|
+    |/activity/newest|GET|-|-|{"item":{}}|最新游戏活动|
+    |/activity/prev|GET|page=[number]&size=[number]|-|{"page":[]}|以前游戏活动|
+    |/strategylist|GET|page=[number]&size=[number]|-|{"page":[]}|攻略列表|
+    |/gameclassify|GET|page=[number]&size=[number]|-|{"page":[]}|游戏分类列表|
+    |/hotgames|GET|type=[basic or all]&num=[number]|-|{"list":[]}|热门游戏列表|
+    |/newgames|GET|type=[basic or all]&num=[number]|-|{"list":[]}|新游列表|
+    |/ordergames|GET|type=[basic or banner]&num=[number]|-|{"list":[]}|可预约游戏列表|
+    |/videostrategy|GET|&num=[number]|-|{"list":[]}|视频攻略|
+    |/hotgames/banner|GET|-|-|{"list":[]}|热门游戏banner|
+    |/biligames|GET|type=[basic or all]&num=[number]|-|{"list":[]}|bilibili游戏列表|
+    |/paygames|GET|type=[basic or all]&num=[number]|-|{"list":[]}|付费游戏列表|
+    |/hotcomments|GET|num=[number]|-|{"list":[]}|热门评论|
+    |/hotsearch|GET|num=[number]|-|{"keys":[]}|热门搜索关键词|
+    |/search|GET|key=[string]&actnum=[number]|-|{"data":{"games":[],"strategies":[]}}|游戏和攻略搜索|
+    |/searchstrgy|GET|key=[string]&page=[string]&size=[number]|-|{"strategies":[]}|攻略搜索|
 
 * 复杂api
     * 登录
 
         |path|method|query|post data|response|respons可能|
         |:-|:-|:-|:-|:-|:-|:-|
-        |`/login`|POST|-|`{uid: string,pwd: string, rememberme:boolean}`|`{"status": [number]}`|status：1001登录成功；1002密码错误|
+        |/login|POST|-|{uid: string,pwd: string, rememberme:boolean}|{"status": [number]}|status：1001登录成功，1002密码错误|
         登录成功后会在cookie设置好token
 
     * 自动登录验证
 
         |path|method|query|post data|response|respons可能|
         |:-|:-|:-|:-|:-|:-|:-|
-        |`/login`|GET|-|-|`{"status": [number]}`|status:1011自动登录成功|
+        |/login|GET|-|-|{"status": [number]}|status:1011自动登录成功|
         当token过期或无token将会得到一个403的http状态。
         403时status1012: 无token（未登陆过)，1013: token过期（会删除token）
     * 获取已登录用户信息
 
         |path|method|query|post data|response|
         |:-|:-|:-|:-|:-|:-|
-        |`/user/info`|GET|-|-|`{"info":{}}`|
+        |/user/info|GET|-|-|{"info":{}}|
         当token过期或无token将会得到一个403的http状态。
         403时status1012: 无token（未登陆过)，1013: token过期（会删除token）
     * 获取已登录用户菜单信息
-    
+
         |path|method|query|post data|response|
         |:-|:-|:-|:-|:-|:-|
-        |`/user/menu`|GET|-|-|`{"menuInfo":{}}`|
+        |/user/menu|GET|-|-|{"menuInfo":{}}|
         当token过期或无token将会得到一个403的http状态。
         403时status1012: 无token（未登陆过)，1013: token过期（会删除token）
 
