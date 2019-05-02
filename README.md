@@ -234,6 +234,8 @@
 |:-|:-|:-|:-|:-|:-|
 |/login|GET|-|-|{"status": [number]}|status:1011自动登录成功|
 
+登录成功后会在cookie设置好token。
+
 #### 获取已登录用户信息
 
 |path|method|query|post data|response|
