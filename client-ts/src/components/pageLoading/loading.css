@@ -1,0 +1,16 @@
+.page-loading-icon {
+  text-align: center;
+  padding-top: 10px
+}
+
+.page-loading-icon img {
+  width: 30px;
+  height: 30px;
+  animation: LoadingRotate 2s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes LoadingRotate {
+  form { transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}

@@ -4,21 +4,7 @@ import { Route, Switch, } from 'react-router-dom';
 import "./app.css";
 import Nav from "./components/nav";
 import TitleBar from "./components/titleBar";
-
-// import Home from "./components/pages/home";
-// import Rank from "./components/pages/rank";
-// import Find from "./components/pages/find";
-// import Strategy from "./components/pages/strategy";
-// import My from "./components/pages/my";
-
-// import Search from "./components/pages/search/";
-// import GamePage from './components/pages/gamePage';
-// import MsgPage from "./components/pages/msg";
-// import MyDownload  from "./components/pages/my-download";
-// import NotFound from "./components/pages/notFound";
-// import Setting from "./components/pages/setting"
-
-
+import PageLoading from "./components/pageLoading"
 
 const Home = React.lazy(() => import("./components/pages/home"));
 const Rank = React.lazy(() => import("./components/pages/rank"));
@@ -37,7 +23,7 @@ const Setting = React.lazy(() => import("./components/pages/setting"));
 function AsyncComponent(props:{Ac:any,route:any}){
 	const { Ac, route } = props;
 	return(
-		<Suspense fallback={<div>Loading...</div>}>
+		<Suspense fallback={<PageLoading/>}>
 			<Ac {...route}/>
 		</Suspense>
 	)
